@@ -4,7 +4,7 @@ services:
 before_install:
   - docker pull lennartwittkuhn/talk-rdm:latest
   - docker run --rm -v $PWD:/home lennartwittkuhn/talk-rdm /bin/sh -c "cd /home; make all"
-  script:
+script:
   - make all
 deploy:
   provider: pages
