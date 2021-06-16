@@ -1,4 +1,4 @@
-language: r
+language: minimal
 services:
   - docker
 before_install:
