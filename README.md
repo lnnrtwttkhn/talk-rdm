@@ -4,6 +4,20 @@
 
 This talk is about how we shared code, data and computational environments used in [Wittkuhn & Schuck, 2021, *Nature Communications*](https://doi.org/10.1038/s41467-021-21970-2).
 
+## Docker
+
+```bash
+docker login
+```
+
+```bash
+docker build -t  lennartwittkuhn/talk-rdm:latest .
+```
+
+```bash
+docker push lennartwittkuhn/talk-rdm:latest
+```
+
 ## License
 
 tba
