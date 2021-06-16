@@ -1,0 +1,17 @@
+language: r
+services:
+  - docker
+before_install:
+  - docker pull lennartwittkuhn/talk-rdm
+  - docker run -it --rm -v $PWD:/home lennartwittkuhn/talk-rdm /bin/sh 
+script:
+  - Rscript -e "rmarkdown::render('home/talk-rdm.Rmd', output_dir = 'home/public', output_file = 'index.html')"
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local_dir: public
+  github-token: $PAT_GITHUB_PAGES
+  keep-history: true
+  target_branch: gh-pages
+  on:
+    branch: master
