@@ -24,7 +24,9 @@ docker push lennartwittkuhn/talk-rdm:latest
 
 ## License
 
-tba
+[Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
+
+Please see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
