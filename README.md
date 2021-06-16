@@ -1,6 +1,6 @@
 # Talk on Research Data Management
 
-https://travis-ci.com/lnnrtwttkhn/talk-rdm.svg?token=LfVUVMzHUJFtwkmHjsL7&branch=master[![Build Status](https://travis-ci.com/lnnrtwttkhn/talk-rdm.svg?token=LfVUVMzHUJFtwkmHjsL7&branch=master)](https://travis-ci.com/lnnrtwttkhn/talk-rdm)
+[![Build Status](https://travis-ci.com/lnnrtwttkhn/talk-rdm.svg?branch=master)](https://travis-ci.com/lnnrtwttkhn/talk-rdm)
 
 ## About
 
