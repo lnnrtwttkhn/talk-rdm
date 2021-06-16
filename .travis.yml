@@ -2,10 +2,10 @@ language: minimal
 services:
   - docker
 before_install:
-  - docker pull lennartwittkuhn/talk-rdm
-  - docker run -it --rm -v $PWD:/home lennartwittkuhn/talk-rdm /bin/sh 
-script:
-  - Rscript -e "rmarkdown::render('home/talk-rdm.Rmd', output_dir = 'home/public', output_file = 'index.html')"
+  - docker pull lennartwittkuhn/talk-rdm:latest
+  - docker run --rm -v $PWD:/home lennartwittkuhn/talk-rdm /bin/sh -c "cd /home; make all"
+  script:
+  - make all
 deploy:
   provider: pages
   skip-cleanup: true
