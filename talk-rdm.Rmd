@@ -275,6 +275,82 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishin
 
 ---
 
+# Code sharing using Git and DataLad
+
+---
+
+# Outlook, challenges and discussions
+
+> *"He [Jon Claerbout] has also pointed out that we have reached a point where solutions are available - it is now possible to publish computational research that is really reproducible by others.*"
+
+Buckheit & Donoho (1995), describing how Jon Claerbout and his team shared CD-ROMs with interactive code that could regenerate the figures in their books - in the *early 90s* *(addition in parantheses)*
+
+--
+
+#### All technical solutions are available!
+
+The long-term challenges are:
+- moving towards a "culture of reproducibility" (cf. Russ Poldrack, see e.g., [this talk](https://www.youtube.com/watch?v=XjW3t-qXAiE))
+- changing incentives / funding schemes
+- education, education, education
+- "slow science"
+
+---
+
+# Challenge: Relationship between code and data
+
+- *"Which code produced which data?"*
+- *"In which order do I need to execute the code?"*
+
+--
+
+#### Example solutions
+
+- [datalad run](http://docs.datalad.org/en/stable/generated/man/datalad-run.html)
+
+> `datalad run` *"[...] will record a shell command, and save all changes this command triggered in the dataset – be that new files or changes to existing files."* (see [details](http://handbook.datalad.org/en/latest/basics/basics-run.html) in the DataLad handbook)
+
+- [GNU Make](https://www.gnu.org/software/make/)
+
+> *"Make enables [...] to build and install your package without knowing the details of how that is done -- because these details are recorded in the makefile that you supply."*
+
+> *"Make figures out automatically which files it needs to update, based on which source files have changed. It also automatically determines the proper order for updating files [...]"*
+
+
+
+---
+
+# Challenge: Implementing a Data User Agreement (DUA)
+
+#### From Wittkuhn & Schuck, 2021, project website (see section on [license information](https://wittkuhn.mpib.berlin/highspeed/#license-information)):
+
+> If you download any of the published data, please complete our Data User Agreeement (DUA). The Data User Agreement (DUA) we use for this study, was taken from the Open Brain Consent project, distributed under Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0).
+
+- based on templates and recommendations of the [Open Brain Consent](https://open-brain-consent.readthedocs.io/en/stable/) project (licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en))
+- optional for data from Wittkuhn & Schuck, 2021
+- not possible to implement mandatory DUA on GIN
+
+---
+
+# Challenge: 
+
+
+---
+
+# Thank you!
+
+---
+
+class: title-slide, center, middle
+name: appendix-datalad
+
+# Appendix: DataLad
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
 # DataLad: What is a dataset?
 
 > *"A dataset is a directory on a computer that DataLad manages."*
@@ -357,86 +433,8 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_
 
 ---
 
-# Code sharing using Git and DataLad
-
-
-
-
----
-
-
-
-
-# Resources on DataLad
+# DataLad: Resources, tutorials and teaching materials
 
 - The [DataLad Handbook](http://handbook.datalad.org/en/latest/) is an incredibly extensive resource 
-
 - YouTube video: ["What is DataLad"](https://www.youtube.com/watch?v=IN0vowZ67vs)
 - YouTube video: Michael Hanke: ["How to introduce data management technology without sinking the ship?"](https://www.youtube.com/watch?v=uH75kYgwLH4)
-
----
-
-# Outlook, challenges and discussions
-
-> *"He [Jon Claerbout] has also pointed out that we have reached a point where solutions are available - it is now possible to publish computational research that is really reproducible by others.*"
-
-Buckheit & Donoho (1995), describing how Jon Claerbout and his team shared CD-ROMs with interactive code that could regenerate the figures in their books - in the *early 90s* *(addition in parantheses)*
-
---
-
-#### All technical solutions are available!
-
-The long-term challenges are:
-- moving towards a "culture of reproducibility" (cf. Russ Poldrack, see e.g., [here](https://www.youtube.com/watch?v=XjW3t-qXAiE))
-- changing incentives / funding schemes
-- education, education, education
-- "slow science"
-
----
-
-# Challenge: Relationship between code and data
-
-*"Which code produced which data?"*
-
---
-
-#### Solutions
-
-- [datalad run](http://docs.datalad.org/en/stable/generated/man/datalad-run.html)
-
-> `datalad run` *"[...] will record a shell command, and save all changes this command triggered in the dataset – be that new files or changes to existing files."* (see [details](http://handbook.datalad.org/en/latest/basics/basics-run.html) in the DataLad handbook)
-
-- [GNU Make](https://www.gnu.org/software/make/)
-
-> *"Make enables [...] to build and install your package without knowing the details of how that is done -- because these details are recorded in the makefile that you supply."*
-
-> *"Make figures out automatically which files it needs to update, based on which source files have changed. It also automatically determines the proper order for updating files [...]"*
-
-
-
----
-
-# Challenge: Implementing a Data User Agreement (DUA)
-
-#### From Wittkuhn & Schuck, 2021, project website (see section on [license information](https://wittkuhn.mpib.berlin/highspeed/#license-information)):
-
-> If you download any of the published data, please complete our Data User Agreeement (DUA). The Data User Agreement (DUA) we use for this study, was taken from the Open Brain Consent project, distributed under Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0).
-
-- based on templates and recommendations of the [Open Brain Consent](https://open-brain-consent.readthedocs.io/en/stable/) project (licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en))
-- optional for data from Wittkuhn & Schuck, 2021
-- not possible to implement mandatory DUA on GIN
-
----
-
-# Challenge: 
-
-
----
-
-# Thank you!
-
-
-
-
-
-
