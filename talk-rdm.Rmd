@@ -308,7 +308,72 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishin
 
 ---
 
+class: title-slide, center, middle
+name: workflow-code
+
+# Workflow: Code Management
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
 # Code sharing using Git and DataLad
+
+#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Code Availability statement](https://www.nature.com/articles/s41467-021-21970-2#code-availability)):
+
+> "*We share all code used in this study. An overview of all the resources is publicly available on our project website: https://wittkuhn.mpib.berlin/highspeed/.*"
+
+- code for the main statistical analyses
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-analysis),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-analysis),
+[DOI](https://doi.org/10.12751/g-node.eqqdtg))
+- code for the behavioral task ([GitHub](https://github.com/lnnrtwttkhn/highspeed-task),
+[Zenodo](https://doi.org/10.5281/zenodo.4305888))
+
+--
+
+#### ... and the rest?
+
+> *"We [...] share all data listed in the Data availability section in modularized units alongside the code that created the data, usually in a dedicated `code` directory in each dataset, instead of separate data and code repositories."*
+
+> *"This approach allows to better establish the provenance of data (i.e., a better understanding which code and input data produced which output data), loosely following the **DataLad YODA principles** [...]*"
+
+---
+
+# **Y**ODAs **O**rganigam on **D**ata **A**nalysis <sup>1</sup>
+
+#### P1: *"One thing, one dataset"* (**Modularity**)
+
+#### P2: *"Record where you got it from, and where it is now"* (**Provenance**)
+
+#### P3: *"Record what you did to it, and with what"* (**Reproducibility**)
+
+.footnote[
+<sup>1</sup> a [ recursive acronym](https://en.wikipedia.org/wiki/Recursive_acronym)
+]
+
+--
+
+</br>
+#### Learn about YODA, you must:
+- DataLad Handbook: "YODA: Best practices for data analyses in a dataset" (see [details](https://handbook.datalad.org/en/latest/basics/101-127-yoda.html))
+- "YODA: YODA's Organigram on Data Analysis" - Poster by Hanke et al., 2018, presented at the 24th Annual Meeting of the Organization for Human Brain Mapping (OHBM) 2018 - CC BY 4.0, [doi: 10.7490/f1000research.1116363.1](https://doi.org/10.7490/f1000research.1116363.1)
+- A short talk on YODA principles (see [details](https://github.com/myyoda/talk-principles))
+
+
+&rarr; Details on YODA principles can also be found in the Appendix
+
+---
+
+# Project website with main statistical results
+
+#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Code Availability statement](https://www.nature.com/articles/s41467-021-21970-2#code-availability)):
+
+> "*We share all code used in this study. An overview of all the resources is publicly available on our **project website.**"*
+
+Project website publicly available at https://wittkuhn.mpib.berlin/highspeed/
+
 
 ---
 
@@ -375,9 +440,9 @@ The long-term challenges are:
 ---
 
 class: title-slide, center, middle
-name: appendix-datalad
+name: appendix-datalad-overview
 
-# Appendix: DataLad
+# Appendix: DataLad Overview
 <!--the next --- is a horizontal line-->
 
 --- 
@@ -462,6 +527,61 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/thirdpart
 
 ```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='see <a href="http://docs.datalad.org/en/stable/metadata.html" target="_blank">DataLad Handbook: Metadata</a>'}
 knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_prov_imaging.svg") 
+```
+
+---
+
+class: title-slide, center, middle
+name: appendix-datalad-yoda
+
+# Appendix: DataLad YODA principles
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# P1: *"One thing, one dataset"*
+
+- Structure study elements (data, code, results) in dedicated directories
+- Input data in `/inputs`, code in `/code`, results in `/outputs`, execution environments in `/envs`
+- Use dedicated projects for multiple different analyses
+
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/dataset_modules.svg")
+```
+
+---
+
+# P2: *"Record where you got it from, and where it is now"*
+
+
+- Record where the data came from, or how it is dependent on or linked to other data
+- Link re-usable data resource units as DataLad *subdatasets*
+- `datalad clone`, `datalad download-url`, `datalad save`
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/data_origin.svg")
+```
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="120%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/decentralized_publishing.svg")
+```
+]
+
+---
+
+# P3: *"Record what you did to it, and with what"*
+
+- Know how exactly the content of every file came to be that was not obtained from elsewhere
+- `datalad run` links input data with code execution to output data
+- `datalad containers-run` allows to do the same *within* software containers (e.g., Docker or Singularity)
+
+```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/decentralized_publishing.svg")
 ```
 
 ---
