@@ -52,9 +52,12 @@ pacman::p_load(char = packages_cran)
 
 # Agenda
 
-1. Introduction
-  - 
-2. 
+1. **Introduction**
+2. **Workflow**
+  - Data Management
+  - Code Management
+  - Computational Environments
+3. **Discussion**
 
 
 
@@ -146,16 +149,6 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/ead22cde6d724eda81d2/?dl=1
 
 ---
 
-class: title-slide, center, middle
-name: workflow
-
-# Workflow
-<!--the next --- is a horizontal line-->
-
---- 
-
----
-
 # Our paper
 
 ```{r, echo=FALSE, fig.align="center", out.width="75%", fig.retina=1, fig.cap='<a href="https://doi.org/10.1038/s41467-021-21970-2" target="_blank">doi: 10.1038/s41467-021-21970-2</a> (accessed 17/06/21)'}
@@ -170,6 +163,16 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/ea0795d894e44fd3ad18/?dl=1
 
 ---
 
+class: title-slide, center, middle
+name: workflow-data
+
+# Workflow: Data Management
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
 # Data management using DataLad: Overview
 
 #### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Data Availability statement](https://www.nature.com/articles/s41467-021-21970-2#data-availability)):
@@ -178,9 +181,9 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/ea0795d894e44fd3ad18/?dl=1
 
 --
 
-- Publicly available project website: https://wittkuhn.mpib.berlin/highspeed/
 - All individual datasets can be found at: https://gin.g-node.org/lnnrtwttkhn
-- Each dataset is associated with a unique URL and a Digital Object Identifier (DOI).
+- Each dataset is associated with a unique URL and a Digital Object Identifier (DOI)
+- Dataset structure shared to GitHub and dataset contents shared to GIN
 
 --
 
@@ -245,7 +248,7 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 - servers are on German land (near Munich, Germany)
 - provides Digital Object Identifiers (DOIs) (details [here](https://gin.g-node.org/G-Node/Info/wiki/DOI))
 - allows to set own license (details [here](https://gin.g-node.org/G-Node/Info/wiki/Licensing))
-- DataLad plays perfectly with GIN (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))
+- Both using git + git-annex, DataLad plays perfectly with GIN (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))
 
 ---
 
