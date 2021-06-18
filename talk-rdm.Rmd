@@ -214,6 +214,18 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/ea0795d894e44fd3ad18/?dl=1
 
 ---
 
+# Data organization: Relying on community standards
+
+#### Organization of "raw data" according to [Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io/)
+
+Hello
+
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see Gorgolewski et al., 2016, <i>Nature Scientific Data</i></br><a href="https://doi.org/10.1038/sdata.2016.44" target="_blank">doi: 10.1038/sdata.2016.44</a>'}
+knitr::include_graphics("https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fsdata.2016.44/MediaObjects/41597_2016_Article_BFsdata201644_Fig1_HTML.jpg?as=webp") 
+```
+
+---
+
 # Data sharing via GIN
 
 
@@ -430,7 +442,14 @@ The long-term challenges are:
 
 ---
 
-# Challenge: 
+# Challenge: Standardizing data organization
+
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='<a href="https://xkcd.com/927/" target="_blank">xkcd cartoon "Standards"</a>'}
+knitr::include_graphics("https://imgs.xkcd.com/comics/standards.png")
+```
+
+
+
 
 
 ---
