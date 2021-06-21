@@ -158,12 +158,12 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/ead22cde6d724eda81d2/?dl=1
 
 --
 
-#### The tools already exist!
+#### **The tools already exist!**
 
 1. **Version-control** and **dependency management**
   - Code, data and computational environments change all the time!
   - Example: Running the same analysis on your laptop, the cluster, or your collaborator's computer
-  - Version-control (e.g., Git, DataLad) and Software containers ([Docker](https://www.docker.com/), [Singularity](https://singularity.hpcng.org/))
+  - Version-control (e.g., [Git](https://git-scm.com/), [DataLad](https://www.datalad.org/)) and Software containers ([Docker](https://www.docker.com/), [Singularity](https://singularity.hpcng.org/))
   - Citations, methods, data etc. as research project dependencies
 
 2. **Collaboration, communication, acknowledgement and contribution**
@@ -220,25 +220,26 @@ name: workflow-data
 
 --
 
-- MRI and behavioral data adhering to the [BIDS standard](https://bids.neuroimaging.io/)
+- `highspeed`: superdataset of all subdatasets, incl. project documentation
+- `highspeed-bids`: MRI and behavioral data adhering to the [BIDS standard](https://bids.neuroimaging.io/)
 ([GitHub](https://github.com/lnnrtwttkhn/highspeed-bids),
 [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-bids),
 [DOI](https://doi.org/10.12751/g-node.4ivuv8))
-- MRI quality metrics and reports based on [MRIQC](https://mriqc.readthedocs.io/en/stable/) 
+- `highspeed-mriqc`: MRI quality metrics and reports based on [MRIQC](https://mriqc.readthedocs.io/en/stable/) 
 ([GitHub](https://github.com/lnnrtwttkhn/highspeed-mriqc),
 [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-mriqc),
 [DOI](https://doi.org/10.12751/g-node.0vmyuh))
-- preprocessed MRI data using [fMRIPrep](https://fmriprep.org/en/stable/),
+- `highspeed-fmriprep`: preprocessed MRI data using [fMRIPrep](https://fmriprep.org/en/stable/),
 ([GitHub](https://github.com/lnnrtwttkhn/highspeed-fmriprep),
 [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-fmriprep),
 [DOI](https://doi.org/10.12751/g-node.0ft06t))
-- binarized anatomical masks used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-masks),
+- `highspeed-masks`: binarized anatomical masks used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-masks),
 [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-masks), [DOI](https://doi.org/10.12751/g-node.omirok))
-- first-level GLM results used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-glm),
+- `highspeed-glm`: first-level GLM results used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-glm),
 [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-glm),
 [DOI](https://doi.org/10.12751/g-node.d21zpv))
-- results of the multivariate decoding approach ([GitHub](https://github.com/lnnrtwttkhn/highspeed-decoding), [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-decoding), [DOI](https://doi.org/10.12751/g-node.9zft1r))
-- unprocessed data of the behavioral task acquired during MRI acquisition ([GitHub](https://github.com/lnnrtwttkhn/highspeed-data-behavior),
+- `highspeed-decoding`: results of the multivariate decoding approach ([GitHub](https://github.com/lnnrtwttkhn/highspeed-decoding), [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-decoding), [DOI](https://doi.org/10.12751/g-node.9zft1r))
+- `highspeed-data`: unprocessed data of the behavioral task acquired during MRI acquisition ([GitHub](https://github.com/lnnrtwttkhn/highspeed-data-behavior),
 [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-data-behavior),
 [DOI](https://doi.org/10.12751/g-node.p7dabb))
 
@@ -355,7 +356,9 @@ datalad push --to gin
 
 --
 
-Done! 🎉
+Done!<sup>1</sup> 🎉
+
+<sup><sup>1</sup> To be fair, it's a bit more complex than that ... 😉 </sup>
 
 ---
 
@@ -367,7 +370,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishin
 
 --
 
-#### Suggested alternatives to GIN that can be used with DataLad:
+#### Suggested alternatives to GIN that can be used with DataLad (selection):
 
 - [Keeper](https://keeper.mpdl.mpg.de/) (Seafile) offers all Max Planck employees 1TB(!) of storage (expandable)
 - [Open Science Framework (OSF)](https://osf.io/), popular in Psychology / Cognitive Neuroscience (see [details](http://docs.datalad.org/projects/osf/en/latest/))
@@ -390,11 +393,13 @@ name: workflow-code
 
 > "*We share all code used in this study. An overview of all the resources is publicly available on our project website: https://wittkuhn.mpib.berlin/highspeed/.*"
 
-- code for the main statistical analyses
+--
+
+- `highspeed-analysis`: code for the main statistical analyses
 ([GitHub](https://github.com/lnnrtwttkhn/highspeed-analysis),
 [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-analysis),
 [DOI](https://doi.org/10.12751/g-node.eqqdtg))
-- code for the behavioral task ([GitHub](https://github.com/lnnrtwttkhn/highspeed-task),
+- `highspeed-task`: code for the behavioral task ([GitHub](https://github.com/lnnrtwttkhn/highspeed-task),
 [Zenodo](https://doi.org/10.5281/zenodo.4305888))
 
 --
@@ -432,7 +437,7 @@ name: workflow-code
 
 #### Learn about YODA, you must:
 - DataLad Handbook: "YODA: Best practices for data analyses in a dataset" (see [details](https://handbook.datalad.org/en/latest/basics/101-127-yoda.html))
-- "YODA: YODA's Organigram on Data Analysis" - Poster by Hanke et al., 2018, presented at the 24th Annual Meeting of the Organization for Human Brain Mapping (OHBM) 2018 - CC BY 4.0, [doi: 10.7490/f1000research.1116363.1](https://doi.org/10.7490/f1000research.1116363.1)
+- "YODA: YODA's Organigram on Data Analysis" - Poster by Hanke et al., 2018, presented at the 24th Annual Meeting of the Organization for Human Brain Mapping (OHBM) 2018 | CC-BY 4.0, [doi: 10.7490/f1000research.1116363.1](https://doi.org/10.7490/f1000research.1116363.1)
 
 
 &rarr; Details on YODA principles can also be found in the Appendix
@@ -579,21 +584,22 @@ name: appendix-challenges-solutions
 
 #### From Wittkuhn & Schuck, 2021, project website (see section on [license information](https://wittkuhn.mpib.berlin/highspeed/#license-information)):
 
-> If you download any of the published data, please complete our Data User Agreeement (DUA). The Data User Agreement (DUA) we use for this study, was taken from the Open Brain Consent project, distributed under Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0).
+> "*If you download any of the published data, please complete our Data User Agreeement (DUA). The Data User Agreement (DUA) we use for this study, was taken from the Open Brain Consent project, distributed under Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0).*"
 
 - based on templates and recommendations of the [Open Brain Consent](https://open-brain-consent.readthedocs.io/en/stable/) project (licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en))
 - optional for data from Wittkuhn & Schuck, 2021
+- Statistics: *N* = 72 accessed the DUA, 0 completed
 - not possible to implement mandatory DUA on GIN
 
 ---
 
 # Challenge: Standardizing data organization
 
-```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='<a href="https://xkcd.com/927/" target="_blank">xkcd cartoon "Standards"</a>'}
+```{r, echo=FALSE, fig.align="center", out.width="65%", fig.retina=1, fig.cap='<a href="https://xkcd.com/927/" target="_blank">xkcd cartoon "Standards"</a>'}
 knitr::include_graphics("https://imgs.xkcd.com/comics/standards.png")
 ```
 
-<sup>also see [slides](https://www.nipreps.org/assets/ORN-Workshop/) by Oscar Esteban on "Building communities around reproducible workflows"</sup>
+<sup>&rarr; also see [slides](https://www.nipreps.org/assets/ORN-Workshop/) by Oscar Esteban on "Building communities around reproducible workflows"</sup>
 
 ---
 
