@@ -84,8 +84,8 @@ Buckheit & Donoho (1995), paraphrasing Jon Claerbout
 ]
 
 .pull-right[
-```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap="Jon Claerbout 	<br>Geophysicist at Stanford University"}
-knitr::include_graphics("https://reproducibility.org/blog/wp-content/uploads/2015/08/claerbout1.jpg") 
+```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='<a href="https://wiki.seg.org/wiki/Jon_Claerbout" target="_blank">Jon Claerbout</a></br>Geophysicist at Stanford University</br>(CC-BY-SA)'}
+knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot.jpg") 
 ```
 ]
 
