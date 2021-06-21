@@ -451,20 +451,12 @@ Project website publicly available at https://wittkuhn.mpib.berlin/highspeed/
 - Project documentation and main statistical analyses are written in RMarkdown (see [here](https://github.com/lnnrtwttkhn/highspeed-analysis/tree/master/code))
 - Documentation pages showcase non-executed code (used in subdatasets) in Python and Bash
 - Statistical analyses are executed and website rendered automatically via [Continuous Integreation / Deployment (CI/CD)](https://docs.gitlab.com/ee/ci/):
-  1. In the [main project repository](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed), all RMarkdown files are [combined](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/_bookdown.yml#L22-36) using using [bookdown](https://bookdown.org/) (across subdatasets)
+  1. In the [main project repository](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed), all RMarkdown files are [combined](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/_bookdown.yml#L22-36) using [bookdown](https://bookdown.org/) (across subdatasets)
   1. Input data is [automatically retrieved](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L5-75) from GIN and / or Keeper using DataLad (run in a [Docker container](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/datalad/Dockerfile))
   1. The RMarkdown files are [run in Docker](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile) (executing main statistical analyses) and [rendered](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L99) into a static website
   1. The static website is [deployed to GitLab pages](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L95-106)
 
----
-
-# Pros of continuous integration / deployment (CI/CD)
-
-#### Figures and sourcedata always ready for download
-
-> *"[...] we may request a source data file in Microsoft Excel format or a zipped folder. The source data file should, as a minimum, contain the raw data underlying any graphs and charts [...]"* (see [*Nat. Comms.* submission guidelines](https://www.nature.com/ncomms/submit/how-to-submit))
-
-- Sourcedata and figures are created and saved during CI are [available for download](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/jobs/25521/artifacts/browse/highspeed-analysis/) (see [details](https://docs.gitlab.com/ee/ci/pipelines/job_artifacts.html))
+&rarr; This pipeline is automatically triggered on every push (change) to the main repository.
 
 ---
 
@@ -593,6 +585,26 @@ knitr::include_graphics("https://imgs.xkcd.com/comics/standards.png")
 ```
 
 <sup>also see [slides](https://www.nipreps.org/assets/ORN-Workshop/) by Oscar Esteban on "Building communities around reproducible workflows"</sup>
+
+---
+
+class: title-slide, center, middle
+name: appendix-continuous-integration
+
+# Appendix: Continuous integration
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Pros of continuous integration / deployment (CI/CD)
+
+#### Figures and sourcedata always ready for download
+
+> *"[...] we may request a source data file in Microsoft Excel format or a zipped folder. The source data file should, as a minimum, contain the raw data underlying any graphs and charts [...]"* (see [*Nat. Comms.* submission guidelines](https://www.nature.com/ncomms/submit/how-to-submit))
+
+- Sourcedata and figures are created and saved during CI are [available for download](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/jobs/25521/artifacts/browse/highspeed-analysis/) (see [details](https://docs.gitlab.com/ee/ci/pipelines/job_artifacts.html))
 
 ---
 
