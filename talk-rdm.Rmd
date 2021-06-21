@@ -73,7 +73,7 @@ name: introduction
 
 ---
 
-# The philosophy
+# Philosophy: Open Science should just be science
 
 .pull-left[
 *"An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship.
@@ -86,10 +86,6 @@ Buckheit & Donoho (1995), paraphrasing Jon Claerbout
 ```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap="Jon Claerbout 	<br>Geophysicist at Stanford University"}
 knitr::include_graphics("https://reproducibility.org/blog/wp-content/uploads/2015/08/claerbout1.jpg") 
 ```
-]
-
-.pull-left[
-*"Open Science should just be science"*
 ]
 
 ???
