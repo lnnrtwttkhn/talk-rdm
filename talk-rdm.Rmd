@@ -32,11 +32,12 @@ pacman::p_load(char = packages_cran)
 #### About me
 
 - PhD student at the [Max Planck Research Group "NeuroCode"](https://www.mpib-berlin.mpg.de/research/research-groups/mprg-neurocode) at the [Max Planck Institute for Human Development](https://www.mpib-berlin.mpg.de/en) in Berlin
-- Research: I study the role of fast neural reactivation ("replay") in decision-making in humans using fMRI
+- Research: I study the role of fast neural reactivation ([*replay*](https://en.wikipedia.org/wiki/Hippocampal_replay)) in decision-making in humans using fMRI
 - Member of the MPIB's working group on research data management
 - You can contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de), [Twitter](https://twitter.com/lnnrtwttkhn),
 [GitHub](https://github.com/lnnrtwttkhn) or
 [LinkedIn](https://www.linkedin.com/in/lennart-wittkuhn-6a079a1a8/)
+- Find out more about my work on my [website](https://lennartwittkuhn.com/), [Google Scholar](https://scholar.google.de/) and [ORCiD](https://orcid.org/0000-0003-2966-6888)
 
 --
 
