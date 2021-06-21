@@ -327,17 +327,29 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishin
 
 # What is DataLad?
 
-#### What is DataLad (see [10,000 feet overview](http://handbook.datalad.org/en/latest/intro/executive_summary.html))?
+#### What is DataLad? (see the [10,000 feet](http://handbook.datalad.org/en/latest/intro/executive_summary.html) and [brief](http://handbook.datalad.org/en/latest/intro/philosophy.html) overview in the DataLad Handbook)
 
-- **"Git for data"**
-- Free, [open-source](https://github.com/datalad/datalad) **command-line tool**
-- Building on top of **Git** and **git-annex**, DataLad allows you to **version control arbitrarily large files** in datasets.
+> *"DataLad is a software tool developed to aid with everything related to the evolution of digital objects"*
+
+- somewhat imprecise and colloquially: **"Git for data"**
+- free, [open-source](https://github.com/datalad/datalad) **command-line tool**
+- building on top of **Git** and **git-annex**, DataLad allows you to **version control arbitrarily large files** in datasets.
 - *"Arbitrarily large?"* - yes, see DataLad dataset of 80TB / 15 million files from the Human Connectome Project (see [details](https://handbook.datalad.org/en/latest/usecases/HCP_dataset.html#usecase-hcp-dataset))
-- DataLad doesn't "lock you in"
+
+.footnote[
+*Disclaimer:* I'm "only" an enthusiastic user of DataLad! 😊
+]
 
 --
 
-- I'm "only" an enthusiastic user of DataLad! 😊
+#### DataLad phiolosophy
+
+- DataLad knows only two things: Datasets and files
+- DataLad datasets are Git repository
+- DataLad can version control arbitrarily large data
+- DataLad minimizes custom procedures and data structures
+- DataLad is developed for complete decentralization
+- DataLad aims to maximize the (re-)use of existing 3rd-party data resources and infrastructure
 
 ---
 
