@@ -44,6 +44,7 @@ pacman::p_load(char = packages_cran)
 #### About this presentation
 
 - **Slides:** Reproducible slides are publicly available via https://lennartwittkuhn.com/talk-rdm/
+- **Software:** Written in [RMarkdown](https://bookdown.org/yihui/rmarkdown/) using the [xaringan](https://github.com/yihui/xaringan) package, run in [Docker](https://www.docker.com/), deployed to [GitHub Pages](https://pages.github.com/) using [Travis CI](https://travis-ci.org/)
 - **Source:** Source code is publicly available on GitHub: https://github.com/lnnrtwttkhn/talk-rdm/
 - **Links:** This presentation contains links to external resources. I do not take responsibility for the accuracy, legality or content of the external site or for that of subsequent links. If you notice an issue with a link, please contact me!
 - **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/F9bVf_flR82RczuISMQnwg#) (publicly available!)
