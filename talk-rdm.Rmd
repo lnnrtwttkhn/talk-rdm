@@ -426,6 +426,49 @@ name: workflow-code
 
 Project website publicly available at https://wittkuhn.mpib.berlin/highspeed/
 
+--
+
+#### Reproducible reports with [Bookdown](https://bookdown.org/yihui/bookdown/) / [RMarkdown](https://bookdown.org/yihui/rmarkdown/)
+
+> *"R Markdown is a file format for making dynamic documents with R. An R Markdown document is written in markdown (an easy-to-write plain text format) and contains chunks of embedded R code [...]"*
+
+- Project documentation and main statistical analyses are written in RMarkdown (see [here](https://github.com/lnnrtwttkhn/highspeed-analysis/tree/master/code))
+- Documentation pages showcase non-executed code (used in subdatasets) in Python and Bash
+- Statistical analyses are executed and website rendered automatically via [Continuous Integreation / Deployment (CI/CD)](https://docs.gitlab.com/ee/ci/):
+  1. In the [main project repository](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed), all RMarkdown files are [combined](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/_bookdown.yml#L22-36) using using [bookdown](https://bookdown.org/) (across subdatasets)
+  1. Input data is [automatically retrieved](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L5-75) from GIN and / or Keeper using DataLad (run in a [Docker container](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/datalad/Dockerfile))
+  1. The RMarkdown files are [run in Docker](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile) (executing main statistical analyses) and [rendered](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L99) into a static website
+  1. The static website is [deployed to GitLab pages](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L95-106)
+
+---
+
+# Pros of continuous integration / deployment (CI/CD)
+
+#### Figures and sourcedata always ready for download
+
+> *"[...] we may request a source data file in Microsoft Excel format or a zipped folder. The source data file should, as a minimum, contain the raw data underlying any graphs and charts [...]"* (see [*Nat. Comms.* submission guidelines](https://www.nature.com/ncomms/submit/how-to-submit))
+
+- Sourcedata and figures are created and saved during CI are [available for download](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/jobs/25521/artifacts/browse/highspeed-analysis/) (see [details](https://docs.gitlab.com/ee/ci/pipelines/job_artifacts.html))
+
+---
+
+# Software containers and virtual environments
+
+#### Software containers
+
+> *"Containers allow a researcher to package up a project with all of the parts it needs - such as libraries, dependencies, and system settings - and ship it all out as one package."* (see [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/renv/renv-containers.html#what-are-containers))
+
+- `highspeed-bids`: containerized conversion of MRI data to BIDS using [HeuDiConv](https://hub.docker.com/r/nipy/heudiconv)
+- `highspeed-fmriprep`: containerized execution of pre-processing pipeline [fMRIPrep](https://fmriprep.org/en/stable/singularity.html)
+- `highspeed-mriqc`: containerized creation of MRI quality reports using [MRIQC](https://mriqc.readthedocs.io/en/stable/docker.html)
+- `highspeed-analysis`: containerized execution of statistical analyses in [custom R container](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile)
+- `tools`, a personal collection of commonly used containers in a DatLad dataset (see [details](https://github.com/lnnrtwttkhn/tools))
+
+#### Virtual environments
+
+> *"[...] it may not be possible for one Python installation to meet the requirements of every application. The solution for this problem is to create a virtual environment, a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages."*
+
+
 
 ---
 
