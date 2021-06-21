@@ -99,7 +99,7 @@ knitr::include_graphics("https://reproducibility.org/blog/wp-content/uploads/201
 
 > *"[...] when the same analysis steps performed on the same dataset consistently produces the same answer."*
 
-```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='<a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html" target="_blank">Table of Definitions for Reproducibility</a> by <i>The Turing Way</i> (accessed 21/06/21)'}
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='<a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html" target="_blank">Table of Definitions for Reproducibility</a> by <i>The Turing Way</i>'}
 knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible-matrix.jpg") 
 ```
 
@@ -146,6 +146,8 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/ead22cde6d724eda81d2/?dl=1
 - "*But it worked when I ran it last month?!*"
 
 - *"Which value did you set for the input of this function?"*
+
+- *"Data available upon reasonable request"*
 
 ---
 
