@@ -14,7 +14,7 @@ output:
     lib_dir: libs
     nature:
       ratio: '16:9'
-      highlightStyle: solarized-dark
+ #     highlightStyle: solarized-dark
       highlightLines: true
       countIncrementalSlides: false
     citation_package: biblatex
@@ -42,8 +42,8 @@ pacman::p_load(char = packages_cran)
 
 #### About this presentation
 
-- **Slides:** Slides are publicly available via https://lennartwittkuhn.com/talk-rdm/
-- **Source:** Source code publicly available on GitHub: https://github.com/lnnrtwttkhn/talk-rdm/
+- **Slides:** Reproducible slides are publicly available via https://lennartwittkuhn.com/talk-rdm/
+- **Source:** Source code is publicly available on GitHub: https://github.com/lnnrtwttkhn/talk-rdm/
 - **Links:** This presentation contains links to external resources. I do not take responsibility for the accuracy, legality or content of the external site or for that of subsequent links. If you notice an issue with a link, please contact me!
 - **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/F9bVf_flR82RczuISMQnwg#) (publicly available!)
 - **Contact**: I am happy for any feedback or suggestion via [email](mailto:wittkuhn@mpib-berlin.mpg.de), [HedgeDoc](https://pad.gwdg.de/F9bVf_flR82RczuISMQnwg#) or [GitHub issues](https://github.com/lnnrtwttkhn/talk-rdm/issues). Thank you! 🙏
@@ -149,11 +149,27 @@ knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible
 
 ---
 
-# The solution
+# The solution?
 
-- Code, data and computational environments change all the time!
+> **Organize science like open-source software (OSS) development** <sup>1</sup>
+
+#### The tools already exist!
+
+1. **Version-control**
+  - Code, data and computational environments change all the time!
   - Example: Running the same analysis on your laptop, the cluster, or your collaborator's computer
-  - &rarr; We need **version-control**
+  - Version-control (e.g., Git, DataLad) and Software containers ([Docker](https://www.docker.com/), [Singularity](https://singularity.hpcng.org/))
+1. **Dependency management**
+  - Citations, methods and data as research project dependencies
+1. **Collaboration and communication**
+  - Raising questions, reporting errors, suggesting ideas via [issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/about-issues)
+  - Proposing, discussing, and reviewing changes via [pull](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) (GitHub) or [merge](https://docs.gitlab.com/ee/user/project/merge_requests/) (GitLab) requests
+1. **Acknowledgement and contribution**
+  - Contributions (by individuals or projects) can be tracked and categorized
+
+.footnote[
+<sup>1</sup> see similar ideas e.g., by [Tennant et al., 2020, *OSF*](https://osf.io/preprints/socarxiv/2kxq8/) or [here](https://twitter.com/glopesdev/status/1327964421088567296?s=20)
+]
 
 ---
 
@@ -319,7 +335,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishin
 #### Suggested alternatives to GIN that can be used with DataLad:
 
 - [Keeper](https://keeper.mpdl.mpg.de/) (Seafile) offers all Max Planck employees 1TB(!) of storage (expandable)
-- [Open Science Framework (OSF)](https://osf.io/), pupular in Psychology / Neuroscience (see [details](http://docs.datalad.org/projects/osf/en/latest/))
+- [Open Science Framework (OSF)](https://osf.io/), popular in Psychology / Cognitive Neuroscience (see [details](http://docs.datalad.org/projects/osf/en/latest/))
 
 
 
@@ -576,13 +592,7 @@ name: appendix-challenges-solutions
 knitr::include_graphics("https://imgs.xkcd.com/comics/standards.png")
 ```
 
-
-
-
-
----
-
-# Thank you!
+<sup>also see [slides](https://www.nipreps.org/assets/ORN-Workshop/) by Oscar Esteban on "Building communities around reproducible workflows"</sup>
 
 ---
 
@@ -738,3 +748,4 @@ knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/decentra
 - The [DataLad Handbook](http://handbook.datalad.org/en/latest/) is an incredibly extensive resource 
 - YouTube video: ["What is DataLad"](https://www.youtube.com/watch?v=IN0vowZ67vs)
 - YouTube video: Michael Hanke: ["How to introduce data management technology without sinking the ship?"](https://www.youtube.com/watch?v=uH75kYgwLH4)
+- YouTube playlist: ["Research Data Management with DataLad"](https://www.youtube.com/playlist?list=PLEQHbPfpVqU5sSVrlwxkP0vpoOpgogg5j) (recording of full-day workshop)
