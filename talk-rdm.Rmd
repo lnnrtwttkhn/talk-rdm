@@ -476,11 +476,15 @@ Project website publicly available at https://wittkuhn.mpib.berlin/highspeed/
 - `highspeed-analysis`: containerized execution of statistical analyses in [custom R container](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile)
 - `tools`, a personal collection of commonly used containers in a DatLad dataset (see [details](https://github.com/lnnrtwttkhn/tools))
 
-#### Virtual environments
+--
+
+#### Virtual environments (e.g., [in Python](https://docs.python.org/3/tutorial/venv.html))
 
 > *"[...] it may not be possible for one Python installation to meet the requirements of every application. The solution for this problem is to create a virtual environment, a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages."*
 
-
+```{bash, eval=FALSE}
+pip freeze > requirements.txt
+```
 
 ---
 
