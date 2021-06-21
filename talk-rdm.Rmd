@@ -386,7 +386,7 @@ name: workflow-code
 
 ---
 
-# **Y**ODAs **O**rganigam on **D**ata **A**nalysis <sup>1</sup>
+# **Y**ODAs **O**rganigam on **D**ata **A**nalysis
 
 #### P1: *"One thing, one dataset"* (**Modularity**)
 
@@ -394,17 +394,24 @@ name: workflow-code
 
 #### P3: *"Record what you did to it, and with what"* (**Reproducibility**)
 
-.footnote[
-<sup>1</sup> a [ recursive acronym](https://en.wikipedia.org/wiki/Recursive_acronym)
-]
+--
+
+```{bash, eval=FALSE}
+.
+├── CHANGELOG.md
+├── README.md
+├── code
+├── input
+├── output
+└── requirements.txt
+3 directories, 3 files
+```
 
 --
 
-</br>
 #### Learn about YODA, you must:
 - DataLad Handbook: "YODA: Best practices for data analyses in a dataset" (see [details](https://handbook.datalad.org/en/latest/basics/101-127-yoda.html))
 - "YODA: YODA's Organigram on Data Analysis" - Poster by Hanke et al., 2018, presented at the 24th Annual Meeting of the Organization for Human Brain Mapping (OHBM) 2018 - CC BY 4.0, [doi: 10.7490/f1000research.1116363.1](https://doi.org/10.7490/f1000research.1116363.1)
-- A short talk on YODA principles (see [details](https://github.com/myyoda/talk-principles))
 
 
 &rarr; Details on YODA principles can also be found in the Appendix
