@@ -24,7 +24,21 @@ Title: "A workflow for open and reproducible fMRI studies"
 
 **Keywords:** data sharing, reproducibility, open science, version-control, fMRI
 
-## Docker
+## Build
+
+## Run make
+
+The `html` version of `talk-rdm.Rmd` can be build using [make](Makefile):
+
+```bash
+make all
+```
+
+Note, that this does not render the RMarkdown in the Docker container but your local system.
+
+## Update Docker image
+
+After updating the [Dockerfile](Dockerfile), I use the following command to push the newest image to [dockerhub](https://hub.docker.com/r/lennartwittkuhn/talk-rdm):
 
 ```bash
 docker login
