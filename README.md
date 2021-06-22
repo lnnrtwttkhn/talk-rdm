@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.com/lnnrtwttkhn/talk-rdm.svg?branch=master)](https://travis-ci.com/lnnrtwttkhn/talk-rdm)
 
+[![DOI](https://zenodo.org/badge/377544507.svg)](https://zenodo.org/badge/latestdoi/377544507)
+
 ## About
 
 This talk is about how we shared code, data and computational environments used in [Wittkuhn & Schuck, 2021, *Nature Communications*](https://doi.org/10.1038/s41467-021-21970-2).
@@ -61,6 +63,13 @@ docker run --rm -v $PWD:/home lennartwittkuhn/talk-rdm /bin/sh -c "cd /home; mak
 [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
 
 Please see the [LICENSE](LICENSE) file for details.
+
+## Citation
+
+You can cite this work:
+
+> Lennart Wittkuhn. (2021, June 22). lnnrtwttkhn/talk-rdm: Version 1.0 of talk on a workflow for open and reproducible MRI studies, prepared for the Max Planck Digital Library (Version v1.0). Zenodo. http://doi.org/10.5281/zenodo.5012477
+
 
 ## Contact
 
