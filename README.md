@@ -52,6 +52,10 @@ docker build -t  lennartwittkuhn/talk-rdm:latest .
 docker push lennartwittkuhn/talk-rdm:latest
 ```
 
+```bash
+docker run --rm -v $PWD:/home lennartwittkuhn/talk-rdm /bin/sh -c "cd /home; make all"
+```
+
 ## License
 
 [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
