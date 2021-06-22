@@ -1,5 +1,5 @@
 ---
-title: "A workflow for open and reproducible MRI studies"
+title: "Towards a workflow for open and reproducible MRI studies"
 subtitle: 'Discussion series on "Human Research Data in Practice"'
 author: "Lennart Wittkuhn | wittkuhn@mpib-berlin.mpg.de"
 institute: "Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Berlin, Germany"
