@@ -3,7 +3,7 @@ title: "Towards a workflow for open and reproducible MRI studies"
 subtitle: 'Discussion series on "Human Research Data in Practice"'
 author: "Lennart Wittkuhn | wittkuhn@mpib-berlin.mpg.de"
 institute: "Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Berlin, Germany"
-date: "Tuesday, 22<sup>th</sup> of June 2021"
+date: "Tuesday, 22<sup>nd</sup> of June 2021"
 #date: "Last update of slides: `r format(Sys.time(), '%H:%M | %B %d, %Y')`"
 output:
   xaringan::moon_reader:
@@ -37,7 +37,7 @@ pacman::p_load(char = packages_cran)
 - You can contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de), [Twitter](https://twitter.com/lnnrtwttkhn),
 [GitHub](https://github.com/lnnrtwttkhn) or
 [LinkedIn](https://www.linkedin.com/in/lennart-wittkuhn-6a079a1a8/)
-- Find out more about my work on my [website](https://lennartwittkuhn.com/), [Google Scholar](https://scholar.google.de/) and [ORCiD](https://orcid.org/0000-0003-2966-6888)
+- Find out more about my work on [my website](https://lennartwittkuhn.com/), [Google Scholar](https://scholar.google.de/) and [ORCiD](https://orcid.org/0000-0003-2966-6888)
 
 --
 
@@ -47,7 +47,7 @@ pacman::p_load(char = packages_cran)
 - **Software:** Written in [RMarkdown](https://bookdown.org/yihui/rmarkdown/) using the [xaringan](https://github.com/yihui/xaringan) package, run in [Docker](https://www.docker.com/), deployed to [GitHub Pages](https://pages.github.com/) using [Travis CI](https://travis-ci.org/)
 - **Source:** Source code is publicly available on GitHub: https://github.com/lnnrtwttkhn/talk-rdm/
 - **Links:** This presentation contains links to external resources. I do not take responsibility for the accuracy, legality or content of the external site or for that of subsequent links. If you notice an issue with a link, please contact me!
-- **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/F9bVf_flR82RczuISMQnwg#) (publicly available!)
+- **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/F9bVf_flR82RczuISMQnwg?both) (publicly available!)
 - **Contact**: I am happy for any feedback or suggestion via [email](mailto:wittkuhn@mpib-berlin.mpg.de), [HedgeDoc](https://pad.gwdg.de/F9bVf_flR82RczuISMQnwg#) or [GitHub issues](https://github.com/lnnrtwttkhn/talk-rdm/issues). Thank you! 🙏
 
 ---
@@ -165,7 +165,7 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/ead22cde6d724eda81d2/?dl=1
   - Code, data and computational environments change all the time!
   - Example: Running the same analysis on your laptop, the cluster, or your collaborator's computer
   - Version-control (e.g., [Git](https://git-scm.com/), [DataLad](https://www.datalad.org/)) and Software containers ([Docker](https://www.docker.com/), [Singularity](https://singularity.hpcng.org/))
-  - Citations, methods, data etc. as research project dependencies
+  - Citations, methods, data, etc. as research project dependencies
 
 2. **Collaboration, communication, acknowledgement and contribution**
   - Raising questions, reporting errors, suggesting ideas via [issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/about-issues)
@@ -250,7 +250,7 @@ name: workflow-data
 
 # What is DataLad?
 
-#### What is DataLad? (see the [10,000 feet](http://handbook.datalad.org/en/latest/intro/executive_summary.html) and [brief](http://handbook.datalad.org/en/latest/intro/philosophy.html) overview in the DataLad Handbook)
+#### What is DataLad? (see the [10,000 feet](http://handbook.datalad.org/en/latest/intro/executive_summary.html) and [brief](http://handbook.datalad.org/en/latest/intro/philosophy.html) overview in the DataLad Handbook by [Wagner et al., 2020, *Zenodo*](https://doi.org/10.5281/ZENODO.3905791))
 
 > *"DataLad is a software tool developed to aid with everything related to the evolution of digital objects"*
 
@@ -288,7 +288,7 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/40e43c7e029a4f4696b8/?dl=1
 
 # Data organization: Relying on community standards
 
-#### Organization of "raw data" according to [Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io/)
+#### Organization of "raw data" according to the [Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io/)
 
 > *"A simple and intuitive way to organize and describe your neuroimaging and behavioral data."*
 
@@ -319,7 +319,7 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 - servers are on German land (near Munich, Germany)
 - provides Digital Object Identifiers (DOIs) (details [here](https://gin.g-node.org/G-Node/Info/wiki/DOI))
 - allows to set own license (details [here](https://gin.g-node.org/G-Node/Info/wiki/Licensing))
-- Both using git + git-annex, DataLad plays perfectly with GIN (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))
+- DataLad plays perfectly with GIN, since both use git + git-annex (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))
 
 ---
 
@@ -359,7 +359,7 @@ datalad push --to gin
 
 Done!<sup>1</sup> 🎉
 
-<sup><sup>1</sup> To be fair, it's a bit more complex than that ... 😉 </sup>
+<sup><sup>1</sup> To be fair, it's a bit more complex than that ... 😉 (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))</sup>
 
 ---
 
