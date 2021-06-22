@@ -14,7 +14,7 @@ Slides are available at: https://lennartwittkuhn.com/talk-rdm/
 
 ## Abstract
 
-Title: "A workflow for open and reproducible fMRI studies"
+**Title:** "Towards a workflow for open and reproducible fMRI studies"
 
 > Achieving computational reproducibility and accessible data sharing can be challenging, in particular for neuroimaging research that involves large amounts of heterogeneous data and code. Here, we showcase a workflow that combines several software tools to allow reproducibility and transparent sharing of code and data of a human fMRI study.
 
@@ -24,7 +24,21 @@ Title: "A workflow for open and reproducible fMRI studies"
 
 **Keywords:** data sharing, reproducibility, open science, version-control, fMRI
 
-## Docker
+## Build
+
+## Run make
+
+The `html` version of `talk-rdm.Rmd` can be build using [make](Makefile):
+
+```bash
+make all
+```
+
+Note, that this does not render the RMarkdown in the Docker container but your local system.
+
+## Update Docker image
+
+After updating the [Dockerfile](Dockerfile), I use the following command to push the newest image to [dockerhub](https://hub.docker.com/r/lennartwittkuhn/talk-rdm):
 
 ```bash
 docker login
