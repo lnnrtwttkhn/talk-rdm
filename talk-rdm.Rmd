@@ -7,8 +7,7 @@ date: "Tuesday, 22<sup>nd</sup> of June 2021"
 #date: "Last update of slides: `r format(Sys.time(), '%H:%M | %B %d, %Y')`"
 output:
   xaringan::moon_reader:
-    css: [default, metropolis, metropolis-fonts]
-    #css: xaringan-themer.css
+    css: [default, metropolis, metropolis-fonts, static/fira_code.css]
     self_contained: true
     yolo: false
     lib_dir: libs
