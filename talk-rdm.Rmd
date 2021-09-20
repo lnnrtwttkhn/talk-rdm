@@ -102,7 +102,7 @@ knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot
 
 > *"[...] when the same analysis steps performed on the same dataset consistently produces the same answer."*
 
-```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='<a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html" target="_blank">Table of Definitions for Reproducibility</a> by <i>The Turing Way</i>'}
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='<a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html" target="_blank">Table of Definitions for Reproducibility</a> by <i>The Turing Way</i> (CC-BY 4.0)'}
 knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible-matrix.jpg") 
 ```
 
