@@ -1,9 +1,9 @@
 ---
-title: "Towards a workflow for open and reproducible MRI studies"
-subtitle: 'Discussion series on "Human Research Data in Practice"'
+title: "Tools for an open and reproducible research workflow"
+subtitle: "Open Science Ambassador Day 2021"
 author: "Lennart Wittkuhn | wittkuhn@mpib-berlin.mpg.de"
 institute: "Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Berlin, Germany"
-date: "Tuesday, 22<sup>nd</sup> of June 2021"
+date: "Monday, 18<sup>th</sup> of October 2021"
 #date: "Last update of slides: `r format(Sys.time(), '%H:%M | %B %d, %Y')`"
 output:
   xaringan::moon_reader:
