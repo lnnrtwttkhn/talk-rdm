@@ -1,0 +1,101 @@
+---
+title: "Talks on research data management"
+author: "Lennart Wittkuhn"
+affiliation: "Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Berlin, Germany"
+date: "Last update: `r format(Sys.time(), '%d %B, %Y')`"
+output:
+  bookdown::html_document2:
+    toc: yes
+    self_contained: true
+    toc_float: true
+    toc_depth: 3
+    number_sections: false
+    highlight: pygments
+    theme: darkly
+    code_folding: "hide"
+    df_print: paged
+    fig_caption: true
+fig.align: "center"
+---
+
+# Overview
+
+Welcome! 👋
+
+- [Repo](https://github.com/lnnrtwttkhn/talk-rdm)
+- [Post-workshop survey](https://forms.gle/UVSUKHs1hXLdXodC7) for feedback
+
+```{r, echo=FALSE, message=FALSE}
+# allow duplicate labels: https://bookdown.org/yihui/rmarkdown-cookbook/duplicate-label.html
+options(knitr.duplicate.label = "allow")
+```
+
+```{r, echo=FALSE, message=FALSE}
+if (!requireNamespace("pacman")) install.packages("pacman")
+packages = c("here", "rmarkdown")
+pacman::p_load(char = packages)
+```
+
+```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
+path_input = here::here("input")
+path_public_input = here::here("public", "input")
+# copy input folder to public
+system2(command = "mkdir", args = "public")
+system2(command = "cp", args = sprintf("-r %s %s", path_input, path_public_input))
+```
+
+```{r, echo=FALSE, results="hide"}
+render_xaringan = function(name, path_rmd){
+  path_rmd_copy = here::here("public", paste0(name, ".Rmd"))
+  system2(command = "cp", args = sprintf("%s %s", path_rmd, path_rmd_copy))
+  name_html = paste0(name, ".html")
+  path_html = here::here("public", name_html)
+  # render twice because of bibtex:
+  rmarkdown::render(path_rmd_copy, 'all', output_file = path_html)
+  rmarkdown::render(path_rmd_copy, 'all', output_file = path_html)
+  return(name_html)
+}
+```
+
+```{r, echo=FALSE, results="hide"}
+print_list = function(path_html = NULL, path_rmd = NULL, path_notes = NULL){
+  repo_url = "https://github.com/lnnrtwttkhn/talk-rdm/blob/master/"
+  cat(paste0('- <a href="', path_html, '" target="_blank">Slides</a>'))
+  cat(sprintf("- [Source](%s)", file.path(repo_url, path_rmd)))
+  cat(sprintf("- [Notes](%s)", path_notes))
+}
+```
+
+# Main
+
+```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
+path_source = "talk-rdm.Rmd"
+path_html = render_xaringan(name = "talk-rdm", path_rmd = here::here(path_source))
+```
+
+```{r, echo=FALSE, results="asis"}
+print_list(path_html = path_html, path_rmd = path_source)
+```
+
+```{r, echo=FALSE}
+knitr::include_url(path_html)
+```
+
+# Archive
+
+## June 22, 2021 | Max Planck Digital Library
+
+```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
+archive_name = "20210622-mpdl"
+path_source = file.path("archive", archive_name, "talk-rdm.Rmd")
+path_html = render_xaringan(name = archive_name, path_rmd = here::here(path_source))
+```
+
+```{r, echo=FALSE, results="asis"}
+print_list(path_html = path_html, path_rmd = path_source)
+```
+
+```{r, echo=FALSE}
+knitr::include_url(path_html)
+```
+
