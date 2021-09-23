@@ -98,6 +98,30 @@ knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot
 
 ---
 
+# Good Scientific Practice?
+
+#### Excerpt from the "Rules of Good Scientific Practice" by the Max Planck Society (November 24, 2000)
+
+> *"Scientific examinations, experiments and numerical calculations can only be reproduced or reconstructed if all the important steps are comprehensible.
+> For this reason, full and adequate reports are necessary, and these reports must be kept for a minimum period of ten years, not least as a source of reference, should the published results be called into question by others."* <sup>1</sup>
+
+.footnote[
+<sup>1</sup> Full PDF available [here](https://www.mpg.de/16404553/rules-scientific-practice.pdf)
+]
+
+--
+
+#### Excerpt from your emplyoment contract
+
+
+> *"The rules for safeguarding good scientific practice of the Max Planck Society dated November 24, 2000 in its current version* [👆] *are part of the employment contract."*
+
+--
+
+Do we really meet these standards?
+
+---
+
 # Reproducible research
 
 > *"[...] when the same analysis steps performed on the same dataset consistently produces the same answer."*
