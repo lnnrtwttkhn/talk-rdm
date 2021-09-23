@@ -60,7 +60,7 @@ render_xaringan = function(name, path_rmd){
 print_list = function(path_html = NULL, path_rmd = NULL, path_notes = NULL){
   repo_url = "https://github.com/lnnrtwttkhn/talk-rdm/blob/master"
   cat(paste0('- <a href="', path_html, '" target="_blank">Slides</a>\n'))
-  cat(sprintf("- [Source](%s)\n", file.path(repo_url, path_rmd)))
+  cat(paste0('- <a href="', file.path(repo_url, path_rmd), '" target="_blank">Source</a>\n'))
   cat(sprintf("- [Notes](%s)\n", path_notes))
 }
 ```
