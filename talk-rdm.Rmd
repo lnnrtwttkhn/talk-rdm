@@ -62,8 +62,6 @@ pacman::p_load(char = packages_cran)
   - Computational Environments
 3. **Discussion**
 
-
-
 ---
 
 class: title-slide, center, middle
@@ -76,7 +74,7 @@ name: introduction
 
 ---
 
-# Philosophy: Open Science should just be science
+# Motivation: "Open" Science should just be "Science"
 
 .pull-left[
 *"An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship.
