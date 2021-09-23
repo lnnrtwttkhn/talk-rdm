@@ -23,7 +23,6 @@ fig.align: "center"
 Welcome! 👋
 
 - [Repo](https://github.com/lnnrtwttkhn/talk-rdm)
-- [Post-workshop survey](https://forms.gle/UVSUKHs1hXLdXodC7) for feedback
 
 ```{r, echo=FALSE, message=FALSE}
 # allow duplicate labels: https://bookdown.org/yihui/rmarkdown-cookbook/duplicate-label.html
@@ -50,19 +49,19 @@ render_xaringan = function(name, path_rmd){
   system2(command = "cp", args = sprintf("%s %s", path_rmd, path_rmd_copy))
   name_html = paste0(name, ".html")
   path_html = here::here("public", name_html)
-  # render twice because of bibtex:
+  # render twice because of bibtex (not needed atm):
   rmarkdown::render(path_rmd_copy, 'all', output_file = path_html)
-  rmarkdown::render(path_rmd_copy, 'all', output_file = path_html)
+  #rmarkdown::render(path_rmd_copy, 'all', output_file = path_html)
   return(name_html)
 }
 ```
 
 ```{r, echo=FALSE, results="hide"}
 print_list = function(path_html = NULL, path_rmd = NULL, path_notes = NULL){
-  repo_url = "https://github.com/lnnrtwttkhn/talk-rdm/blob/master/"
-  cat(paste0('- <a href="', path_html, '" target="_blank">Slides</a>'))
-  cat(sprintf("- [Source](%s)", file.path(repo_url, path_rmd)))
-  cat(sprintf("- [Notes](%s)", path_notes))
+  repo_url = "https://github.com/lnnrtwttkhn/talk-rdm/blob/master"
+  cat(paste0('- <a href="', path_html, '" target="_blank">Slides</a>\n'))
+  cat(sprintf("- [Source](%s)\n", file.path(repo_url, path_rmd)))
+  cat(sprintf("- [Notes](%s)\n", path_notes))
 }
 ```
 
