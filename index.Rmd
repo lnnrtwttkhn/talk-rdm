@@ -22,7 +22,12 @@ fig.align: "center"
 
 Welcome! 👋
 
-- [Repo](https://github.com/lnnrtwttkhn/talk-rdm)
+This website hosts the slides and other resources for my talks on research data management, reproducibility and beyond.
+The current version of the slides can be found in the [main](#main) section.
+Previous versions of the slides can be found in the [archive](#archive) section.
+You can find the GitHub repo with all the source code [here](https://github.com/lnnrtwttkhn/talk-rdm).
+For questions, please contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de).
+Thanks!
 
 ```{r, echo=FALSE, message=FALSE}
 # allow duplicate labels: https://bookdown.org/yihui/rmarkdown-cookbook/duplicate-label.html
@@ -65,7 +70,9 @@ print_list = function(path_html = NULL, path_rmd = NULL, path_notes = NULL){
 }
 ```
 
-# Main
+# Main ✨
+
+The current version of the slides is available below:
 
 ```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
 path_source = "talk-rdm.Rmd"
@@ -80,9 +87,11 @@ print_list(path_html = path_html, path_rmd = path_source)
 knitr::include_url(path_html)
 ```
 
-# Archive
+# Archive 📚
 
-## June 22, 2021 | Max Planck Digital Library
+## Max Planck Digital Library
+
+The following slides were presented during a talk prepared for the "Discussion Series: Human Research Data in Practice" hosted by the [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) (see details [here](https://rdm.mpdl.mpg.de/2021/05/27/discussion-series-human-research-data-in-practice-on-22th-june-2021/)) on 22<sup>nd</sup> of June 2021.
 
 ```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
 archive_name = "20210622-mpdl"
