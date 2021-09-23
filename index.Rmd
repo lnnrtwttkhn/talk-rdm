@@ -1,0 +1,109 @@
+---
+title: "Talks on research data management"
+author: "Lennart Wittkuhn"
+affiliation: "Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Berlin, Germany"
+date: "Last update: `r format(Sys.time(), '%d %B, %Y')`"
+output:
+  bookdown::html_document2:
+    toc: yes
+    self_contained: true
+    toc_float: true
+    toc_depth: 3
+    number_sections: false
+    highlight: pygments
+    theme: darkly
+    code_folding: "hide"
+    df_print: paged
+    fig_caption: true
+fig.align: "center"
+---
+
+# Overview
+
+Welcome! 👋
+
+This website hosts the slides and other resources for my talks on research data management, reproducibility and beyond.
+The current version of the slides can be found in the [main](#main) section.
+Previous versions of the slides can be found in the [archive](#archive) section.
+You can find the GitHub repo with all the source code [here](https://github.com/lnnrtwttkhn/talk-rdm).
+For questions, please contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de).
+Thanks!
+
+```{r, echo=FALSE, message=FALSE}
+# allow duplicate labels: https://bookdown.org/yihui/rmarkdown-cookbook/duplicate-label.html
+options(knitr.duplicate.label = "allow")
+```
+
+```{r, echo=FALSE, message=FALSE}
+if (!requireNamespace("pacman")) install.packages("pacman")
+packages = c("here", "rmarkdown")
+pacman::p_load(char = packages)
+```
+
+```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
+path_input = here::here("input")
+path_public_input = here::here("public", "input")
+# copy input folder to public
+system2(command = "mkdir", args = "public")
+system2(command = "cp", args = sprintf("-r %s %s", path_input, path_public_input))
+```
+
+```{r, echo=FALSE, results="hide"}
+render_xaringan = function(name, path_rmd){
+  path_rmd_copy = here::here("public", paste0(name, ".Rmd"))
+  system2(command = "cp", args = sprintf("%s %s", path_rmd, path_rmd_copy))
+  name_html = paste0(name, ".html")
+  path_html = here::here("public", name_html)
+  # render twice because of bibtex (not needed atm):
+  rmarkdown::render(path_rmd_copy, 'all', output_file = path_html)
+  #rmarkdown::render(path_rmd_copy, 'all', output_file = path_html)
+  return(name_html)
+}
+```
+
+```{r, echo=FALSE, results="hide"}
+print_list = function(path_html = NULL, path_rmd = NULL, path_notes = NULL){
+  repo_url = "https://github.com/lnnrtwttkhn/talk-rdm/blob/master"
+  cat(paste0('- <a href="', path_html, '" target="_blank">Slides</a>\n'))
+  cat(paste0('- <a href="', file.path(repo_url, path_rmd), '" target="_blank">Source</a>\n'))
+  cat(sprintf("- [Notes](%s)\n", path_notes))
+}
+```
+
+# Main ✨
+
+The current version of the slides is available below:
+
+```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
+path_source = "talk-rdm.Rmd"
+path_html = render_xaringan(name = "talk-rdm", path_rmd = here::here(path_source))
+```
+
+```{r, echo=FALSE, results="asis"}
+print_list(path_html = path_html, path_rmd = path_source)
+```
+
+```{r, echo=FALSE}
+knitr::include_url(path_html)
+```
+
+# Archive 📚
+
+## Max Planck Digital Library
+
+The following slides were presented during a talk prepared for the "Discussion Series: Human Research Data in Practice" hosted by the [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) (see details [here](https://rdm.mpdl.mpg.de/2021/05/27/discussion-series-human-research-data-in-practice-on-22th-june-2021/)) on 22<sup>nd</sup> of June 2021.
+
+```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
+archive_name = "20210622-mpdl"
+path_source = file.path("archive", archive_name, "talk-rdm.Rmd")
+path_html = render_xaringan(name = archive_name, path_rmd = here::here(path_source))
+```
+
+```{r, echo=FALSE, results="asis"}
+print_list(path_html = path_html, path_rmd = path_source)
+```
+
+```{r, echo=FALSE}
+knitr::include_url(path_html)
+```
+
