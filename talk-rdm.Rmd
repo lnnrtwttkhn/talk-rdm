@@ -62,8 +62,6 @@ pacman::p_load(char = packages_cran)
   - Computational Environments
 3. **Discussion**
 
-
-
 ---
 
 class: title-slide, center, middle
@@ -73,6 +71,35 @@ name: introduction
 <!--the next --- is a horizontal line-->
 
 --- 
+
+---
+
+# *"How close are you to full reproducibility?"*
+
+#### [...] *full* reproducibility?
+
+#### Reproducibility of statistical results in our [recent paper](https://www.nature.com/articles/s41467-021-21970-2#code-availability):
+
+- Our [project website](https://wittkuhn.mpib.berlin/highspeed/) shows all figures and statistical results next to the corresponding R code
+- The analyses are written in [RMarkdown](https://bookdown.org/yihui/rmarkdown/) notebooks which are run and rendered into the project website using [bookdown](https://bookdown.org/yihui/bookdown/) and deployed to [GitLab pages](https://docs.gitlab.com/ee/user/project/pages/) using [continuous integration (CI)](https://docs.gitlab.com/ee/ci/) (for details, see [here](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml))
+- The input data are retrieved from DataLad datasets in the CI (see [here](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L5-93))
+- R and DataLad are run in dedicated Docker containers (see [here](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile) and [here](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/datalad/Dockerfile) for the Docker recipes)
+
+---
+
+# Random tips to help you keep track
+
+- Use [tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) to mark the state ("commit") in your code and data repo that was used to generate the results in the paper
+
+```{bash, eval=FALSE}
+git tag -a v1.0 -m "version used to generate results in our paper"
+```
+
+- Use software containers, e.g., [Docker](https://www.docker.com/) or [Singularity](https://sylabs.io/guides/3.0/user-guide/index.html)
+
+> Containers allow a researcher to package up a project with all of the parts it needs - such as libraries, dependencies, and system settings - and ship it all out as one package. Anyone can then open up a container and work within it, viewing and interacting with the project as if the machine they are accessing it from is identical to the machine specified in the container - regardless of what their computational environment actually is. They are designed to make it easier to transfer projects between very different environments.
+
+[Turing Way](https://the-turing-way.netlify.app/reproducible-research/renv/renv-containers.html)
 
 ---
 
