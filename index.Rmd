@@ -27,11 +27,13 @@ fig.align: "center"
 Welcome!
 
 This website hosts the slides and other resources for my talks on research data management, reproducibility and beyond.
+
 The current version of the slides can be found in the [main](#main) section.
 Previous versions of the slides can be found in the [archive](#archive) section.
-You can find the GitHub repo with all the source code [here](https://github.com/lnnrtwttkhn/talk-rdm).
+You can find the GitHub repository with all the source code [here](https://github.com/lnnrtwttkhn/talk-rdm).
 All contents are licensed under Creative Commons Attribution-ShareAlike 4.0 International Public License (for details, see [here](https://github.com/lnnrtwttkhn/talk-rdm/blob/master/LICENSE) and [here](https://creativecommons.org/licenses/by-sa/4.0/)).
-For questions, please contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de).
+If you notice any issues or have suggestions for improvement, I would be glad to hear from you!
+Please open an [issue](https://github.com/lnnrtwttkhn/talk-rdm/issues) on GitHub or contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de).
 Thanks!
 
 ```{r, echo=FALSE, message=FALSE}
