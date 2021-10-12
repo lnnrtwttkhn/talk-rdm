@@ -22,7 +22,9 @@ fig.align: "center"
 [![DOI](https://zenodo.org/badge/377544507.svg)](https://zenodo.org/badge/latestdoi/377544507)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-Welcome! 👋
+# Overview 👋
+
+Welcome!
 
 This website hosts the slides and other resources for my talks on research data management, reproducibility and beyond.
 The current version of the slides can be found in the [main](#main) section.
