@@ -62,7 +62,7 @@ render_xaringan = function(name, path_rmd){
   name_html = paste0(name, ".html")
   path_html = here::here("public", name_html)
   # render twice because of bibtex (not needed atm):
-  rmarkdown::render(path_rmd_copy, 'all', output_file = path_html)
+  xfun::Rscript_call(rmarkdown::render, list(input = path_rmd_copy, output_file = path_html))
   #rmarkdown::render(path_rmd_copy, 'all', output_file = path_html)
   return(name_html)
 }
