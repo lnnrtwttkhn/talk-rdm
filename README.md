@@ -1,7 +1,6 @@
 # Talk on Research Data Management
 
-[![Build Status](https://travis-ci.com/lnnrtwttkhn/talk-rdm.svg?branch=master)](https://travis-ci.com/lnnrtwttkhn/talk-rdm)
-
+[![Build Status](https://app.travis-ci.com/lnnrtwttkhn/talk-rdm.svg?branch=master)](https://app.travis-ci.com/lnnrtwttkhn/talk-rdm)
 [![DOI](https://zenodo.org/badge/377544507.svg)](https://zenodo.org/badge/latestdoi/377544507)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
