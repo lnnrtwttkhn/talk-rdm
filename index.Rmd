@@ -36,7 +36,7 @@ options(knitr.duplicate.label = "allow")
 
 ```{r, echo=FALSE, message=FALSE}
 if (!requireNamespace("pacman")) install.packages("pacman")
-packages = c("here", "rmarkdown")
+packages = c("here", "rmarkdown", "xaringan")
 pacman::p_load(char = packages)
 ```
 

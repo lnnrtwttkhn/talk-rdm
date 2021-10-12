@@ -21,7 +21,7 @@ output:
       #countdown: 60000
 ---
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
 if (!requireNamespace("pacman")) install.packages("pacman")
 packages_cran = c("here", "xaringan")
 pacman::p_load(char = packages_cran)
