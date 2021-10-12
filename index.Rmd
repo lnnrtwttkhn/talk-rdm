@@ -19,6 +19,7 @@ fig.align: "center"
 ---
 
 # Overview
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 Welcome! 👋
 
@@ -26,6 +27,7 @@ This website hosts the slides and other resources for my talks on research data 
 The current version of the slides can be found in the [main](#main) section.
 Previous versions of the slides can be found in the [archive](#archive) section.
 You can find the GitHub repo with all the source code [here](https://github.com/lnnrtwttkhn/talk-rdm).
+All contents are licensed under Creative Commons Attribution-ShareAlike 4.0 International Public License (for details, see [here](https://github.com/lnnrtwttkhn/talk-rdm/blob/master/LICENSE) and [here](https://creativecommons.org/licenses/by-sa/4.0/)).
 For questions, please contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de).
 Thanks!
 
