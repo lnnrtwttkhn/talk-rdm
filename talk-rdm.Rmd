@@ -609,12 +609,14 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishin
 ---
 
 class: title-slide, center, middle
-name: workflow-code
+name: workflow-presentation
 
-# Workflow: Code Management
+# Workflow: Code and Data Presentation
 <!--the next --- is a horizontal line-->
 
 --- 
+
+---
 
 # Project website with main statistical results
 
