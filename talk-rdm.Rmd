@@ -246,6 +246,51 @@ knitr::include_graphics("http://phdcomics.com/comics/archive/phd052810s.gif")
 
 ---
 
+# Version-control with Git
+
+> Version control is a systematic approach to record changes made in a [...] set of files, over time. This allows you and your collaborators to track the history, see what changed, and recall specific versions later [...] ([Turing Way](https://the-turing-way.netlify.app/reproducible-research/vcs.html))
+
+--
+
+.pull-left[
+#### Basic versioning workflow 
+1. Create files (text, code, etc.)
+1. Work on the files (change, delete or add new content)
+1. **Create a snapshot of the file status** (a "commit")
+{{content}}
+]
+<!-- see https://stackoverflow.com/questions/46408057/incremental-slides-do-not-work-with-a-two-column-layout-->
+
+--
+
+#### Git
+
+Popular **distributed version control system**
+
+
+--
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="75%", fig.retina=1, fig.cap='<a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control" target="_blank">Figure 3: Distributed Version Control Systems</a>'}
+knitr::include_graphics("https://git-scm.com/book/en/v2/images/distributed.png") 
+```
+]
+
+
+
+---
+
+# The amazing superpowers of version-control
+
+- know exactly what was changed when and by whom
+- You don't loose any changes (unless you try really hard)
+- **Branches**: parallel versions
+- keep working version 
+- collaboration 
+- when using GitLab & GitHub you always have at least one backup of your code
+
+---
+
 # Git mini-tutorial: Create a repository and add content
 
 1\. Open the Terminal / command line on your computer
