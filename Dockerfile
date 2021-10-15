@@ -14,4 +14,4 @@ RUN apt-get update && apt-get install -y \
 r-cran-bookdown
 
 # add missing source packages in blocks of 4
-RUN Rscript -e "installOrQuit(c('pacman', 'here', 'xaringan'))"
+RUN Rscript -e "installOrQuit(c('pacman', 'here', 'xaringan', 'emoji'))"
