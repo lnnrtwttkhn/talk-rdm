@@ -532,6 +532,49 @@ pip freeze > requirements.txt
 
 ---
 
+class: title-slide, center, middle
+name: workflow-code
+
+# Workflow: Project Management
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+# Discuss ideas and plan your work: Issues
+
+.pull-left[
+```{r, echo=FALSE, out.width="100%", fig.retina=1}
+knitr::include_graphics("https://docs.gitlab.com/ee/user/project/issues/img/new_issue_v13_1.png")
+```
+
+#### Example
+
+Open a new issue in our `highspeed` [project repository](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/issues/new?issue)
+]
+
+--
+
+.pull-right[
+#### Elements of a new issue (details [here](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#elements-of-the-new-issue-form))
+
+- **Description:** Markdown + HTML support, task lists, etc.
+- **Confidentiality**: Issue visible only for team members
+- **Assignee**: Assign responsibilities to team members
+- **Milestone**: Add issues to important milestones
+- **Labels**: Organize issues by labels, e.g., `bug`
+- **Due date**: Set due dates for issues
+
+#### More functions of issues (details [here](https://docs.gitlab.com/ee/user/project/issues/))
+
+- Issues can be combined in [issue boards](https://docs.gitlab.com/ee/user/project/issue_board.html)
+- Issues can be [sorted](https://docs.gitlab.com/ee/user/project/issues/sorting_issue_lists.html) (by due date, label priority, etc.)
+- Issues can be [transferred between repositories](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#moving-issues)
+- Issues can be [crosslinked](https://docs.gitlab.com/ee/user/project/issues/crosslinking_issues.htm) e.g., in commit messages: `git commit -m "add missing data, close #37"`
+- Issues can send [automated email notifications](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#new-issue-via-email)
+]
+
+---
 # Summary, outlook, challenges and discussions
 
 > *"He [Jon Claerbout] has also pointed out that we have reached a point where solutions are available - it is now possible to publish computational research that is really reproducible by others.*"
