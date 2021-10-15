@@ -742,6 +742,26 @@ name: workflow-code
 --- 
 
 ---
+
+# Manage projects next to data and code
+
+####
+
+- `r emoji::emoji("white_check_mark")` Manage access to your code and data with detailed [permissions and roles](https://docs.gitlab.com/ee/user/permissions.html)
+
+
+
+#### GitLab for Max Planck employees
+
+- hosted by GWDG: https://gitlab.gwdg.de/users/sign_in
+- hosted by your institute<sup>1</sup>, e.g., at MPIB: https://git.mpib-berlin.mpg.de
+
+.footnote[
+<sup>1</sup> Using your Max Planck credentials, you might already have an account!
+]
+
+---
+
 # Discuss ideas and plan your work: Issues
 
 .pull-left[
