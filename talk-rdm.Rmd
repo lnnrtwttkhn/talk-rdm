@@ -589,17 +589,20 @@ datalad push --to gin
 
 Done!<sup>1</sup> 🎉
 
-<sup><sup>1</sup> To be fair, it's a bit more complex than that ... 😉 (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))</sup>
+<sup><sup>1</sup> To be fair, it's a bit more complex than that ... `r emoji::emoji("innocent")` (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))</sup>
 
 ---
 
-# Sharing data via third-party infrastructure
+# Data sharing on Keeper
 
-```{r, echo=FALSE, fig.align="center", out.width="45%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Third-party infrastructure</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg")
+```{r, echo=FALSE, fig.align="center", out.width="35%", fig.retina=1, fig.cap='<a href="https://keeper.mpdl.mpg.de/" target="_blank">https://keeper.mpdl.mpg.de/</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/media/img/catalog/KEEPER_logo.png")
 ```
 
---
+> "*A free service for all Max Planck employees and project partners with **more than 1TB of storage per user** for your researchdata.
+> Profit from safe data storage, seamlessly integrated into your research workflow.*"
+
+---
 
 #### Suggested alternatives to GIN that can be used with DataLad (selection):
 
