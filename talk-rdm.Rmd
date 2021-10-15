@@ -785,7 +785,11 @@ Buckheit & Donoho (1995), describing how Jon Claerbout and his team shared CD-RO
 
 # Take-home message
 
-#### We have all the tools we need to make science fully transparent and reproducible available today!
+#### Science like software development
+
+We have all the tools we need to make science fully transparent and reproducible available today!
+
+- 
 
 --
 
