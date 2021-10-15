@@ -530,8 +530,25 @@ knitr::include_graphics("https://media.springernature.com/full/springer-static/i
 
 ---
 
-# Data sharing via GIN
+class: title-slide, center, middle
+name: workflow-data-sharing
 
+# Workflow: Data Sharing
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Data sharing with DataLad
+
+- Open Science Framework
+
+
+
+---
+
+# Data sharing via GIN
 
 ```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://gin.g-node.org/" target="_blank">https://gin.g-node.org/</a>'}
 knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
@@ -541,7 +558,7 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 
 --
 
- #### Advantages of GIN (non-exhaustive list)
+#### Advantages of GIN (non-exhaustive list)
 
 - free and open-source (could be hosted within MPIs / MPG)
 - supports private and public repositories
