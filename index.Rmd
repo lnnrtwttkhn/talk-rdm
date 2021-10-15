@@ -18,15 +18,22 @@ output:
 fig.align: "center"
 ---
 
-# Overview
+[![Build Status](https://app.travis-ci.com/lnnrtwttkhn/talk-rdm.svg?branch=master)](https://app.travis-ci.com/lnnrtwttkhn/talk-rdm)
+[![DOI](https://zenodo.org/badge/377544507.svg)](https://zenodo.org/badge/latestdoi/377544507)
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-Welcome! 👋
+# Overview 👋
+
+Welcome!
 
 This website hosts the slides and other resources for my talks on research data management, reproducibility and beyond.
+
 The current version of the slides can be found in the [main](#main) section.
 Previous versions of the slides can be found in the [archive](#archive) section.
-You can find the GitHub repo with all the source code [here](https://github.com/lnnrtwttkhn/talk-rdm).
-For questions, please contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de).
+You can find the GitHub repository with all the source code [here](https://github.com/lnnrtwttkhn/talk-rdm).
+All contents are licensed under Creative Commons Attribution-ShareAlike 4.0 International Public License (for details, see [here](https://github.com/lnnrtwttkhn/talk-rdm/blob/master/LICENSE) and [here](https://creativecommons.org/licenses/by-sa/4.0/)).
+If you notice any issues or have suggestions for improvement, I would be glad to hear from you!
+Please open an [issue](https://github.com/lnnrtwttkhn/talk-rdm/issues) on GitHub or contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de).
 Thanks!
 
 ```{r, echo=FALSE, message=FALSE}
@@ -36,7 +43,7 @@ options(knitr.duplicate.label = "allow")
 
 ```{r, echo=FALSE, message=FALSE}
 if (!requireNamespace("pacman")) install.packages("pacman")
-packages = c("here", "rmarkdown")
+packages = c("here", "rmarkdown", "xaringan")
 pacman::p_load(char = packages)
 ```
 
@@ -55,7 +62,7 @@ render_xaringan = function(name, path_rmd){
   name_html = paste0(name, ".html")
   path_html = here::here("public", name_html)
   # render twice because of bibtex (not needed atm):
-  rmarkdown::render(path_rmd_copy, 'all', output_file = path_html)
+  xfun::Rscript_call(rmarkdown::render, list(input = path_rmd_copy, output_file = path_html))
   #rmarkdown::render(path_rmd_copy, 'all', output_file = path_html)
   return(name_html)
 }
