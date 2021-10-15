@@ -555,7 +555,7 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 
 # Publishing a DataLad dataset to GIN in only 4 steps
 
-Step 1: Create a dataset
+1\. Create a dataset
 
 ```{bash, eval=FALSE}
 datalad create my_dataset
@@ -563,7 +563,7 @@ datalad create my_dataset
 
 --
 
-Step 2: Save data into the dataset
+2\. Save data into the dataset
 
 ```{bash, eval=FALSE}
 datalad save -m "add data to dataset"
@@ -571,7 +571,7 @@ datalad save -m "add data to dataset"
 
 --
 
-Step 3: Add the GIN remote ("sibling")
+3\. Add the GIN remote ("sibling")
 
 ```{bash, eval=FALSE}
 datalad siblings add -d . --name gin --url git@gin.g-node.org:/my_username/my_dataset.git
@@ -579,7 +579,7 @@ datalad siblings add -d . --name gin --url git@gin.g-node.org:/my_username/my_da
 
 --
 
-Step 4: Transfer the dataset to GIN
+4\. Transfer the dataset to GIN
 
 ```{bash, eval=FALSE}
 datalad push --to gin
