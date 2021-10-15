@@ -232,6 +232,115 @@ knitr::include_graphics("http://phdcomics.com/comics/archive/phd052810s.gif")
 
 ---
 
+# Git mini-tutorial: Create a repository and add content
+
+1\. Open the Terminal / command line on your computer
+
+--
+
+2\. Create a new Git repository
+
+```{bash, eval=FALSE}
+$ git init my_project
+Initialized empty Git repository in ~/my_project/.git/
+```
+
+--
+
+3\. Move into the `my_project` directory using `cd` ("**c**hange **d**irectory")
+
+```{bash, eval=FALSE}
+$ cd my_project
+```
+
+--
+
+4\. Create a `README.md` text file that contains the line `hello world`, using `echo`
+
+```{bash, eval=FALSE}
+$ echo "hello world" >> README.md
+```
+
+--
+
+5\. List the contents of the `my_project` directory, using `ls`
+
+```{bash, eval=FALSE}
+$ ls
+README.md
+```
+
+---
+
+# Git mini-tutorial: Track contents
+
+6\. Tell Git to track the changes in the `README.md` file, using `git add`
+
+```{bash, eval=FALSE}
+$ git add README.md
+```
+
+--
+
+7\. *Commit* the changes in the `README.md` file to your repository's history, using `git commit`
+
+```{bash, eval=FALSE}
+$ git commit --message "initial commit"
+  [master (root-commit) 5118725] initial commit 
+  1 file changed, 1 insertion(+) 
+  create mode 100644 README.md
+```
+
+---
+
+# Git mini-tutorial: Record changes over time
+
+8\. Add another line to the `README.md` file, again using `echo`
+
+```{bash, eval=FALSE}
+$ echo "goodbye world" >> README.md
+```
+
+--
+
+9\. Tell Git to also track this recent change, again using `git add`
+
+```{bash, eval=FALSE}
+$ git add README.md
+```
+
+--
+
+10\. Commit this additional change to the history of the repository, again using `git commit`:
+
+```{bash, eval=FALSE}
+$ git commit -m "update README.md"
+  [master c56c4c0] update README.md 
+   1 file changed, 1 insertion(+) 
+```
+
+--
+
+11\. Show the history of the repository using `git log`
+
+```{bash, eval=FALSE}
+$ git log --oneline
+  c56c4c0 (HEAD -> master) update README.md 
+  5118725 initial commit 
+```
+
+???
+
+Show the current status of your repository using `git status`:
+
+```{bash, eval=FALSE}
+git status 
+On branch master 
+nothing to commit, working tree clean
+```
+
+---
+
 # Our paper
 
 ```{r, echo=FALSE, fig.align="center", out.width="75%", fig.retina=1, fig.cap='<a href="https://doi.org/10.1038/s41467-021-21970-2" target="_blank">doi: 10.1038/s41467-021-21970-2</a> (accessed 17/06/21)'}
