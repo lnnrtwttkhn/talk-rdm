@@ -711,6 +711,32 @@ Open a new issue in our `highspeed` [project repository](https://git.mpib-berlin
 ]
 
 ---
+
+# Proposing changes: Merge / pull requests
+
+1. Clone or fork the repository (i.e., "download the project")
+1. Switch to a new branch (i.e., "start a separate version")
+1. Make changes
+1. Push new version
+1. Open a merge request
+
+The maintainer (you) can see:
+- what was changed when by whom
+- add changes to the merge request
+- run (automated) checks on the 
+
+#### Real-life examples
+
+- Your supervisor proposes changes in your manuscript
+- A collaborator wants to add new data into your dataset
+- A colleague fixed several bugs in your analysis pipeline
+
+.footnote[
+<sup>1</sup> *merge* requests on GitLab / *pull* requests on GitHub
+]
+
+---
+
 # Summary, outlook, challenges and discussions
 
 > *"He [Jon Claerbout] has also pointed out that we have reached a point where solutions are available - it is now possible to publish computational research that is really reproducible by others.*"
