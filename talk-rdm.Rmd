@@ -448,9 +448,76 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/40e43c7e029a4f4696b8/?dl=1
 
 ---
 
-# Data organization: Relying on community standards
+class: title-slide, center, middle
+name: workflow-data-organization
 
-#### Organization of "raw data" according to the [Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io/)
+# Workflow: Code and Data Organization
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Code sharing using Git and DataLad
+
+#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Code Availability statement](https://www.nature.com/articles/s41467-021-21970-2#code-availability)):
+
+> "*We share all code used in this study. An overview of all the resources is publicly available on our project website: https://wittkuhn.mpib.berlin/highspeed/.*"
+
+--
+
+- `highspeed-analysis`: code for the main statistical analyses
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-analysis),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-analysis),
+[DOI](https://doi.org/10.12751/g-node.eqqdtg))
+- `highspeed-task`: code for the behavioral task ([GitHub](https://github.com/lnnrtwttkhn/highspeed-task),
+[Zenodo](https://doi.org/10.5281/zenodo.4305888))
+
+--
+
+#### ... and the rest?
+
+> *"We [...] share all data listed in the Data availability section in modularized units alongside the code that created the data, usually in a dedicated `code` directory in each dataset, instead of separate data and code repositories."*
+
+> *"This approach allows to better establish the provenance of data (i.e., a better understanding which code and input data produced which output data), loosely following the **DataLad YODA principles** [...]*"
+
+---
+
+# **Y**ODAs **O**rganigam on **D**ata **A**nalysis
+
+#### P1: *"One thing, one dataset"* (**Modularity**)
+
+#### P2: *"Record where you got it from, and where it is now"* (**Provenance**)
+
+#### P3: *"Record what you did to it, and with what"* (**Reproducibility**)
+
+--
+
+```{bash, eval=FALSE}
+.
+├── CHANGELOG.md
+├── README.md
+├── code
+├── input
+├── output
+└── requirements.txt
+3 directories, 3 files
+```
+
+--
+
+#### Learn about YODA, you must:
+- DataLad Handbook: "YODA: Best practices for data analyses in a dataset" (see [details](https://handbook.datalad.org/en/latest/basics/101-127-yoda.html))
+- "YODA: YODA's Organigram on Data Analysis" - Poster by Hanke et al., 2018, presented at the 24th Annual Meeting of the Organization for Human Brain Mapping (OHBM) 2018 | CC-BY 4.0, [doi: 10.7490/f1000research.1116363.1](https://doi.org/10.7490/f1000research.1116363.1)
+
+
+&rarr; Details on YODA principles can also be found in the Appendix
+
+---
+
+# Example: Brain Imaging Data Structure (BIDS)
+
+#### Organization of neuroimaging data according to the [Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io/)
 
 > *"A simple and intuitive way to organize and describe your neuroimaging and behavioral data."*
 
@@ -458,7 +525,8 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/40e43c7e029a4f4696b8/?dl=1
 knitr::include_graphics("https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fsdata.2016.44/MediaObjects/41597_2016_Article_BFsdata201644_Fig1_HTML.jpg?as=webp") 
 ```
 
-<sup>also see previous talk by Dr. Babayan in the "Human Research Data in Practice" series (see [details](https://rdm.mpdl.mpg.de/2021/05/05/human-research-data-in-practice-a-follow-up-date/) and [slides](https://pure.mpg.de/rest/items/item_3325432_1/component/file_3325433/content))</sup>
+<sup>for those interested: fully automated transformation of newly acquired data using [ReproIn](https://github.com/ReproNim/reproin
+) / [HeuDiConv](https://heudiconv.readthedocs.io/en/latest/)</sup>
 
 ---
 
@@ -547,65 +615,6 @@ name: workflow-code
 <!--the next --- is a horizontal line-->
 
 --- 
-
----
-
-# Code sharing using Git and DataLad
-
-#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Code Availability statement](https://www.nature.com/articles/s41467-021-21970-2#code-availability)):
-
-> "*We share all code used in this study. An overview of all the resources is publicly available on our project website: https://wittkuhn.mpib.berlin/highspeed/.*"
-
---
-
-- `highspeed-analysis`: code for the main statistical analyses
-([GitHub](https://github.com/lnnrtwttkhn/highspeed-analysis),
-[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-analysis),
-[DOI](https://doi.org/10.12751/g-node.eqqdtg))
-- `highspeed-task`: code for the behavioral task ([GitHub](https://github.com/lnnrtwttkhn/highspeed-task),
-[Zenodo](https://doi.org/10.5281/zenodo.4305888))
-
---
-
-#### ... and the rest?
-
-> *"We [...] share all data listed in the Data availability section in modularized units alongside the code that created the data, usually in a dedicated `code` directory in each dataset, instead of separate data and code repositories."*
-
-> *"This approach allows to better establish the provenance of data (i.e., a better understanding which code and input data produced which output data), loosely following the **DataLad YODA principles** [...]*"
-
----
-
-# **Y**ODAs **O**rganigam on **D**ata **A**nalysis
-
-#### P1: *"One thing, one dataset"* (**Modularity**)
-
-#### P2: *"Record where you got it from, and where it is now"* (**Provenance**)
-
-#### P3: *"Record what you did to it, and with what"* (**Reproducibility**)
-
---
-
-```{bash, eval=FALSE}
-.
-├── CHANGELOG.md
-├── README.md
-├── code
-├── input
-├── output
-└── requirements.txt
-3 directories, 3 files
-```
-
---
-
-#### Learn about YODA, you must:
-- DataLad Handbook: "YODA: Best practices for data analyses in a dataset" (see [details](https://handbook.datalad.org/en/latest/basics/101-127-yoda.html))
-- "YODA: YODA's Organigram on Data Analysis" - Poster by Hanke et al., 2018, presented at the 24th Annual Meeting of the Organization for Human Brain Mapping (OHBM) 2018 | CC-BY 4.0, [doi: 10.7490/f1000research.1116363.1](https://doi.org/10.7490/f1000research.1116363.1)
-
-
-&rarr; Details on YODA principles can also be found in the Appendix
-
----
 
 # Project website with main statistical results
 
