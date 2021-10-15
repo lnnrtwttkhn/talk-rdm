@@ -739,7 +739,11 @@ Buckheit & Donoho (1995), describing how Jon Claerbout and his team shared CD-RO
 
 # Take-home message
 
-####
+#### We have all the tools we need to make science fully transparent and reproducible available today!
+
+--
+
+#### "*What can I do to get started?*"
 
 1. Learn about Git
 1. Learn about DataLad
