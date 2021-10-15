@@ -767,6 +767,33 @@ knitr::include_graphics("https://www.repronim.org/images/logo-square-256.png")
 ---
 
 class: title-slide, center, middle
+name: appendix-resources
+
+# Appendix: Resources
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Overview of learning resources
+
+#### Learn Git
+
+- ["Pro Git"](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
+- ["Happy Git and GitHub for the useR"](https://happygitwithr.com/) by Jenny Bryan, the STAT 545 TAs, Jim Hester
+- ["Version Control"](https://the-turing-way.netlify.app/reproducible-research/vcs.html), by The Turing Way
+- ["Version Control with Git"](https://swcarpentry.github.io/git-novice/) by The Software Carpentries
+
+#### Learn DataLad
+
+- ["Datalad Handbook"](http://handbook.datalad.org/en/latest/) by the DataLad team
+- ["Research Data Management with DataLad"](https://www.youtube.com/playlist?list=PLEQHbPfpVqU5sSVrlwxkP0vpoOpgogg5j) | Recording of a full-day workshop on YouTube
+- [Datalad on YouTube](https://www.youtube.com/c/DataLad) | Recorded workshops, tutorials and talks on DataLad
+
+---
+
+class: title-slide, center, middle
 name: appendix-challenges-solutions
 
 # Appendix: Challanges and solutions
