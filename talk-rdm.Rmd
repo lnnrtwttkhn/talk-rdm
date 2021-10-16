@@ -430,6 +430,36 @@ name: workflow-data
 
 ---
 
+# What is DataLad?
+
+#### What is DataLad? (see the [10,000 feet](http://handbook.datalad.org/en/latest/intro/executive_summary.html) and [brief](http://handbook.datalad.org/en/latest/intro/philosophy.html) overview in the DataLad Handbook by [Wagner et al., 2020, *Zenodo*](https://doi.org/10.5281/ZENODO.3905791))
+
+> *"DataLad is a software tool developed to aid with everything related to the evolution of digital objects"*
+
+.footnote[
+*Disclaimer:* I'm "only" an enthusiastic user of DataLad! 😊
+]
+
+--
+
+- **"Git for (large) data"**
+- free, [open-source](https://github.com/datalad/datalad) **command-line tool**
+- building on top of **Git** and **git-annex**, DataLad allows you to **version control arbitrarily large files** in datasets.
+- *"Arbitrarily large?"* - yes, see DataLad dataset of 80TB / 15 million files from the Human Connectome Project (see [details](https://handbook.datalad.org/en/latest/usecases/HCP_dataset.html#usecase-hcp-dataset))
+
+--
+
+#### DataLad phiolosophy
+
+- DataLad knows only two things: Datasets and files
+- DataLad datasets are Git repository
+- DataLad can version control arbitrarily large data
+- DataLad minimizes custom procedures and data structures
+- DataLad is developed for complete decentralization
+- DataLad aims to maximize the (re-)use of existing 3rd-party data resources and infrastructure
+
+---
+
 # Data management using DataLad: Overview
 
 #### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Data Availability statement](https://www.nature.com/articles/s41467-021-21970-2#data-availability)):
@@ -472,36 +502,6 @@ name: workflow-data
 [DOI](https://doi.org/10.12751/g-node.p7dabb))
 
 \> 1.5 TB in total, version-controlled using DataLad
-
----
-
-# What is DataLad?
-
-#### What is DataLad? (see the [10,000 feet](http://handbook.datalad.org/en/latest/intro/executive_summary.html) and [brief](http://handbook.datalad.org/en/latest/intro/philosophy.html) overview in the DataLad Handbook by [Wagner et al., 2020, *Zenodo*](https://doi.org/10.5281/ZENODO.3905791))
-
-> *"DataLad is a software tool developed to aid with everything related to the evolution of digital objects"*
-
-.footnote[
-*Disclaimer:* I'm "only" an enthusiastic user of DataLad! 😊
-]
-
---
-
-- somewhat imprecise and colloquially: **"Git for data"**
-- free, [open-source](https://github.com/datalad/datalad) **command-line tool**
-- building on top of **Git** and **git-annex**, DataLad allows you to **version control arbitrarily large files** in datasets.
-- *"Arbitrarily large?"* - yes, see DataLad dataset of 80TB / 15 million files from the Human Connectome Project (see [details](https://handbook.datalad.org/en/latest/usecases/HCP_dataset.html#usecase-hcp-dataset))
-
---
-
-#### DataLad phiolosophy
-
-- DataLad knows only two things: Datasets and files
-- DataLad datasets are Git repository
-- DataLad can version control arbitrarily large data
-- DataLad minimizes custom procedures and data structures
-- DataLad is developed for complete decentralization
-- DataLad aims to maximize the (re-)use of existing 3rd-party data resources and infrastructure
 
 ---
 
