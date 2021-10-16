@@ -276,7 +276,27 @@ knitr::include_graphics("https://git-scm.com/book/en/v2/images/distributed.png")
 ```
 ]
 
+---
 
+# What is version control?
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/3695300" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://zenodo.org/record/3695300/files/VersionControl.jpg?download=1")
+```
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/3695300" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://zenodo.org/record/3695300/files/ProjectHistory.jpg?download=1") 
+```
+]
+
+.center[
+- keep files organized
+- keep track of changes
+- revert changes or go back to previous states
+]
 
 ---
 
