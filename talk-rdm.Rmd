@@ -285,53 +285,62 @@ knitr::include_graphics("https://zenodo.org/record/3695300/files/ProjectHistory.
 ]
 <!-- see https://stackoverflow.com/questions/46408057/incremental-slides-do-not-work-with-a-two-column-layout-->
 
---
-
-#### Git
-
-Popular **distributed version control system**
-
-
---
-
 .pull-right[
 ```{r, echo=FALSE, fig.align="center", out.width="75%", fig.retina=1, fig.cap='<a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control" target="_blank">Figure 3: Distributed Version Control Systems</a>'}
 knitr::include_graphics("https://git-scm.com/book/en/v2/images/distributed.png") 
 ```
 ]
 
----
+--
 
-# What is version control?
+#### Git
 
-.pull-left[
-```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/3695300" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
-knitr::include_graphics("https://zenodo.org/record/3695300/files/VersionControl.jpg?download=1")
-```
-]
+- most pupular **distributed version control system**
+- free, [open-source](https://github.com/git) command-line tool
+- started by [Linus Torvalds](https://en.wikipedia.org/wiki/Git#History) (creator of Linux) in 2005
+- standard tool for any software developer
+- Graphical User Interfaces (GUIs) exist, e.g., [GitKraken](https://www.gitkraken.com/)
 
-.pull-right[
-```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/3695300" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
-knitr::include_graphics("https://zenodo.org/record/3695300/files/ProjectHistory.jpg?download=1") 
-```
-]
 
-.center[
-- keep files organized
-- keep track of changes
-- revert changes or go back to previous states
-]
+???
+
+- Back in the day: Software developers used BitKeeper to collaborate on code with colleagues
+- Free access to BitKeeper was revoked after a company broke down in 2005
+- A new solution was needed so Linus Torvalds coded it up
+- First version after a couple of days
 
 ---
 
 # The amazing superpowers of version-control
 
-- know exactly what was changed when and by whom
-- You don't loose any changes (unless you try really hard)
-- **Branches**: parallel versions
-- keep working version 
-- collaboration 
-- when using GitLab & GitHub you always have at least one backup of your code
+--
+
+.pull-left[
+#### Git as a distributed **version control** system
+- keep track of changes in a directory (a "repository")
+- take snapshots ("commits") of your repo at any time
+- know the history of what was changed when by whom
+- compare commits and go back to any previous state
+- work on "branches" and flexibly "merge" them together
+
+**save one file and all of its history instead of multiple versions of the same file**
+{{content}}
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/8fda5b269fef4d778007/?dl=1") 
+```
+]
+
+--
+
+#### Git as a **distributed** version control system
+- "push" your repo to a "remote" location and share it
+- host / share your repo on GitHub, GitLab or BitBucket
+- work with others on the same files at the same time
+- others can read / copy / edit and suggest changes
+- make your repo public and openly share your work
 
 ---
 
