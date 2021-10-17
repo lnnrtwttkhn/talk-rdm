@@ -855,66 +855,6 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/media/img/catalog/KEEPER_log
 ---
 
 class: title-slide, center, middle
-name: workflow-presentation
-
-# Workflow: Code and Data Presentation
-<!--the next --- is a horizontal line-->
-
---- 
-
----
-
-# Project website with main statistical results
-
-#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Code Availability statement](https://www.nature.com/articles/s41467-021-21970-2#code-availability)):
-
-> "*We share all code used in this study. An overview of all the resources is publicly available on our **project website.**"*
-
-Project website publicly available at https://wittkuhn.mpib.berlin/highspeed/
-
---
-
-#### Reproducible reports with [Bookdown](https://bookdown.org/yihui/bookdown/) / [RMarkdown](https://bookdown.org/yihui/rmarkdown/)
-
-> *"R Markdown is a file format for making dynamic documents with R. An R Markdown document is written in markdown (an easy-to-write plain text format) and contains chunks of embedded R code [...]"*
-
-- Project documentation and main statistical analyses are written in RMarkdown (see [here](https://github.com/lnnrtwttkhn/highspeed-analysis/tree/master/code))
-- Documentation pages showcase non-executed code (used in subdatasets) in Python and Bash
-- Statistical analyses are executed and website rendered automatically via [Continuous Integreation / Deployment (CI/CD)](https://docs.gitlab.com/ee/ci/):
-  1. In the [main project repository](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed), all RMarkdown files are [combined](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/_bookdown.yml#L22-36) using [bookdown](https://bookdown.org/) (across subdatasets)
-  1. Input data is [automatically retrieved](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L5-75) from GIN and / or Keeper using DataLad (run in a [Docker container](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/datalad/Dockerfile))
-  1. The RMarkdown files are [run in Docker](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile) (executing main statistical analyses) and [rendered](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L99) into a static website
-  1. The static website is [deployed to GitLab pages](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L95-106)
-
-&rarr; This pipeline is automatically triggered on every push (change) to the main repository.
-
----
-
-# Software containers and virtual environments
-
-#### Software containers
-
-> *"Containers allow a researcher to package up a project with all of the parts it needs - such as libraries, dependencies, and system settings - and ship it all out as one package."* (see [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/renv/renv-containers.html#what-are-containers))
-
-- `highspeed-bids`: containerized conversion of MRI data to BIDS using [HeuDiConv](https://hub.docker.com/r/nipy/heudiconv)
-- `highspeed-fmriprep`: containerized execution of pre-processing pipeline [fMRIPrep](https://fmriprep.org/en/stable/singularity.html)
-- `highspeed-mriqc`: containerized creation of MRI quality reports using [MRIQC](https://mriqc.readthedocs.io/en/stable/docker.html)
-- `highspeed-analysis`: containerized execution of statistical analyses in [custom R container](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile)
-- `tools`, a personal collection of commonly used containers in a DatLad dataset (see [details](https://github.com/lnnrtwttkhn/tools))
-
---
-
-#### Virtual environments (e.g., [in Python](https://docs.python.org/3/tutorial/venv.html))
-
-> *"[...] it may not be possible for one Python installation to meet the requirements of every application. The solution for this problem is to create a virtual environment, a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages."*
-
-```{bash, eval=FALSE}
-pip freeze > requirements.txt
-```
-
----
-
-class: title-slide, center, middle
 name: workflow-code
 
 # Workflow: Project Management
@@ -1015,6 +955,66 @@ The maintainer (you) can ...
 - Your supervisor proposes changes in your manuscript
 - A collaborator adds new data to your dataset
 - A colleague fixed several bugs in your analysis pipeline
+
+---
+
+class: title-slide, center, middle
+name: workflow-presentation
+
+# Workflow: Code and Data Presentation
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Project website with main statistical results
+
+#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Code Availability statement](https://www.nature.com/articles/s41467-021-21970-2#code-availability)):
+
+> "*We share all code used in this study. An overview of all the resources is publicly available on our **project website.**"*
+
+Project website publicly available at https://wittkuhn.mpib.berlin/highspeed/
+
+--
+
+#### Reproducible reports with [Bookdown](https://bookdown.org/yihui/bookdown/) / [RMarkdown](https://bookdown.org/yihui/rmarkdown/)
+
+> *"R Markdown is a file format for making dynamic documents with R. An R Markdown document is written in markdown (an easy-to-write plain text format) and contains chunks of embedded R code [...]"*
+
+- Project documentation and main statistical analyses are written in RMarkdown (see [here](https://github.com/lnnrtwttkhn/highspeed-analysis/tree/master/code))
+- Documentation pages showcase non-executed code (used in subdatasets) in Python and Bash
+- Statistical analyses are executed and website rendered automatically via [Continuous Integreation / Deployment (CI/CD)](https://docs.gitlab.com/ee/ci/):
+  1. In the [main project repository](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed), all RMarkdown files are [combined](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/_bookdown.yml#L22-36) using [bookdown](https://bookdown.org/) (across subdatasets)
+  1. Input data is [automatically retrieved](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L5-75) from GIN and / or Keeper using DataLad (run in a [Docker container](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/datalad/Dockerfile))
+  1. The RMarkdown files are [run in Docker](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile) (executing main statistical analyses) and [rendered](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L99) into a static website
+  1. The static website is [deployed to GitLab pages](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L95-106)
+
+&rarr; This pipeline is automatically triggered on every push (change) to the main repository.
+
+---
+
+# Software containers and virtual environments
+
+#### Software containers
+
+> *"Containers allow a researcher to package up a project with all of the parts it needs - such as libraries, dependencies, and system settings - and ship it all out as one package."* (see [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/renv/renv-containers.html#what-are-containers))
+
+- `highspeed-bids`: containerized conversion of MRI data to BIDS using [HeuDiConv](https://hub.docker.com/r/nipy/heudiconv)
+- `highspeed-fmriprep`: containerized execution of pre-processing pipeline [fMRIPrep](https://fmriprep.org/en/stable/singularity.html)
+- `highspeed-mriqc`: containerized creation of MRI quality reports using [MRIQC](https://mriqc.readthedocs.io/en/stable/docker.html)
+- `highspeed-analysis`: containerized execution of statistical analyses in [custom R container](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile)
+- `tools`, a personal collection of commonly used containers in a DatLad dataset (see [details](https://github.com/lnnrtwttkhn/tools))
+
+--
+
+#### Virtual environments (e.g., [in Python](https://docs.python.org/3/tutorial/venv.html))
+
+> *"[...] it may not be possible for one Python installation to meet the requirements of every application. The solution for this problem is to create a virtual environment, a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages."*
+
+```{bash, eval=FALSE}
+pip freeze > requirements.txt
+```
 
 ---
 
