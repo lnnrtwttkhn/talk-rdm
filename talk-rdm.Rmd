@@ -474,7 +474,7 @@ nothing to commit, working tree clean
 class: title-slide, center, middle
 name: workflow-data
 
-# Workflow: Data Management
+# Workflow: Data Management using DataLad
 <!--the next --- is a horizontal line-->
 
 --- 
