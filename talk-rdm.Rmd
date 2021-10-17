@@ -1076,26 +1076,6 @@ We have all the tools we need to make science fully transparent and reproducible
 
 ---
 
-# Discussion about potential limitations
-
-#### "*That's too technical*"
-
-- Many research fields become increasingly data-intense and computation-heavy
-- Computational / programming skills are increasingly sought-after in the (non-)academic job market
-- Focus on education and technical support
-
-#### "*Why these tools? Can't we use something else?*"
-
-- Git is 
-
-- The presented tools are open-source, free to use and **available today**
-
-#### "Windows"
-
-- Discussion of [DataLad on Windows](http://handbook.datalad.org/en/latest/intro/windows.html)
-
----
-
 # Thank you!
 
 .pull-left[
@@ -1122,6 +1102,24 @@ knitr::include_graphics("https://git.mpib-berlin.mpg.de/uploads/-/system/user/av
 knitr::include_graphics("https://www.repronim.org/images/logo-square-256.png")
 ```
 ]
+
+---
+
+# Discussion about potential limitations
+
+#### "*That's too technical*"
+
+- Many research fields become increasingly data-intense and computation-heavy
+- Computational / programming skills are increasingly sought-after in the (non-)academic job market
+- Focus on education and technical support
+
+--
+
+#### "*Why these tools? Can't we use something else?*"
+
+- Git is used by software developers for way more than a decade
+- GitHub has > 50 million users worldwide
+- These tools are well-established, open-source, free to use and **available today**
 
 ---
 
