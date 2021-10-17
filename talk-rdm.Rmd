@@ -592,6 +592,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/thirdpart
 > *"Alternatively, you can use a **multitude of other available third party services** such as Dropbox, Google Drive, Amazon S3, owncloud, or many more that DataLad datasets are compatible with."*
 
 ---
+exclude: true
 
 # DataLad: Metadata handling
 
