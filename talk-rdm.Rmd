@@ -656,7 +656,7 @@ name: workflow-data-organization
 
 ---
 
-# Challenge: Standardizing project organization
+# Challenge: Standardizing data and code organization
 
 ```{r, echo=FALSE, fig.align="center", out.width="65%", fig.retina=1, fig.cap='<a href="https://xkcd.com/927/" target="_blank">xkcd cartoon "Standards"</a>'}
 knitr::include_graphics("https://imgs.xkcd.com/comics/standards.png")
@@ -741,18 +741,34 @@ knitr::include_graphics("https://media.springernature.com/full/springer-static/i
 class: title-slide, center, middle
 name: workflow-data-sharing
 
-# Workflow: Data Sharing
+# Workflow: Data Sharing with DataLad
 <!--the next --- is a horizontal line-->
 
 --- 
 
 ---
 
-# Data sharing with DataLad
+# Share version-controlled datasets with DataLad
 
-- Open Science Framework
+- Share data like you share code
+- DataLad datsets can be cloned, pushed and updated from and to remote hosting
+services
 
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-105-install.html" target="_blank">DataLad Handbook: Install an existing dataset</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collaboration.svg") 
+```
 
+---
+
+# Interoperability with a range of hosting services
+
+DataLad is built to maximize interoperability with a wide range of hosting services and storage technologies
+
+.center[
+```{r, echo=FALSE, fig.align="center", out.width="55%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg")
+```
+]
 
 ---
 
@@ -827,12 +843,14 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/media/img/catalog/KEEPER_log
 > "*A free service for all Max Planck employees and project partners with **more than 1TB of storage per user** for your researchdata.
 > Profit from safe data storage, seamlessly integrated into your research workflow.*"
 
----
+
+<!-----
 
 #### Suggested alternatives to GIN that can be used with DataLad (selection):
 
 - [Keeper](https://keeper.mpdl.mpg.de/) (Seafile) offers all Max Planck employees 1TB(!) of storage (expandable)
 - [Open Science Framework (OSF)](https://osf.io/), popular in Psychology / Cognitive Neuroscience (see [details](http://docs.datalad.org/projects/osf/en/latest/))
+-->
 
 ---
 
