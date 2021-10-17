@@ -1008,6 +1008,16 @@ Project website publicly available at https://wittkuhn.mpib.berlin/highspeed/
 
 ---
 
+class: title-slide, center, middle
+name: workflow-containers
+
+# Workflow: Software Containers
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
 # Software containers and virtual environments
 
 #### Software containers
@@ -1029,6 +1039,16 @@ Project website publicly available at https://wittkuhn.mpib.berlin/highspeed/
 ```{bash, eval=FALSE}
 pip freeze > requirements.txt
 ```
+
+---
+
+class: title-slide, center, middle
+name: discussion
+
+# Discussion
+<!--the next --- is a horizontal line-->
+
+--- 
 
 ---
 
