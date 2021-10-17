@@ -1107,6 +1107,23 @@ We have all the tools we need to make science fully transparent and reproducible
 
 ---
 
+# Overview of learning resources
+
+#### Learn Git
+
+- ["Pro Git"](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
+- ["Happy Git and GitHub for the useR"](https://happygitwithr.com/) by Jenny Bryan, the STAT 545 TAs, Jim Hester
+- ["Version Control"](https://the-turing-way.netlify.app/reproducible-research/vcs.html), by The Turing Way
+- ["Version Control with Git"](https://swcarpentry.github.io/git-novice/) by The Software Carpentries
+
+#### Learn DataLad
+
+- ["Datalad Handbook"](http://handbook.datalad.org/en/latest/) by the DataLad team
+- ["Research Data Management with DataLad"](https://www.youtube.com/playlist?list=PLEQHbPfpVqU5sSVrlwxkP0vpoOpgogg5j) | Recording of a full-day workshop on YouTube
+- [Datalad on YouTube](https://www.youtube.com/c/DataLad) | Recorded workshops, tutorials and talks on DataLad
+
+---
+
 # Thank you!
 
 .pull-left[
@@ -1161,23 +1178,6 @@ name: appendix-resources
 <!--the next --- is a horizontal line-->
 
 --- 
-
----
-
-# Overview of learning resources
-
-#### Learn Git
-
-- ["Pro Git"](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
-- ["Happy Git and GitHub for the useR"](https://happygitwithr.com/) by Jenny Bryan, the STAT 545 TAs, Jim Hester
-- ["Version Control"](https://the-turing-way.netlify.app/reproducible-research/vcs.html), by The Turing Way
-- ["Version Control with Git"](https://swcarpentry.github.io/git-novice/) by The Software Carpentries
-
-#### Learn DataLad
-
-- ["Datalad Handbook"](http://handbook.datalad.org/en/latest/) by the DataLad team
-- ["Research Data Management with DataLad"](https://www.youtube.com/playlist?list=PLEQHbPfpVqU5sSVrlwxkP0vpoOpgogg5j) | Recording of a full-day workshop on YouTube
-- [Datalad on YouTube](https://www.youtube.com/c/DataLad) | Recorded workshops, tutorials and talks on DataLad
 
 ---
 
