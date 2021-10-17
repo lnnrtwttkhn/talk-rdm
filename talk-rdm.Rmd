@@ -878,13 +878,14 @@ name: workflow-code
 
 # Project management next to your data and code
 
-- 
+#### Project infrastructure on hosting services (GitLab / GitHub)
 
-####
+- Discuss and plan your work in [issues](https://docs.gitlab.com/ee/user/project/issues/)
+- Propose changes to code or data using [merge requests](https://docs.gitlab.com/ee/user/project/merge_requests/)
+- Manage access to your code and data with detailed [permissions and roles](https://docs.gitlab.com/ee/user/permissions.html)
+- Add documentation to your repo or in a separate [wiki](https://docs.gitlab.com/ee/user/project/wiki/)
 
-- `r emoji::emoji("white_check_mark")` Manage access to your code and data with detailed [permissions and roles](https://docs.gitlab.com/ee/user/permissions.html)
-
-
+--
 
 #### GitLab for Max Planck employees
 
