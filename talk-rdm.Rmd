@@ -622,7 +622,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_
 
 --
 
-- `highspeed`: superdataset of all subdatasets, incl. project documentation
+- `highspeed`: superdataset of all subdatasets, incl. project documentation ([GitLab](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed))
 - `highspeed-bids`: MRI and behavioral data adhering to the [BIDS standard](https://bids.neuroimaging.io/)
 ([GitHub](https://github.com/lnnrtwttkhn/highspeed-bids),
 [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-bids),
@@ -844,6 +844,7 @@ Done!<sup>1</sup> 🎉
 <sup><sup>1</sup> To be fair, it's a bit more complex than that ... `r emoji::emoji("innocent")` (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))</sup>
 
 ---
+exclude: true
 
 # Data sharing on Keeper
 
@@ -875,7 +876,9 @@ name: workflow-code
 
 ---
 
-# Manage projects next to data and code
+# Project management next to your data and code
+
+- 
 
 ####
 
@@ -1060,8 +1063,6 @@ Buckheit & Donoho (1995), describing how Jon Claerbout and his team shared CD-RO
 #### Science like software development
 
 We have all the tools we need to make science fully transparent and reproducible available today!
-
-- 
 
 --
 
