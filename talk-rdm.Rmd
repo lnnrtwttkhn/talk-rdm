@@ -511,11 +511,93 @@ name: workflow-data
 
 ---
 
-# Data management using DataLad: Overview
+# DataLad: What is a dataset?
+
+> *"A dataset is a directory on a computer that DataLad manages."*
+
+```{r, echo=FALSE, fig.align="center", out.width="40%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-101-create.html" target="_blank">DataLad Handbook: Create a new dataset</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/dataset.svg") 
+```
+
+> "*You can create new, empty datasets [..] and populate them, or transform existing directories into datasets.*"
+
+---
+
+# DataLad: Version-control arbitrarily large files
+
+> *"Building on top of Git and git-annex, DataLad allows you to version control arbitrarily large files in datasets."*
+
+```{r, echo=FALSE, fig.align="center", out.width="40%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-102-populate.html" target="_blank">DataLad Handbook: How to pupulate a dataset</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/local_wf.svg") 
+```
+
+> *"[...] keep track of revisions of data of any size, and view, interact with or restore any version of your dataset [...]."*
+
+---
+
+# DataLad: Dataset consumption and collaboration
+
+> *"DataLad lets you consume datasets provided by others, and collaborate with them."*
+
+> *"You can **install existing datasets** and update them from their sources, or create sibling datasets that you can **publish updates** to and **pull updates** from for collaboration and data sharing."*
+
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-105-install.html" target="_blank">DataLad Handbook: Install an existing dataset</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collaboration.svg") 
+```
+
+---
+
+# DataLad: Dataset linkage
+
+> *"Datasets can contain other datasets (subdatasets), **nested arbitrarily deep.**"*
+
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-106-nesting.html" target="_blank">DataLad Handbook: Nesting datasets</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/linkage_subds1.svg") 
+```
+
+> *"Each dataset has an independent [...] history, but can be registered at a precise version in higher-level datasets. This allows to **combine datasets** and to perform commands recursively across a hierarchy of datasets, and it is the basis for advanced provenance capture abilities."*
+
+---
+
+# DataLad: Full provenance capture and reproducibility
+
+> *"DataLad allows to **capture full provenance**: The origin of datasets, the origin of files obtained from web sources, complete machine-readable and automatically reproducible records of how files were created (including software environments)."*
+
+```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/usecases/provenance_tracking.html" target="_blank">DataLad Handbook: Provenance tracking</a> and <a href="http://handbook.datalad.org/en/latest/basics/basics-run.html" target="_blank">run commands</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/reproducible_execution.svg") 
+```
+
+> *"You or your collaborators can thus re-obtain or reproducibly **recompute content with a single command**, and make use of extensive provenance of dataset content **(who created it, when, and how?)**."*
+
+---
+
+# DataLad: Third party service integration
+
+> *"**Export datasets to third party services** such as GitHub, GitLab, or Figshare with built-in commands."*
+
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/basics-thirdparty.html" target="_blank">DataLad Handbook: Third-party infrastructure</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/thirdparty.svg") 
+```
+
+> *"Alternatively, you can use a **multitude of other available third party services** such as Dropbox, Google Drive, Amazon S3, owncloud, or many more that DataLad datasets are compatible with."*
+
+---
+
+# DataLad: Metadata handling
+
+> *"**Extract, aggregate, and query dataset metadata.** This allows to automatically obtain metadata according to different metadata standards (EXIF, XMP, ID3, BIDS, DICOM, NIfTI1, ...), store this metadata in a portable format, share it, and search dataset contents."*
+
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='see <a href="http://docs.datalad.org/en/stable/metadata.html" target="_blank">DataLad Handbook: Metadata</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_prov_imaging.svg") 
+```
+
+---
+
+# Example: Data management using DataLad
 
 #### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Data Availability statement](https://www.nature.com/articles/s41467-021-21970-2#data-availability)):
 
-> *"We publicly share all data used in this study. Data and code management was realized using DataLad [version 0.13.0142, for details, see https://www.datalad.org/].*"
+> *"We publicly share all data used in this study. Data and code management was realized using DataLad.*"
 
 --
 
@@ -1111,88 +1193,6 @@ name: appendix-datalad-overview
 <!--the next --- is a horizontal line-->
 
 --- 
-
----
-
-# DataLad: What is a dataset?
-
-> *"A dataset is a directory on a computer that DataLad manages."*
-
-```{r, echo=FALSE, fig.align="center", out.width="40%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-101-create.html" target="_blank">DataLad Handbook: Create a new dataset</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/dataset.svg") 
-```
-
-> "*You can create new, empty datasets [..] and populate them, or transform existing directories into datasets.*"
-
----
-
-# DataLad: Version-control arbitrarily large files
-
-> *"Building on top of Git and git-annex, DataLad allows you to version control arbitrarily large files in datasets."*
-
-```{r, echo=FALSE, fig.align="center", out.width="40%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-102-populate.html" target="_blank">DataLad Handbook: How to pupulate a dataset</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/local_wf.svg") 
-```
-
-> *"[...] keep track of revisions of data of any size, and view, interact with or restore any version of your dataset [...]."*
-
----
-
-# DataLad: Dataset consumption and collaboration
-
-> *"DataLad lets you consume datasets provided by others, and collaborate with them."*
-
-> *"You can **install existing datasets** and update them from their sources, or create sibling datasets that you can **publish updates** to and **pull updates** from for collaboration and data sharing."*
-
-```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-105-install.html" target="_blank">DataLad Handbook: Install an existing dataset</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collaboration.svg") 
-```
-
----
-
-# DataLad: Dataset linkage
-
-> *"Datasets can contain other datasets (subdatasets), **nested arbitrarily deep.**"*
-
-```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-106-nesting.html" target="_blank">DataLad Handbook: Nesting datasets</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/linkage_subds1.svg") 
-```
-
-> *"Each dataset has an independent [...] history, but can be registered at a precise version in higher-level datasets. This allows to **combine datasets** and to perform commands recursively across a hierarchy of datasets, and it is the basis for advanced provenance capture abilities."*
-
----
-
-# DataLad: Full provenance capture and reproducibility
-
-> *"DataLad allows to **capture full provenance**: The origin of datasets, the origin of files obtained from web sources, complete machine-readable and automatically reproducible records of how files were created (including software environments)."*
-
-```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/usecases/provenance_tracking.html" target="_blank">DataLad Handbook: Provenance tracking</a> and <a href="http://handbook.datalad.org/en/latest/basics/basics-run.html" target="_blank">run commands</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/reproducible_execution.svg") 
-```
-
-> *"You or your collaborators can thus re-obtain or reproducibly **recompute content with a single command**, and make use of extensive provenance of dataset content **(who created it, when, and how?)**."*
-
----
-
-# DataLad: Third party service integration
-
-> *"**Export datasets to third party services** such as GitHub, GitLab, or Figshare with built-in commands."*
-
-```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/basics-thirdparty.html" target="_blank">DataLad Handbook: Third-party infrastructure</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/thirdparty.svg") 
-```
-
-> *"Alternatively, you can use a **multitude of other available third party services** such as Dropbox, Google Drive, Amazon S3, owncloud, or many more that DataLad datasets are compatible with."*
-
----
-
-# DataLad: Metadata handling
-
-> *"**Extract, aggregate, and query dataset metadata.** This allows to automatically obtain metadata according to different metadata standards (EXIF, XMP, ID3, BIDS, DICOM, NIfTI1, ...), store this metadata in a portable format, share it, and search dataset contents."*
-
-```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='see <a href="http://docs.datalad.org/en/stable/metadata.html" target="_blank">DataLad Handbook: Metadata</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_prov_imaging.svg") 
-```
 
 ---
 
