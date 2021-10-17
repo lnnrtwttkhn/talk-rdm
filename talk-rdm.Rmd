@@ -57,10 +57,20 @@ pacman::p_load(char = packages_cran)
 
 1. **Introduction**
 2. **Workflow**
-  - Data Management
-  - Code Management
+  - Version-control with Git
+  - Data Management with DataLad
+  - Code and Data Organization
+  - Project Management  
   - Computational Environments
 3. **Discussion**
+
+--
+
+#### This talk
+
+- a bouquet of ideas for your own research workflow `r emoji::emoji("bouquet")`
+- suggestions for research data management at an institutional level `r emoji::emoji("school")` 
+
 
 ---
 
