@@ -656,6 +656,16 @@ name: workflow-data-organization
 
 ---
 
+# Challenge: Standardizing project organization
+
+```{r, echo=FALSE, fig.align="center", out.width="65%", fig.retina=1, fig.cap='<a href="https://xkcd.com/927/" target="_blank">xkcd cartoon "Standards"</a>'}
+knitr::include_graphics("https://imgs.xkcd.com/comics/standards.png")
+```
+
+<sup>&rarr; also see [slides](https://www.nipreps.org/assets/ORN-Workshop/) by Oscar Esteban on "Building communities around reproducible workflows"</sup>
+
+---
+
 # Code sharing using Git and DataLad
 
 #### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Code Availability statement](https://www.nature.com/articles/s41467-021-21970-2#code-availability)):
@@ -1153,16 +1163,6 @@ name: appendix-challenges-solutions
 - optional for data from Wittkuhn & Schuck, 2021
 - Statistics: *N* = 72 accessed the DUA, 0 completed
 - not possible to implement mandatory DUA on GIN
-
----
-
-# Challenge: Standardizing data organization
-
-```{r, echo=FALSE, fig.align="center", out.width="65%", fig.retina=1, fig.cap='<a href="https://xkcd.com/927/" target="_blank">xkcd cartoon "Standards"</a>'}
-knitr::include_graphics("https://imgs.xkcd.com/comics/standards.png")
-```
-
-<sup>&rarr; also see [slides](https://www.nipreps.org/assets/ORN-Workshop/) by Oscar Esteban on "Building communities around reproducible workflows"</sup>
 
 ---
 
