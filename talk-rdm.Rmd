@@ -148,20 +148,6 @@ knitr::include_graphics("https://the-turing-way.netlify.app/_images/research-cyc
 
 ---
 
-# How scientists save important data?
-
-.pull-left[
-<blockquote class="twitter-tweet" width="280" align="center" data-theme="light"><p lang="en" dir="ltr">*Seen*! 😂This wonderful graphic on saving important data resonates with us on every possible level! 😃😁🤗How about you? By <a href="https://twitter.com/ErrantScience?ref_src=twsrc%5Etfw">@ErrantScience</a> = <a href="https://twitter.com/MCeeP?ref_src=twsrc%5Etfw">@MCeeP</a> &amp; <a href="https://twitter.com/MichelleAReeve?ref_src=twsrc%5Etfw">@MichelleAReeve</a> <a href="https://t.co/0JaI6iTcNW">pic.twitter.com/0JaI6iTcNW</a></p>&mdash; Max Planck Society (@maxplanckpress) <a href="https://twitter.com/maxplanckpress/status/1431500205044781056?ref_src=twsrc%5Etfw">August 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-]
-
-.pull-right[
-```{r, echo=FALSE, fig.align="center", out.width="90%", fig.retina=1}
-knitr::include_graphics("https://pbs.twimg.com/media/E920a0eWYAENA1V?format=jpg&name=medium") 
-```
-]
-
----
-
 # The challenge
 
 ```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1}
@@ -174,6 +160,20 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/ead22cde6d724eda81d2/?dl=1
 - Data is manipulated by code and new data is generated
  - Mapping between input and output data
 - This happens using specific software in specific versions
+
+---
+
+# How scientists save important data?
+
+.pull-left[
+<blockquote class="twitter-tweet" width="280" align="center" data-theme="light"><p lang="en" dir="ltr">*Seen*! 😂This wonderful graphic on saving important data resonates with us on every possible level! 😃😁🤗How about you? By <a href="https://twitter.com/ErrantScience?ref_src=twsrc%5Etfw">@ErrantScience</a> = <a href="https://twitter.com/MCeeP?ref_src=twsrc%5Etfw">@MCeeP</a> &amp; <a href="https://twitter.com/MichelleAReeve?ref_src=twsrc%5Etfw">@MichelleAReeve</a> <a href="https://t.co/0JaI6iTcNW">pic.twitter.com/0JaI6iTcNW</a></p>&mdash; Max Planck Society (@maxplanckpress) <a href="https://twitter.com/maxplanckpress/status/1431500205044781056?ref_src=twsrc%5Etfw">August 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="90%", fig.retina=1}
+knitr::include_graphics("https://pbs.twimg.com/media/E920a0eWYAENA1V?format=jpg&name=medium") 
+```
+]
 
 ---
 
