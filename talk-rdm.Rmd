@@ -852,26 +852,41 @@ Open a new issue in our `highspeed` [project repository](https://git.mpib-berlin
 
 # Proposing changes: Merge / pull requests
 
-1. Clone or fork the repository (i.e., "download the project")
+--
+
+.pull-left[
+1. Clone the repository (i.e., "download the project")
 1. Switch to a new branch (i.e., "start a separate version")
-1. Make changes
-1. Push new version
-1. Open a merge request
-
-The maintainer (you) can see:
-- what was changed when by whom
-- add changes to the merge request
-- run (automated) checks on the 
-
-#### Real-life examples
-
-- Your supervisor proposes changes in your manuscript
-- A collaborator wants to add new data into your dataset
-- A colleague fixed several bugs in your analysis pipeline
+1. Make changes to the files and push the new version
+1. Open a merge / pull request
+{{content}}
+]
 
 .footnote[
 <sup>1</sup> *merge* requests on GitLab / *pull* requests on GitHub
 ]
+
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="80%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/3695300" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://zenodo.org/record/3678226/files/Contributing.jpg?download=1")
+```
+]
+
+--
+
+The maintainer (you) can ...
+- see what was changed when by whom
+- add changes to the merge request
+- run (automated) checks on the contribution
+{{content}}
+
+--
+
+**Examples:**
+- Your supervisor proposes changes in your manuscript
+- A collaborator adds new data to your dataset
+- A colleague fixed several bugs in your analysis pipeline
 
 ---
 
