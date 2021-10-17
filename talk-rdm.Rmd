@@ -95,6 +95,7 @@ knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot
 - He has also pointed out that we have reached a point where solutions are available - it is now possible to publish computational research that is really reproducible by others.
 
 ---
+exclude: true
 
 # Good Scientific Practice?
 
@@ -108,6 +109,7 @@ knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot
 ]
 
 --
+exclude: true
 
 #### Excerpt from your emplyoment contract
 
@@ -115,8 +117,9 @@ knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot
 > *"The rules for safeguarding good scientific practice of the Max Planck Society dated November 24, 2000 in its current version* [👆] *are part of the employment contract."*
 
 --
+exclude: true
 
-Do we really meet these standards?
+Do we meet these standards?
 
 ---
 
