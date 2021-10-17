@@ -207,8 +207,6 @@ knitr::include_graphics("https://pbs.twimg.com/media/E920a0eWYAENA1V?format=jpg&
 
 - *"Which value did you set for the input of this function?"*
 
-- *"Data available upon reasonable request"*
-
 ---
 
 # The solution?
@@ -888,6 +886,8 @@ name: workflow-code
 
 # Project management next to your data and code
 
+--
+
 #### Project infrastructure on hosting services (GitLab / GitHub)
 
 - Discuss and plan your work in [issues](https://docs.gitlab.com/ee/user/project/issues/)
@@ -1091,7 +1091,7 @@ Buckheit & Donoho (1995), describing how Jon Claerbout and his team shared CD-RO
 
 # Take-home message
 
-#### Science like software development
+#### Science like open-source software development
 
 We have all the tools we need to make science fully transparent and reproducible available today!
 
