@@ -179,6 +179,12 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/ead22cde6d724eda81d2/?dl=1
 knitr::include_graphics("https://www.researchgate.net/profile/M-Tarbell/publication/333061528/figure/fig2/AS:787157769801731@1564684445486/Where-AI-stands-today-Then-a-miracle-occurs-C-Sidney-Harris-in-American-Scientist.png") 
 ```
 
+???
+
+- provide information on how data came into existence
+- change data through documented code, not manually
+- relate changes in data to changes in code
+
 ---
 
 # How scientists save important data?
