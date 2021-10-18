@@ -905,9 +905,9 @@ knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/virtual_
 
 #### Advantages
 
-- Lower-level datasets ("subdatasets") have an independent stand-alone history
+- Lower-level datasets ("subdatasets") have an independent stand-alone history (**modularity** `r emoji::emoji("sparkles")`)
 - The top-level "superdataset" only stores *which version* of the subdataset is currently used
-- This enables **modularity** `r emoji::emoji("sparkles")`
+- Subdatsets need to be updated explictly
 {{content}}
 
 --
