@@ -48,8 +48,7 @@ pacman::p_load(char = packages_cran)
 - **DOI:** [10.5281/zenodo.5012477](http://doi.org/10.5281/zenodo.5012477) (generated using GitHub releases + Zenodo, see details [here](https://guides.github.com/activities/citable-code/))
 - **Source:** Source code is publicly available on GitHub: https://github.com/lnnrtwttkhn/talk-rdm/
 - **Links:** This presentation contains links to external resources. I do not take responsibility for the accuracy, legality or content of the external site or for that of subsequent links. If you notice an issue with a link, please contact me!
-- **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/F9bVf_flR82RczuISMQnwg?both) (publicly available!)
-- **Contact**: I am happy for any feedback or suggestion via [email](mailto:wittkuhn@mpib-berlin.mpg.de), [HedgeDoc](https://pad.gwdg.de/F9bVf_flR82RczuISMQnwg#) or [GitHub issues](https://github.com/lnnrtwttkhn/talk-rdm/issues). Thank you! `r emoji::emoji("pray")`
+- **Contact**: I am happy for any feedback or suggestion via [email](mailto:wittkuhn@mpib-berlin.mpg.de) or [GitHub issues](https://github.com/lnnrtwttkhn/talk-rdm/issues). Thank you! `r emoji::emoji("pray")`
 
 ---
 
@@ -57,7 +56,6 @@ pacman::p_load(char = packages_cran)
 
 1. **Introduction**
   - Version control
-  - Our paper
 2. **Research Workflow with DataLad**
   - Intro to DataLad
   - Reproducibility
@@ -597,10 +595,14 @@ name: workflow-tardis
 - DataLad works on Tardis as it works on your computer (it's not really different)
 - With the dataset installed on both locations, you can flexibly update data back-and-forth
 
+--
+
 #### `r emoji::emoji("question")` "*Do you keep data on Tardis temporally until all analyses are completed?*"
 
 - Yes, just because it's convenient `r emoji::emoji("innocent")`
 - You can always `datalad drop` contents from Tardis at any time (if you can retrieve them from elsewhere)
+
+--
 
 #### `r emoji::emoji("question")` "*How do you manage input / output links within DataLad datasets?*"
 
