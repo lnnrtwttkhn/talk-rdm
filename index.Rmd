@@ -96,6 +96,24 @@ knitr::include_url(path_html)
 
 # Archive 📚
 
+## Open Science Ambassadors Day 2021
+
+The following slides were presented during a talk prepared for the "Open Science Ambassadors Day 2021" hosted by the [Max Planck PhDnet](https://www.phdnet.mpg.de/home) and the [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) (see details [here](https://osambassadors.mpdl.mpg.de/)) on 18<sup>th</sup> of October 2021.
+
+```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
+archive_name = "20211018-osambassadors"
+path_source = file.path("archive", archive_name, "talk-rdm.Rmd")
+path_html = render_xaringan(name = archive_name, path_rmd = here::here(path_source))
+```
+
+```{r, echo=FALSE, results="asis"}
+print_list(path_html = path_html, path_rmd = path_source)
+```
+
+```{r, echo=FALSE}
+knitr::include_url(path_html)
+```
+
 ## Max Planck Digital Library
 
 The following slides were presented during a talk prepared for the "Discussion Series: Human Research Data in Practice" hosted by the [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) (see details [here](https://rdm.mpdl.mpg.de/2021/05/27/discussion-series-human-research-data-in-practice-on-22th-june-2021/)) on 22<sup>nd</sup> of June 2021.
