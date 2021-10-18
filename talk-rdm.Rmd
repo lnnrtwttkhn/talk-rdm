@@ -56,21 +56,15 @@ pacman::p_load(char = packages_cran)
 # Agenda
 
 1. **Introduction**
-2. **Workflow**
-  - Version-control with Git
-  - Data Management with DataLad
+  - Version control
+  - Our paper
+2. **Research Workflow using DataLad**
+  - Intro to DataLad
+  - Reproducibility
   - Code and Data Organization
-  - Project Management  
-  - Computational Environments
+  - Datalad on Tardis
+  - Data Sharing with DataLad
 3. **Discussion**
-
---
-
-#### This talk
-
-- a bouquet of ideas for your own research workflow `r emoji::emoji("bouquet")`
-- suggestions for research data management at an institutional level `r emoji::emoji("school")` 
-
 
 ---
 
