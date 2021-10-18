@@ -84,6 +84,21 @@ name: introduction
 
 ---
 
+# Our paper
+
+```{r, echo=FALSE, fig.align="center", out.width="75%", fig.retina=1, fig.cap='<a href="https://doi.org/10.1038/s41467-021-21970-2" target="_blank">doi: 10.1038/s41467-021-21970-2</a> (accessed 17/06/21)'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/ea0795d894e44fd3ad18/?dl=1") 
+```
+
+--
+
+#### Two-sentence summary:
+
+> Non-invasive measurement of fast neural activity with spatial precision in humans is difficult. Here, the authors show how fMRI can be used to detect sub-second neural sequences in a localized fashion and report fast replay of images in visual cortex that occurred independently of the hippocampus.
+
+---
+
+
 class: title-slide, center, middle
 name: workflow-data
 
@@ -453,19 +468,6 @@ knitr::include_graphics("https://pbs.twimg.com/media/E920a0eWYAENA1V?format=jpg&
   - Services and infrastructure ([GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), [GIN](https://gin.g-node.org/), [OSF](https://osf.io/) etc.) to share and release research products
   - Contributions (by individuals or projects) can be tracked and categorized
 
----
-
-# Our paper
-
-```{r, echo=FALSE, fig.align="center", out.width="75%", fig.retina=1, fig.cap='<a href="https://doi.org/10.1038/s41467-021-21970-2" target="_blank">doi: 10.1038/s41467-021-21970-2</a> (accessed 17/06/21)'}
-knitr::include_graphics("https://keeper.mpdl.mpg.de/f/ea0795d894e44fd3ad18/?dl=1") 
-```
-
---
-
-#### Two-sentence summary:
-
-> Non-invasive measurement of fast neural activity with spatial precision in humans is difficult. Here, the authors show how fMRI can be used to detect sub-second neural sequences in a localized fashion and report fast replay of images in visual cortex that occurred independently of the hippocampus.
 
 ---
 
