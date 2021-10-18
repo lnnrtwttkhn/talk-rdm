@@ -1,7 +1,7 @@
 all: public/index.html
 
 talk-rdm.html: talk-rdm.Rmd
-	Rscript -e "rmarkdown::render('talk-rdm.Rmd', output_file = 'talk-rdm.html')"
+	Rscript -e "rmarkdown::render('talk-rdm.Rmd', output_file = 'talk-rdm.html', envir = new.env())"
 
 public/index.html: index.Rmd talk-rdm.Rmd archive
 	Rscript -e "rmarkdown::render('index.Rmd', output_dir = 'public', output_file = 'index.html')"
