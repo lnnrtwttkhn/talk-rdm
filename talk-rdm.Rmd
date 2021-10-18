@@ -1044,7 +1044,20 @@ name: workflow-data-sharing
 
 --- 
 
-### `r emoji::emoji("question")` "*Did you notice any institute-specific peculiarties regarding infrastructure *"
+### `r emoji::emoji("question")` "*Did you notice any institute-specific peculiarities regarding infrastructure? *"
+
+---
+
+# Summary
+
+#### `r emoji::emoji("question")` "*Did you notice any institute-specific peculiarities regarding infrastructure? *"
+
+1\. We are still lacking *MPIB-hosted* infrastructure to host DataLad datasets
+  - We have a [GitLab](https://git.mpib-berlin.mpg.de/explore/projects) instance to host dataset *structure*
+  - We have an *experimental* [in-house GIN instance](http://gin.mpib-berlin.mpg.de/) with 5TB that can also host annexed data
+  - We have [KEEPER](https://keeper.mpdl.mpg.de/accounts/login/?next=/) (cloud-sharing service with 1TB by the [MPDL](https://www.mpdl.mpg.de/en/)) which can be configured as a [DataLad special remote](http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html#the-common-case-repository-hosting-without-annex-support-and-special-remotes)
+
+&rarr; Flexible in-house storage space is needed!
 
 ---
 
