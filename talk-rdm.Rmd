@@ -759,6 +759,24 @@ name: workflow-data-organization
 
 ---
 
+# Summary
+
+#### `r emoji::emoji("question")` "*What does your project structure look like?*" /  "*What should a project structure look like?*"
+
+1. Do what works for you!
+1. Rely on community standards (e.g., [BIDS](https://bids.neuroimaging.io/) or [Psych-DS](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0)) and code style guides
+1. Keep it simple and modular (see e.g., [YODA principles](https://handbook.datalad.org/en/latest/basics/101-127-yoda.html)): `input` &rarr; `code` &rarr; `output`
+1. Document as much as possible (`README`s etc.)
+
+--
+
+#### `r emoji::emoji("question")` "*How do you connect different analyses, e.g., pre-processing and analysis, using DataLad?*"
+
+- [Nesting](https://handbook.datalad.org/en/latest/basics/101-106-nesting.html) of modular DataLad datasets
+- Install input subdatasets in `inputs` directory
+
+---
+
 # Challenge: Standardizing data and code organization
 
 ```{r, echo=FALSE, fig.align="center", out.width="65%", fig.retina=1, fig.cap='<a href="https://xkcd.com/927/" target="_blank">xkcd cartoon "Standards"</a>'}
@@ -890,7 +908,7 @@ knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/decentra
 .pull-left[
 - One can *nest* other DataLad datasets arbitrarily deep
 - Nested datasets are called "subdatasets"
-- Nested subdatasets look and feel just like a normal (sub-)directories in your project
+- Nested subdatasets look and feel just like a normal (sub-)directories in your project directory
 {{content}}
 ]
 
