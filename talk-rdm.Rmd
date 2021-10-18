@@ -1,5 +1,5 @@
 ---
-title: "Data Management with DataLad"
+title: "Research Workflow with DataLad"
 subtitle: "Lab meeting | Lifespan Neural Dynamics Group (MPIB)"
 author: "Lennart Wittkuhn | wittkuhn@mpib-berlin.mpg.de"
 institute: "Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Berlin, Germany"
