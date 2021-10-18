@@ -748,9 +748,14 @@ class: title-slide, center, middle
 name: workflow-data-organization
 
 # Workflow: Code and Data Organization
+
 <!--the next --- is a horizontal line-->
 
 --- 
+
+
+### `r emoji::emoji("question")` "*What does your project structure look like?*"
+### `r emoji::emoji("question")` "*How do you connect different analyses, e.g., pre-processing and analysis, using DataLad?*"
 
 ---
 
