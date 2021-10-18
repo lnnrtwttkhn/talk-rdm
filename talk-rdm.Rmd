@@ -211,7 +211,7 @@ knitr::include_graphics("https://pbs.twimg.com/media/E920a0eWYAENA1V?format=jpg&
 
 # The solution?
 
-> **Organize science like open-source software (OSS) development** <sup>1</sup>
+> **Organize science like open-source software (OSS) development**
 
 --
 
@@ -233,12 +233,6 @@ knitr::include_graphics("https://pbs.twimg.com/media/E920a0eWYAENA1V?format=jpg&
   - Proposing, discussing, and reviewing changes via [pull](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) (GitHub) or [merge](https://docs.gitlab.com/ee/user/project/merge_requests/) (GitLab) requests
   - Services and infrastructure ([GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), [GIN](https://gin.g-node.org/), [OSF](https://osf.io/) etc.) to share and release research products
   - Contributions (by individuals or projects) can be tracked and categorized
-
---
-
-.footnote[
-<sup>1</sup> see similar ideas e.g., by [Tennant et al., 2020, *OSF*](https://osf.io/preprints/socarxiv/2kxq8/) or [here](https://twitter.com/glopesdev/status/1327964421088567296?s=20)
-]
 
 ---
 
