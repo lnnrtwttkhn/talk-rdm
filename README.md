@@ -1,8 +1,7 @@
 # Talk on Research Data Management
 
-[![Build Status](https://travis-ci.com/lnnrtwttkhn/talk-rdm.svg?branch=master)](https://travis-ci.com/lnnrtwttkhn/talk-rdm)
-
-[![DOI](https://zenodo.org/badge/377544507.svg)](https://zenodo.org/badge/latestdoi/377544507)
+[![Build Status](https://app.travis-ci.com/lnnrtwttkhn/talk-rdm.svg?branch=master)](https://app.travis-ci.com/lnnrtwttkhn/talk-rdm)
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ## About
 
@@ -12,7 +11,10 @@ Slides are available at: https://lennartwittkuhn.com/talk-rdm/
 
 ## History
 
-- 22nd June 2021: "Discussion Series: Human Research Data in Practice" hosted by the [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) (see details [here](https://rdm.mpdl.mpg.de/2021/05/27/discussion-series-human-research-data-in-practice-on-22th-june-2021/))
+| When | What | Host |
+|---|---|---|
+| 18<sup>th</sup> of October 2021 | ["Open Science Ambassadors Day 2021"](https://osambassadors.mpdl.mpg.de/) | [Max Planck PhDnet](https://www.phdnet.mpg.de/home) and the [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) |
+| 22<sup>nd</sup> June 2021 | ["Discussion Series: Human Research Data in Practice"](https://rdm.mpdl.mpg.de/2021/05/27/discussion-series-human-research-data-in-practice-on-22th-june-2021/) | [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) |
 
 ## Abstract
 
@@ -63,13 +65,6 @@ docker run --rm -v $PWD:/home lennartwittkuhn/talk-rdm /bin/sh -c "cd /home; mak
 [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
 
 Please see the [LICENSE](LICENSE) file for details.
-
-## Citation
-
-You can cite this work:
-
-> Lennart Wittkuhn. (2021, June 22). lnnrtwttkhn/talk-rdm: Version 1.0 of talk on a workflow for open and reproducible MRI studies, prepared for the Max Planck Digital Library (Version v1.0). Zenodo. http://doi.org/10.5281/zenodo.5012477
-
 
 ## Contact
 

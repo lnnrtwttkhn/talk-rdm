@@ -18,15 +18,21 @@ output:
 fig.align: "center"
 ---
 
-# Overview
+[![Build Status](https://app.travis-ci.com/lnnrtwttkhn/talk-rdm.svg?branch=master)](https://app.travis-ci.com/lnnrtwttkhn/talk-rdm)
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-Welcome! 👋
+# Overview 👋
+
+Welcome!
 
 This website hosts the slides and other resources for my talks on research data management, reproducibility and beyond.
+
 The current version of the slides can be found in the [main](#main) section.
 Previous versions of the slides can be found in the [archive](#archive) section.
-You can find the GitHub repo with all the source code [here](https://github.com/lnnrtwttkhn/talk-rdm).
-For questions, please contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de).
+You can find the GitHub repository with all the source code [here](https://github.com/lnnrtwttkhn/talk-rdm).
+All contents are licensed under Creative Commons Attribution-ShareAlike 4.0 International Public License (for details, see [here](https://github.com/lnnrtwttkhn/talk-rdm/blob/master/LICENSE) and [here](https://creativecommons.org/licenses/by-sa/4.0/)).
+If you notice any issues or have suggestions for improvement, I would be glad to hear from you!
+Please open an [issue](https://github.com/lnnrtwttkhn/talk-rdm/issues) on GitHub or contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de).
 Thanks!
 
 ```{r, echo=FALSE, message=FALSE}
@@ -36,7 +42,7 @@ options(knitr.duplicate.label = "allow")
 
 ```{r, echo=FALSE, message=FALSE}
 if (!requireNamespace("pacman")) install.packages("pacman")
-packages = c("here", "rmarkdown")
+packages = c("here", "rmarkdown", "xaringan")
 pacman::p_load(char = packages)
 ```
 
@@ -55,7 +61,7 @@ render_xaringan = function(name, path_rmd){
   name_html = paste0(name, ".html")
   path_html = here::here("public", name_html)
   # render twice because of bibtex (not needed atm):
-  rmarkdown::render(path_rmd_copy, 'all', output_file = path_html)
+  xfun::Rscript_call(rmarkdown::render, list(input = path_rmd_copy, output_file = path_html))
   #rmarkdown::render(path_rmd_copy, 'all', output_file = path_html)
   return(name_html)
 }
@@ -89,7 +95,29 @@ knitr::include_url(path_html)
 
 # Archive 📚
 
+## Open Science Ambassadors Day 2021
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5575219.svg)](https://doi.org/10.5281/zenodo.5575219)
+
+The following slides were presented during a talk prepared for the "Open Science Ambassadors Day 2021" hosted by the [Max Planck PhDnet](https://www.phdnet.mpg.de/home) and the [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) (see details [here](https://osambassadors.mpdl.mpg.de/)) on 18<sup>th</sup> of October 2021.
+
+```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
+archive_name = "20211018-osambassadors"
+path_source = file.path("archive", archive_name, "talk-rdm.Rmd")
+path_html = render_xaringan(name = archive_name, path_rmd = here::here(path_source))
+```
+
+```{r, echo=FALSE, results="asis"}
+print_list(path_html = path_html, path_rmd = path_source)
+```
+
+```{r, echo=FALSE}
+knitr::include_url(path_html)
+```
+
 ## Max Planck Digital Library
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5012477.svg)](https://doi.org/10.5281/zenodo.5012477)
 
 The following slides were presented during a talk prepared for the "Discussion Series: Human Research Data in Practice" hosted by the [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) (see details [here](https://rdm.mpdl.mpg.de/2021/05/27/discussion-series-human-research-data-in-practice-on-22th-june-2021/)) on 22<sup>nd</sup> of June 2021.
 
