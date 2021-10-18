@@ -61,6 +61,17 @@ docker push lennartwittkuhn/talk-rdm:latest
 docker run --rm -v $PWD:/home lennartwittkuhn/talk-rdm /bin/sh -c "cd /home; make all"
 ```
 
+## Make PDF
+
+At the moment, this is still done manually:
+
+```bash
+make talk-rdm.html # or
+docker run --rm -v $PWD:/home lennartwittkuhn/talk-rdm /bin/sh -c "cd /home; make talk-rdm.html"
+docker run --rm -t -v `pwd`:/slides -v $PWD:/home/user astefanutti/decktape /home/user/talk-rdm.html talk-rdm.pdf --size '1280x720' --chrome-arg=--allow-file-access-from-files
+	
+```
+
 ## License
 
 [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
