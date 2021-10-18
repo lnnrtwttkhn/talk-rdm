@@ -938,6 +938,111 @@ knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/virtual_
 ---
 
 class: title-slide, center, middle
+name: workflow-tardis
+
+# Workflow: DataLad on Tardis
+<!--the next --- is a horizontal line-->
+
+--- 
+
+### `r emoji::emoji("question")` "*Do you primarily work on Tardis? What is there to consider?*"
+### `r emoji::emoji("question")` "*Do you keep data on Tardis temporally until all analyses are completed?*"
+### `r emoji::emoji("question")` "*How do you manage input / output links within DataLad datasets?*"
+
+---
+
+# Summary
+
+#### `r emoji::emoji("question")` "*Do you primarily work on Tardis? What is there to consider?*"
+
+- DataLad works on Tardis as it works on your computer (it's not really different)
+- With the dataset installed on both locations, you can flexibly update data back-and-forth
+
+#### `r emoji::emoji("question")` "*Do you keep data on Tardis temporally until all analyses are completed?*"
+
+- Yes, just because it's convenient `r emoji::emoji("innocent")`
+- You can always `datalad drop` contents from Tardis at any time (if you can retrieve them from elsewhere)
+
+#### `r emoji::emoji("question")` "*How do you manage input / output links within DataLad datasets?*"
+
+- Ideally, datasets are self-contained (cf. [nesting](https://handbook.datalad.org/en/latest/basics/101-106-nesting.html) and [YODA](https://handbook.datalad.org/en/latest/basics/101-127-yoda.html))
+- Depends on your coding (see e.g., `here` in R, [here](https://github.com/jennybc/here_here) and [here](https://here.r-lib.org/))
+
+
+---
+
+# A basic workflow for DataLad on Tardis
+
+1\. Create a new dataset directly on Tardis: `datalad create my_dataset`
+  
+--
+  
+2\. Start on your computer and move to Tardis
+  - Create a dataset on your computer: `datalad create my_dataset`
+  - Push the dataset to your hosting service (e.g., [GIN](https://gin.g-node.org/)): `datalad push --to gin`
+  - Clone the dataset to Tardis: `datalad clone gin.g-node.org//my_username/my_dataset` (using SSH)
+
+--
+
+Moving back-and-forth between your computer and Tardis:
+1. Run analysis on Tardis
+1. Save changes (either on your computer or on Tardis): `datalad save -m "superduper changes"`
+1. Push changes to your hosting service (e.g., [GIN](https://gin.g-node.org/)): `datalad push --to gin`
+1. Update the clone (either on your computer or on Tardis): `datalad update --merge -s gin`
+1. (Optional: Check if your repo is at the correct commit: `git log` / `git log --oneline -n 1`)
+1. (Optional: Drop contents of the previous commit: `datalad drop .`)
+1. Get the updated contents of the new commit: `datalad get .`
+
+---
+
+# DataLad on an HPC: Further reading
+
+- see preprint ["FAIRly big: A framework for computationally reproducible
+processing of large-scale data"](https://www.biorxiv.org/content/10.1101/2021.10.12.464122v1.full.pdf) by Wagner et al.
+- see [DataLad on High Throughput or High Performance Compute Clusters](http://handbook.datalad.org/en/latest/beyond_basics/101-169-cluster.html) in the DataLad Handbook
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="95%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank"><sup>Clone from local</sup></a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/clone_local.svg")
+```
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="95%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank"><sup>Clone from server / cluster</sup></a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/clone_server.svg") 
+```
+]
+
+---
+
+# `r emoji::emoji("bulb")` Idea: Clone datasets from local
+
+```{bash, eval=FALSE}
+├── zoo-bids
+├── zoo-fmriprep
+  └── inputs
+    └── bids
+└── zoo-mriqc
+  └── inputs
+    └── bids
+```
+
+#### Add `zoo-bids` as an input to `zoo-fmriprep` and `zoo-mriqc`
+
+1\. Clone from hosting service (e.g., GIN), add a `local` sibling:
+  - `datalad clone --dataset . git@gin.g-node.org:/lnnrtwttkhn/zoo-bids inputs/bids`
+  - `datalad siblings add --name local --url ../../../zoo-bids`
+
+2\. Clone from local (and add GIN remote later):
+  - `datalad clone --dataset . ../zoo-bids inputs/bids`
+  - `datalad siblings add --name gin --url git@gin.g-node.org:/lnnrtwttkhn/zoo-bids`
+
+Getting data from local will be *much* faster! `r emoji::emoji("fire")`
+
+---
+
+
+class: title-slide, center, middle
 name: workflow-data-sharing
 
 # Workflow: Data Sharing with DataLad
