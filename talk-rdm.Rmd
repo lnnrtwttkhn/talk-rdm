@@ -84,6 +84,182 @@ name: introduction
 
 ---
 
+class: title-slide, center, middle
+name: workflow-data
+
+# Workflow: Data Management using DataLad
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# What is DataLad?
+
+#### What is DataLad? (see the [10,000 feet](http://handbook.datalad.org/en/latest/intro/executive_summary.html) and [brief](http://handbook.datalad.org/en/latest/intro/philosophy.html) overview in the DataLad Handbook by [Wagner et al., 2020, *Zenodo*](https://doi.org/10.5281/ZENODO.3905791))
+
+> *"DataLad is a software tool developed to aid with everything related to the evolution of digital objects"*
+
+.footnote[
+*Disclaimer:* I'm "only" an enthusiastic user of DataLad! 😊
+]
+
+--
+
+- **"Git for (large) data"**
+- free, [open-source](https://github.com/datalad/datalad) **command-line tool**
+- building on top of **Git** and **git-annex**, DataLad allows you to **version control arbitrarily large files** in datasets.
+- *"Arbitrarily large?"* - yes, see DataLad dataset of 80TB / 15 million files from the Human Connectome Project (see [details](https://handbook.datalad.org/en/latest/usecases/HCP_dataset.html#usecase-hcp-dataset))
+
+--
+
+#### DataLad phiolosophy
+
+- DataLad knows only two things: Datasets and files
+- DataLad datasets are Git repository
+- DataLad can version control arbitrarily large data
+- DataLad minimizes custom procedures and data structures
+- DataLad is developed for complete decentralization
+- DataLad aims to maximize the (re-)use of existing 3rd-party data resources and infrastructure
+
+---
+
+# DataLad: What is a dataset?
+
+> *"A dataset is a directory on a computer that DataLad manages."*
+
+```{r, echo=FALSE, fig.align="center", out.width="40%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-101-create.html" target="_blank">DataLad Handbook: Create a new dataset</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/dataset.svg") 
+```
+
+> "*You can create new, empty datasets [..] and populate them, or transform existing directories into datasets.*"
+
+---
+
+# DataLad: Version-control arbitrarily large files
+
+> *"Building on top of Git and git-annex, DataLad allows you to version control arbitrarily large files in datasets."*
+
+```{r, echo=FALSE, fig.align="center", out.width="40%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-102-populate.html" target="_blank">DataLad Handbook: How to pupulate a dataset</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/local_wf.svg") 
+```
+
+> *"[...] keep track of revisions of data of any size, and view, interact with or restore any version of your dataset [...]."*
+
+---
+
+# DataLad: Dataset consumption and collaboration
+
+> *"DataLad lets you consume datasets provided by others, and collaborate with them."*
+
+> *"You can **install existing datasets** and update them from their sources, or create sibling datasets that you can **publish updates** to and **pull updates** from for collaboration and data sharing."*
+
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-105-install.html" target="_blank">DataLad Handbook: Install an existing dataset</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collaboration.svg") 
+```
+
+---
+
+# DataLad: Dataset linkage
+
+> *"Datasets can contain other datasets (subdatasets), **nested arbitrarily deep.**"*
+
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-106-nesting.html" target="_blank">DataLad Handbook: Nesting datasets</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/linkage_subds1.svg") 
+```
+
+> *"Each dataset has an independent [...] history, but can be registered at a precise version in higher-level datasets. This allows to **combine datasets** and to perform commands recursively across a hierarchy of datasets, and it is the basis for advanced provenance capture abilities."*
+
+---
+
+# DataLad: Full provenance capture and reproducibility
+
+> *"DataLad allows to **capture full provenance**: The origin of datasets, the origin of files obtained from web sources, complete machine-readable and automatically reproducible records of how files were created (including software environments)."*
+
+```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/usecases/provenance_tracking.html" target="_blank">DataLad Handbook: Provenance tracking</a> and <a href="http://handbook.datalad.org/en/latest/basics/basics-run.html" target="_blank">run commands</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/reproducible_execution.svg") 
+```
+
+> *"You or your collaborators can thus re-obtain or reproducibly **recompute content with a single command**, and make use of extensive provenance of dataset content **(who created it, when, and how?)**."*
+
+---
+
+# DataLad: Third party service integration
+
+> *"**Export datasets to third party services** such as GitHub, GitLab, or Figshare with built-in commands."*
+
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/basics-thirdparty.html" target="_blank">DataLad Handbook: Third-party infrastructure</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/thirdparty.svg") 
+```
+
+> *"Alternatively, you can use a **multitude of other available third party services** such as Dropbox, Google Drive, Amazon S3, owncloud, or many more that DataLad datasets are compatible with."*
+
+---
+exclude: true
+
+# DataLad: Metadata handling
+
+> *"**Extract, aggregate, and query dataset metadata.** This allows to automatically obtain metadata according to different metadata standards (EXIF, XMP, ID3, BIDS, DICOM, NIfTI1, ...), store this metadata in a portable format, share it, and search dataset contents."*
+
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='see <a href="http://docs.datalad.org/en/stable/metadata.html" target="_blank">DataLad Handbook: Metadata</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_prov_imaging.svg") 
+```
+
+---
+
+# Example: Data management using DataLad
+
+#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Data Availability statement](https://www.nature.com/articles/s41467-021-21970-2#data-availability)):
+
+> *"We publicly share all data used in this study. Data and code management was realized using DataLad.*"
+
+--
+
+- All individual datasets can be found at: https://gin.g-node.org/lnnrtwttkhn
+- Each dataset is associated with a unique URL and a Digital Object Identifier (DOI)
+- Dataset structure shared to GitHub and dataset contents shared to GIN
+
+--
+
+#### All data?
+
+--
+
+- `highspeed`: superdataset of all subdatasets, incl. project documentation ([GitLab](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed))
+- `highspeed-bids`: MRI and behavioral data adhering to the [BIDS standard](https://bids.neuroimaging.io/)
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-bids),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-bids),
+[DOI](https://doi.org/10.12751/g-node.4ivuv8))
+- `highspeed-mriqc`: MRI quality metrics and reports based on [MRIQC](https://mriqc.readthedocs.io/en/stable/) 
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-mriqc),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-mriqc),
+[DOI](https://doi.org/10.12751/g-node.0vmyuh))
+- `highspeed-fmriprep`: preprocessed MRI data using [fMRIPrep](https://fmriprep.org/en/stable/),
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-fmriprep),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-fmriprep),
+[DOI](https://doi.org/10.12751/g-node.0ft06t))
+- `highspeed-masks`: binarized anatomical masks used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-masks),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-masks), [DOI](https://doi.org/10.12751/g-node.omirok))
+- `highspeed-glm`: first-level GLM results used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-glm),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-glm),
+[DOI](https://doi.org/10.12751/g-node.d21zpv))
+- `highspeed-decoding`: results of the multivariate decoding approach ([GitHub](https://github.com/lnnrtwttkhn/highspeed-decoding), [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-decoding), [DOI](https://doi.org/10.12751/g-node.9zft1r))
+- `highspeed-data`: unprocessed data of the behavioral task acquired during MRI acquisition ([GitHub](https://github.com/lnnrtwttkhn/highspeed-data-behavior),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-data-behavior),
+[DOI](https://doi.org/10.12751/g-node.p7dabb))
+
+\> 1.5 TB in total, version-controlled using DataLad
+
+---
+
+# Superdataset to collect all resources of the project
+
+```{r, echo=FALSE, fig.align="center", out.width="85%", fig.retina=1, fig.cap='see <a href="https://git.mpib-berlin.mpg.de/wittkuhn/highspeed" target="_blank">main project repo on GitLab</a> (accessed 21/06/21)'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/40e43c7e029a4f4696b8/?dl=1")
+```
+
+---
+
 # *"How close are you to full reproducibility?"*
 
 #### [...] *full* reproducibility?
@@ -522,182 +698,6 @@ Show the current status of your repository using `git status`:
 git status 
 On branch master 
 nothing to commit, working tree clean
-```
-
----
-
-class: title-slide, center, middle
-name: workflow-data
-
-# Workflow: Data Management using DataLad
-<!--the next --- is a horizontal line-->
-
---- 
-
----
-
-# What is DataLad?
-
-#### What is DataLad? (see the [10,000 feet](http://handbook.datalad.org/en/latest/intro/executive_summary.html) and [brief](http://handbook.datalad.org/en/latest/intro/philosophy.html) overview in the DataLad Handbook by [Wagner et al., 2020, *Zenodo*](https://doi.org/10.5281/ZENODO.3905791))
-
-> *"DataLad is a software tool developed to aid with everything related to the evolution of digital objects"*
-
-.footnote[
-*Disclaimer:* I'm "only" an enthusiastic user of DataLad! 😊
-]
-
---
-
-- **"Git for (large) data"**
-- free, [open-source](https://github.com/datalad/datalad) **command-line tool**
-- building on top of **Git** and **git-annex**, DataLad allows you to **version control arbitrarily large files** in datasets.
-- *"Arbitrarily large?"* - yes, see DataLad dataset of 80TB / 15 million files from the Human Connectome Project (see [details](https://handbook.datalad.org/en/latest/usecases/HCP_dataset.html#usecase-hcp-dataset))
-
---
-
-#### DataLad phiolosophy
-
-- DataLad knows only two things: Datasets and files
-- DataLad datasets are Git repository
-- DataLad can version control arbitrarily large data
-- DataLad minimizes custom procedures and data structures
-- DataLad is developed for complete decentralization
-- DataLad aims to maximize the (re-)use of existing 3rd-party data resources and infrastructure
-
----
-
-# DataLad: What is a dataset?
-
-> *"A dataset is a directory on a computer that DataLad manages."*
-
-```{r, echo=FALSE, fig.align="center", out.width="40%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-101-create.html" target="_blank">DataLad Handbook: Create a new dataset</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/dataset.svg") 
-```
-
-> "*You can create new, empty datasets [..] and populate them, or transform existing directories into datasets.*"
-
----
-
-# DataLad: Version-control arbitrarily large files
-
-> *"Building on top of Git and git-annex, DataLad allows you to version control arbitrarily large files in datasets."*
-
-```{r, echo=FALSE, fig.align="center", out.width="40%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-102-populate.html" target="_blank">DataLad Handbook: How to pupulate a dataset</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/local_wf.svg") 
-```
-
-> *"[...] keep track of revisions of data of any size, and view, interact with or restore any version of your dataset [...]."*
-
----
-
-# DataLad: Dataset consumption and collaboration
-
-> *"DataLad lets you consume datasets provided by others, and collaborate with them."*
-
-> *"You can **install existing datasets** and update them from their sources, or create sibling datasets that you can **publish updates** to and **pull updates** from for collaboration and data sharing."*
-
-```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-105-install.html" target="_blank">DataLad Handbook: Install an existing dataset</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collaboration.svg") 
-```
-
----
-
-# DataLad: Dataset linkage
-
-> *"Datasets can contain other datasets (subdatasets), **nested arbitrarily deep.**"*
-
-```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-106-nesting.html" target="_blank">DataLad Handbook: Nesting datasets</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/linkage_subds1.svg") 
-```
-
-> *"Each dataset has an independent [...] history, but can be registered at a precise version in higher-level datasets. This allows to **combine datasets** and to perform commands recursively across a hierarchy of datasets, and it is the basis for advanced provenance capture abilities."*
-
----
-
-# DataLad: Full provenance capture and reproducibility
-
-> *"DataLad allows to **capture full provenance**: The origin of datasets, the origin of files obtained from web sources, complete machine-readable and automatically reproducible records of how files were created (including software environments)."*
-
-```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/usecases/provenance_tracking.html" target="_blank">DataLad Handbook: Provenance tracking</a> and <a href="http://handbook.datalad.org/en/latest/basics/basics-run.html" target="_blank">run commands</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/reproducible_execution.svg") 
-```
-
-> *"You or your collaborators can thus re-obtain or reproducibly **recompute content with a single command**, and make use of extensive provenance of dataset content **(who created it, when, and how?)**."*
-
----
-
-# DataLad: Third party service integration
-
-> *"**Export datasets to third party services** such as GitHub, GitLab, or Figshare with built-in commands."*
-
-```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/basics-thirdparty.html" target="_blank">DataLad Handbook: Third-party infrastructure</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/thirdparty.svg") 
-```
-
-> *"Alternatively, you can use a **multitude of other available third party services** such as Dropbox, Google Drive, Amazon S3, owncloud, or many more that DataLad datasets are compatible with."*
-
----
-exclude: true
-
-# DataLad: Metadata handling
-
-> *"**Extract, aggregate, and query dataset metadata.** This allows to automatically obtain metadata according to different metadata standards (EXIF, XMP, ID3, BIDS, DICOM, NIfTI1, ...), store this metadata in a portable format, share it, and search dataset contents."*
-
-```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='see <a href="http://docs.datalad.org/en/stable/metadata.html" target="_blank">DataLad Handbook: Metadata</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_prov_imaging.svg") 
-```
-
----
-
-# Example: Data management using DataLad
-
-#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Data Availability statement](https://www.nature.com/articles/s41467-021-21970-2#data-availability)):
-
-> *"We publicly share all data used in this study. Data and code management was realized using DataLad.*"
-
---
-
-- All individual datasets can be found at: https://gin.g-node.org/lnnrtwttkhn
-- Each dataset is associated with a unique URL and a Digital Object Identifier (DOI)
-- Dataset structure shared to GitHub and dataset contents shared to GIN
-
---
-
-#### All data?
-
---
-
-- `highspeed`: superdataset of all subdatasets, incl. project documentation ([GitLab](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed))
-- `highspeed-bids`: MRI and behavioral data adhering to the [BIDS standard](https://bids.neuroimaging.io/)
-([GitHub](https://github.com/lnnrtwttkhn/highspeed-bids),
-[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-bids),
-[DOI](https://doi.org/10.12751/g-node.4ivuv8))
-- `highspeed-mriqc`: MRI quality metrics and reports based on [MRIQC](https://mriqc.readthedocs.io/en/stable/) 
-([GitHub](https://github.com/lnnrtwttkhn/highspeed-mriqc),
-[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-mriqc),
-[DOI](https://doi.org/10.12751/g-node.0vmyuh))
-- `highspeed-fmriprep`: preprocessed MRI data using [fMRIPrep](https://fmriprep.org/en/stable/),
-([GitHub](https://github.com/lnnrtwttkhn/highspeed-fmriprep),
-[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-fmriprep),
-[DOI](https://doi.org/10.12751/g-node.0ft06t))
-- `highspeed-masks`: binarized anatomical masks used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-masks),
-[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-masks), [DOI](https://doi.org/10.12751/g-node.omirok))
-- `highspeed-glm`: first-level GLM results used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-glm),
-[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-glm),
-[DOI](https://doi.org/10.12751/g-node.d21zpv))
-- `highspeed-decoding`: results of the multivariate decoding approach ([GitHub](https://github.com/lnnrtwttkhn/highspeed-decoding), [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-decoding), [DOI](https://doi.org/10.12751/g-node.9zft1r))
-- `highspeed-data`: unprocessed data of the behavioral task acquired during MRI acquisition ([GitHub](https://github.com/lnnrtwttkhn/highspeed-data-behavior),
-[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-data-behavior),
-[DOI](https://doi.org/10.12751/g-node.p7dabb))
-
-\> 1.5 TB in total, version-controlled using DataLad
-
----
-
-# Superdataset to collect all resources of the project
-
-```{r, echo=FALSE, fig.align="center", out.width="85%", fig.retina=1, fig.cap='see <a href="https://git.mpib-berlin.mpg.de/wittkuhn/highspeed" target="_blank">main project repo on GitLab</a> (accessed 21/06/21)'}
-knitr::include_graphics("https://keeper.mpdl.mpg.de/f/40e43c7e029a4f4696b8/?dl=1")
 ```
 
 ---
