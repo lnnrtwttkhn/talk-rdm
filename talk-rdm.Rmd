@@ -728,9 +728,8 @@ knitr::include_graphics("https://imgs.xkcd.com/comics/standards.png")
 ├── README.md
 ├── code
 ├── input
-├── output
-└── requirements.txt
-3 directories, 3 files
+└── output
+3 directories, 2 files
 ```
 
 --
