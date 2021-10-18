@@ -1050,11 +1050,13 @@ name: workflow-data-sharing
 
 --- 
 
+### `r emoji::emoji("question")` "*Did you notice any institute-specific peculiarties regarding infrastructure *"
+
 ---
 
 # Share version-controlled datasets with DataLad
 
-- Share data like you share code
+- With DataLad, you can share data like you share code
 - DataLad datsets can be cloned, pushed and updated from and to remote hosting
 services
 
