@@ -769,6 +769,21 @@ knitr::include_graphics("https://imgs.xkcd.com/comics/standards.png")
 
 ---
 
+# Example: Brain Imaging Data Structure (BIDS)
+
+#### Organization of neuroimaging data according to the [Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io/)
+
+> *"A simple and intuitive way to organize and describe your neuroimaging and behavioral data."*
+
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see Gorgolewski et al., 2016, <i>Nature Scientific Data</i></br><a href="https://doi.org/10.1038/sdata.2016.44" target="_blank">doi: 10.1038/sdata.2016.44</a>'}
+knitr::include_graphics("https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fsdata.2016.44/MediaObjects/41597_2016_Article_BFsdata201644_Fig1_HTML.jpg?as=webp") 
+```
+
+<sup>for those interested: fully automated transformation of newly acquired data using [ReproIn](https://github.com/ReproNim/reproin
+) / [HeuDiConv](https://heudiconv.readthedocs.io/en/latest/)</sup>
+
+---
+
 # Code sharing using Git and DataLad
 
 #### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Code Availability statement](https://www.nature.com/articles/s41467-021-21970-2#code-availability)):
@@ -825,18 +840,48 @@ knitr::include_graphics("https://imgs.xkcd.com/comics/standards.png")
 
 ---
 
-# Example: Brain Imaging Data Structure (BIDS)
+# P1: *"One thing, one dataset"*
 
-#### Organization of neuroimaging data according to the [Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io/)
+- Structure study elements (data, code, results) in dedicated directories
+- Input data in `/inputs`, code in `/code`, results in `/outputs`, execution environments in `/envs`
+- Use dedicated projects for multiple different analyses
 
-> *"A simple and intuitive way to organize and describe your neuroimaging and behavioral data."*
-
-```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see Gorgolewski et al., 2016, <i>Nature Scientific Data</i></br><a href="https://doi.org/10.1038/sdata.2016.44" target="_blank">doi: 10.1038/sdata.2016.44</a>'}
-knitr::include_graphics("https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fsdata.2016.44/MediaObjects/41597_2016_Article_BFsdata201644_Fig1_HTML.jpg?as=webp") 
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/dataset_modules.svg")
 ```
 
-<sup>for those interested: fully automated transformation of newly acquired data using [ReproIn](https://github.com/ReproNim/reproin
-) / [HeuDiConv](https://heudiconv.readthedocs.io/en/latest/)</sup>
+---
+
+# P2: *"Record where you got it from, and where it is now"*
+
+
+- Record where the data came from, or how it is dependent on or linked to other data
+- Link re-usable data resource units as DataLad *subdatasets*
+- `datalad clone`, `datalad download-url`, `datalad save`
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/data_origin.svg")
+```
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="120%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/decentralized_publishing.svg")
+```
+]
+
+---
+
+# P3: *"Record what you did to it, and with what"*
+
+- Know how exactly the content of every file came to be that was not obtained from elsewhere
+- `datalad run` links input data with code execution to output data
+- `datalad containers-run` allows to do the same *within* software containers (e.g., Docker or Singularity)
+
+```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/decentralized_publishing.svg")
+```
 
 ---
 
