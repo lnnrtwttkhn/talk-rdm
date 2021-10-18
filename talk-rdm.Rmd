@@ -846,7 +846,6 @@ Done!<sup>1</sup> 🎉
 <sup><sup>1</sup> To be fair, it's a bit more complex than that ... `r emoji::emoji("innocent")` (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))</sup>
 
 ---
-exclude: true
 
 # Data sharing on Keeper
 
@@ -856,6 +855,16 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/media/img/catalog/KEEPER_log
 
 > "*A free service for all Max Planck employees and project partners with **more than 1TB of storage per user** for your researchdata.
 > Profit from safe data storage, seamlessly integrated into your research workflow.*"
+
+- \> 1 TB per Max Planck employee
+- data hosted on MPS servers
+- configurable as a [DataLad special remote](http://handbook.datalad.org/en/latest/basics/101-139-dropbox.html)
+
+... and after some confuguration:
+
+```{bash, eval=FALSE}
+datalad push --to keeper
+```
 
 
 <!-----
