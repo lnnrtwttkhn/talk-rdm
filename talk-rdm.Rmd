@@ -1,5 +1,5 @@
 ---
-title: "Research Workflow with DataLad"
+title: "Research Workflow with DataLad - A discussion"
 subtitle: "Lab meeting | Lifespan Neural Dynamics Group (MPIB)"
 author: "Lennart Wittkuhn | wittkuhn@mpib-berlin.mpg.de"
 institute: "Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Berlin, Germany"
@@ -58,7 +58,7 @@ pacman::p_load(char = packages_cran)
 1. **Introduction**
   - Version control
   - Our paper
-2. **Research Workflow using DataLad**
+2. **Research Workflow with DataLad**
   - Intro to DataLad
   - Reproducibility
   - Code and Data Organization
@@ -78,7 +78,7 @@ name: introduction
 
 ---
 
-# The need for  *proper* version-control in a nutshell
+# The need for *proper* version-control in a nutshell
 
 ```{r, echo=FALSE, fig.align="center", out.width="33%", fig.retina=1, fig.cap='<a href="http://phdcomics.com/comics/archive/phd101212s.gif" target="_blank"><sup>&copy; Jorge Cham (phdcomics.com)</sup></a>'}
 knitr::include_graphics("http://phdcomics.com/comics/archive/phd101212s.gif") 
