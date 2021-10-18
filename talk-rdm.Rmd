@@ -84,6 +84,46 @@ name: introduction
 
 ---
 
+# The need for  *proper* version-control in a nutshell
+
+```{r, echo=FALSE, fig.align="center", out.width="33%", fig.retina=1, fig.cap='<a href="http://phdcomics.com/comics/archive/phd101212s.gif" target="_blank"><sup>&copy; Jorge Cham (phdcomics.com)</sup></a>'}
+knitr::include_graphics("http://phdcomics.com/comics/archive/phd101212s.gif") 
+```
+
+---
+
+# The need for *proper* version-control in a nutshell
+
+```{r, echo=FALSE, fig.align="center", out.width="55%", fig.retina=1, fig.cap='<a href="http://phdcomics.com/comics/archive/phd052810s.gif" target="_blank"><sup>&copy; Jorge Cham (phdcomics.com)</sup></a>'}
+knitr::include_graphics("http://phdcomics.com/comics/archive/phd052810s.gif") 
+```
+
+---
+
+# What is version control?
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/3695300" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://zenodo.org/record/3695300/files/VersionControl.jpg?download=1")
+```
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/3695300" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://zenodo.org/record/3695300/files/ProjectHistory.jpg?download=1") 
+```
+]
+
+--
+
+.center[
+- keep files organized
+- keep track of changes
+- revert changes or go back to previous versions
+]
+
+---
+
 # Our paper
 
 ```{r, echo=FALSE, fig.align="center", out.width="75%", fig.retina=1, fig.cap='<a href="https://doi.org/10.1038/s41467-021-21970-2" target="_blank">doi: 10.1038/s41467-021-21970-2</a> (accessed 17/06/21)'}
