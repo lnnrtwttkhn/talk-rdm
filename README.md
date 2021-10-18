@@ -12,7 +12,7 @@ Slides are available at: https://lennartwittkuhn.com/talk-rdm/
 ## History
 
 | When | What | Host |
-|---|---|---|---|---|
+|---|---|---|
 | 18<sup>th</sup> of October 2021 | ["Open Science Ambassadors Day 2021"](https://osambassadors.mpdl.mpg.de/) | [Max Planck PhDnet](https://www.phdnet.mpg.de/home) and the [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) |
 | 22<sup>nd</sup> June 2021 | ["Discussion Series: Human Research Data in Practice"](https://rdm.mpdl.mpg.de/2021/05/27/discussion-series-human-research-data-in-practice-on-22th-june-2021/) | [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) |
 
