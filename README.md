@@ -69,7 +69,6 @@ At the moment, this is still done manually:
 make talk-rdm.html # or
 docker run --rm -v $PWD:/home lennartwittkuhn/talk-rdm /bin/sh -c "cd /home; make talk-rdm.html"
 docker run --rm -t -v `pwd`:/slides -v $PWD:/home/user astefanutti/decktape /home/user/talk-rdm.html talk-rdm.pdf --size '1280x720' --chrome-arg=--allow-file-access-from-files
-	
 ```
 
 ## License
