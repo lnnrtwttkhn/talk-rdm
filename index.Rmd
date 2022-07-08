@@ -95,6 +95,23 @@ knitr::include_url(path_html)
 
 # Archive 📚
 
+## 5<sup>th</sup> RDM-Workshop 2022 on Research Data Management in the Max Planck Society
+
+The following slides were presented during a talk prepared for the [5<sup>th</sup> RDM-Workshop 2022 on Research Data Management in the Max Planck Society](https://rdm.mpdl.mpg.de/2022/05/09/5-fdm-workshop-2022-forschungsdatenmanagement-in-der-max-planck-gesellschaft-call-for-participation/) at the [Max Planck Institute for Human Cognitive and Brain Sciences](https://www.mpib-berlin.mpg.de/en) in Leipzig, Germany from the 13<sup>th</sup> to 14<sup>th</sup> of September 2022.
+
+### Abstract
+
+> Wir bitten um eine kurze Beschreibung des möglichen Beitrags in ca. fünf Sätzen und einen vorläufigen (deutschen) Präsentationstitel.
+
+Vorläufiger Titel: **Forschung als Software Engineering - Lösung für alles?**
+
+Begrenzte Reproduzierbarkeit, mangelnde Transparenz und ineffiziente Arbeitsabläufe - viele wissenschaftliche Disziplinen haben einen großen Innovationsbedarf.
+Zudem wird der Forschungsprozess immer digitaler, komputationaler und interaktiver.
+In meinem Vortrag argumentiere ich, dass technische Lösungen für diese Herausforderungen bereits vorhanden und in der professionellen Softwareentwicklung zu finden sind.
+Dazu zählen vor allem Tools für Versionskontrolle wie Git oder DataLad und Software-Container wie Docker.
+Ich diskutiere wie diese Tools wissenschaftliche Arbeitsabläufe revolutionieren und welche (vorranging nicht technischen) Hürden bei ihrer Implementierung bestehen.
+Ähnliche vorherige Vorträge finden sich auf https://lennartwittkuhn.com/talk-rdm/.
+
 ## Lifespan Neural Dynamics Group
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5586318.svg)](https://doi.org/10.5281/zenodo.5586318)
