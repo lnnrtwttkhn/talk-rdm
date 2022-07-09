@@ -105,11 +105,11 @@ The following slides were presented during a talk prepared for the [5<sup>th</su
 
 Vorläufiger Titel: **Forschung als Software Engineering - Lösung für alles?**
 
-Begrenzte Reproduzierbarkeit, mangelnde Transparenz und ineffiziente Arbeitsabläufe - viele wissenschaftliche Disziplinen haben einen großen Innovationsbedarf.
+Unzureichende Reproduzierbarkeit, mangelnde Transparenz und ineffiziente Arbeitsabläufe - viele wissenschaftliche Disziplinen haben einen großen Innovationsbedarf.
 Zudem wird der Forschungsprozess immer digitaler, komputationaler und interaktiver.
 In meinem Vortrag argumentiere ich, dass technische Lösungen für diese Herausforderungen bereits vorhanden und in der professionellen Softwareentwicklung zu finden sind.
 Dazu zählen vor allem Tools für Versionskontrolle wie Git oder DataLad und Software-Container wie Docker.
-Ich diskutiere wie diese Tools wissenschaftliche Arbeitsabläufe revolutionieren und welche (vorranging nicht technischen) Hürden bei ihrer Implementierung bestehen.
+Ich diskutiere wie diese Tools wissenschaftliche Arbeitsabläufe transformieren und welche (vorranging nicht technischen) Hürden bei ihrer Implementierung bestehen.
 Ähnliche vorherige Vorträge finden sich auf https://lennartwittkuhn.com/talk-rdm/.
 
 ## Lifespan Neural Dynamics Group
