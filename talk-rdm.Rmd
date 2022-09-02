@@ -417,9 +417,9 @@ The primary use case for dataverse siblings is dataset deposition, where only on
 ---
 
 class: title-slide, center, middle
-name: workflow-code
+name: workflow-communication
 
-# Workflow: Project Management
+# Workflow: Communication and project management
 <!--the next --- is a horizontal line-->
 
 --- 
@@ -430,7 +430,7 @@ name: workflow-code
 
 --
 
-#### Project infrastructure on hosting services (GitLab / GitHub)
+#### Project management infrastructure via repository hosting services (e.g., GitLab / GitHub)
 
 - Discuss and plan your work in [issues](https://docs.gitlab.com/ee/user/project/issues/)
 - Propose changes to code or data using [merge requests](https://docs.gitlab.com/ee/user/project/merge_requests/)
@@ -441,7 +441,7 @@ name: workflow-code
 
 #### GitLab for Max Planck employees
 
-- hosted by GWDG: https://gitlab.gwdg.de/users/sign_in
+- hosted by GWDG: https://gitlab.gwdg.de
 - hosted by your institute<sup>1</sup>, e.g., at MPIB: https://git.mpib-berlin.mpg.de
 
 .footnote[
@@ -489,7 +489,7 @@ Open a new issue in our `highspeed` [project repository](https://git.mpib-berlin
 
 ---
 
-# Proposing changes: Merge / pull requests
+# Propose changes: Merge / pull requests
 
 --
 
