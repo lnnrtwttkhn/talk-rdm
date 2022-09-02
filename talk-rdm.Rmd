@@ -473,15 +473,19 @@ Open a new issue in our `highspeed` [project repository](https://git.mpib-berlin
 - **Milestone**: Add issues to important milestones
 - **Labels**: Organize issues by labels, e.g., `bug`
 - **Due date**: Set due dates for issues
+{{content}}
+]
 
-#### More functions of issues (details [here](https://docs.gitlab.com/ee/user/project/issues/))
+--
+
+#### More functions of Issues (details [here](https://docs.gitlab.com/ee/user/project/issues/))
 
 - Issues can be combined in [issue boards](https://docs.gitlab.com/ee/user/project/issue_board.html)
 - Issues can be [sorted](https://docs.gitlab.com/ee/user/project/issues/sorting_issue_lists.html) (by due date, label priority, etc.)
 - Issues can be [transferred between repositories](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#moving-issues)
 - Issues can be [crosslinked](https://docs.gitlab.com/ee/user/project/issues/crosslinking_issues.htm) e.g., in commit messages: `git commit -m "add missing data, close #37"`
 - Issues can send [automated email notifications](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#new-issue-via-email)
-]
+{{content}}
 
 ---
 
