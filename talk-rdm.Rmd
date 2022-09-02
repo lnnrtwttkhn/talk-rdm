@@ -244,6 +244,148 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_
 
 ---
 
+
+class: title-slide, center, middle
+name: workflow-sharing
+
+# Workflow: Code and data sharing using MPS infrastructure
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Summary
+
+#### `r emoji::emoji("question")` "*Did you notice any institute-specific peculiarities regarding infrastructure? *"
+
+1\. We are still lacking *MPIB-hosted* infrastructure to host DataLad datasets
+  - We have a [GitLab](https://git.mpib-berlin.mpg.de/explore/projects) instance to host dataset *structure*
+  - We have an *experimental* [in-house GIN instance](http://gin.mpib-berlin.mpg.de/) with 5TB that can also host annexed data
+  - We have [KEEPER](https://keeper.mpdl.mpg.de/accounts/login/?next=/) (cloud-sharing service with 1TB by the [MPDL](https://www.mpdl.mpg.de/en/)) which can be configured as a [DataLad special remote](http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html#the-common-case-repository-hosting-without-annex-support-and-special-remotes)
+
+&rarr; Flexible in-house storage space is needed!
+
+---
+
+# Share version-controlled datasets with DataLad
+
+- With DataLad, you can share data like you share code
+- DataLad datsets can be cloned, pushed and updated from and to remote hosting
+services
+
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-105-install.html" target="_blank">DataLad Handbook: Install an existing dataset</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collaboration.svg") 
+```
+
+---
+
+# Interoperability with a range of hosting services
+
+DataLad is built to maximize interoperability with a wide range of hosting services and storage technologies
+
+.center[
+```{r, echo=FALSE, fig.align="center", out.width="55%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg")
+```
+]
+
+---
+
+# Data sharing via GIN
+
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://gin.g-node.org/" target="_blank">https://gin.g-node.org/</a>'}
+knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
+```
+
+> "*GIN is [...] a web-accessible repository store of your data based on git and git-annex that you can access securely anywhere you desire while keeping your data in sync, backed up and easily accessible [...]"*
+
+--
+
+#### Advantages of GIN
+
+- free to use and open-source (could be hosted within MPIs / MPS; details [here](https://gin.g-node.org/G-Node/Info/wiki/In+House))
+- supports private and public repositories
+- publicly funded by the Federal Ministry of Education and Research (BMBF; details [here](https://gin.g-node.org/G-Node/Info/wiki/about#support))
+- servers are on German land (near Munich, Germany; cf. GDPR)
+- provides Digital Object Identifiers (DOIs) (details [here](https://gin.g-node.org/G-Node/Info/wiki/DOI))
+- allows to set own license (details [here](https://gin.g-node.org/G-Node/Info/wiki/Licensing))
+- DataLad plays perfectly with GIN, since both use git + git-annex (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))
+
+---
+
+# Publishing a DataLad dataset to GIN in only 4 steps
+
+1\. Create a dataset
+
+```{bash, eval=FALSE}
+datalad create my_dataset
+```
+
+--
+
+2\. Save data into the dataset
+
+```{bash, eval=FALSE}
+datalad save -m "add data to dataset"
+```
+
+--
+
+3\. Add the GIN remote ("sibling")
+
+```{bash, eval=FALSE}
+datalad siblings add -d . --name gin --url git@gin.g-node.org:/my_username/my_dataset.git
+```
+
+--
+
+4\. Transfer the dataset to GIN
+
+```{bash, eval=FALSE}
+datalad push --to gin
+```
+
+--
+
+Done!<sup>1</sup> 🎉
+
+<sup><sup>1</sup> To be fair, it's a bit more complex than that ... `r emoji::emoji("innocent")` (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))</sup>
+
+---
+
+# Data sharing via Keeper
+
+```{r, echo=FALSE, fig.align="center", out.width="35%", fig.retina=1, fig.cap='<a href="https://keeper.mpdl.mpg.de/" target="_blank">https://keeper.mpdl.mpg.de/</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/media/img/catalog/KEEPER_logo.png")
+```
+
+> "*A free service for all Max Planck employees and project partners with **more than 1TB of storage per user** for your researchdata.
+> Profit from safe data storage, seamlessly integrated into your research workflow.*"
+
+--
+
+- \> 1 TB per Max Planck employee
+- data hosted on MPS servers
+- configurable as a [DataLad special remote](http://handbook.datalad.org/en/latest/basics/101-139-dropbox.html)
+
+... and after some configuration ✨:
+
+```{bash, eval=FALSE}
+datalad push --to keeper
+```
+
+
+<!-----
+
+#### Suggested alternatives to GIN that can be used with DataLad (selection):
+
+- [Keeper](https://keeper.mpdl.mpg.de/) (Seafile) offers all Max Planck employees 1TB(!) of storage (expandable)
+- [Open Science Framework (OSF)](https://osf.io/), popular in Psychology / Cognitive Neuroscience (see [details](http://docs.datalad.org/projects/osf/en/latest/))
+-->
+
+---
+
 # Random useful info about DataLad
 
 #### Use DataLad within Python `r emoji::emoji("snake")` and R `r emoji::emoji("pirate_flag")`
@@ -729,148 +871,6 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/clone_ser
   - `datalad siblings add --name gin --url git@gin.g-node.org:/lnnrtwttkhn/zoo-bids`
 
 Getting data from local will be *much* faster! `r emoji::emoji("fire")`
-
----
-
-
-class: title-slide, center, middle
-name: workflow-data-sharing
-
-# Workflow: Data Sharing with DataLad
-<!--the next --- is a horizontal line-->
-
---- 
-
-### `r emoji::emoji("question")` "*Did you notice any institute-specific peculiarities regarding infrastructure? *"
-
----
-
-# Summary
-
-#### `r emoji::emoji("question")` "*Did you notice any institute-specific peculiarities regarding infrastructure? *"
-
-1\. We are still lacking *MPIB-hosted* infrastructure to host DataLad datasets
-  - We have a [GitLab](https://git.mpib-berlin.mpg.de/explore/projects) instance to host dataset *structure*
-  - We have an *experimental* [in-house GIN instance](http://gin.mpib-berlin.mpg.de/) with 5TB that can also host annexed data
-  - We have [KEEPER](https://keeper.mpdl.mpg.de/accounts/login/?next=/) (cloud-sharing service with 1TB by the [MPDL](https://www.mpdl.mpg.de/en/)) which can be configured as a [DataLad special remote](http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html#the-common-case-repository-hosting-without-annex-support-and-special-remotes)
-
-&rarr; Flexible in-house storage space is needed!
-
----
-
-# Share version-controlled datasets with DataLad
-
-- With DataLad, you can share data like you share code
-- DataLad datsets can be cloned, pushed and updated from and to remote hosting
-services
-
-```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-105-install.html" target="_blank">DataLad Handbook: Install an existing dataset</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collaboration.svg") 
-```
-
----
-
-# Interoperability with a range of hosting services
-
-DataLad is built to maximize interoperability with a wide range of hosting services and storage technologies
-
-.center[
-```{r, echo=FALSE, fig.align="center", out.width="55%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg")
-```
-]
-
----
-
-# Data sharing via GIN
-
-```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://gin.g-node.org/" target="_blank">https://gin.g-node.org/</a>'}
-knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
-```
-
-> "*GIN is [...] a web-accessible repository store of your data based on git and git-annex that you can access securely anywhere you desire while keeping your data in sync, backed up and easily accessible [...]"*
-
---
-
-#### Advantages of GIN (non-exhaustive list)
-
-- free and open-source (could be hosted within MPIs / MPG)
-- supports private and public repositories
-- publicly funded by the Federal Ministry of Education and Research (BMBF)
-- servers are on German land (near Munich, Germany)
-- provides Digital Object Identifiers (DOIs) (details [here](https://gin.g-node.org/G-Node/Info/wiki/DOI))
-- allows to set own license (details [here](https://gin.g-node.org/G-Node/Info/wiki/Licensing))
-- DataLad plays perfectly with GIN, since both use git + git-annex (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))
-
----
-
-# Publishing a DataLad dataset to GIN in only 4 steps
-
-1\. Create a dataset
-
-```{bash, eval=FALSE}
-datalad create my_dataset
-```
-
---
-
-2\. Save data into the dataset
-
-```{bash, eval=FALSE}
-datalad save -m "add data to dataset"
-```
-
---
-
-3\. Add the GIN remote ("sibling")
-
-```{bash, eval=FALSE}
-datalad siblings add -d . --name gin --url git@gin.g-node.org:/my_username/my_dataset.git
-```
-
---
-
-4\. Transfer the dataset to GIN
-
-```{bash, eval=FALSE}
-datalad push --to gin
-```
-
---
-
-Done!<sup>1</sup> 🎉
-
-<sup><sup>1</sup> To be fair, it's a bit more complex than that ... `r emoji::emoji("innocent")` (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))</sup>
-
----
-
-# Data sharing on Keeper
-
-```{r, echo=FALSE, fig.align="center", out.width="35%", fig.retina=1, fig.cap='<a href="https://keeper.mpdl.mpg.de/" target="_blank">https://keeper.mpdl.mpg.de/</a>'}
-knitr::include_graphics("https://keeper.mpdl.mpg.de/media/img/catalog/KEEPER_logo.png")
-```
-
-> "*A free service for all Max Planck employees and project partners with **more than 1TB of storage per user** for your researchdata.
-> Profit from safe data storage, seamlessly integrated into your research workflow.*"
-
-- \> 1 TB per Max Planck employee
-- data hosted on MPS servers
-- configurable as a [DataLad special remote](http://handbook.datalad.org/en/latest/basics/101-139-dropbox.html)
-
-... and after some confuguration:
-
-```{bash, eval=FALSE}
-datalad push --to keeper
-```
-
-
-<!-----
-
-#### Suggested alternatives to GIN that can be used with DataLad (selection):
-
-- [Keeper](https://keeper.mpdl.mpg.de/) (Seafile) offers all Max Planck employees 1TB(!) of storage (expandable)
-- [Open Science Framework (OSF)](https://osf.io/), popular in Psychology / Cognitive Neuroscience (see [details](http://docs.datalad.org/projects/osf/en/latest/))
--->
 
 ---
 
