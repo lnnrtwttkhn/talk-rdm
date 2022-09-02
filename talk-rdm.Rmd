@@ -375,6 +375,36 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/media/img/catalog/KEEPER_log
 datalad push --to keeper
 ```
 
+---
+
+# Data sharing via Edmond
+
+```{r, echo=FALSE, fig.align="center", out.width="35%", fig.retina=1, fig.cap='<a href="https://edmond.mpdl.mpg.de/" target="_blank">https://edmond.mpdl.mpg.de/</a>'}
+knitr::include_graphics("https://colab.mpdl.mpg.de/mw010/images/d/db/EDMOND_hell.png")
+```
+
+> "*Edmond is a research data repository for Max Planck researchers. It is the place to store completed datasets of research data with open access. Edmond serves the publication of research data from all disciplines [...].*"
+
+--
+
+- based on [Dataverse](https://dataverse.org/)
+- use free of charge
+- no storage limitation
+- data hosted on MPS servers
+- flexible licensing
+
+--
+
+#### DataLad dataverse integration (details [here](http://docs.datalad.org/projects/datalad-dataverse/en/latest/index.html))
+
+- "push" DataLad datasets (including version history, data, code, results and provenance) to Dataverse 
+- "clone" published DataLad datasets from Dataverse
+
+???
+
+With datalad-dataverse, the entire dataset is deposited on a Dataverse installation. Internally, this is achieved by packaging the "Git" part and depositing it alongside the annexed data, similar to how the datalad-next extensions allows to do this for webdav based services.
+
+The primary use case for dataverse siblings is dataset deposition, where only one site is uploading dataset and file content updates for others to reuse. Compared to workflows which use repository hosting services, this solution will be less flexible for collaboration (because it's not able to utilise features for controlling dataset history offered by repository hosting services, such as pull requests and conflict resolution), and might be slower (when it comes to file transfer). What it offers, however, is the ability to make the published dataset browsable like regular directories and amendable with metadata on the Dataverse instance while being cloneable through DataLad.
 
 <!-----
 
