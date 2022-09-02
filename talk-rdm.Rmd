@@ -61,11 +61,11 @@ pacman::p_load(char = packages_cran)
 1. **Introduction**
   - Version control
 2. **Research Workflow with DataLad**
-  - Intro to DataLad
-  - Reproducibility
-  - Code and Data Organization
-  - Datalad on Tardis
-  - Data Sharing with DataLad
+  - Code (Git etc.)
+  - Data (DataLad etc.)
+  - Environments (Docker etc.)
+  - Procedures (Make etc.)
+  - Communication (Issues etc.)
 3. **Discussion**
 
 ---
