@@ -347,31 +347,17 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_
 class: title-slide, center, middle
 name: workflow-sharing
 
-# Workflow: Code and data sharing using MPS infrastructure
+# Workflow: Data sharing using MPS infrastructure
 <!--the next --- is a horizontal line-->
 
 --- 
 
 ---
 
-# Summary
-
-#### `r emoji::emoji("question")` "*Did you notice any institute-specific peculiarities regarding infrastructure? *"
-
-1\. We are still lacking *MPIB-hosted* infrastructure to host DataLad datasets
-  - We have a [GitLab](https://git.mpib-berlin.mpg.de/explore/projects) instance to host dataset *structure*
-  - We have an *experimental* [in-house GIN instance](http://gin.mpib-berlin.mpg.de/) with 5TB that can also host annexed data
-  - We have [KEEPER](https://keeper.mpdl.mpg.de/accounts/login/?next=/) (cloud-sharing service with 1TB by the [MPDL](https://www.mpdl.mpg.de/en/)) which can be configured as a [DataLad special remote](http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html#the-common-case-repository-hosting-without-annex-support-and-special-remotes)
-
-&rarr; Flexible in-house storage space is needed!
-
----
-
 # Share version-controlled datasets with DataLad
 
-- With DataLad, you can share data like you share code
-- DataLad datsets can be cloned, pushed and updated from and to remote hosting
-services
+- With DataLad, you can **share data like you share code** (i.e., via repository hosting services)
+- DataLad datsets can be cloned, pushed and updated from and to remote hosting services
 
 ```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-105-install.html" target="_blank">DataLad Handbook: Install an existing dataset</a>'}
 knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collaboration.svg") 
@@ -381,7 +367,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collabora
 
 # Interoperability with a range of hosting services
 
-DataLad is built to maximize interoperability with a wide range of hosting services and storage technologies
+DataLad is built to **maximize interoperability with a wide range of hosting services** and storage technologies
 
 .center[
 ```{r, echo=FALSE, fig.align="center", out.width="55%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
@@ -393,7 +379,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishin
 
 # Data sharing via GIN
 
-```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://gin.g-node.org/" target="_blank">https://gin.g-node.org/</a>'}
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://gin.g-node.org/" target="_blank">gin.g-node.org</a>'}
 knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 ```
 
@@ -410,6 +396,10 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 - provides Digital Object Identifiers (DOIs) (details [here](https://gin.g-node.org/G-Node/Info/wiki/DOI))
 - allows to set own license (details [here](https://gin.g-node.org/G-Node/Info/wiki/Licensing))
 - DataLad plays perfectly with GIN, since both use git + git-annex (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))
+
+???
+
+We have an *experimental* [in-house GIN instance](http://gin.mpib-berlin.mpg.de/) with 5TB that can also host annexed data
 
 ---
 
@@ -431,7 +421,7 @@ datalad save -m "add data to dataset"
 
 --
 
-3\. Add the GIN remote ("sibling")
+3\. Add the GIN remote (aka. "sibling") to the repository
 
 ```{bash, eval=FALSE}
 datalad siblings add -d . --name gin --url git@gin.g-node.org:/my_username/my_dataset.git
@@ -464,7 +454,7 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/media/img/catalog/KEEPER_log
 
 --
 
-- \> 1 TB per Max Planck employee
+- \> 1 TB per Max Planck employee (expandable)
 - data hosted on MPS servers
 - configurable as a [DataLad special remote](http://handbook.datalad.org/en/latest/basics/101-139-dropbox.html)
 
@@ -473,6 +463,10 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/media/img/catalog/KEEPER_log
 ```{bash, eval=FALSE}
 datalad push --to keeper
 ```
+
+???
+
+**special remote**: git-annex concept: A protocol that defines the underlying transport of annexed files to and from places that are not Git repositories (e.g., a cloud service or external machines such as HPC systems).
 
 ---
 
@@ -487,8 +481,8 @@ knitr::include_graphics("https://colab.mpdl.mpg.de/mw010/images/d/db/EDMOND_hell
 --
 
 - based on [Dataverse](https://dataverse.org/)
-- use free of charge
-- no storage limitation
+- use is free of charge
+- no storage limitation (on datasets or individual files)
 - data hosted on MPS servers
 - flexible licensing
 
