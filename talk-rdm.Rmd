@@ -194,6 +194,27 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/8fda5b269fef4d778007/?dl=1
 
 ---
 
+# Code sharing via GitLab
+
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://gitlab.com/" target="_blank">gitlab.com</a>'}
+knitr::include_graphics("https://cdn.icon-icons.com/icons2/2415/PNG/512/gitlab_original_logo_icon_146503.png")
+```
+
+> "*GitLab is **open source** software to collaborate on code. Manage git repositories with fine-grained **access controls** that keep your code secure. [...] Perform **code reviews** and **enhance collaboration** with merge requests. Each project can also have an **issue tracker** and a **wiki**.*"
+
+--
+
+#### GitLab for Max Planck employees
+
+- hosted by GWDG: https://gitlab.gwdg.de
+- hosted by your institute<sup>1</sup>, e.g., at MPIB: https://git.mpib-berlin.mpg.de
+
+.footnote[
+<sup>1</sup> Using your Max Planck credentials, you should already have an account!
+]
+
+---
+
 class: title-slide, center, middle
 name: workflow-data
 
@@ -509,17 +530,6 @@ name: workflow-communication
 - Propose changes to code or data using [merge requests](https://docs.gitlab.com/ee/user/project/merge_requests/)
 - Manage access to your code and data with detailed [permissions and roles](https://docs.gitlab.com/ee/user/permissions.html)
 - Add documentation to your repo or in a separate [wiki](https://docs.gitlab.com/ee/user/project/wiki/)
-
---
-
-#### GitLab for Max Planck employees
-
-- hosted by GWDG: https://gitlab.gwdg.de
-- hosted by your institute<sup>1</sup>, e.g., at MPIB: https://git.mpib-berlin.mpg.de
-
-.footnote[
-<sup>1</sup> Using your Max Planck credentials, you might already have an account!
-]
 
 ---
 
