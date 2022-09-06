@@ -34,7 +34,7 @@ pacman::p_load(char = packages_cran)
 #### About me
 
 - **Position:** PostDoc at the [Max Planck Research Group "NeuroCode"](https://www.mpib-berlin.mpg.de/research/research-groups/mprg-neurocode) at the [Max Planck Institute for Human Development](https://www.mpib-berlin.mpg.de/en)
-- **Research:** I study the role of fast neural memory reactivation ([*replay*](https://en.wikipedia.org/wiki/Hippocampal_replay)) in decision-making in humans using fMRI
+- **Research:** I study the role of fast neural memory reactivation ([*replay*](https://en.wikipedia.org/wiki/Hippocampal_replay)) in the human brain using fMRI
 - **Background:** BSc Psychology (TU Dresden), MSc Cognitive Neuroscience (TU Dresden), PhD Psychology (FU Berlin)
 - **Roles:** Member of the MPIB's working group on research data management
 - **Contact:** You can contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de), [Twitter](https://twitter.com/lnnrtwttkhn),
@@ -46,10 +46,10 @@ pacman::p_load(char = packages_cran)
 
 #### About this presentation
 
-- **Slides:** Reproducible slides are publicly available via https://lennartwittkuhn.com/talk-rdm/
+- **Slides:** Reproducible slides are publicly available at [lennartwittkuhn.com/talk-rdm](https://lennartwittkuhn.com/talk-rdm/)
 - **Software:** Written in [RMarkdown](https://bookdown.org/yihui/rmarkdown/) using the [xaringan](https://github.com/yihui/xaringan) package, run in [Docker](https://www.docker.com/), deployed to [GitHub Pages](https://pages.github.com/) using [Travis CI](https://travis-ci.org/)
 - **DOI:** [10.5281/zenodo.5012477](http://doi.org/10.5281/zenodo.5012477) (generated using GitHub releases + Zenodo, see details [here](https://guides.github.com/activities/citable-code/))
-- **Source:** Source code is publicly available on GitHub: https://github.com/lnnrtwttkhn/talk-rdm/
+- **Source:** Source code is publicly available on GitHub at [github.com/lnnrtwttkhn/talk-rdm](https://github.com/lnnrtwttkhn/talk-rdm/)
 - **Links:** This presentation contains links to external resources. I do not take responsibility for the accuracy, legality or content of the external site or for that of subsequent links. If you notice an issue with a link, please contact me!
 - **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/s/CosmQVnEJ#) (public!)
 - **Contact**: I am happy for any feedback or suggestions via [email](mailto:wittkuhn@mpib-berlin.mpg.de) or [GitHub issues](https://github.com/lnnrtwttkhn/talk-rdm/issues). Thank you! `r emoji::emoji("pray")`
