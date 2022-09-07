@@ -334,9 +334,9 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/linkage_s
 
 # DataLad: Full provenance capture and reproducibility
 
-> *"DataLad allows to **capture full provenance**: The origin of datasets, the origin of files obtained from web sources, complete machine-readable and automatically reproducible records of how files were created (including software environments)."*
+> *"DataLad allows to **capture full provenance**: The origin of datasets, the origin of files obtained from web sources, complete machine-readable and automatically reproducible records of how files were created [...]."*
 
-```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/usecases/provenance_tracking.html" target="_blank">DataLad Handbook: Provenance tracking</a> and <a href="http://handbook.datalad.org/en/latest/basics/basics-run.html" target="_blank">run commands</a>'}
+```{r, echo=FALSE, fig.align="center", out.width="55%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/usecases/provenance_tracking.html" target="_blank">DataLad Handbook: Provenance tracking</a> and <a href="http://handbook.datalad.org/en/latest/basics/basics-run.html" target="_blank">run commands</a>'}
 knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/reproducible_execution.svg") 
 ```
 
@@ -348,7 +348,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/reproduci
 
 > *"**Export datasets to third party services** such as GitHub, GitLab, or Figshare with built-in commands."*
 
-```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/basics-thirdparty.html" target="_blank">DataLad Handbook: Third-party infrastructure</a>'}
+```{r, echo=FALSE, fig.align="center", out.width="65%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/basics-thirdparty.html" target="_blank">DataLad Handbook: Third-party infrastructure</a>'}
 knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/thirdparty.svg") 
 ```
 
@@ -383,7 +383,7 @@ name: workflow-sharing
 - With DataLad, you can **share data like you share code** (i.e., via repository hosting services)
 - DataLad datsets can be cloned, pushed and updated from and to remote hosting services
 
-```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-105-install.html" target="_blank">DataLad Handbook: Install an existing dataset</a>'}
+```{r, echo=FALSE, fig.align="center", out.width="75%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-105-install.html" target="_blank">DataLad Handbook: Install an existing dataset</a>'}
 knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collaboration.svg") 
 ```
 
