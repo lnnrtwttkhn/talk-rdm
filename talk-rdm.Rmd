@@ -70,6 +70,30 @@ pacman::p_load(char = packages_cran)
 
 ---
 
+# Credit and further reading
+
+#### Papers
+
+- Wilson et al. (2014). [Best practices for scientific computing](https://doi.org/10.1371/journal.pbio.1001745). *PLOS Biology*.
+- Wilson et al. (2017). [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510). *PLOS Computational Biology*.
+- Lowndes et al. (2017). [Our path to better science in less time using open data science tools](https://doi.org/10.1038/s41559-017-0160). *Nature Ecology Evolution*.
+
+#### Talks
+
+- Richard McElreath (2020). [Science as amateur software development](https://www.youtube.com/watch?v=zwRdO9_GGhY). YouTube
+- Russ Poldrack (2020). [Toward a Culture of Computational Reproducibility](https://www.youtube.com/watch?v=XjW3t-qXAiE). YouTube
+
+#### Handbooks
+
+- Adina Wagner et al. (2022). [The DataLad Handbook](http://handbook.datalad.org/)
+- Greg Wilson (2021). [Building software together](https://buildtogether.tech/)
+- Patrick J. Mineault & The Good Research Code Handbook Community (2021). [The Good Research Code Handbook](https://goodresearch.dev)
+- The Turing Way Community. (2019). [The Turing Way handbook to reproducible, ethical and collaborative data science](https://the-turing-way.netlify.app)
+
+... and many more!
+
+---
+
 class: title-slide, center, middle
 name: introduction
 
