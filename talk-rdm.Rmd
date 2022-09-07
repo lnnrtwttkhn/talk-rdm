@@ -642,6 +642,107 @@ The repository maintainer (i.e., you) can ...
 
 ---
 
+class: title-slide, center, middle
+name: discussion
+
+# Discussion
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Summary, outlook, challenges and discussions
+
+> *"He [Jon Claerbout] has also pointed out that we have reached a point where solutions are available - it is now possible to publish computational research that is really reproducible by others.*"
+
+Buckheit & Donoho (1995), describing how Jon Claerbout and his team shared CD-ROMs with interactive code that could regenerate the figures in their books - in the *early 90s* *(addition in parantheses)*
+
+--
+
+#### The technical solutions are already available!
+
+- Code and data management using Git / DataLad
+- Reproducible computational environments using software containers
+- Reliance on community standards for data organization and code style guides
+- Project management via issue boards and pull / merge requests on GitHub / GitLab
+- Focus education on reproducible science and technical skills
+
+--
+
+#### The long-term challenges are largely non-technical:
+- moving towards a "culture of reproducibility" (cf. Russ Poldrack, see e.g., [this talk](https://www.youtube.com/watch?v=XjW3t-qXAiE))
+- changing incentives / funding schemes
+- education, education, education
+- implementing "slow science" (see e.g., [Frith, 2020, *TICS*](https://doi.org/10.1016/j.tics.2019.10.007))
+
+---
+
+# Take-home message
+
+#### Science as distributed, open-source ~~software~~ *knowledge* development (cf. McElreath, 2020)
+
+We have all the tools we need to make science fully transparent and reproducible available today!
+
+--
+
+#### "*What can I do to get started?*"
+
+1. Learn about Git
+1. Learn about DataLad
+1. Learn about software containers
+
+... and reproducible you may be! `r emoji::emoji("sparkles")`
+
+---
+
+# Overview of learning resources
+
+#### Learn Git
+
+- ["Pro Git"](https://git-scm.com/book/en/v2) by Scott Chacon & Ben Straub
+- ["Happy Git and GitHub for the useR"](https://happygitwithr.com/) by Jenny Bryan, the STAT 545 TAs & Jim Hester
+- ["Version Control"](https://the-turing-way.netlify.app/reproducible-research/vcs.html) by The Turing Way
+- ["Version Control with Git"](https://swcarpentry.github.io/git-novice/) by The Software Carpentries
+- ["Version control"](http://neuroimaging-data-science.org/content/002-datasci-toolbox/002-git.html) (chapter 3 of "Neuroimaging and Data Science") by Ariel Rokem & Tal Yarkoni
+
+#### Learn DataLad
+
+- ["Datalad Handbook"](http://handbook.datalad.org/en/latest/) by the DataLad team / Wagner et al., 2022, *Zenodo*
+- ["Research Data Management with DataLad"](https://www.youtube.com/playlist?list=PLEQHbPfpVqU5sSVrlwxkP0vpoOpgogg5j) | Recording of a full-day workshop on YouTube
+- [Datalad on YouTube](https://www.youtube.com/c/DataLad) | Recorded workshops, tutorials and talks on DataLad
+
+---
+
+# Thank you!
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='<a href="https://schucklab.gitlab.io/" target="_blank">Schuck lab</a>'}
+knitr::include_graphics("https://schucklab.gitlab.io/img/group_photo.png")
+```
+]
+
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='<a href="https://www.mpg.de/en" target="_blank">Max Planck Society</a>'}
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/en/c/c9/Max-Planck-Gesellschaft.svg")
+```
+]
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="30%", fig.retina=1, fig.cap='<a href="https://www.mpib-berlin.mpg.de/mitarbeiter/michael-krause" target="_blank">Michael Krause</a>'}
+knitr::include_graphics("https://git.mpib-berlin.mpg.de/uploads/-/system/user/avatar/3/avatar.png?width=400")
+```
+]
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="30%", fig.retina=1, fig.cap='<a href="https://www.repronim.org/" target="_blank">ReproNim</a>'}
+knitr::include_graphics("https://www.repronim.org/images/logo-square-256.png")
+```
+]
+
+---
+
 # Random useful info about DataLad
 
 #### Use DataLad within Python `r emoji::emoji("snake")` and R `r emoji::emoji("pirate_flag")`
@@ -1197,106 +1298,6 @@ name: workflow-containers
 ```{bash, eval=FALSE}
 pip freeze > requirements.txt
 ```
-
----
-
-class: title-slide, center, middle
-name: discussion
-
-# Discussion
-<!--the next --- is a horizontal line-->
-
---- 
-
----
-
-# Summary, outlook, challenges and discussions
-
-> *"He [Jon Claerbout] has also pointed out that we have reached a point where solutions are available - it is now possible to publish computational research that is really reproducible by others.*"
-
-Buckheit & Donoho (1995), describing how Jon Claerbout and his team shared CD-ROMs with interactive code that could regenerate the figures in their books - in the *early 90s* *(addition in parantheses)*
-
---
-
-#### The technical solutions are already available!
-
-- Code and data management using Git / DataLad
-- Reproducible computational environments using software containers
-- Reliance on community standards for data organization and code style guides
-- Project management via issue boards and pull / merge requests on GitHub / GitLab
-- Focus education on reproducible science and technical skills
-
---
-
-#### The long-term challenges are largely non-technical:
-- moving towards a "culture of reproducibility" (cf. Russ Poldrack, see e.g., [this talk](https://www.youtube.com/watch?v=XjW3t-qXAiE))
-- changing incentives / funding schemes
-- education, education, education
-- implementing "slow science" (see e.g., [Frith, 2020, *TICS*](https://doi.org/10.1016/j.tics.2019.10.007))
-
----
-
-# Take-home message
-
-#### Science like open-source software development
-
-We have all the tools we need to make science fully transparent and reproducible available today!
-
---
-
-#### "*What can I do to get started?*"
-
-1. Learn about Git
-1. Learn about DataLad
-1. Learn about software containers
-
-... and reproducible you may be! `r emoji::emoji("sparkles")`
-
----
-
-# Overview of learning resources
-
-#### Learn Git
-
-- ["Pro Git"](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
-- ["Happy Git and GitHub for the useR"](https://happygitwithr.com/) by Jenny Bryan, the STAT 545 TAs, Jim Hester
-- ["Version Control"](https://the-turing-way.netlify.app/reproducible-research/vcs.html), by The Turing Way
-- ["Version Control with Git"](https://swcarpentry.github.io/git-novice/) by The Software Carpentries
-
-#### Learn DataLad
-
-- ["Datalad Handbook"](http://handbook.datalad.org/en/latest/) by the DataLad team
-- ["Research Data Management with DataLad"](https://www.youtube.com/playlist?list=PLEQHbPfpVqU5sSVrlwxkP0vpoOpgogg5j) | Recording of a full-day workshop on YouTube
-- [Datalad on YouTube](https://www.youtube.com/c/DataLad) | Recorded workshops, tutorials and talks on DataLad
-
----
-
-# Thank you!
-
-.pull-left[
-```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='<a href="https://schucklab.gitlab.io/" target="_blank">Schuck lab</a>'}
-knitr::include_graphics("https://schucklab.gitlab.io/img/group_photo.png")
-```
-]
-
-
-.pull-left[
-```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='<a href="https://www.mpg.de/en" target="_blank">Max Planck Society</a>'}
-knitr::include_graphics("https://upload.wikimedia.org/wikipedia/en/c/c9/Max-Planck-Gesellschaft.svg")
-```
-]
-
-.pull-left[
-```{r, echo=FALSE, fig.align="center", out.width="30%", fig.retina=1, fig.cap='<a href="https://www.mpib-berlin.mpg.de/mitarbeiter/michael-krause" target="_blank">Michael Krause</a>'}
-knitr::include_graphics("https://git.mpib-berlin.mpg.de/uploads/-/system/user/avatar/3/avatar.png?width=400")
-```
-]
-
-.pull-left[
-```{r, echo=FALSE, fig.align="center", out.width="30%", fig.retina=1, fig.cap='<a href="https://www.repronim.org/" target="_blank">ReproNim</a>'}
-knitr::include_graphics("https://www.repronim.org/images/logo-square-256.png")
-```
-]
 
 ---
 
