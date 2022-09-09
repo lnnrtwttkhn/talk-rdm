@@ -756,6 +756,21 @@ Open a new Issue in the [ repository](https://github.com/lnnrtwttkhn/talk-rdm/is
 
 ---
 
+exclude: true
+
+# Issue boards
+
+.pull-left[
+```{r, echo=FALSE, out.width="120%", fig.retina=1, fig.cap='<a href="https://docs.gitlab.com/ee/user/project/issue_board.html" target="_blank">GitLab Issue Boards</a>'}
+knitr::include_graphics("https://docs.gitlab.com/ee/user/project/img/issue_boards_core_v14_1.png") 
+```
+]
+
+
+
+
+---
+
 # Propose and implement changes: Merge / pull requests
 
 --
