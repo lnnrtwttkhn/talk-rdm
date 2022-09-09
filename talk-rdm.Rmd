@@ -59,14 +59,19 @@ pacman::p_load(char = packages_cran)
 # Agenda
 
 1. **Introduction**
-  - Version control
-2. **Research Workflow with DataLad**
+2. **Research Workflow**
   - Code (Git etc.)
   - Data (DataLad etc.)
-  - Environments (Docker etc.)
-  - Procedures (Make etc.)
   - Communication (Issues etc.)
+  - *Environments (Docker etc.)*
+  - *Procedures (Make etc.)*
 3. **Discussion**
+
+???
+
+- Kurze Einleitung in die Thematik
+- Fokus auf drei Aspekte des vorgeschlagenen Workflows: Code, Daten, Kommunikation
+- Anstösse für die Diskussion
 
 ---
 
