@@ -291,12 +291,16 @@ knitr::include_graphics("https://zenodo.org/record/3695300/files/ProjectHistory.
 
 # Version control with Git
 
+```{r, echo=FALSE, fig.align="center", out.width="15%", fig.retina=1}
+knitr::include_graphics("https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png")
+```
+
 > Version control is a systematic approach to record changes made in a [...] set of files, over time. This allows you and your collaborators to track the history, see what changed, and recall specific versions later [...] ([Turing Way](https://the-turing-way.netlify.app/reproducible-research/vcs.html))
 
 --
 
 .pull-left[
-#### Basic versioning workflow 
+#### Basic version control workflow 
 1. Create files (text, code, etc.)
 1. Work on the files (change, delete or add content)
 1. **Create a snapshot of the file status** (a "commit")
