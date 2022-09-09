@@ -309,7 +309,8 @@ knitr::include_graphics("https://git-scm.com/images/logos/downloads/Git-Logo-2Co
 <!-- see https://stackoverflow.com/questions/46408057/incremental-slides-do-not-work-with-a-two-column-layout-->
 
 .pull-right[
-```{r, echo=FALSE, fig.align="center", out.width="75%", fig.retina=1, fig.cap='<a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control" target="_blank">Figure 3: Distributed Version Control Systems</a>'}
+```{r, echo=FALSE, fig.align="center", out.width="55%", fig.retina=1}
+# fig.cap='<a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control" target="_blank">Figure 3: Distributed Version Control Systems</a>'
 knitr::include_graphics("https://git-scm.com/book/en/v2/images/distributed.png") 
 ```
 ]
@@ -320,7 +321,6 @@ knitr::include_graphics("https://git-scm.com/book/en/v2/images/distributed.png")
 
 - most popular **distributed version control system**
 - free, [open-source](https://github.com/git) command-line tool
-- started by [Linus Torvalds](https://en.wikipedia.org/wiki/Git#History) (creator of Linux) in 2005
 - standard tool for most (all?) software developers
 - Graphical User Interfaces (GUIs) exist, e.g., [GitKraken](https://www.gitkraken.com/)
 
