@@ -351,7 +351,7 @@ knitr::include_graphics("https://git-scm.com/book/en/v2/images/distributed.png")
 ]
 
 .pull-right[
-```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap="Screenshot of GitKraken"}
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap="Commit history in GitKraken"}
 knitr::include_graphics("https://keeper.mpdl.mpg.de/f/8fda5b269fef4d778007/?dl=1") 
 ```
 ]
