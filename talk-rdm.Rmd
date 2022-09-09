@@ -113,22 +113,153 @@ name: introduction
 --- 
 
 ---
+exclude: true
 
-# The need for *proper* version-control in a nutshell
+# Motivation: "Open" Science should just be "Science"
 
-```{r, echo=FALSE, fig.align="center", out.width="33%", fig.retina=1, fig.cap='<a href="http://phdcomics.com/comics/archive/phd101212s.gif" target="_blank"><sup>&copy; Jorge Cham (phdcomics.com)</sup></a>'}
+.pull-left[
+*"An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship.
+The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures."*
+
+Buckheit & Donoho (1995), paraphrasing Jon Claerbout
+{{content}}
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='<a href="https://wiki.seg.org/wiki/Jon_Claerbout" target="_blank">Jon Claerbout</a></br>Geophysicist at Stanford University</br>(CC-BY-SA)'}
+knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot.jpg") 
+```
+]
+
+???
+
+- "Open Science" vielgehörter Begriff
+- Praktiken von Open Science (Open Access, Open Data, Open Code) entsprechen Elementen der guten wissenschaftlichen Praxis
+- Ansatz: Offenheit der Offenen Wissenschaft sollte Standard sein
+- Die Basis der berichteten Ergebnisse in einem Paper (Code, Daten, etc.) sollten zugänglich und nutzbar sein, sonst bleibt die eigentliche Arbeit unzugänglich, nicht überprüfbar und nicht reproduzierbar
+
+<!--the next --- is a horizontal line-->
+--- 
+
+- Jon Claerbout, a distinguished exploration geophysicist at Stanford University
+- He has also pointed out that we have reached a point where solutions are available - it is now possible to publish computational research that is really reproducible by others.
+
+---
+
+exclude: true
+
+# Reproducible research
+
+> *"[...] when the same analysis steps performed on the same dataset consistently produces the same answer."*
+
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='<a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html" target="_blank">Table of Definitions for Reproducibility</a> by <i>The Turing Way</i> (CC-BY 4.0)'}
+knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible-matrix.jpg") 
+```
+
+???
+
+- Komputationale Reproduzierbarkeit: Situation, wenn die gleiche Analyse der gleichen Daten das gleiche Ergebnis hervorbringt
+- Komputationale Reproduzierbarkeit als Mindestanforderung für Forschungsarbeit
+- Grundvoraussetzung für replizierbare, robuste und generalisierbare Forschung
+- Oft können Ergebnisse kurze Zeit nach Publikation nicht mehr von den Originalautoren reproduziert werden
+- Wie verlässlich sind die Ergebnisse? Wie effizient ist diese Art Forschung zu betreiben?
+
+--- 
+
+- **Reproducible:** A result is reproducible when the same analysis steps performed on the same dataset consistently produces the same answer.
+- **Replicable:** A result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.
+- **Robust:** A result is robust when the same dataset is subjected to different analysis workflows to answer the same research question (for example one pipeline written in R and another written in Python) and a qualitatively similar or identical answer is produced. Robust results show that the work is not dependent on the specificities of the programming language chosen to perform the analysis.
+- **Generalisable:** Combining replicable and robust findings allow us to form generalisable results. Note that running an analysis on a different software implementation and with a different dataset does not provide generalised results. There will be many more steps to know how well the work applies to all the different aspects of the research question. Generalisation is an important step towards understanding that the result is not dependent on a particular dataset nor a particular version of the analysis pipeline.
+
+---
+
+# Challenge: Many stages in the research cycle
+
+```{r, echo=FALSE, fig.align="center", out.width="58%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/4906004" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://the-turing-way.netlify.app/_images/research-cycle.jpg") 
+```
+
+???
+
+- Reproduzierbarkeit ist sehr anspruchsvoll für komplexe Forschungsprojekte
+- Viele Schritte im Forschungsprozess über viele Jahre
+- Formalisieren dieser Herausforderung
+
+
+---
+
+# Challenge: Interactions between data and code
+
+```{r, echo=FALSE, fig.align="center", out.width="40%", fig.retina=1}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/7094210d35484a1f8f8c/?dl=1")
+```
+
+???
+
+- **Code:** Kleine Textdatein
+ - z.B. Programmiercode in Python oder R
+ - Manuskript in LaTeX
+- **Daten:** binäre Dateeien und größere Textdateien
+ - MRT Daten
+ - größere tabellarische Daten (`.csv`)
+- **Prozeduren:** Code und Daten interagieren
+ - Basierend auf Daten werden mit Code neue Daten produziert: Ich lese Dateien ein und produziere Grafiken
+ - Code produziert alleine neue Daten (z.B. in Simulationen)
+ - Prozeduren können und sollten dokumentiert werden bzw. maschinenausführbar implementiert werden
+- **Umgebung:** Komputationale Umgebungen (Betriebssystem, Softwareversionen), die diese Interaktion von Code und Daten möglich machen und beeinflussen
+  - Reproduzierbare komputationale Umgebungen verhindern das "Works On My Machine"-Problem
+- **Kommunikation:**
+ - Koordination der Arbeit mit mehrere Forschenden
+ - Absprachen, Entscheidungen, etc.
+
+Fokus: Code, Daten, Kommunikation
+
+--- 
+
+- Data is produced through code (e.g., task code)
+- Data is manipulated by code and new data is generated
+ - Mapping between input and output data
+- This happens using specific software in specific versions
+
+---
+
+class: title-slide, center, middle
+name: workflow-git
+
+# Workflow: Code management using Git
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Why we need version control for code
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='<a href="http://phdcomics.com/comics/archive/phd101212s.gif" target="_blank"><sup>&copy; Jorge Cham (phdcomics.com)</sup></a>'}
 knitr::include_graphics("http://phdcomics.com/comics/archive/phd101212s.gif") 
 ```
+]
+
+.pull-right[
+- It worked when I ran it last time!
+
+
+]
+
+???
+
+- Vielen, die an einem langen Textdokument gearbeitet haben, inbesondere zusammen mit anderen, sollte dieses Problem bekannt vorkommen
+ - Viele Runden von Veränderungen und Anpassungen
+ - Speichern von Zwischenergebnissen
+ - Entstehung von Parallelversionen 
+ - Bei Programmiercode: Warum funktioniert der Code in dieser Version nicht?
+- Lösung: Versionskontrolle
+- Hier: Implizite Versionskontrolle, die an ihre Grenzen stösst
 
 ---
 
-# The need for *proper* version-control in a nutshell
-
-```{r, echo=FALSE, fig.align="center", out.width="55%", fig.retina=1, fig.cap='<a href="http://phdcomics.com/comics/archive/phd052810s.gif" target="_blank"><sup>&copy; Jorge Cham (phdcomics.com)</sup></a>'}
-knitr::include_graphics("http://phdcomics.com/comics/archive/phd052810s.gif") 
-```
-
----
+exclude: true
 
 # What is version control?
 
