@@ -188,7 +188,7 @@ knitr::include_graphics("https://the-turing-way.netlify.app/_images/research-cyc
 
 ---
 
-# Challenge: Interactions between data and code
+# Challenge: Many computational interactions
 
 ```{r, echo=FALSE, fig.align="center", out.width="40%", fig.retina=1}
 knitr::include_graphics("https://keeper.mpdl.mpg.de/f/7094210d35484a1f8f8c/?dl=1")
@@ -447,7 +447,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/dataset.s
 
 ---
 
-# DataLad: Version-control arbitrarily large files
+# DataLad: Version control arbitrarily large files
 
 > *"Building on top of Git and git-annex, DataLad allows you to version control arbitrarily large files in datasets."*
 
