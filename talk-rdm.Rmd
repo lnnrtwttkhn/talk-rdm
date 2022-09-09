@@ -144,13 +144,17 @@ knitr::include_graphics("https://zenodo.org/record/3695300/files/ProjectHistory.
 ```
 ]
 
---
-
 .center[
 - keep files organized
 - keep track of changes
 - revert changes or go back to previous versions
 ]
+
+???
+
+- Datein zu organisieren
+- präziser Verlauf aller Veränderungen an einer Datei
+- Änderungen zurücknehmen und zu älteren Versionen zurückkehren
 
 ---
 
