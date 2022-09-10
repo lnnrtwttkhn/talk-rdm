@@ -230,7 +230,7 @@ Fokus: Code, Daten, Kommunikation
 class: title-slide, center, middle
 name: workflow-git
 
-# Workflow: Code management using Git
+# Workflow: Code Management using Git
 <!--the next --- is a horizontal line-->
 
 --- 
@@ -299,7 +299,7 @@ knitr::include_graphics("https://git-scm.com/images/logos/downloads/Git-Logo-2Co
 #### Basic version control workflow 
 1. Create files (text, code, etc.)
 1. Work on the files (change, delete or add content)
-1. **Create a snapshot of the file status** (a "commit")
+1. **Create a snapshot of the file state** (current version)
 {{content}}
 ]
 <!-- see https://stackoverflow.com/questions/46408057/incremental-slides-do-not-work-with-a-two-column-layout-->
@@ -317,9 +317,8 @@ knitr::include_graphics("https://git-scm.com/book/en/v2/images/distributed.png")
 
 - most popular **distributed version control system**
 - free, [open-source](https://github.com/git) command-line tool
-- standard tool for most (all?) software developers
 - Graphical User Interfaces (GUIs) exist, e.g., [GitKraken](https://www.gitkraken.com/)
-
+- standard tool for most (all?) software developers
 
 ???
 
@@ -646,9 +645,11 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 
 ???
 
-We have an *experimental* [in-house GIN instance](http://gin.mpib-berlin.mpg.de/) with 5TB that can also host annexed data
+- We have an *experimental* [in-house GIN instance](http://gin.mpib-berlin.mpg.de/) with 5TB that can also host annexed data
 
 ---
+
+exclude: true
 
 # Publishing a DataLad dataset to GIN in only 4 steps
 
@@ -692,7 +693,7 @@ Done!<sup>1</sup> 🎉
 
 # Data sharing via Keeper
 
-```{r, echo=FALSE, fig.align="center", out.width="35%", fig.retina=1, fig.cap='<a href="https://keeper.mpdl.mpg.de/" target="_blank">https://keeper.mpdl.mpg.de/</a>'}
+```{r, echo=FALSE, fig.align="center", out.width="35%", fig.retina=1, fig.cap='<a href="https://keeper.mpdl.mpg.de/" target="_blank">keeper.mpdl.mpg.de</a>'}
 knitr::include_graphics("https://keeper.mpdl.mpg.de/media/img/catalog/KEEPER_logo.png")
 ```
 
@@ -702,14 +703,9 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/media/img/catalog/KEEPER_log
 --
 
 - \> 1 TB per Max Planck employee (expandable)
+- based on the cloud-sharing service [Seafile](https://www.seafile.com/en/home/) (similar to Dropbox)
 - data hosted on MPS servers
 - configurable as a [DataLad special remote](http://handbook.datalad.org/en/latest/basics/101-139-dropbox.html)
-
-... and after some configuration ✨:
-
-```{bash, eval=FALSE}
-datalad push --to keeper
-```
 
 ???
 
@@ -719,7 +715,7 @@ datalad push --to keeper
 
 # Data sharing via Edmond
 
-```{r, echo=FALSE, fig.align="center", out.width="35%", fig.retina=1, fig.cap='<a href="https://edmond.mpdl.mpg.de/" target="_blank">https://edmond.mpdl.mpg.de/</a>'}
+```{r, echo=FALSE, fig.align="center", out.width="35%", fig.retina=1, fig.cap='<a href="https://edmond.mpdl.mpg.de/" target="_blank">edmond.mpdl.mpg.de</a>'}
 knitr::include_graphics("https://colab.mpdl.mpg.de/mw010/images/d/db/EDMOND_hell.png")
 ```
 
@@ -727,18 +723,18 @@ knitr::include_graphics("https://colab.mpdl.mpg.de/mw010/images/d/db/EDMOND_hell
 
 --
 
-- based on [Dataverse](https://dataverse.org/)
+- based on [Dataverse](https://dataverse.org/), hosted on MPS servers
 - use is free of charge
 - no storage limitation (on datasets or individual files)
-- data hosted on MPS servers
 - flexible licensing
 
 --
 
-#### DataLad dataverse integration (details [here](http://docs.datalad.org/projects/datalad-dataverse/en/latest/index.html))
+#### DataLad - Dataverse integration (details [here](http://docs.datalad.org/projects/datalad-dataverse/en/latest/index.html))
 
 - "push" DataLad datasets (including version history, data, code, results and provenance) to Dataverse 
 - "clone" published DataLad datasets from Dataverse
+- primarily for one-time dataset publication and consumption, not extensive collaboration
 
 ???
 
@@ -769,17 +765,20 @@ name: workflow-communication
 
 ---
 
-# Project management next to your data and code
-# Project management next to your code and data
+# Communication and project management
+
+#### Status-quo
+
+- Multitude of channels: Notepads, Email, Messenger (e.g., Mattermost), Project Management Software (e.g., Trello), ...
 
 --
 
-#### Project management infrastructure via repository hosting services (e.g., GitLab / GitHub)
+#### `r emoji::emoji("bulb")` Project management next to your code and data via repository hosting services (e.g., GitLab)
 
 - Discuss and plan your work in [Issues](https://docs.gitlab.com/ee/user/project/issues/)
 - Propose changes to code or data using [merge requests](https://docs.gitlab.com/ee/user/project/merge_requests/) <sup>1</sup>
 - Manage access to your code and data with detailed [permissions and roles](https://docs.gitlab.com/ee/user/permissions.html)
-- Add documentation to your repo or in a separate [wiki](https://docs.gitlab.com/ee/user/project/wiki/)
+- Add documentation to your repository or in a separate [wiki](https://docs.gitlab.com/ee/user/project/wiki/)
 
 .footnote[
 <sup>1</sup> *merge* requests on GitLab / *pull* requests on GitHub
@@ -895,19 +894,17 @@ name: discussion
 
 # Summary, outlook, challenges and discussions
 
-> *"He [Jon Claerbout] has also pointed out that we have reached a point where solutions are available - it is now possible to publish computational research that is really reproducible by others.*"
-
-Buckheit & Donoho (1995), describing how Jon Claerbout and his team shared CD-ROMs with interactive code that could regenerate the figures in their books - in the *early 90s* *(addition in parantheses)*
+> How can we conduct our research openly and reproducibly?
 
 --
 
 #### The technical solutions are already available!
 
-- Code and data management using Git / DataLad
-- Reproducible computational environments using software containers
-- Reliance on community standards for data organization and code style guides
-- Project management via issue boards and pull / merge requests on GitHub / GitLab
-- Focus education on reproducible science and technical skills
+- Code and data management using Git / DataLad (free, open-source command-line tools)
+- Code and data sharing via flexible MPS-hosted infrastructure (GIN, Keeper, Edmond, etc.)
+- Project management and communication via issue boards and merge requests on GitLab
+- *Reproducible computational environments using software containers (e.g., Docker)*
+- *Reliance on community standards for data organization and code style guides*
 
 --
 
@@ -933,7 +930,7 @@ We have all the tools we need to make science fully transparent and reproducible
 1. Learn about DataLad
 1. Learn about software containers
 
-... and reproducible you may be! `r emoji::emoji("sparkles")`
+... and reproducible we may be! `r emoji::emoji("sparkles")`
 
 ---
 
