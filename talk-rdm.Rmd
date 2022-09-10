@@ -44,7 +44,8 @@ pacman::p_load(char = packages_cran)
 
 ???
 
-- FDM aus Sicht eines Forschenden
+- FDM und Open Science aus Sicht eines Forschenden
+- Wie mit Code und Daten effektiv umgegangen werden kann
 
 
 --
@@ -76,6 +77,7 @@ pacman::p_load(char = packages_cran)
 
 - Kurze Einleitung in die Thematik
 - Fokus auf drei Aspekte des vorgeschlagenen Workflows: Code, Daten, Kommunikation
+- Verweise auf Infrastruktur innerhalb der MPG
 - Anstösse für die Diskussion
 
 ---
@@ -181,8 +183,10 @@ knitr::include_graphics("https://the-turing-way.netlify.app/_images/research-cyc
 
 ???
 
-- Reproduzierbarkeit ist sehr anspruchsvoll für komplexe Forschungsprojekte
+- Moderne Forschung ist sehr umfangreich und komplex
+- Gleichzeitig gibt es hohe Ansprüche an die Forschung: Sie soll exakt sein, objektiv, transparent, nachvollziehbar und reproduzierbar sein
 - Viele Schritte im Forschungsprozess über viele Jahre
+- Bei jedem dieser Schritte werden i.d.R. Daten generiert und verarbeitet - wie kann man damit systematisch und effektiv umgehen?
 - Formalisieren dieser Herausforderung
 
 
@@ -398,6 +402,19 @@ name: workflow-data
 knitr::include_graphics("http://phdcomics.com/comics/archive/phd052810s.gif") 
 ```
 
+???
+
+- Problem mangelnder Versionskontrolle gibt es auch für Daten
+- Daten können sich über die Zeit verändern
+- Mehrere Versionen der gleichen Datei mit unklaren Unterschieden
+- Vermischung verschiedener Daten
+
+<!--the next --- is a horizontal line-->
+--- 
+
+- Kann man Git verwenden? Git ist für die Versionskontrolle von kleineren, textbasierten Dateien geeignet
+- Gibt es auch Versionskontrolle für Daten?
+
 ---
 
 # What is DataLad?
@@ -426,6 +443,12 @@ knitr::include_graphics("https://avatars.githubusercontent.com/u/8927200?s=200&v
 
 ???
 
+- DataLad ist domänen-unspezifisch und kann für jede Art von Daten verwendet werden
+- DataLad interagiert mit verschiedenen bekannten Infrastrukturen und Hosting-Plattformen
+
+<!--the next --- is a horizontal line-->
+--- 
+
 #### What is DataLad? (see the [10,000 feet](http://handbook.datalad.org/en/latest/intro/executive_summary.html) and [brief](http://handbook.datalad.org/en/latest/intro/philosophy.html) overview in the DataLad Handbook by [Wagner et al., 2020, *Zenodo*](https://doi.org/10.5281/ZENODO.3905791))
 
 #### Human Connectome Project
@@ -445,6 +468,12 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/dataset.s
 
 > "*You can create new, empty datasets [..] and populate them, or transform existing directories into datasets.*"
 
+???
+
+- Wie bei Git, ist ein DataLad dataset ist einfach nur ein Ordner auf dem Computer der von DataLad getrackt wird
+- Man kann neue, leere Datasets erstellen und befüllen oder bereits existierende Ordner mit Dateien in DataLad datasets überführen
+
+
 ---
 
 # DataLad: Version control arbitrarily large files
@@ -456,6 +485,10 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/local_wf.
 ```
 
 > *"[...] keep track of revisions of data of any size, and view, interact with or restore any version of your dataset [...]."*
+
+???
+
+- DataLad trackt Veränderungen in Dateien jeglicher Größe und speichert den Zustand in der Repository Historie ab
 
 ---
 
@@ -469,6 +502,11 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/local_wf.
 knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collaboration.svg") 
 ```
 
+???
+
+- Mit DataLad können bereits existierende Datensätze gecloned / installiert werden, damit weitergearbeitet werden
+- Eigene Datasets können zu einer Reihe von Hosting-Platformen publiziert und mit anderen geteilt werden
+
 ---
 
 # DataLad: Dataset linkage
@@ -481,7 +519,17 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/linkage_s
 
 > *"Each dataset has an independent [...] history, but can be registered at a precise version in higher-level datasets. This allows to **combine datasets** and to perform commands recursively across a hierarchy of datasets, and it is the basis for advanced provenance capture abilities."*
 
+???
+
+- DataLad datasets können miteinander verlinkt werden
+- DataLad speichert die präzise Version des Datensatzes, der verwendet wird
+- Sehr geeignet für die Art von sequentiellen Datenverarbeitungsschritten in der Forschung
+- Modularität der einzelnen Datasets erleichtert Wiederwendung
+- Git user: funktioniert mit Git submodules
+
 ---
+
+exclude: true
 
 # DataLad: Full provenance capture and reproducibility
 
@@ -505,6 +553,11 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/thirdpart
 
 > *"Alternatively, you can use a **multitude of other available third party services** such as Dropbox, Google Drive, Amazon S3, owncloud, or many more that DataLad datasets are compatible with."*
 
+???
+
+- DataLad integriert mit einer Reihe von Platformen und Services, die in der Forschung verbreitet sind
+- Dadurch ermöglicht DataLad systematische Kollaboration und Veröffentlichung von größeren Datensätzen
+
 ---
 exclude: true
 
@@ -527,6 +580,10 @@ name: workflow-sharing
 
 --- 
 
+???
+
+- Fokus, wie Infrastruktur der MPG zum Tragen kommt
+
 ---
 
 # Share version-controlled datasets with DataLad
@@ -537,6 +594,10 @@ name: workflow-sharing
 ```{r, echo=FALSE, fig.align="center", out.width="75%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-105-install.html" target="_blank">DataLad Handbook: Install an existing dataset</a>'}
 knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collaboration.svg") 
 ```
+
+???
+
+- Mit DataLad können wir Daten genau so mit anderen Teilen, wie wir es mit Git und Code gewohnt
 
 ---
 
@@ -550,6 +611,12 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishin
 ```
 ]
 
+???
+
+- DataLad interagiert mit einer Vielzahl von Hosting-Services
+- Bekannte wie GitHub, GitLab, Open Science Framework (OSF)
+- Fokus auf drei Services, die von der MPG angeboten werden bzw. könnten
+
 ---
 
 # Data sharing via GIN
@@ -560,9 +627,14 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 
 > "*GIN is [...] a web-accessible repository store of your data based on git and git-annex that you can access securely anywhere you desire while keeping your data in sync, backed up and easily accessible [...]"*
 
+???
+
+- Angebot des German Neuroinformatics Node (GNode) in München
+- Fokus auf Neurowissenschaften, aber im Prinzip für Daten verschiedener Disziplinen verwendbar
+
 --
 
-#### Advantages of GIN
+#### `r emoji::emoji("sparkles")` Advantages of GIN
 
 - free to use and open-source (could be hosted within MPIs / MPS; details [here](https://gin.g-node.org/G-Node/Info/wiki/In+House))
 - supports private and public repositories
@@ -669,6 +741,9 @@ knitr::include_graphics("https://colab.mpdl.mpg.de/mw010/images/d/db/EDMOND_hell
 - "clone" published DataLad datasets from Dataverse
 
 ???
+
+- nach Hackathon während des Meetings der Organization for Human Brain Mapping (OHBM) gibt es seit Juli 2022 eine DataLad-Dataverse Integration (noch nicht getestest!)
+
 
 With datalad-dataverse, the entire dataset is deposited on a Dataverse installation. Internally, this is achieved by packaging the "Git" part and depositing it alongside the annexed data, similar to how the datalad-next extensions allows to do this for webdav based services.
 
