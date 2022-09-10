@@ -433,6 +433,8 @@ knitr::include_graphics("https://avatars.githubusercontent.com/u/8927200?s=200&v
 
 --
 
+exclude: true
+
 #### DataLad philosophy (excerpt)
 
 - DataLad knows only two things: Datasets and files
@@ -661,6 +663,8 @@ datalad create my_dataset
 
 --
 
+exclude: true
+
 2\. Save data into the dataset
 
 ```{bash, eval=FALSE}
@@ -668,6 +672,8 @@ datalad save -m "add data to dataset"
 ```
 
 --
+
+exclude: true
 
 3\. Add the GIN remote (aka. "sibling") to the repository
 
@@ -677,6 +683,8 @@ datalad siblings add -d . --name gin --url git@gin.g-node.org:/my_username/my_da
 
 --
 
+exclude: true
+
 4\. Transfer the dataset to GIN
 
 ```{bash, eval=FALSE}
@@ -684,6 +692,8 @@ datalad push --to gin
 ```
 
 --
+
+exclude: true
 
 Done!<sup>1</sup> 🎉
 
