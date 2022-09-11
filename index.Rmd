@@ -1,5 +1,5 @@
 ---
-title: "Talks on research data management"
+title: "Talks on research data management, open science and reproducibility"
 author: "Lennart Wittkuhn"
 affiliation: "Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Berlin, Germany"
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`"
