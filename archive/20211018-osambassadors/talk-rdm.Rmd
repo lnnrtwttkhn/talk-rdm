@@ -1153,13 +1153,13 @@ knitr::include_graphics("https://schucklab.gitlab.io/img/group_photo.png")
 
 .pull-left[
 ```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='<a href="https://www.mpg.de/en" target="_blank">Max Planck Society</a>'}
-knitr::include_graphics("https://upload.wikimedia.org/wikipedia/en/c/c9/Max-Planck-Gesellschaft.svg")
+knitr::include_graphics("https://www.mpg.de/assets/og-logo-8216b4912130f3257762760810a4027c063e0a4b09512fc955727997f9da6ea3.jpg")
 ```
 ]
 
 .pull-left[
 ```{r, echo=FALSE, fig.align="center", out.width="30%", fig.retina=1, fig.cap='<a href="https://www.mpib-berlin.mpg.de/mitarbeiter/michael-krause" target="_blank">Michael Krause</a>'}
-knitr::include_graphics("https://git.mpib-berlin.mpg.de/uploads/-/system/user/avatar/3/avatar.png?width=400")
+knitr::include_graphics("https://secure.gravatar.com/avatar/f49adcdd1c7bb710cdf529ab916c3098?s=800&d=identicon")
 ```
 ]
 
