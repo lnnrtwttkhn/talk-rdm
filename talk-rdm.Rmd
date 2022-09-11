@@ -1684,7 +1684,7 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/ead22cde6d724eda81d2/?dl=1
 # Challenge: Documentation of methods and provenance
 
 ```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap="&copy; Sidney Harris"}
-knitr::include_graphics("https://www.researchgate.net/profile/M-Tarbell/publication/333061528/figure/fig2/AS:787157769801731@1564684445486/Where-AI-stands-today-Then-a-miracle-occurs-C-Sidney-Harris-in-American-Scientist.png") 
+knitr::include_graphics("https://www.openuphub.eu/media/zoo/images/Sidney%20Harris_60c1243bb770a33f55ab7b012ff3e6dd.jpg")
 ```
 
 ???
