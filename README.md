@@ -5,8 +5,6 @@
 
 ## About
 
-This talk is about how we shared code, data and computational environments used in [Wittkuhn & Schuck, 2021, *Nature Communications*](https://doi.org/10.1038/s41467-021-21970-2).
-
 Slides are available at: https://lennartwittkuhn.com/talk-rdm/
 
 ## History
