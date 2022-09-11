@@ -929,7 +929,8 @@ name: workflow-code
 
 .pull-left[
 ```{r, echo=FALSE, out.width="100%", fig.retina=1}
-knitr::include_graphics("https://docs.gitlab.com/ee/user/project/issues/img/new_issue_v13_1.png")
+knitr::include_graphics("https://gitlab.pavlovia.org/help/user/project/issues/img/new_issue.png")
+# https://docs.gitlab.com/ee/user/project/issues/img/new_issue_v13_1.png
 ```
 
 #### Example
