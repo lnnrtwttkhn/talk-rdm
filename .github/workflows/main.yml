@@ -1,0 +1,34 @@
+name: Build and Deploy
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: lennartwittkuhn/talk-rdm
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install and Build
+        run: |
+          Rscript -e "rmarkdown::render('index.Rmd', output_dir = 'public', output_file = 'index.html')"
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: page
+          path: public
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: page
+          path: public
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: public
