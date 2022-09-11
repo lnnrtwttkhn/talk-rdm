@@ -578,7 +578,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collabora
 > *"Datasets can contain other datasets (subdatasets), **nested arbitrarily deep.**"*
 
 ```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-106-nesting.html" target="_blank">DataLad Handbook: Nesting datasets</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/linkage_subds1.svg") 
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/linkage_subds.svg") 
 ```
 
 > *"Each dataset has an independent [...] history, but can be registered at a precise version in higher-level datasets. This allows to **combine datasets** and to perform commands recursively across a hierarchy of datasets, and it is the basis for advanced provenance capture abilities."*
