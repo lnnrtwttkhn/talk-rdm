@@ -2,7 +2,7 @@
 title: "Tools for an open and reproducible research workflow"
 subtitle: "5<sup>th</sup> Research Data Management Workshop 2022"
 author: "Dr. Lennart Wittkuhn | wittkuhn@mpib-berlin.mpg.de"
-institute: "Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Berlin, Germany"
+institute: "Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Leipzig, Germany"
 date: "Tuesday, 13<sup>th</sup> of September 2022"
 #date: "Last update of slides: `r format(Sys.time(), '%H:%M | %B %d, %Y')`"
 output:
@@ -36,7 +36,7 @@ pacman::p_load(char = packages_cran)
 - **Position:** PostDoc at the [Max Planck Research Group "NeuroCode"](https://www.mpib-berlin.mpg.de/research/research-groups/mprg-neurocode) at the [Max Planck Institute for Human Development](https://www.mpib-berlin.mpg.de/en)
 - **Research:** I study the role of fast neural memory reactivation ([*replay*](https://en.wikipedia.org/wiki/Hippocampal_replay)) in the human brain using fMRI
 - **Background:** BSc Psychology (TU Dresden), MSc Cognitive Neuroscience (TU Dresden), PhD Psychology (FU Berlin)
-- **Roles:** Member of the MPIB's working group on research data management
+- **Roles:** Member of the MPIB's working group on research data management and open science
 - **Contact:** You can contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de), [Twitter](https://twitter.com/lnnrtwttkhn),
 [GitHub](https://github.com/lnnrtwttkhn) or
 [LinkedIn](https://www.linkedin.com/in/lennart-wittkuhn-6a079a1a8/)
@@ -53,7 +53,7 @@ pacman::p_load(char = packages_cran)
 #### About this presentation
 
 - **Slides:** Reproducible slides are publicly available at [lennartwittkuhn.com/talk-rdm](https://lennartwittkuhn.com/talk-rdm/)
-- **Software:** Written in [RMarkdown](https://bookdown.org/yihui/rmarkdown/) using the [xaringan](https://github.com/yihui/xaringan) package, run in [Docker](https://www.docker.com/), deployed to [GitHub Pages](https://pages.github.com/) using [Travis CI](https://travis-ci.org/)
+- **Software:** Written in [RMarkdown](https://bookdown.org/yihui/rmarkdown/) with the [xaringan](https://github.com/yihui/xaringan) package, run in [Docker](https://www.docker.com/), deployed to [GitHub Pages](https://pages.github.com/) using [GitHub Actions](https://github.com/features/actions)
 - **DOI:** [10.5281/zenodo.5012477](http://doi.org/10.5281/zenodo.5012477) (generated using GitHub releases + Zenodo, see details [here](https://guides.github.com/activities/citable-code/))
 - **Source:** Source code is publicly available on GitHub at [github.com/lnnrtwttkhn/talk-rdm](https://github.com/lnnrtwttkhn/talk-rdm/)
 - **Links:** This presentation contains links to external resources. I do not take responsibility for the accuracy, legality or content of the external site or for that of subsequent links. If you notice an issue with a link, please contact me!
@@ -642,7 +642,7 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 - publicly funded by the Federal Ministry of Education and Research (BMBF; details [here](https://gin.g-node.org/G-Node/Info/wiki/about#support))
 - servers are on German land (near Munich, Germany; cf. GDPR)
 - provides Digital Object Identifiers (DOIs) (details [here](https://gin.g-node.org/G-Node/Info/wiki/DOI))
-- allows to set own license (details [here](https://gin.g-node.org/G-Node/Info/wiki/Licensing))
+- free licensing (details [here](https://gin.g-node.org/G-Node/Info/wiki/Licensing))
 - DataLad plays perfectly with GIN, since both use git + git-annex (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))
 
 ???
@@ -904,43 +904,49 @@ name: discussion
 
 # Summary, outlook, challenges and discussions
 
-> How can we conduct our research openly and reproducibly?
+.center[
+**`r emoji::emoji("sparkles")` Towards science as distributed, open-source ~~software~~ *knowledge* development (cf. McElreath, 2020) `r emoji::emoji("sparkles")`**
+]
+
+???
+
+- Forschung strebt letztendlich danach, "distributed, open-source knowledge development zu betreiben", wie es Richard McElreath (Direktor am Max-Planck-Institut für Evolutionäre Anthropologie) treffend beschrieben hat
+
+--
+
+> How can we manage our code and data openly and reproducibly?
 
 --
 
 #### The technical solutions are already available!
 
-- Code and data management using Git / DataLad (free, open-source command-line tools)
-- Code and data sharing via flexible MPS-hosted infrastructure (GIN, Keeper, Edmond, etc.)
-- Project management and communication via issue boards and merge requests on GitLab
+- Code and data management using **Git / DataLad** (free, open-source command-line tools)
+- Code and data sharing via flexible MPS-hosted infrastructure (**GIN, Keeper, Edmond**, etc.)
+- Project management and communication via **issue boards** and **merge requests** on GitLab
 - *Reproducible computational environments using software containers (e.g., Docker)*
+- *Reproducible procedures using e.g., Make or `datalad run` commands*
 - *Reliance on community standards for data organization and code style guides*
+
+???
+
+- Viele der Praktiken, die im open-source software development längst Standard sind, sind oft mit wenigen Modifikationen auf die Forschungsarbeit übertragbar
+- Die technischen Lösungen und Praktiken im Umgang mit Code und Daten sind heute vorhanden!
+- Sie sind kostenlos, open-source und etabliert und bieten Lösungen für viele der Probleme, die uns im Umgang mit Code und Daten in der Wissenschaft beschäftigen
+- Wichtig zu betonen, da wir Entscheidungen treffen, auf welche Tools wir uns fokusieren
+- Wir können heute damit beginnen und müssen nicht darauf warten, dass eine neue Platform erst jahrelang entwickelt werden muss.
 
 --
 
 #### The long-term challenges are largely non-technical:
-- moving towards a "culture of reproducibility" (cf. Russ Poldrack, see e.g., [this talk](https://www.youtube.com/watch?v=XjW3t-qXAiE))
+- moving towards a "culture of reproducibility" (cf. Russ Poldrack)
 - changing incentives / funding schemes
 - education, education, education
-- implementing "slow science" (see e.g., [Frith, 2020, *TICS*](https://doi.org/10.1016/j.tics.2019.10.007))
 
----
+???
 
-# Take-home message
+- Viele Faktoren innerhalb der Wissenschaft, die uns 
 
-#### Science as distributed, open-source ~~software~~ *knowledge* development (cf. McElreath, 2020)
 
-We have all the tools we need to make science fully transparent and reproducible available today!
-
---
-
-#### "*What can I do to get started?*"
-
-1. Learn about Git
-1. Learn about DataLad
-1. Learn about software containers
-
-... and reproducible we may be! `r emoji::emoji("sparkles")`
 
 ---
 
@@ -988,11 +994,6 @@ knitr::include_graphics("https://secure.gravatar.com/avatar/f49adcdd1c7bb710cdf5
 knitr::include_graphics("https://www.repronim.org/images/logo-square-256.png")
 ```
 ]
-
----
-
-> *"If your solution to some problem relies on “If everyone would just…” then you do not have a solution. Everyone is not going to just. At not time in the history of the universe has everyone just, and they’re not going to start now."* -- [Source](https://squareallworthy.tumblr.com/post/163790039847/everyone-will-not-just)
-
 
 ---
 
