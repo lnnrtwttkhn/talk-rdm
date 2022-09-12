@@ -908,6 +908,12 @@ name: discussion
 **`r emoji::emoji("sparkles")` Towards science as distributed, open-source ~~software~~ *knowledge* development (cf. McElreath, 2020) `r emoji::emoji("sparkles")`**
 ]
 
+???
+
+- Forschung strebt letztendlich danach, "distributed, open-source knowledge development zu betreiben", wie es Richard McElreath (Direktor am Max-Planck-Institut für Evolutionäre Anthropologie) treffend beschrieben hat
+
+--
+
 > How can we manage our code and data openly and reproducibly?
 
 --
@@ -921,12 +927,26 @@ name: discussion
 - *Reproducible procedures using e.g., Make or `datalad run` commands*
 - *Reliance on community standards for data organization and code style guides*
 
+???
+
+- Viele der Praktiken, die im open-source software development längst Standard sind, sind oft mit wenigen Modifikationen auf die Forschungsarbeit übertragbar
+- Die technischen Lösungen und Praktiken im Umgang mit Code und Daten sind heute vorhanden!
+- Sie sind kostenlos, open-source und etabliert und bieten Lösungen für viele der Probleme, die uns im Umgang mit Code und Daten in der Wissenschaft beschäftigen
+- Wichtig zu betonen, da wir Entscheidungen treffen, auf welche Tools wir uns fokusieren
+- Wir können heute damit beginnen und müssen nicht darauf warten, dass eine neue Platform erst jahrelang entwickelt werden muss.
+
 --
 
 #### The long-term challenges are largely non-technical:
 - moving towards a "culture of reproducibility" (cf. Russ Poldrack)
 - changing incentives / funding schemes
 - education, education, education
+
+???
+
+- Viele Faktoren innerhalb der Wissenschaft, die uns 
+
+
 
 ---
 
