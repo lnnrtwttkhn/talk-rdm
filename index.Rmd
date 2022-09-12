@@ -137,7 +137,7 @@ knitr::include_url(path_html)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5575219.svg)](https://doi.org/10.5281/zenodo.5575219)
 [![PDF](https://img.shields.io/badge/PDF-Download-<COLOR>.svg)](https://github.com/lnnrtwttkhn/talk-rdm/releases/download/v2.0/talk-rdm.pdf)
 
-The following slides were presented during a talk prepared for the "Open Science Ambassadors Day 2021" hosted by the [Max Planck PhDnet](https://www.phdnet.mpg.de/home) and the [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) (see details [here](https://osambassadors.mpdl.mpg.de/)) on 18<sup>th</sup> of October 2021.
+The following slides were presented during a talk prepared for the "Open Science Ambassadors Day 2021" hosted by the [Max Planck PhDnet](https://www.phdnet.mpg.de/home) and the [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) (see details [here](https://osambassadors.mpdl.mpg.de/program-2021/)) on 18<sup>th</sup> of October 2021.
 
 ```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
 archive_name = "20211018-osambassadors"
