@@ -904,43 +904,29 @@ name: discussion
 
 # Summary, outlook, challenges and discussions
 
-> How can we conduct our research openly and reproducibly?
+.center[
+**`r emoji::emoji("sparkles")` Towards science as distributed, open-source ~~software~~ *knowledge* development (cf. McElreath, 2020) `r emoji::emoji("sparkles")`**
+]
+
+> How can we manage our code and data openly and reproducibly?
 
 --
 
 #### The technical solutions are already available!
 
-- Code and data management using Git / DataLad (free, open-source command-line tools)
-- Code and data sharing via flexible MPS-hosted infrastructure (GIN, Keeper, Edmond, etc.)
-- Project management and communication via issue boards and merge requests on GitLab
+- Code and data management using **Git / DataLad** (free, open-source command-line tools)
+- Code and data sharing via flexible MPS-hosted infrastructure (**GIN, Keeper, Edmond**, etc.)
+- Project management and communication via **issue boards** and **merge requests** on GitLab
 - *Reproducible computational environments using software containers (e.g., Docker)*
+- *Reproducible procedures using e.g., Make or `datalad run` commands*
 - *Reliance on community standards for data organization and code style guides*
 
 --
 
 #### The long-term challenges are largely non-technical:
-- moving towards a "culture of reproducibility" (cf. Russ Poldrack, see e.g., [this talk](https://www.youtube.com/watch?v=XjW3t-qXAiE))
+- moving towards a "culture of reproducibility" (cf. Russ Poldrack)
 - changing incentives / funding schemes
 - education, education, education
-- implementing "slow science" (see e.g., [Frith, 2020, *TICS*](https://doi.org/10.1016/j.tics.2019.10.007))
-
----
-
-# Take-home message
-
-#### Science as distributed, open-source ~~software~~ *knowledge* development (cf. McElreath, 2020)
-
-We have all the tools we need to make science fully transparent and reproducible available today!
-
---
-
-#### "*What can I do to get started?*"
-
-1. Learn about Git
-1. Learn about DataLad
-1. Learn about software containers
-
-... and reproducible we may be! `r emoji::emoji("sparkles")`
 
 ---
 
@@ -988,11 +974,6 @@ knitr::include_graphics("https://secure.gravatar.com/avatar/f49adcdd1c7bb710cdf5
 knitr::include_graphics("https://www.repronim.org/images/logo-square-256.png")
 ```
 ]
-
----
-
-> *"If your solution to some problem relies on “If everyone would just…” then you do not have a solution. Everyone is not going to just. At not time in the history of the universe has everyone just, and they’re not going to start now."* -- [Source](https://squareallworthy.tumblr.com/post/163790039847/everyone-will-not-just)
-
 
 ---
 
