@@ -642,7 +642,7 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 - publicly funded by the Federal Ministry of Education and Research (BMBF; details [here](https://gin.g-node.org/G-Node/Info/wiki/about#support))
 - servers are on German land (near Munich, Germany; cf. GDPR)
 - provides Digital Object Identifiers (DOIs) (details [here](https://gin.g-node.org/G-Node/Info/wiki/DOI))
-- allows to set own license (details [here](https://gin.g-node.org/G-Node/Info/wiki/Licensing))
+- free licensing (details [here](https://gin.g-node.org/G-Node/Info/wiki/Licensing))
 - DataLad plays perfectly with GIN, since both use git + git-annex (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))
 
 ???
