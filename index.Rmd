@@ -113,7 +113,7 @@ path_html = render_xaringan(name = archive_name, path_rmd = here::here(path_sour
 ```
 
 ```{r, echo=FALSE, results="asis"}
-print_list(path_html = path_html, path_rmd = path_source)
+print_list(path_html = path_html, path_rmd = path_source, path_notes = "https://pad.gwdg.de/ClJI4StqRJ6dUARq0rIh8g?view")
 ```
 
 ```{r, echo=FALSE}
