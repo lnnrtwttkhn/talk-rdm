@@ -54,7 +54,7 @@ pacman::p_load(char = packages_cran)
 
 - **Slides:** Reproducible slides are publicly available at [lennartwittkuhn.com/talk-rdm](https://lennartwittkuhn.com/talk-rdm/)
 - **Software:** Written in [RMarkdown](https://bookdown.org/yihui/rmarkdown/) with the [xaringan](https://github.com/yihui/xaringan) package, run in [Docker](https://www.docker.com/), deployed to [GitHub Pages](https://pages.github.com/) using [GitHub Actions](https://github.com/features/actions)
-- **DOI:** [10.5281/zenodo.5012477](http://doi.org/10.5281/zenodo.5012477) (generated using GitHub releases + Zenodo, see details [here](https://guides.github.com/activities/citable-code/))
+- **DOI:** [10.5281/zenodo.7075084](http://doi.org/10.5281/zenodo.7075084) (generated using GitHub releases + Zenodo, see details [here](https://guides.github.com/activities/citable-code/))
 - **Source:** Source code is publicly available on GitHub at [github.com/lnnrtwttkhn/talk-rdm](https://github.com/lnnrtwttkhn/talk-rdm/)
 - **Links:** This presentation contains links to external resources. I do not take responsibility for the accuracy, legality or content of the external site or for that of subsequent links. If you notice an issue with a link, please contact me!
 - **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/s/CosmQVnEJ#) (public!)
