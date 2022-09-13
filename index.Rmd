@@ -104,6 +104,22 @@ knitr::include_url(path_html)
 The following slides were presented during a talk prepared for the [5<sup>th</sup> RDM-Workshop 2022 on Research Data Management in the Max Planck Society](https://rdm.mpdl.mpg.de/2022/05/09/5-fdm-workshop-2022-forschungsdatenmanagement-in-der-max-planck-gesellschaft-call-for-participation/) at the [Max Planck Institute for Human Cognitive and Brain Sciences](https://www.mpib-berlin.mpg.de/en) in Leipzig, Germany from the 13<sup>th</sup> to 14<sup>th</sup> of September 2022.
 The talk was held in German (but slides were in English).
 
+### Slides
+
+```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
+archive_name = "20220913-mpg-fdm-workshop"
+path_source = file.path("archive", archive_name, "talk-rdm.Rmd")
+path_html = render_xaringan(name = archive_name, path_rmd = here::here(path_source))
+```
+
+```{r, echo=FALSE, results="asis"}
+print_list(path_html = path_html, path_rmd = path_source)
+```
+
+```{r, echo=FALSE}
+knitr::include_url(path_html)
+```
+
 ### Abstract
 
 Vorläufiger Titel: **Forschung als Software Engineering - Lösung für alles?**
