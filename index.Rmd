@@ -140,6 +140,8 @@ Ich diskutiere wie diese Tools wissenschaftliche Arbeitsabläufe transformieren 
 
 The following slides were presented during a talk prepared for the [Lifespan Neural Dynamics Group (LNDG)](https://www.mpib-berlin.mpg.de/research/research-centers/lip/projects/lndg) at the [Max Planck Institute for Human Development](https://www.mpib-berlin.mpg.de/en) on 20<sup>th</sup> of October 2021.
 
+### Slides
+
 ```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
 archive_name = "20211020-lndg"
 path_source = file.path("archive", archive_name, "talk-rdm.Rmd")
@@ -180,6 +182,8 @@ knitr::include_url(path_html)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5012477.svg)](https://doi.org/10.5281/zenodo.5012477)
 
 The following slides were presented during a talk prepared for the "Discussion Series: Human Research Data in Practice" hosted by the [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) (see details [here](https://rdm.mpdl.mpg.de/2021/05/27/discussion-series-human-research-data-in-practice-on-22th-june-2021/)) on 22<sup>nd</sup> of June 2021.
+
+### Slides
 
 ```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
 archive_name = "20210622-mpdl"
