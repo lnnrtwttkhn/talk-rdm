@@ -1,9 +1,9 @@
 ---
 title: "Tools for an open and reproducible research workflow"
-subtitle: "5<sup>th</sup> Research Data Management Workshop 2022"
+subtitle: "@ Open Science Initiative (OSIP) at TU Dresden"
 author: "Dr. Lennart Wittkuhn | wittkuhn@mpib-berlin.mpg.de"
-institute: "Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Leipzig, Germany"
-date: "Tuesday, 13<sup>th</sup> of September 2022"
+institute: "Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Department of Psychology at University of Hamburg"
+date: "</br>Wednesday, 7<sup>th</sup> of December 2022"
 #date: "Last update of slides: `r format(Sys.time(), '%H:%M | %B %d, %Y')`"
 output:
   xaringan::moon_reader:
