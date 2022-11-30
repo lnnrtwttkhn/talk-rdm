@@ -33,11 +33,12 @@ pacman::p_load(char = packages_cran)
 
 #### About me
 
-- **Position:** PostDoc at the [Max Planck Research Group "NeuroCode"](https://www.mpib-berlin.mpg.de/research/research-groups/mprg-neurocode) at the [Max Planck Institute for Human Development](https://www.mpib-berlin.mpg.de/en)
+- **Position:** PostDoc at [Max Planck Institute for Human Development](https://www.mpib-berlin.mpg.de/en) & Lab Manager at [University of Hamburg](https://www.psy.uni-hamburg.de/en/arbeitsbereiche/lern-und-veraenderungsmechanismen.html) (Schuck Lab)
 - **Research:** I study the role of fast neural memory reactivation ([*replay*](https://en.wikipedia.org/wiki/Hippocampal_replay)) in the human brain using fMRI
 - **Background:** BSc Psychology (TU Dresden), MSc Cognitive Neuroscience (TU Dresden), PhD Psychology (FU Berlin)
 - **Roles:** Member of the MPIB's working group on research data management and open science
-- **Contact:** You can contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de), [Twitter](https://twitter.com/lnnrtwttkhn),
+ & ethics committee
+- **Contact:** You can contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de), [Twitter](https://twitter.com/lnnrtwttkhn), [Mastodon](https://fediscience.org/@lnnrtwttkhn),
 [GitHub](https://github.com/lnnrtwttkhn) or
 [LinkedIn](https://www.linkedin.com/in/lennart-wittkuhn-6a079a1a8/)
 - **Info:** Find out more about my work on [my website](https://lennartwittkuhn.com/), [Google Scholar](https://scholar.google.de/) and [ORCiD](https://orcid.org/0000-0003-2966-6888)
@@ -46,7 +47,6 @@ pacman::p_load(char = packages_cran)
 
 - FDM und Open Science aus Sicht eines Forschenden
 - Wie mit Code und Daten effektiv umgegangen werden kann
-
 
 --
 
@@ -57,7 +57,7 @@ pacman::p_load(char = packages_cran)
 - **DOI:** [10.5281/zenodo.7075084](http://doi.org/10.5281/zenodo.7075084) (generated using GitHub releases + Zenodo, see details [here](https://guides.github.com/activities/citable-code/))
 - **Source:** Source code is publicly available on GitHub at [github.com/lnnrtwttkhn/talk-rdm](https://github.com/lnnrtwttkhn/talk-rdm/)
 - **Links:** This presentation contains links to external resources. I do not take responsibility for the accuracy, legality or content of the external site or for that of subsequent links. If you notice an issue with a link, please contact me!
-- **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/s/CosmQVnEJ#) (public!)
+- **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/XAmdzBEBToOD7WxFjgLiWw?both) (public!)
 - **Contact**: I am happy for any feedback or suggestions via [email](mailto:wittkuhn@mpib-berlin.mpg.de) or [GitHub issues](https://github.com/lnnrtwttkhn/talk-rdm/issues). Thank you! `r emoji::emoji("pray")`
 
 ---
