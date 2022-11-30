@@ -892,6 +892,33 @@ The repository maintainer (i.e., you) can ...
 
 ---
 
+# Managing access, permissions and roles
+
+- GitLab (and GitHub) allow setting the **project and group visibility**
+  - GitLab visibility levels: `Private` `r emoji::emoji("new_moon")` `Internal` `r emoji::emoji("first_quarter_moon")` `Public` `r emoji::emoji("full_moon")` (details [here](https://docs.gitlab.com/ee/user/public_access.html))
+- GitLab (and GitHub) allow setting fine-grained **permissions and roles** for contributors
+  - GitLab roles: `Guest` `r emoji::emoji("arrow_right")` `Reporter` `r emoji::emoji("arrow_right")` `Developer` `r emoji::emoji("arrow_right")` `Maintainer` `r emoji::emoji("arrow_right")` `Owner` (details [here](https://docs.gitlab.com/ee/user/permissions.html))
+
+--
+
+#### Example workflow
+
+- Your projects are `private` from the start
+- Everyone in your group can view each other's projects (`Guest` or `Reporter`)
+- Direct collaborators (internal or external) can edit the project (`Developer` or `Maintainer`)
+- The PI gets access to all projects (`Maintainer` or `Owner`; optionally only at the end of a project)
+- Project can be set to `public` later on (e.g., upon publication)
+
+???
+
+- Group members can always view your projects and their current status
+- Group members can clone your repository, fork it, open issues and merge requests
+- Group members can not make any changes to your project by default
+
+- PI has at least Maingtainer access to all projects for long-term availability
+
+---
+
 class: title-slide, center, middle
 name: discussion
 
