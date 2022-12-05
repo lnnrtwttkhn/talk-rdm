@@ -603,6 +603,18 @@ name: workflow-sharing
 
 ---
 
+# Data sharing and collaboration with DataLad
+
+.center[
+*"I have a dataset on my computer. How can I share it or collaborate on it?"*
+]
+
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/d0b1749c4d504bb080b7/?dl=1") 
+```
+
+---
+
 # Share version-controlled datasets with DataLad
 
 - With DataLad, you can **share data like you share code** (i.e., via repository hosting services)
@@ -620,11 +632,13 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collabora
 
 # Interoperability with a range of hosting services
 
-DataLad is built to **maximize interoperability with a wide range of hosting services** and storage technologies
+.center[DataLad is built to **maximize interoperability with a wide range of hosting services** and storage technologies]
 
 .center[
-```{r, echo=FALSE, fig.align="center", out.width="53%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg")
+```{r, echo=FALSE, fig.align="center", out.width="38%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3ff02e436e5142059461/?dl=1")
+# http://datasets.datalad.org/datalad/datalad-course/pics/services_connected.png
+# http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg
 ```
 ]
 
@@ -636,6 +650,21 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishin
 
 ---
 
+# Separate content in Git vs. git-annex behind the scenes
+
+- Datasets are exposed via private or public repository on a repository hosting service (e.g., GitLab)
+- Data can't be stored in the repository hosting service but can be kept in almost any third party storage
+- Publication dependencies automate pushing data content to the correct place
+
+.center[
+```{r, echo=FALSE, fig.align="center", out.width="45%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/9aebc525ce194a4d8a64/?dl=1")
+# http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg
+```
+]
+
+---
+
 # Data sharing via GIN
 
 ```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://gin.g-node.org/" target="_blank">gin.g-node.org</a>'}
@@ -643,6 +672,10 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 ```
 
 > "*GIN is [...] a web-accessible repository store of your data based on git and git-annex that you can access securely anywhere you desire while keeping your data in sync, backed up and easily accessible [...]"*
+
+.center[
+DataLad plays perfectly with GIN, since both use git + git-annex (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))
+]
 
 ???
 
@@ -654,12 +687,11 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 #### `r emoji::emoji("sparkles")` Advantages of GIN
 
 - free to use and open-source (could be hosted within your institution; details [here](https://gin.g-node.org/G-Node/Info/wiki/In+House))
+- currently unlimited storage capacity and no restrictions on individual file size
 - supports private and public repositories
 - publicly funded by the Federal Ministry of Education and Research (BMBF; details [here](https://gin.g-node.org/G-Node/Info/wiki/about#support))
 - servers are on German land (near Munich, Germany; cf. GDPR)
-- provides Digital Object Identifiers (DOIs) (details [here](https://gin.g-node.org/G-Node/Info/wiki/DOI))
-- free licensing (details [here](https://gin.g-node.org/G-Node/Info/wiki/Licensing))
-- DataLad plays perfectly with GIN, since both use git + git-annex (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))
+- provides Digital Object Identifiers (DOIs) (details [here](https://gin.g-node.org/G-Node/Info/wiki/DOI)) and allows free licensing (details [here](https://gin.g-node.org/G-Node/Info/wiki/Licensing))
 
 ???
 
@@ -668,6 +700,8 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 ---
 
 # Publishing a DataLad dataset to GIN in only 4 steps
+
+--
 
 1\. Create a dataset
 
@@ -704,6 +738,33 @@ datalad push --to gin
 Done!<sup>1</sup> 🎉
 
 <sup><sup>1</sup> To be fair, it's a bit more complex than that ... `r emoji::emoji("innocent")` (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))</sup>
+
+---
+
+# Data sharing via the Open Science Framework (OSF)
+
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://osf.io/" target="_blank">osf.io</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/27b4f2ac823147a7975c/?dl=1")
+```
+
+.center[
+DataLad-OSF extension allows to integrate with OSF via DataLad (details [here](http://docs.datalad.org/projects/osf/en/latest/index.html))
+]
+
+--
+
+#### `r emoji::emoji("sparkles")` Advantages of OSF
+
+- free to use
+- supports private and public repositories
+- provides Digital Object Identifiers (DOIs) (details [here](https://help.osf.io/article/220-create-dois)) and allows free licensing (details [here](https://help.osf.io/article/148-licensing))
+- very popular among scientists (details [here](https://www.cos.io/blog/shared-investment-in-osf-sustainability))
+
+#### `r emoji::emoji("cloud_with_rain")` Limitations of OSF
+
+- private and public projects projects limited to 5GB and 50GB, respectively
+- maximum individual file size of 5GB
+
 
 ---
 
