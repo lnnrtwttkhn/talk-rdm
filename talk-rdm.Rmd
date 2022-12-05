@@ -66,11 +66,15 @@ pacman::p_load(char = packages_cran)
 
 1. **Introduction**
 2. **Research Workflow**
-  - Code (Git etc.)
-  - Data (DataLad etc.)
-  - Communication (Issues etc.)
-  - *Environments (Docker etc.)*
-  - *Procedures (Make etc.)*
+  - Code Management: **Git**
+  - Data Management: **DataLad**
+  - Project Hosting: **GitLab** and **GIN**
+  - Collaboration and contributions: **Merge requests**
+  - Project managament: Access
+  - Communication: **Issues**
+  - Documentation
+  - Environments: **renv**, **conda**, **venv**, **Docker**, **Apptainer**
+  - Procedures (Make etc.)*
 3. **Discussion**
 
 ???
@@ -148,9 +152,23 @@ knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot
 
 ---
 
-exclude: true
+# Challenge: Many stages in the research cycle
 
-# Reproducible research
+```{r, echo=FALSE, fig.align="center", out.width="58%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/4906004" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3a1863ac2c2e40809c5f/?dl=1") 
+```
+
+???
+
+- Moderne Forschung ist sehr umfangreich und komplex
+- Gleichzeitig gibt es hohe Ansprüche an die Forschung: Sie soll exakt sein, objektiv, transparent, nachvollziehbar und reproduzierbar sein
+- Viele Schritte im Forschungsprozess über viele Jahre
+- Bei jedem dieser Schritte werden i.d.R. Daten generiert und verarbeitet - wie kann man damit systematisch und effektiv umgehen?
+- Formalisieren dieser Herausforderung
+
+---
+
+# Challenge: Computational Reproducibility
 
 > *"[...] when the same analysis steps performed on the same dataset consistently produces the same answer."*
 
@@ -172,23 +190,6 @@ knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible
 - **Replicable:** A result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.
 - **Robust:** A result is robust when the same dataset is subjected to different analysis workflows to answer the same research question (for example one pipeline written in R and another written in Python) and a qualitatively similar or identical answer is produced. Robust results show that the work is not dependent on the specificities of the programming language chosen to perform the analysis.
 - **Generalisable:** Combining replicable and robust findings allow us to form generalisable results. Note that running an analysis on a different software implementation and with a different dataset does not provide generalised results. There will be many more steps to know how well the work applies to all the different aspects of the research question. Generalisation is an important step towards understanding that the result is not dependent on a particular dataset nor a particular version of the analysis pipeline.
-
----
-
-# Challenge: Many stages in the research cycle
-
-```{r, echo=FALSE, fig.align="center", out.width="58%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/4906004" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
-knitr::include_graphics("https://the-turing-way.netlify.app/_images/research-cycle.jpg") 
-```
-
-???
-
-- Moderne Forschung ist sehr umfangreich und komplex
-- Gleichzeitig gibt es hohe Ansprüche an die Forschung: Sie soll exakt sein, objektiv, transparent, nachvollziehbar und reproduzierbar sein
-- Viele Schritte im Forschungsprozess über viele Jahre
-- Bei jedem dieser Schritte werden i.d.R. Daten generiert und verarbeitet - wie kann man damit systematisch und effektiv umgehen?
-- Formalisieren dieser Herausforderung
-
 
 ---
 
@@ -255,7 +256,7 @@ knitr::include_graphics("http://phdcomics.com/comics/archive/phd101212s.gif")
 
 ---
 
-exclude: true
+exclude: false
 
 # What is version control?
 
@@ -372,13 +373,12 @@ knitr::include_graphics("https://cdn.icon-icons.com/icons2/2415/PNG/512/gitlab_o
 
 --
 
-#### GitLab for Max Planck employees
+#### GitLab for TU Dresden employees
 
-- hosted by GWDG: https://gitlab.gwdg.de
-- hosted by your institute<sup>1</sup>, e.g., at MPIB: https://git.mpib-berlin.mpg.de
+- hosted [at the School of Science at TU Dresden](https://tu-dresden.de/mn/der-bereich/it-kompetenz-und-servicezentrum/gitlab-dienst?set_language=en)<sup>1</sup>
 
 .footnote[
-<sup>1</sup> Using your Max Planck credentials, you should already have an account!
+<sup>1</sup> Using your ZIH credentials, you should already have an account!
 ]
 
 ---
@@ -430,6 +430,7 @@ knitr::include_graphics("https://avatars.githubusercontent.com/u/8927200?s=200&v
 - free, [open-source](https://github.com/datalad/datalad) **command-line tool**
 - building on top of **Git** and **git-annex**, DataLad allows you to **version control arbitrarily large files** in datasets.
 - *"Arbitrarily large?"* - yes, see DataLad dataset of 80TB / 15 million files from the Human Connectome Project (see [details](https://handbook.datalad.org/en/latest/usecases/HCP_dataset.html#usecase-hcp-dataset))
+- A Graphical User Interface (GUI) exists: [DataLad Gooey](http://docs.datalad.org/projects/gooey/en/latest/index.html)
 
 --
 
@@ -560,6 +561,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/thirdpart
 - Dadurch ermöglicht DataLad systematische Kollaboration und Veröffentlichung von größeren Datensätzen
 
 ---
+
 exclude: true
 
 # DataLad: Metadata handling
@@ -576,7 +578,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_
 class: title-slide, center, middle
 name: workflow-sharing
 
-# Workflow: Data sharing using MPS infrastructure
+# Workflow: Data sharing using DataLad
 <!--the next --- is a horizontal line-->
 
 --- 
@@ -637,7 +639,7 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 
 #### `r emoji::emoji("sparkles")` Advantages of GIN
 
-- free to use and open-source (could be hosted within MPIs / MPS; details [here](https://gin.g-node.org/G-Node/Info/wiki/In+House))
+- free to use and open-source (could be hosted within your institution; details [here](https://gin.g-node.org/G-Node/Info/wiki/In+House))
 - supports private and public repositories
 - publicly funded by the Federal Ministry of Education and Research (BMBF; details [here](https://gin.g-node.org/G-Node/Info/wiki/about#support))
 - servers are on German land (near Munich, Germany; cf. GDPR)
@@ -651,8 +653,6 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 
 ---
 
-exclude: true
-
 # Publishing a DataLad dataset to GIN in only 4 steps
 
 1\. Create a dataset
@@ -663,8 +663,6 @@ datalad create my_dataset
 
 --
 
-exclude: true
-
 2\. Save data into the dataset
 
 ```{bash, eval=FALSE}
@@ -672,8 +670,6 @@ datalad save -m "add data to dataset"
 ```
 
 --
-
-exclude: true
 
 3\. Add the GIN remote (aka. "sibling") to the repository
 
@@ -683,8 +679,6 @@ datalad siblings add -d . --name gin --url git@gin.g-node.org:/my_username/my_da
 
 --
 
-exclude: true
-
 4\. Transfer the dataset to GIN
 
 ```{bash, eval=FALSE}
@@ -692,8 +686,6 @@ datalad push --to gin
 ```
 
 --
-
-exclude: true
 
 Done!<sup>1</sup> 🎉
 
