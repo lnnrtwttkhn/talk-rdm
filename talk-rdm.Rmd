@@ -658,7 +658,7 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3ff02e436e5142059461/?dl=1
 
 .center[
 ```{r, echo=FALSE, fig.align="center", out.width="45%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
-knitr::include_graphics("https://keeper.mpdl.mpg.de/f/9aebc525ce194a4d8a64/?dl=1")
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/a3347c7a01084525a8df/?dl=1")
 # http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg
 ```
 ]
