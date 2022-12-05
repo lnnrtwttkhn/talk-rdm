@@ -229,6 +229,20 @@ Fokus: Code, Daten, Kommunikation
 ---
 
 class: title-slide, center, middle
+name: track-everything
+
+# If everything is relevant ... 
+--
+track everything
+--
+
+.footnote[
+Credit: adapted from [Slides on "Research Data Management with DataLad" by Adina Wagner & Michael Hanke](http://datasets.datalad.org/datalad/datalad-course/html/mpsc-introduction.html#/5)
+]
+
+---
+
+class: title-slide, center, middle
 name: workflow-git
 
 # Workflow: Code Management using Git
