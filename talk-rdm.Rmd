@@ -765,6 +765,35 @@ DataLad-OSF extension allows to integrate with OSF via DataLad (details [here](h
 - private and public projects projects limited to 5GB and 50GB, respectively
 - maximum individual file size of 5GB
 
+---
+
+# Data sharing via S3 buckets (object storage)
+
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='e.g., <a href="https://tu-dresden.de/zih/dienste/service-katalog/arbeitsumgebung/datenspeicher/objektspeicher-s3?set_language=en" target="_blank">Object Storage at ZIH</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/45a664d668724e51917a/?dl=1")
+```
+
+--
+
+.center[
+> "*Object storage is a data store that originates in cloud environments and can be used to store and share data.*
+> *An object consists of a unique name, the actual data, and associated metadata.*
+> *In contrast to file systems, objects are not stored in a hierarchy but in a flat container (so-called buckets).*"
+]
+
+--
+
+#### `r emoji::emoji("sparkles")` Advantages of S3 buckets
+
+- up to 200 GB per TU Dresden employee (expandable)
+- data hosted on ZIH servers
+- S3 buckets can be configured as a [DataLad special remote](https://handbook.datalad.org/en/latest/basics/101-139-s3.html) (walkthrough in DataLad Handbook)
+
+
+???
+
+> Object storage is a data store that originates in cloud environments and can be used to store and share data. An object consists of a unique name, the actual data, and associated metadata (such as access permissions and user-defined metadata). In contrast to file systems, objects are not stored in a hierarchy but in a flat container (so-called buckets). Access is possible via HTTP-based protocols/APIs such as S3 or Swift.
+
 
 ---
 
