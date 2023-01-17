@@ -152,23 +152,7 @@ knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot
 
 ---
 
-# Challenge: Many stages in the research cycle
-
-```{r, echo=FALSE, fig.align="center", out.width="58%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/4906004" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
-knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3a1863ac2c2e40809c5f/?dl=1") 
-```
-
-???
-
-- Moderne Forschung ist sehr umfangreich und komplex
-- Gleichzeitig gibt es hohe Ansprüche an die Forschung: Sie soll exakt sein, objektiv, transparent, nachvollziehbar und reproduzierbar sein
-- Viele Schritte im Forschungsprozess über viele Jahre
-- Bei jedem dieser Schritte werden i.d.R. Daten generiert und verarbeitet - wie kann man damit systematisch und effektiv umgehen?
-- Formalisieren dieser Herausforderung
-
----
-
-# Challenge: Computational Reproducibility
+# Challenge: Computational reproducibility
 
 > *"[...] when the same analysis steps performed on the same dataset consistently produces the same answer."*
 
@@ -190,6 +174,22 @@ knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible
 - **Replicable:** A result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.
 - **Robust:** A result is robust when the same dataset is subjected to different analysis workflows to answer the same research question (for example one pipeline written in R and another written in Python) and a qualitatively similar or identical answer is produced. Robust results show that the work is not dependent on the specificities of the programming language chosen to perform the analysis.
 - **Generalisable:** Combining replicable and robust findings allow us to form generalisable results. Note that running an analysis on a different software implementation and with a different dataset does not provide generalised results. There will be many more steps to know how well the work applies to all the different aspects of the research question. Generalisation is an important step towards understanding that the result is not dependent on a particular dataset nor a particular version of the analysis pipeline.
+
+---
+
+# Challenge: Many stages in the research cycle
+
+```{r, echo=FALSE, fig.align="center", out.width="58%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/4906004" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3a1863ac2c2e40809c5f/?dl=1") 
+```
+
+???
+
+- Moderne Forschung ist sehr umfangreich und komplex
+- Gleichzeitig gibt es hohe Ansprüche an die Forschung: Sie soll exakt sein, objektiv, transparent, nachvollziehbar und reproduzierbar sein
+- Viele Schritte im Forschungsprozess über viele Jahre
+- Bei jedem dieser Schritte werden i.d.R. Daten generiert und verarbeitet - wie kann man damit systematisch und effektiv umgehen?
+- Formalisieren dieser Herausforderung
 
 ---
 
