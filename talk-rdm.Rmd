@@ -1091,6 +1091,19 @@ name: discussion
 - ["Research Data Management with DataLad"](https://www.youtube.com/playlist?list=PLEQHbPfpVqU5sSVrlwxkP0vpoOpgogg5j) | Recording of a full-day workshop on YouTube
 - [Datalad on YouTube](https://www.youtube.com/c/DataLad) | Recorded workshops, tutorials and talks on DataLad
 
+--
+
+#### Learn both (disclaimer: shameless plug `r emoji::emoji("see_no_evil")`)
+
+- Full-semester course on ["Version control of code and data using Git and DataLad"](https://lennartwittkuhn.com/ddlitlab/) in winter semester 2023/24 at University of Hamburg (generously funded by the [Digital and Data Literacy in Teaching Lab](https://www.isa.uni-hamburg.de/en/ddlitlab.html) program) - *more details coming soon ...*
+
+---
+
+# Why share data?
+
+- Studies with accessible data tend to have fewer error and more robust statistical effects (Wicherts et al. 2011)
+- "The long-tail of dark data": over 50% of completed studies are estimated to be unreported, because the results did not conform to authors' hypotheses (Chan et al., 2014)
+
 ---
 
 # Thank you!
