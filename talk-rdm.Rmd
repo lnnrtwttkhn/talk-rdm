@@ -223,7 +223,7 @@ Fokus: Code, Daten, Kommunikation
 
 - Data is produced through code (e.g., task code)
 - Data is manipulated by code and new data is generated
- - Mapping between input and output data
+- Mapping between input and output data
 - This happens using specific software in specific versions
 
 ---
@@ -237,7 +237,7 @@ track everything
 --
 
 .footnote[
-Credit: adapted from [Slides on "Research Data Management with DataLad" by Adina Wagner & Michael Hanke](http://datasets.datalad.org/datalad/datalad-course/html/mpsc-introduction.html#/5)
+Credit: Adapted from [Slides on "Research Data Management with DataLad"](http://datasets.datalad.org/datalad/datalad-course/html/mpsc-introduction.html#/5) by Adina Wagner & Michael Hanke
 ]
 
 ---
@@ -961,8 +961,10 @@ The repository maintainer (i.e., you) can ...
 
 # Managing access, permissions and roles
 
+#### Visibility and permissions settings on GitLab
+
 - GitLab (and GitHub) allow setting the **project and group visibility**
-  - GitLab visibility levels: `Private` `r emoji::emoji("new_moon")` `Internal` `r emoji::emoji("first_quarter_moon")` `Public` `r emoji::emoji("full_moon")` (details [here](https://docs.gitlab.com/ee/user/public_access.html))
+  - GitLab visibility levels: `r emoji::emoji("new_moon")` `Private` `r emoji::emoji("first_quarter_moon")` `Internal` `r emoji::emoji("full_moon")` `Public`  (details [here](https://docs.gitlab.com/ee/user/public_access.html))
 - GitLab (and GitHub) allow setting fine-grained **permissions and roles** for contributors
   - GitLab roles: `Guest` `r emoji::emoji("arrow_right")` `Reporter` `r emoji::emoji("arrow_right")` `Developer` `r emoji::emoji("arrow_right")` `Maintainer` `r emoji::emoji("arrow_right")` `Owner` (details [here](https://docs.gitlab.com/ee/user/permissions.html))
 
