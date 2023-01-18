@@ -68,13 +68,12 @@ pacman::p_load(char = packages_cran)
 2. **Research Workflow**
   - Code Management: **Git**
   - Data Management: **DataLad**
-  - Project Hosting: **GitLab** and **GIN**
-  - Collaboration and contributions: **Merge requests**
-  - Project managament: Access
-  - Communication: **Issues**
-  - Documentation
-  - Environments: **renv**, **conda**, **venv**, **Docker**, **Apptainer**
-  - Procedures (Make etc.)*
+  - Code & Data Sharing: **GIN**, **OSF**, **S3**, etc.
+  - Example: Wittkuhn & Schuck, 2021, *Nature Communications*
+  - Communication: Discussion via **Issues** and collaborations via **Merge Requests**
+  - *( Procedures: **datalad run** and **Make**)*
+  - *( Environments: **renv**, **venv**, **Docker**, etc.)*
+  
 3. **Discussion**
 
 ???
