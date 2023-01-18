@@ -860,6 +860,16 @@ The primary use case for dataverse siblings is dataset deposition, where only on
 
 ---
 
+class: title-slide, center, middle
+name: example
+
+# Example: Wittkuhn & Schuck, 2021, *Nature Communications*
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
 # Example: Our paper
 
 .pull-left[
