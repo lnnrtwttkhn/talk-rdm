@@ -861,6 +861,79 @@ The primary use case for dataverse siblings is dataset deposition, where only on
 
 ---
 
+# Example: Our paper
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="https://doi.org/10.1038/s41467-021-21970-2" target="_blank">doi: 10.1038/s41467-021-21970-2</a> (accessed 18/01/23)'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/a7540f80580b4131b22c/?dl=1") 
+```
+
+#### Two-sentence summary:
+
+> "*Non-invasive measurement of fast neural activity with spatial precision in humans is difficult.*
+> *Here, the authors **show how fMRI can be used to detect sub-second neural sequences in a localized fashion** and **report fast replay of images in visual cortex** that occurred independently of the hippocampus.*"
+
+]
+
+.pull-right[
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">We share all code + data via <a href="https://twitter.com/gnode?ref_src=twsrc%5Etfw">@gnode</a> + <a href="https://twitter.com/hashtag/GitHub?src=hash&amp;ref_src=twsrc%5Etfw">#GitHub</a>, version-controlled with <a href="https://twitter.com/datalad?ref_src=twsrc%5Etfw">@datalad</a> (ca. 1.5 TB): MRI in <a href="https://twitter.com/BIDSstandard?ref_src=twsrc%5Etfw">@BIDSstandard</a>, <a href="https://twitter.com/hashtag/fMRIPrep?src=hash&amp;ref_src=twsrc%5Etfw">#fMRIPrep</a> data, <a href="https://twitter.com/hashtag/MRIQC?src=hash&amp;ref_src=twsrc%5Etfw">#MRIQC</a> metrics, GLMs + anatomical masks, task code, decoding pipeline, statistical analyses: <a href="https://t.co/sv3Vrco7wj">https://t.co/sv3Vrco7wj</a> <a href="https://twitter.com/hashtag/OpenScience?src=hash&amp;ref_src=twsrc%5Etfw">#OpenScience</a> 🧮 [2/n]</p>&mdash; Lennart Wittkuhn (@lnnrtwttkhn) <a href="https://twitter.com/lnnrtwttkhn/status/1372859256777670659?ref_src=twsrc%5Etfw">March 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+]
+
+---
+
+# Example: Data management using DataLad
+
+#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Data Availability statement](https://www.nature.com/articles/s41467-021-21970-2#data-availability)):
+
+> *"We publicly share all data used in this study. Data and code management was realized using DataLad.*"
+
+--
+
+- All individual datasets can be found at: https://gin.g-node.org/lnnrtwttkhn
+- Each dataset is associated with a unique URL and a Digital Object Identifier (DOI)
+- Dataset structure shared to GitHub and dataset contents shared to GIN
+
+--
+
+#### All data?
+
+--
+
+- `highspeed`: superdataset of all subdatasets, incl. project documentation ([GitLab](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed))
+- `highspeed-bids`: MRI and behavioral data adhering to the [BIDS standard](https://bids.neuroimaging.io/)
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-bids),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-bids),
+[DOI](https://doi.org/10.12751/g-node.4ivuv8))
+- `highspeed-mriqc`: MRI quality metrics and reports based on [MRIQC](https://mriqc.readthedocs.io/en/stable/) 
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-mriqc),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-mriqc),
+[DOI](https://doi.org/10.12751/g-node.0vmyuh))
+- `highspeed-fmriprep`: preprocessed MRI data using [fMRIPrep](https://fmriprep.org/en/stable/),
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-fmriprep),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-fmriprep),
+[DOI](https://doi.org/10.12751/g-node.0ft06t))
+- `highspeed-masks`: binarized anatomical masks used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-masks),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-masks), [DOI](https://doi.org/10.12751/g-node.omirok))
+- `highspeed-glm`: first-level GLM results used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-glm),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-glm),
+[DOI](https://doi.org/10.12751/g-node.d21zpv))
+- `highspeed-decoding`: results of the multivariate decoding approach ([GitHub](https://github.com/lnnrtwttkhn/highspeed-decoding), [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-decoding), [DOI](https://doi.org/10.12751/g-node.9zft1r))
+- `highspeed-data`: unprocessed data of the behavioral task acquired during MRI acquisition ([GitHub](https://github.com/lnnrtwttkhn/highspeed-data-behavior),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-data-behavior),
+[DOI](https://doi.org/10.12751/g-node.p7dabb))
+
+\> 1.5 TB in total, version-controlled using DataLad
+
+---
+
+# Superdataset to collect all resources of the project
+
+```{r, echo=FALSE, fig.align="center", out.width="85%", fig.retina=1, fig.cap='see <a href="https://git.mpib-berlin.mpg.de/wittkuhn/highspeed" target="_blank">main project repo on GitLab</a> (accessed 21/06/21)'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/40e43c7e029a4f4696b8/?dl=1")
+```
+
+---
+
 class: title-slide, center, middle
 name: workflow-communication
 
