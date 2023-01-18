@@ -1111,8 +1111,78 @@ The repository maintainer (i.e., you) can ...
 - Group members can always view your projects and their current status
 - Group members can clone your repository, fork it, open issues and merge requests
 - Group members can not make any changes to your project by default
-
 - PI has at least Maingtainer access to all projects for long-term availability
+
+---
+
+class: title-slide, center, middle
+name: procedures
+
+# Procedures: Relationships between code and data
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Procedures: Relationships between code and data
+
+- `r emoji::emoji("question")` *"Which (version of the) code produced which (version of the) data?"*
+- `r emoji::emoji("question")` *"In which order do I need to execute the code to reproduce the results?"*
+
+--
+
+#### Example solutions
+
+--
+
+.pull-left[
+
+[`datalad run`](http://docs.datalad.org/en/stable/generated/man/datalad-run.html) *"[...] will record a shell command, and save all changes this command triggered in the dataset – be that new files or changes to existing files."* ([DataLad Handbook](http://handbook.datalad.org/en/latest/basics/basics-run.html))
+{{content}}
+]
+
+--
+
+```bash
+datalad run -m "Run script to create plot" \
+  "python3 script.py" -i "data.tsv" -o "plot.png"
+```
+
+```bash
+{
+ "cmd": "python3 script.py",
+ "inputs": [
+  "data.csv"
+ ],
+ "outputs": [
+  "plot.png"
+ ]
+}
+```
+
+--
+
+.pull-right[
+[GNU Make](https://www.gnu.org/software/make/) *"enables [...] to build and install your package without knowing the details of how that is done -- because these details are recorded in the makefile that you supply."*
+
+*"Make figures out automatically which files it needs to update, based on which source files have changed. It also [...] determines the proper order for updating files [...]"*
+
+{{content}}
+]
+
+--
+
+```lang-makefile
+all: plot.png
+
+plot.png: script.py data.tsv
+    python3 script.py
+```
+
+```bash
+make all
+```
 
 ---
 
