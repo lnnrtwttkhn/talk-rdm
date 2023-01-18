@@ -33,15 +33,15 @@ pacman::p_load(char = packages_cran)
 
 #### About me
 
-- **Position:** PostDoc at [Max Planck Institute for Human Development](https://www.mpib-berlin.mpg.de/en) & Lab Manager at [University of Hamburg](https://www.psy.uni-hamburg.de/en/arbeitsbereiche/lern-und-veraenderungsmechanismen.html) (Schuck Lab)
-- **Research:** I study the role of fast neural memory reactivation ([*replay*](https://en.wikipedia.org/wiki/Hippocampal_replay)) in the human brain using fMRI
-- **Background:** BSc Psychology (TU Dresden), MSc Cognitive Neuroscience (TU Dresden), PhD Psychology (FU Berlin)
-- **Roles:** Member of the MPIB's working group on research data management and open science
+- `r emoji::emoji("scientist")` **Position:** PostDoc at [MPI for Human Development](https://www.mpib-berlin.mpg.de/en) & Lab Manager at [University of Hamburg](https://www.psy.uni-hamburg.de/en/arbeitsbereiche/lern-und-veraenderungsmechanismen.html) (PI: Nico Schuck)
+- `r emoji::emoji("microscope")` **Research:** I study the role of fast neural memory reactivation ([*replay*](https://en.wikipedia.org/wiki/Hippocampal_replay)) in the human brain using fMRI
+- `r emoji::emoji("mortar_board")` **Background:** BSc Psychology (TU Dresden), MSc Cognitive Neuroscience (TU Dresden), PhD Psychology (FU Berlin)
+- `r emoji::emoji("bookmark")` **Roles:** Member of the MPIB's working group on research data management and open science
  & ethics committee
-- **Contact:** You can contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de), [Twitter](https://twitter.com/lnnrtwttkhn), [Mastodon](https://fediscience.org/@lnnrtwttkhn),
+- `r emoji::emoji("link")` **Contact:** You can connect with me via [email](mailto:wittkuhn@mpib-berlin.mpg.de), [Twitter](https://twitter.com/lnnrtwttkhn), [Mastodon](https://fediscience.org/@lnnrtwttkhn),
 [GitHub](https://github.com/lnnrtwttkhn) or
 [LinkedIn](https://www.linkedin.com/in/lennart-wittkuhn-6a079a1a8/)
-- **Info:** Find out more about my work on [my website](https://lennartwittkuhn.com/), [Google Scholar](https://scholar.google.de/) and [ORCiD](https://orcid.org/0000-0003-2966-6888)
+- `r emoji::emoji("information_source")` **Info:** Find out more about my work on [my website](https://lennartwittkuhn.com/), [Google Scholar](https://scholar.google.de/) and [ORCiD](https://orcid.org/0000-0003-2966-6888)
 
 ???
 
@@ -52,13 +52,13 @@ pacman::p_load(char = packages_cran)
 
 #### About this presentation
 
-- **Slides:** Reproducible slides are publicly available at [lennartwittkuhn.com/talk-rdm](https://lennartwittkuhn.com/talk-rdm/)
-- **Software:** Written in [RMarkdown](https://bookdown.org/yihui/rmarkdown/) with the [xaringan](https://github.com/yihui/xaringan) package, run in [Docker](https://www.docker.com/), deployed to [GitHub Pages](https://pages.github.com/) using [GitHub Actions](https://github.com/features/actions)
-- **DOI:** [10.5281/zenodo.7075084](http://doi.org/10.5281/zenodo.7075084) (generated using GitHub releases + Zenodo, see details [here](https://guides.github.com/activities/citable-code/))
-- **Source:** Source code is publicly available on GitHub at [github.com/lnnrtwttkhn/talk-rdm](https://github.com/lnnrtwttkhn/talk-rdm/)
-- **Links:** This presentation contains links to external resources. I do not take responsibility for the accuracy, legality or content of the external site or for that of subsequent links. If you notice an issue with a link, please contact me!
-- **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/XAmdzBEBToOD7WxFjgLiWw?both) (public!)
-- **Contact**: I am happy for any feedback or suggestions via [email](mailto:wittkuhn@mpib-berlin.mpg.de) or [GitHub issues](https://github.com/lnnrtwttkhn/talk-rdm/issues). Thank you! `r emoji::emoji("pray")`
+- `r emoji::emoji("computer")` **Slides:** Reproducible slides are publicly available at [lennartwittkuhn.com/talk-rdm](https://lennartwittkuhn.com/talk-rdm/)
+- `r emoji::emoji("package")` **Software:** [RMarkdown](https://bookdown.org/yihui/rmarkdown/) with the [xaringan](https://github.com/yihui/xaringan) package, run in [Docker](https://www.docker.com/), deployed to [GitHub Pages](https://pages.github.com/) using [GitHub Actions](https://github.com/features/actions)
+- `r emoji::emoji("trackball")` **DOI:** [10.5281/zenodo.5012476](http://doi.org/10.5281/zenodo.5012476) (generated using GitHub releases + Zenodo, see details [here](https://guides.github.com/activities/citable-code/))
+- `r emoji::emoji("abacus")` **Source:** Source code is publicly available on GitHub at [github.com/lnnrtwttkhn/talk-rdm](https://github.com/lnnrtwttkhn/talk-rdm/)
+- `r emoji::emoji("electric_plug")` **Links:** This presentation contains links to external resources. I do not take responsibility for the accuracy, legality or content of the external site or for that of subsequent links. If you notice an issue with a link, please contact me!
+- `r emoji::emoji("notebook")` **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/XAmdzBEBToOD7WxFjgLiWw?both) (public!)
+- `r emoji::emoji("pray")` **Contact**: I am happy for any feedback or suggestions via [email](mailto:wittkuhn@mpib-berlin.mpg.de) or [GitHub issues](https://github.com/lnnrtwttkhn/talk-rdm/issues). Thank you!
 
 ---
 
