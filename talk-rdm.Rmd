@@ -793,7 +793,6 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/45a664d668724e51917a/?dl=1
 
 > Object storage is a data store that originates in cloud environments and can be used to store and share data. An object consists of a unique name, the actual data, and associated metadata (such as access permissions and user-defined metadata). In contrast to file systems, objects are not stored in a hierarchy but in a flat container (so-called buckets). Access is possible via HTTP-based protocols/APIs such as S3 or Swift.
 
-
 ---
 
 # Data sharing via Keeper
@@ -883,6 +882,8 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/a7540f80580b4131b22c/?dl=1
 > *Here, the authors **show how fMRI can be used to detect sub-second neural sequences in a localized fashion** and **report fast replay of images in visual cortex** that occurred independently of the hippocampus.*"
 
 ]
+
+--
 
 .pull-right[
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">We share all code + data via <a href="https://twitter.com/gnode?ref_src=twsrc%5Etfw">@gnode</a> + <a href="https://twitter.com/hashtag/GitHub?src=hash&amp;ref_src=twsrc%5Etfw">#GitHub</a>, version-controlled with <a href="https://twitter.com/datalad?ref_src=twsrc%5Etfw">@datalad</a> (ca. 1.5 TB): MRI in <a href="https://twitter.com/BIDSstandard?ref_src=twsrc%5Etfw">@BIDSstandard</a>, <a href="https://twitter.com/hashtag/fMRIPrep?src=hash&amp;ref_src=twsrc%5Etfw">#fMRIPrep</a> data, <a href="https://twitter.com/hashtag/MRIQC?src=hash&amp;ref_src=twsrc%5Etfw">#MRIQC</a> metrics, GLMs + anatomical masks, task code, decoding pipeline, statistical analyses: <a href="https://t.co/sv3Vrco7wj">https://t.co/sv3Vrco7wj</a> <a href="https://twitter.com/hashtag/OpenScience?src=hash&amp;ref_src=twsrc%5Etfw">#OpenScience</a> 🧮 [2/n]</p>&mdash; Lennart Wittkuhn (@lnnrtwttkhn) <a href="https://twitter.com/lnnrtwttkhn/status/1372859256777670659?ref_src=twsrc%5Etfw">March 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
@@ -981,9 +982,9 @@ name: workflow-communication
 
 # Communication and project management
 
-#### Status-quo
+#### The not uncommon status-quo
 
-- Multitude of channels: Notepads, Email, Messenger (e.g., Mattermost), Project Management Software (e.g., Trello), ...
+- A diversity of channels: Notepads, Email, Messenger (e.g., Slack), Project Management Software (e.g., Trello), ... `r emoji::emoji("see_no_evil")`
 
 --
 
@@ -1097,6 +1098,8 @@ The repository maintainer (i.e., you) can ...
 ---
 
 # Managing access, permissions and roles
+
+--
 
 #### Visibility and permissions settings on GitLab
 
@@ -1217,18 +1220,19 @@ name: discussion
 
 --
 
-> How can we manage our code and data openly and reproducibly?
+> How can we manage our work (largely code and data) openly and reproducibly?
 
 --
 
 #### The technical solutions are already available!
 
-- Code and data management using **Git / DataLad** (free, open-source command-line tools)
-- Code and data sharing via flexible MPS-hosted infrastructure (**GIN, Keeper, Edmond**, etc.)
-- Project management and communication via **issue boards** and **merge requests** on GitLab
+- Code and data *management* using **Git** and **DataLad** (free, open-source command-line tools)
+- Code and data *sharing* via flexible repository hosting services (**GitLab, GitHub, GIN**, etc.)
+- Code and data *storage* on various infrastructure (**GIN**, **OSF**, **S3**, **Keeper**, **Dataverse**, and many more!)
+- Project-related communication (ideas, problems, discussions) via **issue boards** on GitLab
+- Contributions to code and data via **merge requests** on GitLab (i.e., pull requests on GitHub)
+- *Reproducible procedures using e.g., Make or datalad run commands*
 - *Reproducible computational environments using software containers (e.g., Docker)*
-- *Reproducible procedures using e.g., Make or `datalad run` commands*
-- *Reliance on community standards for data organization and code style guides*
 
 ???
 
@@ -1242,14 +1246,27 @@ name: discussion
 
 #### The long-term challenges are largely non-technical:
 - moving towards a "culture of reproducibility" (cf. Russ Poldrack)
-- changing incentives / funding schemes
-- education, education, education
+- changing incentives and funding schemes
+- learning, adopting new practices, upgrading workflows
 
-???
+---
 
-- Viele Faktoren innerhalb der Wissenschaft, die uns 
+exclude: true
+
+# What are the costs?
+
+| | Git | DataLad | GitLab | GIN | Zenodo |
+|---|---|---|---|---|---|
+| available today | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` |
+| free to use | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` |
+| open source | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` |
+| publicly funded | `NA` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("heavy_multiplication_x")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` |
+| self-hosted | `NA` | `NA` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `NA` |
 
 
+The only real cost is the **time invested in learning**!
+
+... and learning resources are plentiful!
 
 ---
 
@@ -1276,6 +1293,8 @@ name: discussion
 - Full-semester course on ["Version control of code and data using Git and DataLad"](https://lennartwittkuhn.com/ddlitlab/) in winter semester 2023/24 at University of Hamburg (generously funded by the [Digital and Data Literacy in Teaching Lab](https://www.isa.uni-hamburg.de/en/ddlitlab.html) program) - *more details coming soon ...*
 
 ---
+
+exclude: true
 
 # Why share data?
 
