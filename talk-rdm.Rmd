@@ -1182,8 +1182,8 @@ name: discussion
 # Thank you!
 
 .pull-left[
-```{r, echo=FALSE, fig.align="center", out.width="85%", fig.retina=1, fig.cap='<a href="https://schucklab.gitlab.io/" target="_blank">MPRG NeuroCode at MPIB</a>'}
-knitr::include_graphics("https://schucklab.gitlab.io/img/digital_group_photo.webp")
+```{r, echo=FALSE, fig.align="center", out.width="65%", fig.retina=1, fig.cap='<a href="https://schucklab.gitlab.io/" target="_blank">"NeuroCode" group at MPIB and UHH</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/90314f29b57f4e299755/?dl=1")
 ```
 ]
 
@@ -1195,7 +1195,7 @@ knitr::include_graphics("https://www.mpg.de/assets/og-logo-8216b4912130f32577627
 ]
 
 .pull-left[
-```{r, echo=FALSE, fig.align="center", out.width="30%", fig.retina=1, fig.cap='<a href="https://www.mpib-berlin.mpg.de/mitarbeiter/michael-krause" target="_blank">Michael Krause</a>'}
+```{r, echo=FALSE, fig.align="center", out.width="30%", fig.retina=1, fig.cap='<a href="https://www.mpib-berlin.mpg.de/mitarbeiter/michael-krause" target="_blank">Michael Krause (MPIB Sys Admin)</a>'}
 knitr::include_graphics("https://secure.gravatar.com/avatar/f49adcdd1c7bb710cdf529ab916c3098?s=800&d=identicon")
 ```
 ]
