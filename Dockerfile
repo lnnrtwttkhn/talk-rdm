@@ -1,4 +1,4 @@
-FROM r-base:4.0.3
+FROM r-base:4.2.2
 
 RUN apt-get update
 
