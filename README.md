@@ -38,7 +38,7 @@ docker login
 ```
 
 ```bash
-docker build -t  lennartwittkuhn/talk-rdm:latest .
+docker build --platform linux/amd64 -t lennartwittkuhn/talk-rdm:amd64 .
 ```
 
 ```bash
@@ -46,7 +46,11 @@ docker push lennartwittkuhn/talk-rdm:latest
 ```
 
 ```bash
-docker run --rm -v $PWD:/home lennartwittkuhn/talk-rdm /bin/sh -c "cd /home; make all"
+docker run --rm --platform linux/amd64 -v $PWD:/home lennartwittkuhn/talk-rdm:amd64 /bin/sh -c "cd /home; make all"
+```
+
+```bash
+docker run -it --rm --platform linux/amd64 -v $PWD:/home lennartwittkuhn/talk-rdm:amd64 /bin/sh
 ```
 
 ## Make PDF
