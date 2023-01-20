@@ -96,6 +96,25 @@ knitr::include_url(path_html)
 
 # Archive 📚
 
+## Open Science Initiative (OSIP) at the Department of Psychology at TU Dresden
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7075084.svg)](https://doi.org/10.5281/zenodo.7075084)
+[![PDF](https://img.shields.io/badge/PDF-Download-<COLOR>.svg)](https://github.com/lnnrtwttkhn/talk-rdm/releases/download/v5.0/talk-rdm.pdf)
+
+The following slides were presented during a talk prepared for the [Open Science Initiative at the Department of Psychology (OSIP)](https://tu-dresden.de/mn/psychologie/die-fakultaet/open-science#) at [Technische Universität Dresden](https://tu-dresden.de/), Germany on 18<sup>th</sup> of January 2023.
+
+### Slides
+
+```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
+archive_name = "20230118-osip-tu-dresden"
+path_source = file.path("archive", archive_name, "talk-rdm.Rmd")
+path_html = render_xaringan(name = archive_name, path_rmd = here::here(path_source))
+```
+
+```{r, echo=FALSE}
+knitr::include_url(path_html)
+```
+
 ## 5<sup>th</sup> RDM-Workshop 2022 on Research Data Management in the Max Planck Society
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7075084.svg)](https://doi.org/10.5281/zenodo.7075084)

@@ -12,6 +12,7 @@ Slides are available at: https://lennartwittkuhn.com/talk-rdm/
 
 | When | What | Host |
 |---|---|---|
+| 18<sup>th</sup> of January 2023 | [Open Science Initiative at the Department of Psychology (OSIP)](https://tu-dresden.de/mn/psychologie/die-fakultaet/open-science#) at [TU Dresden](https://tu-dresden.de/) |
 | 13<sup>th</sup> of September 2022 | [5<sup>th</sup> RDM-Workshop 2022 on Research Data Management in the Max Planck Society](https://rdm.mpdl.mpg.de/mpdl-services/workshops/5-fdm-workshop-2022/) | [Max Planck Digital Library (MPDL)](https://www.mpdl.mpg.de/en/) |
 | 20<sup>th</sup> of October 2021 | LNDG Lab meeting | [Lifespan Neural Dynamics Group (LNDG)](https://www.mpib-berlin.mpg.de/research/research-centers/lip/projects/lndg) at the [Max Planck Institute for Human Development](https://www.mpib-berlin.mpg.de/en) |
 | 18<sup>th</sup> of October 2021 | ["Open Science Ambassadors Day 2021"](https://osambassadors.mpdl.mpg.de/) | [Max Planck PhDnet](https://www.phdnet.mpg.de/home) and the [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) |
