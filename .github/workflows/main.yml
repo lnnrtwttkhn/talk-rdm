@@ -10,6 +10,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install and Build
         run: |
+          renv::deactivate()
           Rscript -e "rmarkdown::render('index.Rmd', output_dir = 'public', output_file = 'index.html')"
       - name: Upload artifact
         uses: actions/upload-artifact@v2
