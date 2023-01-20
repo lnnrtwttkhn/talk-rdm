@@ -12,6 +12,7 @@ Slides are available at: https://lennartwittkuhn.com/talk-rdm/
 
 | When | What | Host |
 |---|---|---|
+| 18<sup>th</sup> of January 2023 | [Open Science Initiative at the Department of Psychology (OSIP)](https://tu-dresden.de/mn/psychologie/die-fakultaet/open-science#) at [TU Dresden](https://tu-dresden.de/) |
 | 13<sup>th</sup> of September 2022 | [5<sup>th</sup> RDM-Workshop 2022 on Research Data Management in the Max Planck Society](https://rdm.mpdl.mpg.de/mpdl-services/workshops/5-fdm-workshop-2022/) | [Max Planck Digital Library (MPDL)](https://www.mpdl.mpg.de/en/) |
 | 20<sup>th</sup> of October 2021 | LNDG Lab meeting | [Lifespan Neural Dynamics Group (LNDG)](https://www.mpib-berlin.mpg.de/research/research-centers/lip/projects/lndg) at the [Max Planck Institute for Human Development](https://www.mpib-berlin.mpg.de/en) |
 | 18<sup>th</sup> of October 2021 | ["Open Science Ambassadors Day 2021"](https://osambassadors.mpdl.mpg.de/) | [Max Planck PhDnet](https://www.phdnet.mpg.de/home) and the [Max Planck Digital Library](https://www.mpdl.mpg.de/en/) |
@@ -33,20 +34,40 @@ Note, that this does not render the RMarkdown in the Docker container but your l
 
 After updating the [Dockerfile](Dockerfile), I use the following command to push the newest image to [dockerhub](https://hub.docker.com/r/lennartwittkuhn/talk-rdm):
 
+### Login
+
 ```bash
 docker login
 ```
 
-```bash
-docker build -t  lennartwittkuhn/talk-rdm:latest .
-```
+### Build
 
 ```bash
-docker push lennartwittkuhn/talk-rdm:latest
+docker build --platform linux/amd64 -t lennartwittkuhn/talk-rdm:amd64 .
 ```
 
+### Push
+
 ```bash
-docker run --rm -v $PWD:/home lennartwittkuhn/talk-rdm /bin/sh -c "cd /home; make all"
+docker push lennartwittkuhn/talk-rdm:amd64
+```
+
+### Pull
+
+```bash
+docker image pull lennartwittkuhn/talk-rdm:amd64
+```
+
+### Run
+
+```bash
+docker run --rm --platform linux/amd64 -v $PWD:/home lennartwittkuhn/talk-rdm:amd64 /bin/sh -c "cd /home; make all"
+```
+
+### Run interactively
+
+```bash
+docker run -it --rm --platform linux/amd64 -v $PWD:/home lennartwittkuhn/talk-rdm:amd64 /bin/sh
 ```
 
 ## Make PDF

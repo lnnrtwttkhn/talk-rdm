@@ -4,3 +4,4 @@ libs
 input
 public
 *.pdf
+.Rhistory

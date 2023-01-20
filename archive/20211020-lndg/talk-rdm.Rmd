@@ -1256,7 +1256,7 @@ knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible
 # Challenges: Many stages in the research cycle
 
 ```{r, echo=FALSE, fig.align="center", out.width="58%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/4906004" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
-knitr::include_graphics("https://the-turing-way.netlify.app/_images/research-cycle.jpg") 
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3a1863ac2c2e40809c5f/?dl=1")
 ```
 
 ---
