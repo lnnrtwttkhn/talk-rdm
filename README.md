@@ -33,21 +33,37 @@ Note, that this does not render the RMarkdown in the Docker container but your l
 
 After updating the [Dockerfile](Dockerfile), I use the following command to push the newest image to [dockerhub](https://hub.docker.com/r/lennartwittkuhn/talk-rdm):
 
+### Login
+
 ```bash
 docker login
 ```
+
+### Build
 
 ```bash
 docker build --platform linux/amd64 -t lennartwittkuhn/talk-rdm:amd64 .
 ```
 
+### Push
+
 ```bash
-docker push lennartwittkuhn/talk-rdm:latest
+docker push lennartwittkuhn/talk-rdm:amd64
 ```
+
+### Pull
+
+```bash
+docker image pull lennartwittkuhn/talk-rdm:amd64
+```
+
+### Run
 
 ```bash
 docker run --rm --platform linux/amd64 -v $PWD:/home lennartwittkuhn/talk-rdm:amd64 /bin/sh -c "cd /home; make all"
 ```
+
+### Run interactively
 
 ```bash
 docker run -it --rm --platform linux/amd64 -v $PWD:/home lennartwittkuhn/talk-rdm:amd64 /bin/sh
