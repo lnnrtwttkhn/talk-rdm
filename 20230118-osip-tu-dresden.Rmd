@@ -1,0 +1,2481 @@
+---
+title: "Tools for an open and reproducible research workflow"
+subtitle: "@ Open Science Initiative (OSIP) at TU Dresden (Dept. of Psychology)"
+author: "Dr. Lennart Wittkuhn"
+institute: "</br>Max Planck Research Group NeuroCode, Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Department of Psychology, University of Hamburg"
+date: "</br>Wednesday, 18<sup>th</sup> of January 2023"
+#date: "Last update of slides: `r format(Sys.time(), '%H:%M | %B %d, %Y')`"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts]
+    #css: xaringan-themer.css
+    self_contained: true
+    yolo: false
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+ #     highlightStyle: solarized-dark
+      highlightLines: true
+      countIncrementalSlides: false
+    citation_package: biblatex
+      #countdown: 60000
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
+if (!requireNamespace("pacman")) install.packages("pacman")
+packages_cran = c("here", "xaringan", "emoji")
+pacman::p_load(char = packages_cran)
+```
+
+# About
+
+--
+
+#### About me
+
+- `r emoji::emoji("scientist")` **Position:** PostDoc at [MPI for Human Development](https://www.mpib-berlin.mpg.de/en) & Lab Manager at [University of Hamburg](https://www.psy.uni-hamburg.de/en/arbeitsbereiche/lern-und-veraenderungsmechanismen.html) (PI: Nico Schuck)
+- `r emoji::emoji("microscope")` **Research:** I study the role of fast neural memory reactivation ([*replay*](https://en.wikipedia.org/wiki/Hippocampal_replay)) in the human brain using fMRI
+- `r emoji::emoji("mortar_board")` **Background:** BSc Psychology (TU Dresden), MSc Cognitive Neuroscience (TU Dresden), PhD Psychology (FU Berlin)
+- `r emoji::emoji("bookmark")` **Roles:** Member of the MPIB's working group on research data management and open science
+ & ethics committee
+- `r emoji::emoji("link")` **Contact:** You can connect with me via [email](mailto:wittkuhn@mpib-berlin.mpg.de), [Twitter](https://twitter.com/lnnrtwttkhn), [Mastodon](https://fediscience.org/@lnnrtwttkhn),
+[GitHub](https://github.com/lnnrtwttkhn) or
+[LinkedIn](https://www.linkedin.com/in/lennart-wittkuhn-6a079a1a8/)
+- `r emoji::emoji("information_source")` **Info:** Find out more about my work on [my website](https://lennartwittkuhn.com/), [Google Scholar](https://scholar.google.de/) and [ORCiD](https://orcid.org/0000-0003-2966-6888)
+
+???
+
+- FDM und Open Science aus Sicht eines Forschenden
+- Wie mit Code und Daten effektiv umgegangen werden kann
+
+--
+
+#### About this presentation
+
+- `r emoji::emoji("computer")` **Slides:** Reproducible slides are publicly available at [lennartwittkuhn.com/talk-rdm](https://lennartwittkuhn.com/talk-rdm/)
+- `r emoji::emoji("package")` **Software:** [RMarkdown](https://bookdown.org/yihui/rmarkdown/) with the [xaringan](https://github.com/yihui/xaringan) package, run in [Docker](https://www.docker.com/), deployed to [GitHub Pages](https://pages.github.com/) using [GitHub Actions](https://github.com/features/actions)
+- `r emoji::emoji("trackball")` **DOI:** [10.5281/zenodo.5012476](http://doi.org/10.5281/zenodo.5012476) (generated using GitHub releases + Zenodo, see details [here](https://guides.github.com/activities/citable-code/))
+- `r emoji::emoji("abacus")` **Source:** Source code is publicly available on GitHub at [github.com/lnnrtwttkhn/talk-rdm](https://github.com/lnnrtwttkhn/talk-rdm/)
+- `r emoji::emoji("electric_plug")` **Links:** This presentation contains links to external resources. I do not take responsibility for the accuracy, legality or content of the external site or for that of subsequent links. If you notice an issue with a link, please contact me!
+- `r emoji::emoji("notebook")` **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/XAmdzBEBToOD7WxFjgLiWw?both) (public!)
+- `r emoji::emoji("pray")` **Contact**: I am happy for any feedback or suggestions via [email](mailto:wittkuhn@mpib-berlin.mpg.de) or [GitHub issues](https://github.com/lnnrtwttkhn/talk-rdm/issues). Thank you!
+
+---
+
+# Agenda
+
+1. **Introduction**
+2. **Research Workflow**
+  - Code Management: **Git**
+  - Data Management: **DataLad**
+  - Code & Data Sharing: **GIN**, **OSF**, **S3**, etc.
+  - Example: Wittkuhn & Schuck, 2021, *Nature Communications*
+  - Communication: Discussion via **Issues** and collaborations via **Merge Requests**
+  - *( Procedures: **datalad run** and **Make**)*
+  - *( Environments: **renv**, **venv**, **Docker**, etc.)*
+  
+3. **Discussion**
+
+???
+
+- Kurze Einleitung in die Thematik
+- Fokus auf drei Aspekte des vorgeschlagenen Workflows: Code, Daten, Kommunikation
+- Verweise auf Infrastruktur innerhalb der MPG
+- Anstösse für die Diskussion
+
+---
+
+# Credit and further reading
+
+#### Papers
+
+- Wilson et al. (2014). [Best practices for scientific computing](https://doi.org/10.1371/journal.pbio.1001745). *PLOS Biology*.
+- Wilson et al. (2017). [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510). *PLOS Computational Biology*.
+- Lowndes et al. (2017). [Our path to better science in less time using open data science tools](https://doi.org/10.1038/s41559-017-0160). *Nature Ecology Evolution*.
+
+#### Talks
+
+- Richard McElreath (2020). [Science as amateur software development](https://www.youtube.com/watch?v=zwRdO9_GGhY). YouTube
+- Russ Poldrack (2020). [Toward a Culture of Computational Reproducibility](https://www.youtube.com/watch?v=XjW3t-qXAiE). YouTube
+
+#### Handbooks
+
+- Adina Wagner et al. (2022). [The DataLad Handbook](http://handbook.datalad.org/)
+- Greg Wilson (2021). [Building software together](https://buildtogether.tech/)
+- Patrick J. Mineault & The Good Research Code Handbook Community (2021). [The Good Research Code Handbook](https://goodresearch.dev)
+- The Turing Way Community. (2019). [The Turing Way handbook to reproducible, ethical and collaborative data science](https://the-turing-way.netlify.app)
+
+... and many more!
+
+---
+
+class: title-slide, center, middle
+name: introduction
+
+# Introduction
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+exclude: true
+
+# Motivation: "Open" Science should just be "Science"
+
+.pull-left[
+*"An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship.
+The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures."*
+
+Buckheit & Donoho (1995), paraphrasing Jon Claerbout
+{{content}}
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='<a href="https://wiki.seg.org/wiki/Jon_Claerbout" target="_blank">Jon Claerbout</a></br>Geophysicist at Stanford University</br>(CC-BY-SA)'}
+knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot.jpg") 
+```
+]
+
+???
+
+- "Open Science" vielgehörter Begriff
+- Praktiken von Open Science (Open Access, Open Data, Open Code) entsprechen Elementen der guten wissenschaftlichen Praxis
+- Ansatz: Offenheit der Offenen Wissenschaft sollte Standard sein
+- Die Basis der berichteten Ergebnisse in einem Paper (Code, Daten, etc.) sollten zugänglich und nutzbar sein, sonst bleibt die eigentliche Arbeit unzugänglich, nicht überprüfbar und nicht reproduzierbar
+
+<!--the next --- is a horizontal line-->
+--- 
+
+- Jon Claerbout, a distinguished exploration geophysicist at Stanford University
+- He has also pointed out that we have reached a point where solutions are available - it is now possible to publish computational research that is really reproducible by others.
+
+---
+
+# Challenge: Computational reproducibility
+
+> *"[...] when the same analysis steps performed on the same dataset consistently produces the same answer."*
+
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='<a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html" target="_blank">Table of Definitions for Reproducibility</a> by <i>The Turing Way</i> (CC-BY 4.0)'}
+knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible-matrix.jpg") 
+```
+
+???
+
+- Komputationale Reproduzierbarkeit: Situation, wenn die gleiche Analyse der gleichen Daten das gleiche Ergebnis hervorbringt
+- Komputationale Reproduzierbarkeit als Mindestanforderung für Forschungsarbeit
+- Grundvoraussetzung für replizierbare, robuste und generalisierbare Forschung
+- Oft können Ergebnisse kurze Zeit nach Publikation nicht mehr von den Originalautoren reproduziert werden
+- Wie verlässlich sind die Ergebnisse? Wie effizient ist diese Art Forschung zu betreiben?
+
+--- 
+
+- **Reproducible:** A result is reproducible when the same analysis steps performed on the same dataset consistently produces the same answer.
+- **Replicable:** A result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.
+- **Robust:** A result is robust when the same dataset is subjected to different analysis workflows to answer the same research question (for example one pipeline written in R and another written in Python) and a qualitatively similar or identical answer is produced. Robust results show that the work is not dependent on the specificities of the programming language chosen to perform the analysis.
+- **Generalisable:** Combining replicable and robust findings allow us to form generalisable results. Note that running an analysis on a different software implementation and with a different dataset does not provide generalised results. There will be many more steps to know how well the work applies to all the different aspects of the research question. Generalisation is an important step towards understanding that the result is not dependent on a particular dataset nor a particular version of the analysis pipeline.
+
+---
+
+# Challenge: Many stages in the research cycle
+
+```{r, echo=FALSE, fig.align="center", out.width="58%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/4906004" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3a1863ac2c2e40809c5f/?dl=1") 
+```
+
+???
+
+- Moderne Forschung ist sehr umfangreich und komplex
+- Gleichzeitig gibt es hohe Ansprüche an die Forschung: Sie soll exakt sein, objektiv, transparent, nachvollziehbar und reproduzierbar sein
+- Viele Schritte im Forschungsprozess über viele Jahre
+- Bei jedem dieser Schritte werden i.d.R. Daten generiert und verarbeitet - wie kann man damit systematisch und effektiv umgehen?
+- Formalisieren dieser Herausforderung
+
+---
+
+# Challenge: Many computational interactions
+
+```{r, echo=FALSE, fig.align="center", out.width="40%", fig.retina=1}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/7094210d35484a1f8f8c/?dl=1")
+```
+
+???
+
+- **Code:** Kleine Textdatein
+ - z.B. Programmiercode in Python oder R
+ - Manuskript in LaTeX
+- **Daten:** binäre Dateeien und größere Textdateien
+ - MRT Daten
+ - größere tabellarische Daten (`.csv`)
+- **Prozeduren:** Code und Daten interagieren
+ - Basierend auf Daten werden mit Code neue Daten produziert: Ich lese Dateien ein und produziere Grafiken
+ - Code produziert alleine neue Daten (z.B. in Simulationen)
+ - Prozeduren können und sollten dokumentiert werden bzw. maschinenausführbar implementiert werden
+- **Umgebung:** Komputationale Umgebungen (Betriebssystem, Softwareversionen), die diese Interaktion von Code und Daten möglich machen und beeinflussen
+  - Reproduzierbare komputationale Umgebungen verhindern das "Works On My Machine"-Problem
+- **Kommunikation:**
+ - Koordination der Arbeit mit mehrere Forschenden
+ - Absprachen, Entscheidungen, etc.
+
+Fokus: Code, Daten, Kommunikation
+
+--- 
+
+- Data is produced through code (e.g., task code)
+- Data is manipulated by code and new data is generated
+- Mapping between input and output data
+- This happens using specific software in specific versions
+
+---
+
+class: title-slide, center, middle
+name: track-everything
+
+# If everything is relevant ... 
+--
+track everything
+--
+
+.footnote[
+Credit: Adapted from [Slides on "Research Data Management with DataLad"](http://datasets.datalad.org/datalad/datalad-course/html/mpsc-introduction.html#/5) by Adina Wagner & Michael Hanke
+]
+
+---
+
+class: title-slide, center, middle
+name: workflow-git
+
+# Workflow: Code Management using Git
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Why we need version control for code
+
+```{r, echo=FALSE, fig.align="center", out.width="33%", fig.retina=1, fig.cap='<a href="http://phdcomics.com/comics/archive/phd101212s.gif" target="_blank"><sup>&copy; Jorge Cham (phdcomics.com)</sup></a>'}
+knitr::include_graphics("http://phdcomics.com/comics/archive/phd101212s.gif") 
+```
+
+???
+
+- Vielen, die an einem langen Textdokument gearbeitet haben, inbesondere zusammen mit anderen, sollte dieses Problem bekannt vorkommen
+ - Viele Runden von Veränderungen und Anpassungen
+ - Speichern von Zwischenergebnissen
+ - Entstehung von Parallelversionen 
+ - Bei Programmiercode: Warum funktioniert der Code in dieser Version nicht?
+- Lösung: Versionskontrolle
+- Hier: Implizite Versionskontrolle, die an ihre Grenzen stösst
+
+---
+
+exclude: false
+
+# What is version control?
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/3695300" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://zenodo.org/record/3695300/files/VersionControl.jpg?download=1")
+```
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/3695300" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://zenodo.org/record/3695300/files/ProjectHistory.jpg?download=1") 
+```
+]
+
+.center[
+- keep files organized
+- keep track of changes
+- revert changes or go back to previous versions
+]
+
+???
+
+- Datein zu organisieren
+- präziser Verlauf aller Veränderungen an einer Datei
+- Änderungen zurücknehmen und zu älteren Versionen zurückkehren
+
+---
+
+# Version control with Git
+
+```{r, echo=FALSE, fig.align="center", out.width="15%", fig.retina=1}
+knitr::include_graphics("https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png")
+```
+
+> Version control is a systematic approach to record changes made in a [...] set of files, over time. This allows you and your collaborators to track the history, see what changed, and recall specific versions later [...] ([Turing Way](https://the-turing-way.netlify.app/reproducible-research/vcs.html))
+
+--
+
+.pull-left[
+#### Basic version control workflow 
+1. Create files (text, code, etc.)
+1. Work on the files (change, delete or add content)
+1. **Create a snapshot of the file state** (current version)
+{{content}}
+]
+<!-- see https://stackoverflow.com/questions/46408057/incremental-slides-do-not-work-with-a-two-column-layout-->
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="55%", fig.retina=1}
+# fig.cap='<a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control" target="_blank">Figure 3: Distributed Version Control Systems</a>'
+knitr::include_graphics("https://git-scm.com/book/en/v2/images/distributed.png") 
+```
+]
+
+--
+
+#### Git
+
+- most popular **distributed version control system**
+- free, [open-source](https://github.com/git) command-line tool
+- Graphical User Interfaces (GUIs) exist, e.g., [GitKraken](https://www.gitkraken.com/)
+- standard tool for most (all?) software developers
+
+???
+
+- Back in the day: Software developers used BitKeeper to collaborate on code with colleagues
+- Free access to BitKeeper was revoked after a company broke down in 2005
+- A new solution was needed so Linus Torvalds coded it up
+- First version after a couple of days
+
+---
+
+# The amazing superpowers of version control with Git
+
+--
+
+.pull-left[
+#### Git as a distributed **version control** system
+- keep track of changes in a directory (a "repository")
+- take snapshots ("commits") of your repo at any time
+- know the history of what was changed when by whom
+- compare commits and go back to any previous state
+- work on "branches" and flexibly "merge" them together
+
+`r emoji::emoji("bulb")` **save one file and all of its history instead of multiple versions of the same file**
+{{content}}
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap="Commit history in GitKraken"}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/8fda5b269fef4d778007/?dl=1") 
+```
+]
+
+--
+
+#### Git as a **distributed** version control system
+- "push" your repo to a "remote" location and share it
+- host / share your repo on GitHub, GitLab or BitBucket
+- work with others on the same files at the same time
+- others can read / copy / edit and suggest changes
+- make your repo public and openly share your work
+
+---
+
+# Code sharing via GitLab
+
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://gitlab.com/" target="_blank">gitlab.com</a>'}
+knitr::include_graphics("https://cdn.icon-icons.com/icons2/2415/PNG/512/gitlab_original_logo_icon_146503.png")
+```
+
+> "*GitLab is **open source** software to collaborate on code. Manage git repositories with fine-grained **access controls** that keep your code secure. [...] Perform **code reviews** and **enhance collaboration** with merge requests. Each project can also have an **issue tracker** and a **wiki**.*"
+
+--
+
+#### GitLab for TU Dresden employees
+
+- hosted [at the School of Science at TU Dresden](https://tu-dresden.de/mn/der-bereich/it-kompetenz-und-servicezentrum/gitlab-dienst?set_language=en)<sup>1</sup>
+
+.footnote[
+<sup>1</sup> Using your ZIH credentials, you should already have an account!
+]
+
+---
+
+class: title-slide, center, middle
+name: workflow-data
+
+# Workflow: Data Management using DataLad
+<!--the next --- is a horizontal line-->
+
+--- 
+
+
+
+---
+
+# Why we need version control for data
+
+```{r, echo=FALSE, fig.align="center", out.width="55%", fig.retina=1, fig.cap='<a href="http://phdcomics.com/comics/archive/phd052810s.gif" target="_blank"><sup>&copy; Jorge Cham (phdcomics.com)</sup></a>'}
+knitr::include_graphics("http://phdcomics.com/comics/archive/phd052810s.gif") 
+```
+
+???
+
+- Problem mangelnder Versionskontrolle gibt es auch für Daten
+- Daten können sich über die Zeit verändern
+- Mehrere Versionen der gleichen Datei mit unklaren Unterschieden
+- Vermischung verschiedener Daten
+
+<!--the next --- is a horizontal line-->
+--- 
+
+- Kann man Git verwenden? Git ist für die Versionskontrolle von kleineren, textbasierten Dateien geeignet
+- Gibt es auch Versionskontrolle für Daten?
+
+---
+
+# What is DataLad?
+
+```{r, echo=FALSE, fig.align="center", out.width="8%", fig.retina=1, fig.cap='<a href="https://www.datalad.org/" target="_blank">datalad.org</a>'}
+knitr::include_graphics("https://avatars.githubusercontent.com/u/8927200?s=200&v=4")
+```
+
+> *"DataLad is a software tool developed to **aid with everything related to the evolution of digital objects**"*
+
+--
+
+- **"Git for (large) data"**
+- free, [open-source](https://github.com/datalad/datalad) **command-line tool**
+- building on top of **Git** and **git-annex**, DataLad allows you to **version control arbitrarily large files** in datasets.
+- *"Arbitrarily large?"* - yes, see DataLad dataset of 80TB / 15 million files from the Human Connectome Project (see [details](https://handbook.datalad.org/en/latest/usecases/HCP_dataset.html#usecase-hcp-dataset))
+- A Graphical User Interface (GUI) exists: [DataLad Gooey](http://docs.datalad.org/projects/gooey/en/latest/index.html)
+
+--
+
+exclude: true
+
+#### DataLad philosophy (excerpt)
+
+- DataLad knows only two things: Datasets and files
+- DataLad minimizes custom procedures and data structures
+- DataLad is developed for complete decentralization
+- DataLad aims to maximize the (re-)use of existing third-party data resources and infrastructure
+
+???
+
+- DataLad ist domänen-unspezifisch und kann für jede Art von Daten verwendet werden
+- DataLad interagiert mit verschiedenen bekannten Infrastrukturen und Hosting-Plattformen
+
+<!--the next --- is a horizontal line-->
+--- 
+
+#### What is DataLad? (see the [10,000 feet](http://handbook.datalad.org/en/latest/intro/executive_summary.html) and [brief](http://handbook.datalad.org/en/latest/intro/philosophy.html) overview in the DataLad Handbook by [Wagner et al., 2020, *Zenodo*](https://doi.org/10.5281/ZENODO.3905791))
+
+#### Human Connectome Project
+
+> The goal of the Human Connectome Project is to build a "network map" (connectome) that will shed light on the anatomical and functional connectivity within the healthy human brain, as well as to produce a body of data that will facilitate research into brain disorders such as dyslexia, autism, Alzheimer's disease, and schizophrenia.
+-- [Source: Wikipedia](https://en.wikipedia.org/wiki/Human_Connectome_Project)
+
+---
+
+# DataLad: What is a dataset?
+
+> *"A dataset is a directory on a computer that DataLad manages."*
+
+```{r, echo=FALSE, fig.align="center", out.width="40%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-101-create.html" target="_blank">DataLad Handbook: Create a new dataset</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/dataset.svg") 
+```
+
+> "*You can create new, empty datasets [..] and populate them, or transform existing directories into datasets.*"
+
+???
+
+- Wie bei Git, ist ein DataLad dataset ist einfach nur ein Ordner auf dem Computer der von DataLad getrackt wird
+- Man kann neue, leere Datasets erstellen und befüllen oder bereits existierende Ordner mit Dateien in DataLad datasets überführen
+
+
+---
+
+# DataLad: Version control arbitrarily large files
+
+> *"Building on top of Git and git-annex, DataLad allows you to version control arbitrarily large files in datasets."*
+
+```{r, echo=FALSE, fig.align="center", out.width="40%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-102-populate.html" target="_blank">DataLad Handbook: How to pupulate a dataset</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/local_wf.svg") 
+```
+
+> *"[...] keep track of revisions of data of any size, and view, interact with or restore any version of your dataset [...]."*
+
+???
+
+- DataLad trackt Veränderungen in Dateien jeglicher Größe und speichert den Zustand in der Repository Historie ab
+
+---
+
+# DataLad: Dataset consumption and collaboration
+
+> *"DataLad lets you consume datasets provided by others, and collaborate with them."*
+
+> *"You can **install existing datasets** and update them from their sources, or create sibling datasets that you can **publish updates** to and **pull updates** from for collaboration and data sharing."*
+
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-105-install.html" target="_blank">DataLad Handbook: Install an existing dataset</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collaboration.svg") 
+```
+
+???
+
+- Mit DataLad können bereits existierende Datensätze gecloned / installiert werden, damit weitergearbeitet werden
+- Eigene Datasets können zu einer Reihe von Hosting-Platformen publiziert und mit anderen geteilt werden
+
+---
+
+# DataLad: Dataset linkage
+
+> *"Datasets can contain other datasets (subdatasets), **nested arbitrarily deep.**"*
+
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-106-nesting.html" target="_blank">DataLad Handbook: Nesting datasets</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/linkage_subds.svg") 
+```
+
+> *"Each dataset has an independent [...] history, but can be registered at a precise version in higher-level datasets. This allows to **combine datasets** and to perform commands recursively across a hierarchy of datasets, and it is the basis for advanced provenance capture abilities."*
+
+???
+
+- DataLad datasets können miteinander verlinkt werden
+- DataLad speichert die präzise Version des Datensatzes, der verwendet wird
+- Sehr geeignet für die Art von sequentiellen Datenverarbeitungsschritten in der Forschung
+- Modularität der einzelnen Datasets erleichtert Wiederwendung
+- Git user: funktioniert mit Git submodules
+
+---
+
+exclude: true
+
+# DataLad: Full provenance capture and reproducibility
+
+> *"DataLad allows to **capture full provenance**: The origin of datasets, the origin of files obtained from web sources, complete machine-readable and automatically reproducible records of how files were created [...]."*
+
+```{r, echo=FALSE, fig.align="center", out.width="55%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/usecases/provenance_tracking.html" target="_blank">DataLad Handbook: Provenance tracking</a> and <a href="http://handbook.datalad.org/en/latest/basics/basics-run.html" target="_blank">run commands</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/reproducible_execution.svg") 
+```
+
+> *"You or your collaborators can thus re-obtain or reproducibly **recompute content with a single command**, and make use of extensive provenance of dataset content **(who created it, when, and how?)**."*
+
+---
+
+# DataLad: Third party service integration
+
+> *"**Export datasets to third party services** such as GitHub, GitLab, or Figshare with built-in commands."*
+
+```{r, echo=FALSE, fig.align="center", out.width="65%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/basics-thirdparty.html" target="_blank">DataLad Handbook: Third-party infrastructure</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/thirdparty.svg") 
+```
+
+> *"Alternatively, you can use a **multitude of other available third party services** such as Dropbox, Google Drive, Amazon S3, owncloud, or many more that DataLad datasets are compatible with."*
+
+???
+
+- DataLad integriert mit einer Reihe von Platformen und Services, die in der Forschung verbreitet sind
+- Dadurch ermöglicht DataLad systematische Kollaboration und Veröffentlichung von größeren Datensätzen
+
+---
+
+exclude: true
+
+# DataLad: Metadata handling
+
+> *"**Extract, aggregate, and query dataset metadata.** This allows to automatically obtain metadata according to different metadata standards (EXIF, XMP, ID3, BIDS, DICOM, NIfTI1, ...), store this metadata in a portable format, share it, and search dataset contents."*
+
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='see <a href="http://docs.datalad.org/en/stable/metadata.html" target="_blank">DataLad Handbook: Metadata</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_prov_imaging.svg") 
+```
+
+---
+
+
+class: title-slide, center, middle
+name: workflow-sharing
+
+# Workflow: Data sharing using DataLad
+<!--the next --- is a horizontal line-->
+
+--- 
+
+???
+
+- Fokus, wie Infrastruktur der MPG zum Tragen kommt
+
+---
+
+# Data sharing and collaboration with DataLad
+
+.center[
+*"I have a dataset on my computer. How can I share it or collaborate on it?"*
+]
+
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/d0b1749c4d504bb080b7/?dl=1") 
+```
+
+---
+
+# Share version-controlled datasets with DataLad
+
+- With DataLad, you can **share data like you share code** (i.e., via repository hosting services)
+- DataLad datsets can be cloned, pushed and updated from and to remote hosting services
+
+```{r, echo=FALSE, fig.align="center", out.width="75%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-105-install.html" target="_blank">DataLad Handbook: Install an existing dataset</a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collaboration.svg") 
+```
+
+???
+
+- Mit DataLad können wir Daten genau so mit anderen Teilen, wie wir es mit Git und Code gewohnt
+
+---
+
+# Interoperability with a range of hosting services
+
+.center[DataLad is built to **maximize interoperability with a wide range of hosting services** and storage technologies]
+
+.center[
+```{r, echo=FALSE, fig.align="center", out.width="38%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3ff02e436e5142059461/?dl=1")
+# http://datasets.datalad.org/datalad/datalad-course/pics/services_connected.png
+# http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg
+```
+]
+
+???
+
+- DataLad interagiert mit einer Vielzahl von Hosting-Services
+- Bekannte wie GitHub, GitLab, Open Science Framework (OSF)
+- Fokus auf drei Services, die von der MPG angeboten werden bzw. könnten
+
+---
+
+# Separate content in Git vs. git-annex behind the scenes
+
+- Datasets are exposed via private or public repository on a repository hosting service (e.g., GitLab)
+- Data can't be stored in the repository hosting service but can be kept in almost any third party storage
+- Publication dependencies automate pushing data content to the correct place
+
+.center[
+```{r, echo=FALSE, fig.align="center", out.width="45%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/a3347c7a01084525a8df/?dl=1")
+# http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg
+```
+]
+
+---
+
+# Data sharing via GIN
+
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://gin.g-node.org/" target="_blank">gin.g-node.org</a>'}
+knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
+```
+
+> "*GIN is [...] a web-accessible repository store of your data based on git and git-annex that you can access securely anywhere you desire while keeping your data in sync, backed up and easily accessible [...]"*
+
+.center[
+DataLad plays perfectly with GIN, since both use git + git-annex (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))
+]
+
+???
+
+- Angebot des German Neuroinformatics Node (GNode) in München
+- Fokus auf Neurowissenschaften, aber im Prinzip für Daten verschiedener Disziplinen verwendbar
+
+--
+
+#### `r emoji::emoji("sparkles")` Advantages of GIN
+
+- free to use and open-source (could be hosted within your institution; details [here](https://gin.g-node.org/G-Node/Info/wiki/In+House))
+- currently unlimited storage capacity and no restrictions on individual file size
+- supports private and public repositories
+- publicly funded by the Federal Ministry of Education and Research (BMBF; details [here](https://gin.g-node.org/G-Node/Info/wiki/about#support))
+- servers are on German land (near Munich, Germany; cf. GDPR)
+- provides Digital Object Identifiers (DOIs) (details [here](https://gin.g-node.org/G-Node/Info/wiki/DOI)) and allows free licensing (details [here](https://gin.g-node.org/G-Node/Info/wiki/Licensing))
+
+???
+
+- We have an *experimental* [in-house GIN instance](http://gin.mpib-berlin.mpg.de/) with 5TB that can also host annexed data
+
+---
+
+# Publishing a DataLad dataset to GIN in only 4 steps
+
+--
+
+1\. Create a dataset
+
+```{bash, eval=FALSE}
+datalad create my_dataset
+```
+
+--
+
+2\. Save data into the dataset
+
+```{bash, eval=FALSE}
+datalad save -m "add data to dataset"
+```
+
+--
+
+3\. Add the GIN remote (aka. "sibling") to the repository
+
+```{bash, eval=FALSE}
+datalad siblings add -d . --name gin --url git@gin.g-node.org:/my_username/my_dataset.git
+```
+
+--
+
+4\. Transfer the dataset to GIN
+
+```{bash, eval=FALSE}
+datalad push --to gin
+```
+
+--
+
+Done!<sup>1</sup> 🎉
+
+<sup><sup>1</sup> To be fair, it's a bit more complex than that ... `r emoji::emoji("innocent")` (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))</sup>
+
+---
+
+# Data sharing via the Open Science Framework (OSF)
+
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://osf.io/" target="_blank">osf.io</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/27b4f2ac823147a7975c/?dl=1")
+```
+
+.center[
+DataLad-OSF extension allows to integrate with OSF via DataLad (details [here](http://docs.datalad.org/projects/osf/en/latest/index.html))
+]
+
+--
+
+#### `r emoji::emoji("sparkles")` Advantages of OSF
+
+- free to use
+- supports private and public repositories
+- provides Digital Object Identifiers (DOIs) (details [here](https://help.osf.io/article/220-create-dois)) and allows free licensing (details [here](https://help.osf.io/article/148-licensing))
+- very popular among scientists (details [here](https://www.cos.io/blog/shared-investment-in-osf-sustainability))
+
+#### `r emoji::emoji("cloud_with_rain")` Limitations of OSF
+
+- private and public projects projects limited to 5GB and 50GB, respectively
+- maximum individual file size of 5GB
+
+---
+
+# Data sharing via S3 buckets (object storage)
+
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='e.g., <a href="https://tu-dresden.de/zih/dienste/service-katalog/arbeitsumgebung/datenspeicher/objektspeicher-s3?set_language=en" target="_blank">Object Storage at ZIH</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/45a664d668724e51917a/?dl=1")
+```
+
+--
+
+.center[
+> "*Object storage is a data store that originates in cloud environments and can be used to store and share data.*
+> *An object consists of a unique name, the actual data, and associated metadata.*
+> *In contrast to file systems, objects are not stored in a hierarchy but in a flat container (so-called buckets).*"
+]
+
+--
+
+#### `r emoji::emoji("sparkles")` Advantages of S3 buckets
+
+- up to 200 GB per TU Dresden employee (expandable)
+- data hosted on ZIH servers
+- S3 buckets can be configured as a [DataLad special remote](https://handbook.datalad.org/en/latest/basics/101-139-s3.html) (walkthrough in DataLad Handbook)
+
+
+???
+
+> Object storage is a data store that originates in cloud environments and can be used to store and share data. An object consists of a unique name, the actual data, and associated metadata (such as access permissions and user-defined metadata). In contrast to file systems, objects are not stored in a hierarchy but in a flat container (so-called buckets). Access is possible via HTTP-based protocols/APIs such as S3 or Swift.
+
+---
+
+# Data sharing via Keeper
+
+```{r, echo=FALSE, fig.align="center", out.width="35%", fig.retina=1, fig.cap='<a href="https://keeper.mpdl.mpg.de/" target="_blank">keeper.mpdl.mpg.de</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/media/img/catalog/KEEPER_logo.png")
+```
+
+> "*A free service for all Max Planck employees and project partners with **more than 1TB of storage per user** for your researchdata.
+> Profit from safe data storage, seamlessly integrated into your research workflow.*"
+
+--
+
+- \> 1 TB per Max Planck employee (expandable)
+- based on the cloud-sharing service [Seafile](https://www.seafile.com/en/home/) (similar to Dropbox)
+- data hosted on MPS servers
+- configurable as a [DataLad special remote](http://handbook.datalad.org/en/latest/basics/101-139-dropbox.html)
+
+???
+
+**special remote**: git-annex concept: A protocol that defines the underlying transport of annexed files to and from places that are not Git repositories (e.g., a cloud service or external machines such as HPC systems).
+
+---
+
+# Data sharing via Edmond
+
+```{r, echo=FALSE, fig.align="center", out.width="35%", fig.retina=1, fig.cap='<a href="https://edmond.mpdl.mpg.de/" target="_blank">edmond.mpdl.mpg.de</a>'}
+knitr::include_graphics("https://colab.mpdl.mpg.de/mw010/images/d/db/EDMOND_hell.png")
+```
+
+> "*Edmond is a research data repository for Max Planck researchers. It is the place to store completed datasets of research data with open access. Edmond serves the publication of research data from all disciplines [...].*"
+
+--
+
+- based on [Dataverse](https://dataverse.org/), hosted on MPS servers
+- use is free of charge
+- no storage limitation (on datasets or individual files)
+- flexible licensing
+
+--
+
+#### DataLad - Dataverse integration (details [here](http://docs.datalad.org/projects/datalad-dataverse/en/latest/index.html))
+
+- "push" DataLad datasets (including version history, data, code, results and provenance) to Dataverse 
+- "clone" published DataLad datasets from Dataverse
+- primarily for one-time dataset publication and consumption, not extensive collaboration
+
+???
+
+- nach Hackathon während des Meetings der Organization for Human Brain Mapping (OHBM) gibt es seit Juli 2022 eine DataLad-Dataverse Integration (noch nicht getestest!)
+
+
+With datalad-dataverse, the entire dataset is deposited on a Dataverse installation. Internally, this is achieved by packaging the "Git" part and depositing it alongside the annexed data, similar to how the datalad-next extensions allows to do this for webdav based services.
+
+The primary use case for dataverse siblings is dataset deposition, where only one site is uploading dataset and file content updates for others to reuse. Compared to workflows which use repository hosting services, this solution will be less flexible for collaboration (because it's not able to utilise features for controlling dataset history offered by repository hosting services, such as pull requests and conflict resolution), and might be slower (when it comes to file transfer). What it offers, however, is the ability to make the published dataset browsable like regular directories and amendable with metadata on the Dataverse instance while being cloneable through DataLad.
+
+<!-----
+
+#### Suggested alternatives to GIN that can be used with DataLad (selection):
+
+- [Keeper](https://keeper.mpdl.mpg.de/) (Seafile) offers all Max Planck employees 1TB(!) of storage (expandable)
+- [Open Science Framework (OSF)](https://osf.io/), popular in Psychology / Cognitive Neuroscience (see [details](http://docs.datalad.org/projects/osf/en/latest/))
+-->
+
+---
+
+class: title-slide, center, middle
+name: example
+
+# Example: Wittkuhn & Schuck, 2021, *Nature Communications*
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Example: Our paper
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="https://doi.org/10.1038/s41467-021-21970-2" target="_blank">doi: 10.1038/s41467-021-21970-2</a> (accessed 18/01/23)'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/a7540f80580b4131b22c/?dl=1") 
+```
+
+#### Two-sentence summary:
+
+> "*Non-invasive measurement of fast neural activity with spatial precision in humans is difficult.*
+> *Here, the authors **show how fMRI can be used to detect sub-second neural sequences in a localized fashion** and **report fast replay of images in visual cortex** that occurred independently of the hippocampus.*"
+
+]
+
+--
+
+.pull-right[
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">We share all code + data via <a href="https://twitter.com/gnode?ref_src=twsrc%5Etfw">@gnode</a> + <a href="https://twitter.com/hashtag/GitHub?src=hash&amp;ref_src=twsrc%5Etfw">#GitHub</a>, version-controlled with <a href="https://twitter.com/datalad?ref_src=twsrc%5Etfw">@datalad</a> (ca. 1.5 TB): MRI in <a href="https://twitter.com/BIDSstandard?ref_src=twsrc%5Etfw">@BIDSstandard</a>, <a href="https://twitter.com/hashtag/fMRIPrep?src=hash&amp;ref_src=twsrc%5Etfw">#fMRIPrep</a> data, <a href="https://twitter.com/hashtag/MRIQC?src=hash&amp;ref_src=twsrc%5Etfw">#MRIQC</a> metrics, GLMs + anatomical masks, task code, decoding pipeline, statistical analyses: <a href="https://t.co/sv3Vrco7wj">https://t.co/sv3Vrco7wj</a> <a href="https://twitter.com/hashtag/OpenScience?src=hash&amp;ref_src=twsrc%5Etfw">#OpenScience</a> 🧮 [2/n]</p>&mdash; Lennart Wittkuhn (@lnnrtwttkhn) <a href="https://twitter.com/lnnrtwttkhn/status/1372859256777670659?ref_src=twsrc%5Etfw">March 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+]
+
+---
+
+# Example: Data management using DataLad
+
+#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Data Availability statement](https://www.nature.com/articles/s41467-021-21970-2#data-availability)):
+
+> *"We publicly share all data used in this study. Data and code management was realized using DataLad.*"
+
+--
+
+- All individual datasets can be found at: https://gin.g-node.org/lnnrtwttkhn
+- Each dataset is associated with a unique URL and a Digital Object Identifier (DOI)
+- Dataset structure shared to GitHub and dataset contents shared to GIN
+
+--
+
+#### All data?
+
+--
+
+- `highspeed`: superdataset of all subdatasets, incl. project documentation ([GitLab](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed))
+- `highspeed-bids`: MRI and behavioral data adhering to the [BIDS standard](https://bids.neuroimaging.io/)
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-bids),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-bids),
+[DOI](https://doi.org/10.12751/g-node.4ivuv8))
+- `highspeed-mriqc`: MRI quality metrics and reports based on [MRIQC](https://mriqc.readthedocs.io/en/stable/) 
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-mriqc),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-mriqc),
+[DOI](https://doi.org/10.12751/g-node.0vmyuh))
+- `highspeed-fmriprep`: preprocessed MRI data using [fMRIPrep](https://fmriprep.org/en/stable/),
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-fmriprep),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-fmriprep),
+[DOI](https://doi.org/10.12751/g-node.0ft06t))
+- `highspeed-masks`: binarized anatomical masks used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-masks),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-masks), [DOI](https://doi.org/10.12751/g-node.omirok))
+- `highspeed-glm`: first-level GLM results used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-glm),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-glm),
+[DOI](https://doi.org/10.12751/g-node.d21zpv))
+- `highspeed-decoding`: results of the multivariate decoding approach ([GitHub](https://github.com/lnnrtwttkhn/highspeed-decoding), [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-decoding), [DOI](https://doi.org/10.12751/g-node.9zft1r))
+- `highspeed-data`: unprocessed data of the behavioral task acquired during MRI acquisition ([GitHub](https://github.com/lnnrtwttkhn/highspeed-data-behavior),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-data-behavior),
+[DOI](https://doi.org/10.12751/g-node.p7dabb))
+
+\> 1.5 TB in total, version-controlled using DataLad
+
+---
+
+# Superdataset to collect all resources of the project
+
+```{r, echo=FALSE, fig.align="center", out.width="85%", fig.retina=1, fig.cap='see <a href="https://git.mpib-berlin.mpg.de/wittkuhn/highspeed" target="_blank">main project repo on GitLab</a> (accessed 21/06/21)'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/40e43c7e029a4f4696b8/?dl=1")
+```
+
+---
+
+# Project website with main statistical results
+
+#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Code Availability statement](https://www.nature.com/articles/s41467-021-21970-2#code-availability)):
+
+> "*We share all code used in this study. An overview of all the resources is publicly available on our **project website.**"*
+
+Project website publicly available at https://wittkuhn.mpib.berlin/highspeed/
+
+--
+
+#### Reproducible reports with [Bookdown](https://bookdown.org/yihui/bookdown/) / [RMarkdown](https://bookdown.org/yihui/rmarkdown/)
+
+> *"R Markdown is a file format for making dynamic documents with R. An R Markdown document is written in markdown (an easy-to-write plain text format) and contains chunks of embedded R code [...]"*
+
+- Project documentation and main statistical analyses are written in RMarkdown (see [here](https://github.com/lnnrtwttkhn/highspeed-analysis/tree/master/code))
+- Documentation pages showcase non-executed code (used in subdatasets) in Python and Bash
+- Statistical analyses are executed and website rendered automatically via [Continuous Integreation / Deployment (CI/CD)](https://docs.gitlab.com/ee/ci/):
+  1. In the [main project repository](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed), all RMarkdown files are [combined](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/_bookdown.yml#L22-36) using [bookdown](https://bookdown.org/) (across subdatasets)
+  1. Input data is [automatically retrieved](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L5-75) from GIN and / or Keeper using DataLad (run in a [Docker container](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/datalad/Dockerfile))
+  1. The RMarkdown files are [run in Docker](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile) (executing main statistical analyses) and [rendered](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L99) into a static website
+  1. The static website is [deployed to GitLab pages](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L95-106)
+
+&rarr; This pipeline is automatically triggered on every push (change) to the main repository.
+
+---
+
+class: title-slide, center, middle
+name: workflow-communication
+
+# Workflow: Communication and project management
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Communication and project management
+
+#### The not uncommon status-quo
+
+- A diversity of channels: Notepads, Email, Messenger (e.g., Slack), Project Management Software (e.g., Trello), ... `r emoji::emoji("see_no_evil")`
+
+--
+
+#### `r emoji::emoji("bulb")` Project management next to your code and data via repository hosting services (e.g., GitLab)
+
+- Discuss and plan your work in [Issues](https://docs.gitlab.com/ee/user/project/issues/)
+- Propose changes to code or data using [merge requests](https://docs.gitlab.com/ee/user/project/merge_requests/) <sup>1</sup>
+- Manage access to your code and data with detailed [permissions and roles](https://docs.gitlab.com/ee/user/permissions.html)
+- Add documentation to your repository or in a separate [wiki](https://docs.gitlab.com/ee/user/project/wiki/)
+
+.footnote[
+<sup>1</sup> *merge* requests on GitLab / *pull* requests on GitHub
+]
+
+---
+
+# Discuss ideas and plan your work: Issues
+
+.pull-left[
+```{r, echo=FALSE, out.width="120%", fig.retina=1}
+knitr::include_graphics("https://gitlab.pavlovia.org/help/user/project/issues/img/new_issue.png")
+# https://docs.gitlab.com/ee/user/project/issues/img/new_issue_v13_1.png
+```
+{{content}}
+]
+
+--
+
+#### Try it!
+
+Open a new Issue in the [ repository](https://github.com/lnnrtwttkhn/talk-rdm/issues/new) for these slides (requires a GitHub account)
+
+--
+
+.pull-right[
+#### Elements of a new Issue (details [here](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#elements-of-the-new-issue-form))
+
+- **Description:** Markdown + HTML support, task lists, etc.
+- **Confidentiality**: Issue visible only for team members
+- **Assignee**: Assign responsibilities to team members
+- **Milestone**: Add Issues to important milestones
+- **Labels**: Organize Issues by labels, e.g., `bug`
+- **Due date**: Set due dates for Issues
+{{content}}
+]
+
+--
+
+#### More functions of Issues (details [here](https://docs.gitlab.com/ee/user/project/issues/))
+
+- Issues can be combined in [Issue boards](https://docs.gitlab.com/ee/user/project/issue_board.html)
+- Issues can be [sorted](https://docs.gitlab.com/ee/user/project/issues/sorting_issue_lists.html) (by due date, label priority, etc.)
+- Issues can be [transferred between repositories](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#moving-issues)
+- Issues can be [crosslinked](https://docs.gitlab.com/ee/user/project/issues/crosslinking_issues.htm) e.g., in commit messages: `git commit -m "add missing data, close #37"`
+- Issues can send [automated email notifications](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#new-issue-via-email)
+- Issues can be [exported](https://docs.gitlab.com/ee/user/project/issues/csv_export.html) and archived
+{{content}}
+
+---
+
+exclude: true
+
+# Issue boards
+
+.pull-left[
+```{r, echo=FALSE, out.width="120%", fig.retina=1, fig.cap='<a href="https://docs.gitlab.com/ee/user/project/issue_board.html" target="_blank">GitLab Issue Boards</a>'}
+knitr::include_graphics("https://docs.gitlab.com/ee/user/project/img/issue_boards_core_v14_1.png") 
+```
+]
+
+
+
+
+---
+
+# Propose and implement changes: Merge / pull requests
+
+--
+
+.pull-left[
+#### Basic collaboration workflow:
+1. Clone the repository (i.e., "download the project")
+1. Switch to a new branch (i.e., "start a separate version")
+1. Make changes to the files and push the new version
+1. Open a merge / pull request <sup>1</sup>
+{{content}}
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="75%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/3695300" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://zenodo.org/record/3678226/files/Contributing.jpg?download=1")
+```
+]
+
+--
+
+The repository maintainer (i.e., you) can ...
+- see what was changed when by whom
+- add additional changes to the merge request
+- run (automated) checks on the contribution
+- approve the contribution and merge the changes
+{{content}}
+
+--
+
+**Examples:**
+- A co-author proposes changes to your manuscript
+- A collaborator adds new data to your dataset
+- A colleague fixes several bugs in your analysis pipeline
+
+---
+
+# Managing access, permissions and roles
+
+--
+
+#### Visibility and permissions settings on GitLab
+
+- GitLab (and GitHub) allow setting the **project and group visibility**
+  - GitLab visibility levels: `r emoji::emoji("new_moon")` `Private` `r emoji::emoji("first_quarter_moon")` `Internal` `r emoji::emoji("full_moon")` `Public`  (details [here](https://docs.gitlab.com/ee/user/public_access.html))
+- GitLab (and GitHub) allow setting fine-grained **permissions and roles** for contributors
+  - GitLab roles: `Guest` `r emoji::emoji("arrow_right")` `Reporter` `r emoji::emoji("arrow_right")` `Developer` `r emoji::emoji("arrow_right")` `Maintainer` `r emoji::emoji("arrow_right")` `Owner` (details [here](https://docs.gitlab.com/ee/user/permissions.html))
+
+--
+
+#### Example workflow
+
+- Your projects are `private` from the start
+- Everyone in your group can view each other's projects (`Guest` or `Reporter`)
+- Direct collaborators (internal or external) can edit the project (`Developer` or `Maintainer`)
+- The PI gets access to all projects (`Maintainer` or `Owner`; optionally only at the end of a project)
+- Project can be set to `public` later on (e.g., upon publication)
+
+???
+
+- Group members can always view your projects and their current status
+- Group members can clone your repository, fork it, open issues and merge requests
+- Group members can not make any changes to your project by default
+- PI has at least Maingtainer access to all projects for long-term availability
+
+---
+
+class: title-slide, center, middle
+name: procedures
+
+# Procedures: Relationships between code and data
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Procedures: Relationships between code and data
+
+- `r emoji::emoji("question")` *"Which (version of the) code produced which (version of the) data?"*
+- `r emoji::emoji("question")` *"In which order do I need to execute the code to reproduce the results?"*
+
+--
+
+#### Example solutions
+
+--
+
+.pull-left[
+
+[`datalad run`](http://docs.datalad.org/en/stable/generated/man/datalad-run.html) *"[...] will record a shell command, and save all changes this command triggered in the dataset – be that new files or changes to existing files."* ([DataLad Handbook](http://handbook.datalad.org/en/latest/basics/basics-run.html))
+{{content}}
+]
+
+--
+
+```bash
+datalad run -m "Run script to create plot" \
+  "python3 script.py" -i "data.tsv" -o "plot.png"
+```
+
+```bash
+{
+ "cmd": "python3 script.py",
+ "inputs": [
+  "data.csv"
+ ],
+ "outputs": [
+  "plot.png"
+ ]
+}
+```
+
+--
+
+.pull-right[
+[GNU Make](https://www.gnu.org/software/make/) *"enables [...] to build and install your package without knowing the details of how that is done -- because these details are recorded in the makefile that you supply."*
+
+*"Make figures out automatically which files it needs to update, based on which source files have changed. It also [...] determines the proper order for updating files [...]"*
+
+{{content}}
+]
+
+--
+
+```lang-makefile
+all: plot.png
+
+plot.png: script.py data.tsv
+    python3 script.py
+```
+
+```bash
+make all
+```
+
+---
+
+class: title-slide, center, middle
+name: discussion
+
+# Discussion
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Summary, outlook, challenges and discussions
+
+.center[
+**`r emoji::emoji("sparkles")` Towards science as distributed, open-source ~~software~~ *knowledge* development (cf. McElreath, 2020) `r emoji::emoji("sparkles")`**
+]
+
+???
+
+- Forschung strebt letztendlich danach, "distributed, open-source knowledge development zu betreiben", wie es Richard McElreath (Direktor am Max-Planck-Institut für Evolutionäre Anthropologie) treffend beschrieben hat
+
+--
+
+> How can we manage our work (largely code and data) openly and reproducibly?
+
+--
+
+#### The technical solutions are already available!
+
+- Code and data *management* using **Git** and **DataLad** (free, open-source command-line tools)
+- Code and data *sharing* via flexible repository hosting services (**GitLab, GitHub, GIN**, etc.)
+- Code and data *storage* on various infrastructure (**GIN**, **OSF**, **S3**, **Keeper**, **Dataverse**, and many more!)
+- Project-related communication (ideas, problems, discussions) via **issue boards** on GitLab
+- Contributions to code and data via **merge requests** on GitLab (i.e., pull requests on GitHub)
+- *Reproducible procedures using e.g., Make or datalad run commands*
+- *Reproducible computational environments using software containers (e.g., Docker)*
+
+???
+
+- Viele der Praktiken, die im open-source software development längst Standard sind, sind oft mit wenigen Modifikationen auf die Forschungsarbeit übertragbar
+- Die technischen Lösungen und Praktiken im Umgang mit Code und Daten sind heute vorhanden!
+- Sie sind kostenlos, open-source und etabliert und bieten Lösungen für viele der Probleme, die uns im Umgang mit Code und Daten in der Wissenschaft beschäftigen
+- Wichtig zu betonen, da wir Entscheidungen treffen, auf welche Tools wir uns fokusieren
+- Wir können heute damit beginnen und müssen nicht darauf warten, dass eine neue Platform erst jahrelang entwickelt werden muss.
+
+--
+
+#### The long-term challenges are largely non-technical:
+- moving towards a "culture of reproducibility" (cf. Russ Poldrack)
+- changing incentives and funding schemes
+- learning, adopting new practices, upgrading workflows
+
+---
+
+exclude: true
+
+# What are the costs?
+
+| | Git | DataLad | GitLab | GIN | Zenodo |
+|---|---|---|---|---|---|
+| available today | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` |
+| free to use | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` |
+| open source | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` |
+| publicly funded | `NA` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("heavy_multiplication_x")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` |
+| self-hosted | `NA` | `NA` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `NA` |
+
+
+The only real cost is the **time invested in learning**!
+
+... and learning resources are plentiful!
+
+---
+
+# Overview of learning resources
+
+#### Learn Git
+
+- ["Pro Git"](https://git-scm.com/book/en/v2) by Scott Chacon & Ben Straub
+- ["Happy Git and GitHub for the useR"](https://happygitwithr.com/) by Jenny Bryan, the STAT 545 TAs & Jim Hester
+- ["Version Control"](https://the-turing-way.netlify.app/reproducible-research/vcs.html) by The Turing Way
+- ["Version Control with Git"](https://swcarpentry.github.io/git-novice/) by The Software Carpentries
+- ["Version control"](http://neuroimaging-data-science.org/content/002-datasci-toolbox/002-git.html) (chapter 3 of "Neuroimaging and Data Science") by Ariel Rokem & Tal Yarkoni
+
+#### Learn DataLad
+
+- ["Datalad Handbook"](http://handbook.datalad.org/en/latest/) by the DataLad team / Wagner et al., 2022, *Zenodo*
+- ["Research Data Management with DataLad"](https://www.youtube.com/playlist?list=PLEQHbPfpVqU5sSVrlwxkP0vpoOpgogg5j) | Recording of a full-day workshop on YouTube
+- [Datalad on YouTube](https://www.youtube.com/c/DataLad) | Recorded workshops, tutorials and talks on DataLad
+
+--
+
+#### Learn both (disclaimer: shameless plug `r emoji::emoji("see_no_evil")`)
+
+- Full-semester course on ["Version control of code and data using Git and DataLad"](https://lennartwittkuhn.com/ddlitlab/) in winter semester 2023/24 at University of Hamburg (generously funded by the [Digital and Data Literacy in Teaching Lab](https://www.isa.uni-hamburg.de/en/ddlitlab.html) program) - *more details coming soon ...*
+
+---
+
+exclude: true
+
+# Why share data?
+
+- Studies with accessible data tend to have fewer error and more robust statistical effects (Wicherts et al. 2011)
+- "The long-tail of dark data": over 50% of completed studies are estimated to be unreported, because the results did not conform to authors' hypotheses (Chan et al., 2014)
+
+---
+
+# Thank you!
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="65%", fig.retina=1, fig.cap='<a href="https://schucklab.gitlab.io/" target="_blank">"NeuroCode" group at MPIB and UHH</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/90314f29b57f4e299755/?dl=1")
+```
+]
+
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='<a href="https://www.mpg.de/en" target="_blank">Max Planck Society</a>'}
+knitr::include_graphics("https://www.mpg.de/assets/og-logo-8216b4912130f3257762760810a4027c063e0a4b09512fc955727997f9da6ea3.jpg")
+```
+]
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="30%", fig.retina=1, fig.cap='<a href="https://www.mpib-berlin.mpg.de/mitarbeiter/michael-krause" target="_blank">Michael Krause (MPIB Sys Admin)</a>'}
+knitr::include_graphics("https://secure.gravatar.com/avatar/f49adcdd1c7bb710cdf529ab916c3098?s=800&d=identicon")
+```
+]
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="30%", fig.retina=1, fig.cap='<a href="https://www.repronim.org/" target="_blank">ReproNim</a>'}
+knitr::include_graphics("https://www.repronim.org/images/logo-square-256.png")
+```
+]
+
+---
+
+# Random useful info about DataLad
+
+#### Use DataLad within Python `r emoji::emoji("snake")` and R `r emoji::emoji("pirate_flag")`
+
+- DataLad Python API Use DataLad commands directly in your Python scripts
+- Install DataLad `pip install datalad` and import in your Python script `import datalad.api as dl`
+- Use system commands in other languages, e.g., in R `system2("datalad status")`
+
+--
+
+#### Keep only what you need (aka. "How to work on two fMRI studies with a 250GB laptop")
+
+- `datalad drop` removes the file contents completely from your dataset
+- only keep whatever you like or re-obtain with `datalad get`
+
+--
+
+#### git-annex takes the safety of your files seriously
+
+- Files saved under git-annex are locked against modifications
+- `datalad run` automatically unlocks specified inputs / outputs
+- `datalad unlock` can be used to unlock annexed content manually
+- Everything that is stored under git-annex is content-locked and everything that is stored under Git is not
+
+---
+
+# Git vs. git-annex
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-114-txt2git.html" target="_blank"><sup>DataLad Handbook: Data Safety</sup></a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/git_vs_gitannex.svg")
+```
+
+- Example: `datalad create -c text2git my_dataset`<br>&rarr; all text files are saved under Git
+- the `.gitattributes` file handles, which files are stored under Git vs. git-annex (can modify manually)
+- see [this chapter](http://handbook.datalad.og/en/latest/basics/basics-configuration.html#chapter-config) in the DataLad handbook
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank"><sup>DataLad Handbook: Beyond shared infrastructure</sup></a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg") 
+```
+]
+
+---
+
+class: title-slide, center, middle
+name: paper
+
+# Workflow: Our paper
+<!--the next --- is a horizontal line-->
+
+--- 
+
+### `r emoji::emoji("question")` "*How close are you to full reproducibility?*"
+
+---
+
+# Reproducible research
+
+> *"[...] when the same analysis steps performed on the same dataset consistently produces the same answer."*
+
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='<a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html" target="_blank">Table of Definitions for Reproducibility</a> by <i>The Turing Way</i> (CC-BY 4.0)'}
+knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible-matrix.jpg") 
+```
+
+???
+
+- **Reproducible:** A result is reproducible when the same analysis steps performed on the same dataset consistently produces the same answer.
+- **Replicable:** A result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.
+- **Robust:** A result is robust when the same dataset is subjected to different analysis workflows to answer the same research question (for example one pipeline written in R and another written in Python) and a qualitatively similar or identical answer is produced. Robust results show that the work is not dependent on the specificities of the programming language chosen to perform the analysis.
+- **Generalisable:** Combining replicable and robust findings allow us to form generalisable results. Note that running an analysis on a different software implementation and with a different dataset does not provide generalised results. There will be many more steps to know how well the work applies to all the different aspects of the research question. Generalisation is an important step towards understanding that the result is not dependent on a particular dataset nor a particular version of the analysis pipeline.
+
+---
+
+# Our paper
+
+```{r, echo=FALSE, fig.align="center", out.width="75%", fig.retina=1, fig.cap='<a href="https://doi.org/10.1038/s41467-021-21970-2" target="_blank">doi: 10.1038/s41467-021-21970-2</a> (accessed 17/06/21)'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/ea0795d894e44fd3ad18/?dl=1") 
+```
+
+--
+
+#### Two-sentence summary:
+
+> Non-invasive measurement of fast neural activity with spatial precision in humans is difficult. Here, the authors show how fMRI can be used to detect sub-second neural sequences in a localized fashion and report fast replay of images in visual cortex that occurred independently of the hippocampus.
+
+---
+
+# Example: Data management using DataLad
+
+#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Data Availability statement](https://www.nature.com/articles/s41467-021-21970-2#data-availability)):
+
+> *"We publicly share all data used in this study. Data and code management was realized using DataLad.*"
+
+--
+
+- All individual datasets can be found at: https://gin.g-node.org/lnnrtwttkhn
+- Each dataset is associated with a unique URL and a Digital Object Identifier (DOI)
+- Dataset structure shared to GitHub and dataset contents shared to GIN
+
+--
+
+#### All data?
+
+--
+
+- `highspeed`: superdataset of all subdatasets, incl. project documentation ([GitLab](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed))
+- `highspeed-bids`: MRI and behavioral data adhering to the [BIDS standard](https://bids.neuroimaging.io/)
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-bids),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-bids),
+[DOI](https://doi.org/10.12751/g-node.4ivuv8))
+- `highspeed-mriqc`: MRI quality metrics and reports based on [MRIQC](https://mriqc.readthedocs.io/en/stable/) 
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-mriqc),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-mriqc),
+[DOI](https://doi.org/10.12751/g-node.0vmyuh))
+- `highspeed-fmriprep`: preprocessed MRI data using [fMRIPrep](https://fmriprep.org/en/stable/),
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-fmriprep),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-fmriprep),
+[DOI](https://doi.org/10.12751/g-node.0ft06t))
+- `highspeed-masks`: binarized anatomical masks used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-masks),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-masks), [DOI](https://doi.org/10.12751/g-node.omirok))
+- `highspeed-glm`: first-level GLM results used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-glm),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-glm),
+[DOI](https://doi.org/10.12751/g-node.d21zpv))
+- `highspeed-decoding`: results of the multivariate decoding approach ([GitHub](https://github.com/lnnrtwttkhn/highspeed-decoding), [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-decoding), [DOI](https://doi.org/10.12751/g-node.9zft1r))
+- `highspeed-data`: unprocessed data of the behavioral task acquired during MRI acquisition ([GitHub](https://github.com/lnnrtwttkhn/highspeed-data-behavior),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-data-behavior),
+[DOI](https://doi.org/10.12751/g-node.p7dabb))
+
+\> 1.5 TB in total, version-controlled using DataLad
+
+---
+
+# Superdataset to collect all resources of the project
+
+```{r, echo=FALSE, fig.align="center", out.width="85%", fig.retina=1, fig.cap='see <a href="https://git.mpib-berlin.mpg.de/wittkuhn/highspeed" target="_blank">main project repo on GitLab</a> (accessed 21/06/21)'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/40e43c7e029a4f4696b8/?dl=1")
+```
+
+---
+
+# `r emoji::emoji("question")` *"How close are you to full reproducibility?"*
+
+> **[...] *full* reproducibility**?
+
+#### Reproducibility of statistical results and figures in our [recent paper](https://www.nature.com/articles/s41467-021-21970-2#code-availability):
+
+- Our [project website](https://wittkuhn.mpib.berlin/highspeed/) shows all figures and statistical results next to the corresponding R code
+- The analyses are written in [RMarkdown](https://bookdown.org/yihui/rmarkdown/) notebooks which are run and rendered into the project website using [bookdown](https://bookdown.org/yihui/bookdown/) and deployed to [GitLab pages](https://docs.gitlab.com/ee/user/project/pages/) using [continuous integration (CI)](https://docs.gitlab.com/ee/ci/) (for details, see [here](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml))
+- The input data are retrieved from DataLad datasets in the CI (see [here](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L5-93))
+- R and DataLad are run in dedicated Docker containers (see [here](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile) and [here](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/datalad/Dockerfile) for the Docker recipes)
+
+--
+
+#### Reproducibility *beyond* statistical results and figures reported in the paper:
+
+- Pre-processing (HeuDiConv, fMRIPrep, MRIQC) containerized using Singularity
+- `requirements.txt` files for Python code as part of the repo
+- Most analyses run on cluster - tricky to reproduce? `r emoji::emoji("man_shrugging")`
+
+---
+
+# Software containers and virtual environments
+
+#### Software containers
+
+> *"Containers allow a researcher to package up a project with all of the parts it needs - such as libraries, dependencies, and system settings - and ship it all out as one package."* (see [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/renv/renv-containers.html#what-are-containers))
+
+- `highspeed-bids`: containerized conversion of MRI data to BIDS using [HeuDiConv](https://hub.docker.com/r/nipy/heudiconv)
+- `highspeed-fmriprep`: containerized execution of pre-processing pipeline [fMRIPrep](https://fmriprep.org/en/stable/singularity.html)
+- `highspeed-mriqc`: containerized creation of MRI quality reports using [MRIQC](https://mriqc.readthedocs.io/en/stable/docker.html)
+- `highspeed-analysis`: containerized execution of statistical analyses in [custom R container](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile)
+- `tools`, a personal collection of commonly used containers in a DatLad dataset (see [details](https://github.com/lnnrtwttkhn/tools))
+
+--
+
+#### Virtual environments (e.g., [in Python](https://docs.python.org/3/tutorial/venv.html))
+
+> *"[...] it may not be possible for one Python installation to meet the requirements of every application. The solution for this problem is to create a virtual environment, a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages."*
+
+```{bash, eval=FALSE}
+pip freeze > requirements.txt
+```
+
+---
+
+class: title-slide, center, middle
+name: workflow-data-organization
+
+# Workflow: Code and Data Organization
+
+<!--the next --- is a horizontal line-->
+
+--- 
+
+
+### `r emoji::emoji("question")` "*What does your project structure look like?*"
+### `r emoji::emoji("question")` "*How do you connect different analyses, e.g., pre-processing and analysis, using DataLad?*"
+
+---
+
+# Summary
+
+#### `r emoji::emoji("question")` "*What does your project structure look like?*" /  "*What should a project structure look like?*"
+
+1. Do what works for you!
+1. Rely on community standards (e.g., [BIDS](https://bids.neuroimaging.io/) or [Psych-DS](https://docs.google.com/document/d/1u8o5jnWk0Iqp_J06PTu5NjBfVsdoPbBhstht6W0fFp0)) and code style guides
+1. Keep it simple and modular (see e.g., [YODA principles](https://handbook.datalad.org/en/latest/basics/101-127-yoda.html)): `input` &rarr; `code` &rarr; `output`
+1. Document as much as possible (`README`s etc.)
+
+--
+
+#### `r emoji::emoji("question")` "*How do you connect different analyses, e.g., pre-processing and analysis, using DataLad?*"
+
+- [Nesting](https://handbook.datalad.org/en/latest/basics/101-106-nesting.html) of modular DataLad datasets
+- Install input subdatasets in `inputs` directory
+
+---
+
+# Challenge: Standardizing data and code organization
+
+```{r, echo=FALSE, fig.align="center", out.width="65%", fig.retina=1, fig.cap='<a href="https://xkcd.com/927/" target="_blank">xkcd cartoon "Standards"</a>'}
+knitr::include_graphics("https://imgs.xkcd.com/comics/standards.png")
+```
+
+<sup>&rarr; also see [slides](https://www.nipreps.org/assets/ORN-Workshop/) by Oscar Esteban on "Building communities around reproducible workflows"</sup>
+
+---
+
+# Example: Brain Imaging Data Structure (BIDS)
+
+#### Organization of neuroimaging data according to the [Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io/)
+
+> *"A simple and intuitive way to organize and describe your neuroimaging and behavioral data."*
+
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see Gorgolewski et al., 2016, <i>Nature Scientific Data</i></br><a href="https://doi.org/10.1038/sdata.2016.44" target="_blank">doi: 10.1038/sdata.2016.44</a>'}
+knitr::include_graphics("https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fsdata.2016.44/MediaObjects/41597_2016_Article_BFsdata201644_Fig1_HTML.jpg?as=webp") 
+```
+
+<sup>for those interested: fully automated transformation of newly acquired data using [ReproIn](https://github.com/ReproNim/reproin
+) / [HeuDiConv](https://heudiconv.readthedocs.io/en/latest/)</sup>
+
+---
+
+# Code sharing using Git and DataLad
+
+#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Code Availability statement](https://www.nature.com/articles/s41467-021-21970-2#code-availability)):
+
+> "*We share all code used in this study. An overview of all the resources is publicly available on our project website: https://wittkuhn.mpib.berlin/highspeed/.*"
+
+--
+
+- `highspeed-analysis`: code for the main statistical analyses
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-analysis),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-analysis),
+[DOI](https://doi.org/10.12751/g-node.eqqdtg))
+- `highspeed-task`: code for the behavioral task ([GitHub](https://github.com/lnnrtwttkhn/highspeed-task),
+[Zenodo](https://doi.org/10.5281/zenodo.4305888))
+
+--
+
+#### ... and the rest?
+
+> *"We [...] share all data listed in the Data availability section in modularized units alongside the code that created the data, usually in a dedicated `code` directory in each dataset, instead of separate data and code repositories."*
+
+> *"This approach allows to better establish the provenance of data (i.e., a better understanding which code and input data produced which output data), loosely following the **DataLad YODA principles** [...]*"
+
+---
+
+# **Y**ODAs **O**rganigam on **D**ata **A**nalysis
+
+#### P1: *"One thing, one dataset"* (**Modularity**)
+
+#### P2: *"Record where you got it from, and where it is now"* (**Provenance**)
+
+#### P3: *"Record what you did to it, and with what"* (**Reproducibility**)
+
+--
+
+```{bash, eval=FALSE}
+.
+├── CHANGELOG.md
+├── README.md
+├── code
+├── input
+└── output
+3 directories, 2 files
+```
+
+--
+
+#### Learn about YODA, you must:
+- DataLad Handbook: "YODA: Best practices for data analyses in a dataset" (see [details](https://handbook.datalad.org/en/latest/basics/101-127-yoda.html))
+- "YODA: YODA's Organigram on Data Analysis" - Poster by Hanke et al., 2018, presented at the 24th Annual Meeting of the Organization for Human Brain Mapping (OHBM) 2018 | CC-BY 4.0, [doi: 10.7490/f1000research.1116363.1](https://doi.org/10.7490/f1000research.1116363.1)
+
+
+&rarr; Details on YODA principles can also be found in the Appendix
+
+---
+
+# P1: *"One thing, one dataset"*
+
+- Structure study elements (data, code, results) in dedicated directories
+- Input data in `/inputs`, code in `/code`, results in `/outputs`, execution environments in `/envs`
+- Use dedicated projects for multiple different analyses
+
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/dataset_modules.svg")
+```
+
+---
+
+# P2: *"Record where you got it from, and where it is now"*
+
+
+- Record where the data came from, or how it is dependent on or linked to other data
+- Link re-usable data resource units as DataLad *subdatasets*
+- `datalad clone`, `datalad download-url`, `datalad save`
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/data_origin.svg")
+```
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="120%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/decentralized_publishing.svg")
+```
+]
+
+---
+
+# P3: *"Record what you did to it, and with what"*
+
+- Know how exactly the content of every file came to be that was not obtained from elsewhere
+- `datalad run` links input data with code execution to output data
+- `datalad containers-run` allows to do the same *within* software containers (e.g., Docker or Singularity)
+
+```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/decentralized_publishing.svg")
+```
+
+---
+
+# Dataset nesting
+
+.pull-left[
+- One can *nest* other DataLad datasets arbitrarily deep
+- Nested datasets are called "subdatasets"
+- Nested subdatasets look and feel just like a normal (sub-)directories in your project directory
+{{content}}
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-106-nesting.html" target="_blank">DataLad Handbook: Dataset nesting</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/virtual_dstree_dl101.svg
+")
+```
+]
+
+--
+
+#### Advantages
+
+- Lower-level datasets ("subdatasets") have an independent stand-alone history (**modularity** `r emoji::emoji("sparkles")`)
+- The top-level "superdataset" only stores *which version* of the subdataset is currently used
+- Subdatsets need to be updated explictly
+{{content}}
+
+--
+
+#### Git users
+
+- A subdataset is essentially a [Git submodule](https://git-scm.com/book/de/v2/Git-Tools-Submodule)
+- The version is registered using the [shasum](https://handbook.datalad.org/en/latest/glossary.html#term-shasum) of the latest commit of the cloned subdataset
+
+---
+
+class: title-slide, center, middle
+name: workflow-tardis
+
+# Workflow: DataLad on Tardis
+<!--the next --- is a horizontal line-->
+
+--- 
+
+### `r emoji::emoji("question")` "*Do you primarily work on Tardis? What is there to consider?*"
+### `r emoji::emoji("question")` "*Do you keep data on Tardis temporally until all analyses are completed?*"
+### `r emoji::emoji("question")` "*How do you manage input / output links within DataLad datasets?*"
+
+---
+
+# Summary
+
+#### `r emoji::emoji("question")` "*Do you primarily work on Tardis? What is there to consider?*"
+
+- DataLad works on Tardis as it works on your computer (it's not really different)
+- With the dataset installed on both locations, you can flexibly update data back-and-forth
+
+--
+
+#### `r emoji::emoji("question")` "*Do you keep data on Tardis temporally until all analyses are completed?*"
+
+- Yes, just because it's convenient `r emoji::emoji("innocent")`
+- You can always `datalad drop` contents from Tardis at any time (if you can retrieve them from elsewhere)
+
+--
+
+#### `r emoji::emoji("question")` "*How do you manage input / output links within DataLad datasets?*"
+
+- Ideally, datasets are self-contained (cf. [nesting](https://handbook.datalad.org/en/latest/basics/101-106-nesting.html) and [YODA](https://handbook.datalad.org/en/latest/basics/101-127-yoda.html))
+- Depends on your coding (see e.g., `here` in R, [here](https://github.com/jennybc/here_here) and [here](https://here.r-lib.org/))
+
+
+---
+
+# A basic workflow for DataLad on Tardis
+
+1\. Create a new dataset directly on Tardis: `datalad create my_dataset`
+  
+--
+  
+2\. Start on your computer and move to Tardis
+  - Create a dataset on your computer: `datalad create my_dataset`
+  - Push the dataset to your hosting service (e.g., [GIN](https://gin.g-node.org/)): `datalad push --to gin`
+  - Clone the dataset to Tardis: `datalad clone gin.g-node.org//my_username/my_dataset` (using SSH)
+
+--
+
+Moving back-and-forth between your computer and Tardis:
+1. Run analysis on Tardis
+1. Save changes (either on your computer or on Tardis): `datalad save -m "superduper changes"`
+1. Push changes to your hosting service (e.g., [GIN](https://gin.g-node.org/)): `datalad push --to gin`
+1. Update the clone (either on your computer or on Tardis): `datalad update --merge -s gin`
+1. (Optional: Check if your repo is at the correct commit: `git log` / `git log --oneline -n 1`)
+1. (Optional: Drop contents of the previous commit: `datalad drop .`)
+1. Get the updated contents of the new commit: `datalad get .`
+
+---
+
+# DataLad on an HPC: Further reading
+
+- see preprint ["FAIRly big: A framework for computationally reproducible
+processing of large-scale data"](https://www.biorxiv.org/content/10.1101/2021.10.12.464122v1.full.pdf) by Wagner et al.
+- see [DataLad on High Throughput or High Performance Compute Clusters](http://handbook.datalad.org/en/latest/beyond_basics/101-169-cluster.html) in the DataLad Handbook
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="95%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank"><sup>Clone from local</sup></a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/clone_local.svg")
+```
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="95%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank"><sup>Clone from server / cluster</sup></a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/clone_server.svg") 
+```
+]
+
+---
+
+# `r emoji::emoji("bulb")` Idea: Clone datasets from local
+
+```{bash, eval=FALSE}
+├── zoo-bids
+├── zoo-fmriprep
+  └── inputs
+    └── bids
+└── zoo-mriqc
+  └── inputs
+    └── bids
+```
+
+#### Add `zoo-bids` as an input to `zoo-fmriprep` and `zoo-mriqc`
+
+1\. Clone from hosting service (e.g., GIN), add a `local` sibling:
+  - `datalad clone --dataset . git@gin.g-node.org:/lnnrtwttkhn/zoo-bids inputs/bids`
+  - `datalad siblings add --name local --url ../../../zoo-bids`
+
+2\. Clone from local (and add GIN remote later):
+  - `datalad clone --dataset . ../zoo-bids inputs/bids`
+  - `datalad siblings add --name gin --url git@gin.g-node.org:/lnnrtwttkhn/zoo-bids`
+
+Getting data from local will be *much* faster! `r emoji::emoji("fire")`
+
+---
+
+class: title-slide, center, middle
+name: workflow-presentation
+
+# Workflow: Code and Data Presentation
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Project website with main statistical results
+
+#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Code Availability statement](https://www.nature.com/articles/s41467-021-21970-2#code-availability)):
+
+> "*We share all code used in this study. An overview of all the resources is publicly available on our **project website.**"*
+
+Project website publicly available at https://wittkuhn.mpib.berlin/highspeed/
+
+--
+
+#### Reproducible reports with [Bookdown](https://bookdown.org/yihui/bookdown/) / [RMarkdown](https://bookdown.org/yihui/rmarkdown/)
+
+> *"R Markdown is a file format for making dynamic documents with R. An R Markdown document is written in markdown (an easy-to-write plain text format) and contains chunks of embedded R code [...]"*
+
+- Project documentation and main statistical analyses are written in RMarkdown (see [here](https://github.com/lnnrtwttkhn/highspeed-analysis/tree/master/code))
+- Documentation pages showcase non-executed code (used in subdatasets) in Python and Bash
+- Statistical analyses are executed and website rendered automatically via [Continuous Integreation / Deployment (CI/CD)](https://docs.gitlab.com/ee/ci/):
+  1. In the [main project repository](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed), all RMarkdown files are [combined](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/_bookdown.yml#L22-36) using [bookdown](https://bookdown.org/) (across subdatasets)
+  1. Input data is [automatically retrieved](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L5-75) from GIN and / or Keeper using DataLad (run in a [Docker container](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/datalad/Dockerfile))
+  1. The RMarkdown files are [run in Docker](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile) (executing main statistical analyses) and [rendered](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L99) into a static website
+  1. The static website is [deployed to GitLab pages](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L95-106)
+
+&rarr; This pipeline is automatically triggered on every push (change) to the main repository.
+
+---
+
+class: title-slide, center, middle
+name: workflow-containers
+
+# Workflow: Software Containers
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Software containers and virtual environments
+
+#### Software containers
+
+> *"Containers allow a researcher to package up a project with all of the parts it needs - such as libraries, dependencies, and system settings - and ship it all out as one package."* (see [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/renv/renv-containers.html#what-are-containers))
+
+- `highspeed-bids`: containerized conversion of MRI data to BIDS using [HeuDiConv](https://hub.docker.com/r/nipy/heudiconv)
+- `highspeed-fmriprep`: containerized execution of pre-processing pipeline [fMRIPrep](https://fmriprep.org/en/stable/singularity.html)
+- `highspeed-mriqc`: containerized creation of MRI quality reports using [MRIQC](https://mriqc.readthedocs.io/en/stable/docker.html)
+- `highspeed-analysis`: containerized execution of statistical analyses in [custom R container](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile)
+- `tools`, a personal collection of commonly used containers in a DatLad dataset (see [details](https://github.com/lnnrtwttkhn/tools))
+
+--
+
+#### Virtual environments (e.g., [in Python](https://docs.python.org/3/tutorial/venv.html))
+
+> *"[...] it may not be possible for one Python installation to meet the requirements of every application. The solution for this problem is to create a virtual environment, a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages."*
+
+```{bash, eval=FALSE}
+pip freeze > requirements.txt
+```
+
+---
+
+# Discussion about potential limitations
+
+#### "*That's too technical*"
+
+- Many research fields become increasingly data-intense and computation-heavy
+- Computational / programming skills are increasingly sought-after in the (non-)academic job market
+- Focus on education and technical support
+
+--
+
+#### "*Why these tools? Can't we use something else?*"
+
+- Git is used by software developers for way more than a decade
+- GitHub has > 50 million users worldwide
+- These tools are well-established, open-source, free to use and **available today**
+
+---
+
+class: title-slide, center, middle
+name: appendix-resources
+
+# Appendix: Resources
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+class: title-slide, center, middle
+name: motivation
+
+# Introduction: Motivation for Reproducibility
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Motivation: "Open" Science should just be "Science"
+
+.pull-left[
+*"An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship.
+The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures."*
+
+Buckheit & Donoho (1995), paraphrasing Jon Claerbout
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='<a href="https://wiki.seg.org/wiki/Jon_Claerbout" target="_blank">Jon Claerbout</a></br>Geophysicist at Stanford University</br>(CC-BY-SA)'}
+knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot.jpg") 
+```
+]
+
+???
+
+- Jon Claerbout, a distinguished exploration geophysicist at Stanford University
+- He has also pointed out that we have reached a point where solutions are available - it is now possible to publish computational research that is really reproducible by others.
+
+---
+exclude: true
+
+# Good Scientific Practice?
+
+#### Excerpt from the "Rules of Good Scientific Practice" by the Max Planck Society (November 24, 2000)
+
+> *"Scientific examinations, experiments and numerical calculations can only be reproduced or reconstructed if all the important steps are comprehensible.
+> For this reason, full and adequate reports are necessary, and these reports must be kept for a minimum period of ten years, not least as a source of reference, should the published results be called into question by others."* <sup>1</sup>
+
+.footnote[
+<sup>1</sup> Full PDF available [here](https://www.mpg.de/16404553/rules-scientific-practice.pdf)
+]
+
+--
+exclude: true
+
+#### Excerpt from your emplyoment contract
+
+
+> *"The rules for safeguarding good scientific practice of the Max Planck Society dated November 24, 2000 in its current version* [👆] *are part of the employment contract."*
+
+--
+exclude: true
+
+Do we meet these standards?
+
+---
+
+# Reproducible research
+
+> *"[...] when the same analysis steps performed on the same dataset consistently produces the same answer."*
+
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='<a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html" target="_blank">Table of Definitions for Reproducibility</a> by <i>The Turing Way</i> (CC-BY 4.0)'}
+knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible-matrix.jpg") 
+```
+
+???
+
+- **Reproducible:** A result is reproducible when the same analysis steps performed on the same dataset consistently produces the same answer.
+- **Replicable:** A result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.
+- **Robust:** A result is robust when the same dataset is subjected to different analysis workflows to answer the same research question (for example one pipeline written in R and another written in Python) and a qualitatively similar or identical answer is produced. Robust results show that the work is not dependent on the specificities of the programming language chosen to perform the analysis.
+- **Generalisable:** Combining replicable and robust findings allow us to form generalisable results. Note that running an analysis on a different software implementation and with a different dataset does not provide generalised results. There will be many more steps to know how well the work applies to all the different aspects of the research question. Generalisation is an important step towards understanding that the result is not dependent on a particular dataset nor a particular version of the analysis pipeline.
+
+---
+
+# Challenges: Many stages in the research cycle
+
+```{r, echo=FALSE, fig.align="center", out.width="58%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/4906004" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3a1863ac2c2e40809c5f/?dl=1") 
+```
+
+---
+
+# Challenges: Interaction between data and code
+
+```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/ead22cde6d724eda81d2/?dl=1") 
+```
+
+???
+
+- Data is produced through code (e.g., task code)
+- Data is manipulated by code and new data is generated
+ - Mapping between input and output data
+- This happens using specific software in specific versions
+
+---
+
+# Challenge: Documentation of methods and provenance
+
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap="&copy; Sidney Harris"}
+knitr::include_graphics("https://www.openuphub.eu/media/zoo/images/Sidney%20Harris_60c1243bb770a33f55ab7b012ff3e6dd.jpg")
+```
+
+???
+
+- provide information on how data came into existence
+- change data through documented code, not manually
+- relate changes in data to changes in code
+
+---
+
+# How scientists save important data?
+
+.pull-left[
+<blockquote class="twitter-tweet" width="280" align="center" data-theme="light"><p lang="en" dir="ltr">*Seen*! 😂This wonderful graphic on saving important data resonates with us on every possible level! 😃😁🤗How about you? By <a href="https://twitter.com/ErrantScience?ref_src=twsrc%5Etfw">@ErrantScience</a> = <a href="https://twitter.com/MCeeP?ref_src=twsrc%5Etfw">@MCeeP</a> &amp; <a href="https://twitter.com/MichelleAReeve?ref_src=twsrc%5Etfw">@MichelleAReeve</a> <a href="https://t.co/0JaI6iTcNW">pic.twitter.com/0JaI6iTcNW</a></p>&mdash; Max Planck Society (@maxplanckpress) <a href="https://twitter.com/maxplanckpress/status/1431500205044781056?ref_src=twsrc%5Etfw">August 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="90%", fig.retina=1}
+knitr::include_graphics("https://pbs.twimg.com/media/E920a0eWYAENA1V?format=jpg&name=medium") 
+```
+]
+
+---
+
+# "Practice" of research code and data management
+
+--
+
+- "*Where is the data?*"
+
+- "*Can I see your code?*"
+
+- "*Which version of the code and data did I use to produce this result?*"
+
+- "*What is the difference between `data_version1_edit.csv` and `data_version8_new_final.csv`?*"
+
+- "*Where did you get this file / code from?*"
+
+- "*I get different results on my machine ...*"
+
+- "*But it worked when I ran it last month?!*"
+
+- *"Which value did you set for the input of this function?"*
+
+---
+
+# The solution?
+
+> **Organize science like open-source software (OSS) development**
+
+--
+
+#### **The tools already exist!**
+
+--
+
+1. **Version-control** and **dependency management**
+
+  - Code, data and computational environments change all the time!
+  - Example: Running the same analysis on your laptop, the cluster, or your collaborator's computer
+  - Known solutions: Version-control (e.g., [Git](https://git-scm.com/), [DataLad](https://www.datalad.org/)) and software containers ([Docker](https://www.docker.com/), [Singularity](https://singularity.hpcng.org/))
+
+--
+
+2. **Collaboration, communication, acknowledgement and contribution**
+
+  - Raising questions, reporting errors, suggesting ideas via [issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/about-issues)
+  - Proposing, discussing, and reviewing changes via [pull](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) (GitHub) or [merge](https://docs.gitlab.com/ee/user/project/merge_requests/) (GitLab) requests
+  - Services and infrastructure ([GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), [GIN](https://gin.g-node.org/), [OSF](https://osf.io/) etc.) to share and release research products
+  - Contributions (by individuals or projects) can be tracked and categorized
+
+
+---
+
+class: title-slide, center, middle
+name: workflow-git
+
+# Workflow: Version control using Git
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# The need for  *proper* version-control in a nutshell
+
+```{r, echo=FALSE, fig.align="center", out.width="33%", fig.retina=1, fig.cap='<a href="http://phdcomics.com/comics/archive/phd101212s.gif" target="_blank"><sup>&copy; Jorge Cham (phdcomics.com)</sup></a>'}
+knitr::include_graphics("http://phdcomics.com/comics/archive/phd101212s.gif") 
+```
+
+---
+
+# The need for *proper* version-control in a nutshell
+
+```{r, echo=FALSE, fig.align="center", out.width="55%", fig.retina=1, fig.cap='<a href="http://phdcomics.com/comics/archive/phd052810s.gif" target="_blank"><sup>&copy; Jorge Cham (phdcomics.com)</sup></a>'}
+knitr::include_graphics("http://phdcomics.com/comics/archive/phd052810s.gif") 
+```
+
+---
+
+# What is version control?
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/3695300" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://zenodo.org/record/3695300/files/VersionControl.jpg?download=1")
+```
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/3695300" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
+knitr::include_graphics("https://zenodo.org/record/3695300/files/ProjectHistory.jpg?download=1") 
+```
+]
+
+--
+
+.center[
+- keep files organized
+- keep track of changes
+- revert changes or go back to previous versions
+]
+
+---
+
+# Version-control with Git
+
+> Version control is a systematic approach to record changes made in a [...] set of files, over time. This allows you and your collaborators to track the history, see what changed, and recall specific versions later [...] ([Turing Way](https://the-turing-way.netlify.app/reproducible-research/vcs.html))
+
+--
+
+.pull-left[
+#### Basic versioning workflow 
+1. Create files (text, code, etc.)
+1. Work on the files (change, delete or add new content)
+1. **Create a snapshot of the file status** (a "commit")
+{{content}}
+]
+<!-- see https://stackoverflow.com/questions/46408057/incremental-slides-do-not-work-with-a-two-column-layout-->
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="75%", fig.retina=1, fig.cap='<a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control" target="_blank">Figure 3: Distributed Version Control Systems</a>'}
+knitr::include_graphics("https://git-scm.com/book/en/v2/images/distributed.png") 
+```
+]
+
+--
+
+#### Git
+
+- most pupular **distributed version control system**
+- free, [open-source](https://github.com/git) command-line tool
+- started by [Linus Torvalds](https://en.wikipedia.org/wiki/Git#History) (creator of Linux) in 2005
+- standard tool for any software developer
+- Graphical User Interfaces (GUIs) exist, e.g., [GitKraken](https://www.gitkraken.com/)
+
+
+???
+
+- Back in the day: Software developers used BitKeeper to collaborate on code with colleagues
+- Free access to BitKeeper was revoked after a company broke down in 2005
+- A new solution was needed so Linus Torvalds coded it up
+- First version after a couple of days
+
+---
+
+# The amazing superpowers of version-control
+
+--
+
+.pull-left[
+#### Git as a distributed **version control** system
+- keep track of changes in a directory (a "repository")
+- take snapshots ("commits") of your repo at any time
+- know the history of what was changed when by whom
+- compare commits and go back to any previous state
+- work on "branches" and flexibly "merge" them together
+
+**save one file and all of its history instead of multiple versions of the same file**
+{{content}}
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap="Screenshot of GitKraken"}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/8fda5b269fef4d778007/?dl=1") 
+```
+]
+
+--
+
+#### Git as a **distributed** version control system
+- "push" your repo to a "remote" location and share it
+- host / share your repo on GitHub, GitLab or BitBucket
+- work with others on the same files at the same time
+- others can read / copy / edit and suggest changes
+- make your repo public and openly share your work
+
+---
+
+# Git mini-tutorial: Create a repository and add content
+
+1\. Open the Terminal / command line on your computer
+
+--
+
+2\. Create a new Git repository
+
+```{bash, eval=FALSE}
+$ git init my_project
+Initialized empty Git repository in ~/my_project/.git/
+```
+
+--
+
+3\. Move into the `my_project` directory using `cd` ("**c**hange **d**irectory")
+
+```{bash, eval=FALSE}
+$ cd my_project
+```
+
+--
+
+4\. Create a `README.md` text file that contains the line `hello world`, using `echo`
+
+```{bash, eval=FALSE}
+$ echo "hello world" >> README.md
+```
+
+--
+
+5\. List the contents of the `my_project` directory, using `ls`
+
+```{bash, eval=FALSE}
+$ ls
+README.md
+```
+
+---
+
+# Git mini-tutorial: Track contents
+
+6\. Tell Git to track the changes in the `README.md` file, using `git add`
+
+```{bash, eval=FALSE}
+$ git add README.md
+```
+
+--
+
+7\. *Commit* the changes in the `README.md` file to your repository's history, using `git commit`
+
+```{bash, eval=FALSE}
+$ git commit --message "initial commit"
+  [master (root-commit) 5118725] initial commit 
+  1 file changed, 1 insertion(+) 
+  create mode 100644 README.md
+```
+
+---
+
+# Git mini-tutorial: Record changes over time
+
+8\. Add another line to the `README.md` file, again using `echo`
+
+```{bash, eval=FALSE}
+$ echo "goodbye world" >> README.md
+```
+
+--
+
+9\. Tell Git to also track this recent change, again using `git add`
+
+```{bash, eval=FALSE}
+$ git add README.md
+```
+
+--
+
+10\. Commit this additional change to the history of the repository, again using `git commit`:
+
+```{bash, eval=FALSE}
+$ git commit -m "update README.md"
+  [master c56c4c0] update README.md 
+   1 file changed, 1 insertion(+) 
+```
+
+--
+
+11\. Show the history of the repository using `git log`
+
+```{bash, eval=FALSE}
+$ git log --oneline
+  c56c4c0 (HEAD -> master) update README.md 
+  5118725 initial commit 
+```
+
+???
+
+Show the current status of your repository using `git status`:
+
+```{bash, eval=FALSE}
+git status 
+On branch master 
+nothing to commit, working tree clean
+```
+
+---
+
+# Random tips to help you keep track
+
+- Use [tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) to mark the state ("commit") in your code and data repo that was used to generate the results in the paper
+
+```{bash, eval=FALSE}
+git tag -a v1.0 -m "version used to generate results in our paper"
+```
+
+- Use software containers, e.g., [Docker](https://www.docker.com/) or [Singularity](https://sylabs.io/guides/3.0/user-guide/index.html)
+
+> Containers allow a researcher to package up a project with all of the parts it needs - such as libraries, dependencies, and system settings - and ship it all out as one package. Anyone can then open up a container and work within it, viewing and interacting with the project as if the machine they are accessing it from is identical to the machine specified in the container - regardless of what their computational environment actually is. They are designed to make it easier to transfer projects between very different environments.
+
+[Turing Way](https://the-turing-way.netlify.app/reproducible-research/renv/renv-containers.html)
+
+---
+
+class: title-slide, center, middle
+name: appendix-challenges-solutions
+
+# Appendix: Challanges and solutions
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Challenge: Relationship between code and data
+
+- *"Which code produced which data?"*
+- *"In which order do I need to execute the code?"*
+
+--
+
+#### Example solutions
+
+- [datalad run](http://docs.datalad.org/en/stable/generated/man/datalad-run.html)
+
+> `datalad run` *"[...] will record a shell command, and save all changes this command triggered in the dataset – be that new files or changes to existing files."* (see [details](http://handbook.datalad.org/en/latest/basics/basics-run.html) in the DataLad handbook)
+
+- [GNU Make](https://www.gnu.org/software/make/)
+
+> *"Make enables [...] to build and install your package without knowing the details of how that is done -- because these details are recorded in the makefile that you supply."*
+
+> *"Make figures out automatically which files it needs to update, based on which source files have changed. It also automatically determines the proper order for updating files [...]"*
+
+---
+
+# Challenge: Implementing a Data User Agreement (DUA)
+
+#### From Wittkuhn & Schuck, 2021, project website (see section on [license information](https://wittkuhn.mpib.berlin/highspeed/#license-information)):
+
+> "*If you download any of the published data, please complete our Data User Agreeement (DUA). The Data User Agreement (DUA) we use for this study, was taken from the Open Brain Consent project, distributed under Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0).*"
+
+- based on templates and recommendations of the [Open Brain Consent](https://open-brain-consent.readthedocs.io/en/stable/) project (licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en))
+- optional for data from Wittkuhn & Schuck, 2021
+- Statistics: *N* = 72 accessed the DUA, 0 completed
+- not possible to implement mandatory DUA on GIN
+
+---
+
+class: title-slide, center, middle
+name: appendix-continuous-integration
+
+# Appendix: Continuous integration
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Pros of continuous integration / deployment (CI/CD)
+
+#### Figures and sourcedata always ready for download
+
+> *"[...] we may request a source data file in Microsoft Excel format or a zipped folder. The source data file should, as a minimum, contain the raw data underlying any graphs and charts [...]"* (see [*Nat. Comms.* submission guidelines](https://www.nature.com/ncomms/submit/how-to-submit))
+
+- Sourcedata and figures are created and saved during CI are [available for download](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/jobs/25521/artifacts/browse/highspeed-analysis/) (see [details](https://docs.gitlab.com/ee/ci/pipelines/job_artifacts.html))
+
+---
+
+class: title-slide, center, middle
+name: appendix-datalad-overview
+
+# Appendix: DataLad Overview
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+class: title-slide, center, middle
+name: appendix-datalad-yoda
+
+# Appendix: DataLad YODA principles
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# P1: *"One thing, one dataset"*
+
+- Structure study elements (data, code, results) in dedicated directories
+- Input data in `/inputs`, code in `/code`, results in `/outputs`, execution environments in `/envs`
+- Use dedicated projects for multiple different analyses
+
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/dataset_modules.svg")
+```
+
+---
+
+# P2: *"Record where you got it from, and where it is now"*
+
+
+- Record where the data came from, or how it is dependent on or linked to other data
+- Link re-usable data resource units as DataLad *subdatasets*
+- `datalad clone`, `datalad download-url`, `datalad save`
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/data_origin.svg")
+```
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="120%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/decentralized_publishing.svg")
+```
+]
+
+---
+
+# P3: *"Record what you did to it, and with what"*
+
+- Know how exactly the content of every file came to be that was not obtained from elsewhere
+- `datalad run` links input data with code execution to output data
+- `datalad containers-run` allows to do the same *within* software containers (e.g., Docker or Singularity)
+
+```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-127-yoda.html" target="_blank">DataLad Handbook: YODA: Best practices for data analyses in a dataset</a>'}
+knitr::include_graphics("https://handbook.datalad.org/en/latest/_images/decentralized_publishing.svg")
+```
+
+---
+
+# DataLad: Resources, tutorials and teaching materials
+
+- The [DataLad Handbook](http://handbook.datalad.org/en/latest/) is an incredibly extensive resource 
+- YouTube video: ["What is DataLad"](https://www.youtube.com/watch?v=IN0vowZ67vs)
+- YouTube video: Michael Hanke: ["How to introduce data management technology without sinking the ship?"](https://www.youtube.com/watch?v=uH75kYgwLH4)
+- YouTube playlist: ["Research Data Management with DataLad"](https://www.youtube.com/playlist?list=PLEQHbPfpVqU5sSVrlwxkP0vpoOpgogg5j) (recording of full-day workshop)
