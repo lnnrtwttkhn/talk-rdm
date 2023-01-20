@@ -98,6 +98,8 @@ knitr::include_url(path_html)
 
 ## Open Science Initiative (OSIP) at the Department of Psychology at TU Dresden
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7554142.svg)](https://doi.org/10.5281/zenodo.7554142)
+
 The following slides were presented during a talk prepared for the [Open Science Initiative at the Department of Psychology (OSIP)](https://tu-dresden.de/mn/psychologie/die-fakultaet/open-science#) at [Technische Universität Dresden](https://tu-dresden.de/), Germany on 18<sup>th</sup> of January 2023.
 
 ### Slides
