@@ -3,6 +3,6 @@
 # in this case DO NOT activate renv
 if ( here::here() == "/home" && file.exists(here::here("../.dockerenv")) == TRUE )  {
 } else {
-  source("renv/activate.R")
+  # source("renv/activate.R")
 }
 
