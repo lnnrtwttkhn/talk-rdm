@@ -1,9 +1,9 @@
 ---
 title: "Tools for an open and reproducible research workflow"
-subtitle: "5<sup>th</sup> Research Data Management Workshop 2022"
-author: "Dr. Lennart Wittkuhn | wittkuhn@mpib-berlin.mpg.de"
-institute: "Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Leipzig, Germany"
-date: "Tuesday, 13<sup>th</sup> of September 2022"
+subtitle: "@ Open Science Initiative (OSIP) at TU Dresden (Dept. of Psychology)"
+author: "Dr. Lennart Wittkuhn"
+institute: "</br>Max Planck Research Group NeuroCode, Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Department of Psychology, University of Hamburg"
+date: "</br>Wednesday, 18<sup>th</sup> of January 2023"
 #date: "Last update of slides: `r format(Sys.time(), '%H:%M | %B %d, %Y')`"
 output:
   xaringan::moon_reader:
@@ -33,32 +33,32 @@ pacman::p_load(char = packages_cran)
 
 #### About me
 
-- **Position:** PostDoc at the [Max Planck Research Group "NeuroCode"](https://www.mpib-berlin.mpg.de/research/research-groups/mprg-neurocode) at the [Max Planck Institute for Human Development](https://www.mpib-berlin.mpg.de/en)
-- **Research:** I study the role of fast neural memory reactivation ([*replay*](https://en.wikipedia.org/wiki/Hippocampal_replay)) in the human brain using fMRI
-- **Background:** BSc Psychology (TU Dresden), MSc Cognitive Neuroscience (TU Dresden), PhD Psychology (FU Berlin)
-- **Roles:** Member of the MPIB's working group on research data management and open science
-- **Contact:** You can contact me via [email](mailto:wittkuhn@mpib-berlin.mpg.de), [Twitter](https://twitter.com/lnnrtwttkhn),
+- `r emoji::emoji("scientist")` **Position:** PostDoc at [MPI for Human Development](https://www.mpib-berlin.mpg.de/en) & Lab Manager at [University of Hamburg](https://www.psy.uni-hamburg.de/en/arbeitsbereiche/lern-und-veraenderungsmechanismen.html) (PI: Nico Schuck)
+- `r emoji::emoji("microscope")` **Research:** I study the role of fast neural memory reactivation ([*replay*](https://en.wikipedia.org/wiki/Hippocampal_replay)) in the human brain using fMRI
+- `r emoji::emoji("mortar_board")` **Background:** BSc Psychology (TU Dresden), MSc Cognitive Neuroscience (TU Dresden), PhD Psychology (FU Berlin)
+- `r emoji::emoji("bookmark")` **Roles:** Member of the MPIB's working group on research data management and open science
+ & ethics committee
+- `r emoji::emoji("link")` **Contact:** You can connect with me via [email](mailto:wittkuhn@mpib-berlin.mpg.de), [Twitter](https://twitter.com/lnnrtwttkhn), [Mastodon](https://fediscience.org/@lnnrtwttkhn),
 [GitHub](https://github.com/lnnrtwttkhn) or
 [LinkedIn](https://www.linkedin.com/in/lennart-wittkuhn-6a079a1a8/)
-- **Info:** Find out more about my work on [my website](https://lennartwittkuhn.com/), [Google Scholar](https://scholar.google.de/) and [ORCiD](https://orcid.org/0000-0003-2966-6888)
+- `r emoji::emoji("information_source")` **Info:** Find out more about my work on [my website](https://lennartwittkuhn.com/), [Google Scholar](https://scholar.google.de/) and [ORCiD](https://orcid.org/0000-0003-2966-6888)
 
 ???
 
 - FDM und Open Science aus Sicht eines Forschenden
 - Wie mit Code und Daten effektiv umgegangen werden kann
 
-
 --
 
 #### About this presentation
 
-- **Slides:** Reproducible slides are publicly available at [lennartwittkuhn.com/talk-rdm](https://lennartwittkuhn.com/talk-rdm/)
-- **Software:** Written in [RMarkdown](https://bookdown.org/yihui/rmarkdown/) with the [xaringan](https://github.com/yihui/xaringan) package, run in [Docker](https://www.docker.com/), deployed to [GitHub Pages](https://pages.github.com/) using [GitHub Actions](https://github.com/features/actions)
-- **DOI:** [10.5281/zenodo.7075084](http://doi.org/10.5281/zenodo.7075084) (generated using GitHub releases + Zenodo, see details [here](https://guides.github.com/activities/citable-code/))
-- **Source:** Source code is publicly available on GitHub at [github.com/lnnrtwttkhn/talk-rdm](https://github.com/lnnrtwttkhn/talk-rdm/)
-- **Links:** This presentation contains links to external resources. I do not take responsibility for the accuracy, legality or content of the external site or for that of subsequent links. If you notice an issue with a link, please contact me!
-- **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/s/CosmQVnEJ#) (public!)
-- **Contact**: I am happy for any feedback or suggestions via [email](mailto:wittkuhn@mpib-berlin.mpg.de) or [GitHub issues](https://github.com/lnnrtwttkhn/talk-rdm/issues). Thank you! `r emoji::emoji("pray")`
+- `r emoji::emoji("computer")` **Slides:** Reproducible slides are publicly available at [lennartwittkuhn.com/talk-rdm](https://lennartwittkuhn.com/talk-rdm/)
+- `r emoji::emoji("package")` **Software:** [RMarkdown](https://bookdown.org/yihui/rmarkdown/) with the [xaringan](https://github.com/yihui/xaringan) package, run in [Docker](https://www.docker.com/), deployed to [GitHub Pages](https://pages.github.com/) using [GitHub Actions](https://github.com/features/actions)
+- `r emoji::emoji("trackball")` **DOI:** [10.5281/zenodo.5012476](http://doi.org/10.5281/zenodo.5012476) (generated using GitHub releases + Zenodo, see details [here](https://guides.github.com/activities/citable-code/))
+- `r emoji::emoji("abacus")` **Source:** Source code is publicly available on GitHub at [github.com/lnnrtwttkhn/talk-rdm](https://github.com/lnnrtwttkhn/talk-rdm/)
+- `r emoji::emoji("electric_plug")` **Links:** This presentation contains links to external resources. I do not take responsibility for the accuracy, legality or content of the external site or for that of subsequent links. If you notice an issue with a link, please contact me!
+- `r emoji::emoji("notebook")` **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/XAmdzBEBToOD7WxFjgLiWw?both) (public!)
+- `r emoji::emoji("pray")` **Contact**: I am happy for any feedback or suggestions via [email](mailto:wittkuhn@mpib-berlin.mpg.de) or [GitHub issues](https://github.com/lnnrtwttkhn/talk-rdm/issues). Thank you!
 
 ---
 
@@ -66,11 +66,14 @@ pacman::p_load(char = packages_cran)
 
 1. **Introduction**
 2. **Research Workflow**
-  - Code (Git etc.)
-  - Data (DataLad etc.)
-  - Communication (Issues etc.)
-  - *Environments (Docker etc.)*
-  - *Procedures (Make etc.)*
+  - Code Management: **Git**
+  - Data Management: **DataLad**
+  - Code & Data Sharing: **GIN**, **OSF**, **S3**, etc.
+  - Example: Wittkuhn & Schuck, 2021, *Nature Communications*
+  - Communication: Discussion via **Issues** and collaborations via **Merge Requests**
+  - *( Procedures: **datalad run** and **Make**)*
+  - *( Environments: **renv**, **venv**, **Docker**, etc.)*
+  
 3. **Discussion**
 
 ???
@@ -148,9 +151,7 @@ knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot
 
 ---
 
-exclude: true
-
-# Reproducible research
+# Challenge: Computational reproducibility
 
 > *"[...] when the same analysis steps performed on the same dataset consistently produces the same answer."*
 
@@ -178,7 +179,7 @@ knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible
 # Challenge: Many stages in the research cycle
 
 ```{r, echo=FALSE, fig.align="center", out.width="58%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/4906004" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
-knitr::include_graphics("https://the-turing-way.netlify.app/_images/research-cycle.jpg") 
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3a1863ac2c2e40809c5f/?dl=1") 
 ```
 
 ???
@@ -188,7 +189,6 @@ knitr::include_graphics("https://the-turing-way.netlify.app/_images/research-cyc
 - Viele Schritte im Forschungsprozess über viele Jahre
 - Bei jedem dieser Schritte werden i.d.R. Daten generiert und verarbeitet - wie kann man damit systematisch und effektiv umgehen?
 - Formalisieren dieser Herausforderung
-
 
 ---
 
@@ -222,8 +222,22 @@ Fokus: Code, Daten, Kommunikation
 
 - Data is produced through code (e.g., task code)
 - Data is manipulated by code and new data is generated
- - Mapping between input and output data
+- Mapping between input and output data
 - This happens using specific software in specific versions
+
+---
+
+class: title-slide, center, middle
+name: track-everything
+
+# If everything is relevant ... 
+--
+track everything
+--
+
+.footnote[
+Credit: Adapted from [Slides on "Research Data Management with DataLad"](http://datasets.datalad.org/datalad/datalad-course/html/mpsc-introduction.html#/5) by Adina Wagner & Michael Hanke
+]
 
 ---
 
@@ -255,7 +269,7 @@ knitr::include_graphics("http://phdcomics.com/comics/archive/phd101212s.gif")
 
 ---
 
-exclude: true
+exclude: false
 
 # What is version control?
 
@@ -372,13 +386,12 @@ knitr::include_graphics("https://cdn.icon-icons.com/icons2/2415/PNG/512/gitlab_o
 
 --
 
-#### GitLab for Max Planck employees
+#### GitLab for TU Dresden employees
 
-- hosted by GWDG: https://gitlab.gwdg.de
-- hosted by your institute<sup>1</sup>, e.g., at MPIB: https://git.mpib-berlin.mpg.de
+- hosted [at the School of Science at TU Dresden](https://tu-dresden.de/mn/der-bereich/it-kompetenz-und-servicezentrum/gitlab-dienst?set_language=en)<sup>1</sup>
 
 .footnote[
-<sup>1</sup> Using your Max Planck credentials, you should already have an account!
+<sup>1</sup> Using your ZIH credentials, you should already have an account!
 ]
 
 ---
@@ -430,6 +443,7 @@ knitr::include_graphics("https://avatars.githubusercontent.com/u/8927200?s=200&v
 - free, [open-source](https://github.com/datalad/datalad) **command-line tool**
 - building on top of **Git** and **git-annex**, DataLad allows you to **version control arbitrarily large files** in datasets.
 - *"Arbitrarily large?"* - yes, see DataLad dataset of 80TB / 15 million files from the Human Connectome Project (see [details](https://handbook.datalad.org/en/latest/usecases/HCP_dataset.html#usecase-hcp-dataset))
+- A Graphical User Interface (GUI) exists: [DataLad Gooey](http://docs.datalad.org/projects/gooey/en/latest/index.html)
 
 --
 
@@ -560,6 +574,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/thirdpart
 - Dadurch ermöglicht DataLad systematische Kollaboration und Veröffentlichung von größeren Datensätzen
 
 ---
+
 exclude: true
 
 # DataLad: Metadata handling
@@ -576,7 +591,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_
 class: title-slide, center, middle
 name: workflow-sharing
 
-# Workflow: Data sharing using MPS infrastructure
+# Workflow: Data sharing using DataLad
 <!--the next --- is a horizontal line-->
 
 --- 
@@ -584,6 +599,18 @@ name: workflow-sharing
 ???
 
 - Fokus, wie Infrastruktur der MPG zum Tragen kommt
+
+---
+
+# Data sharing and collaboration with DataLad
+
+.center[
+*"I have a dataset on my computer. How can I share it or collaborate on it?"*
+]
+
+```{r, echo=FALSE, fig.align="center", out.width="60%", fig.retina=1, fig.cap='see <a href="https://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/d0b1749c4d504bb080b7/?dl=1") 
+```
 
 ---
 
@@ -604,11 +631,13 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/collabora
 
 # Interoperability with a range of hosting services
 
-DataLad is built to **maximize interoperability with a wide range of hosting services** and storage technologies
+.center[DataLad is built to **maximize interoperability with a wide range of hosting services** and storage technologies]
 
 .center[
-```{r, echo=FALSE, fig.align="center", out.width="53%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg")
+```{r, echo=FALSE, fig.align="center", out.width="38%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3ff02e436e5142059461/?dl=1")
+# http://datasets.datalad.org/datalad/datalad-course/pics/services_connected.png
+# http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg
 ```
 ]
 
@@ -620,6 +649,21 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishin
 
 ---
 
+# Separate content in Git vs. git-annex behind the scenes
+
+- Datasets are exposed via private or public repository on a repository hosting service (e.g., GitLab)
+- Data can't be stored in the repository hosting service but can be kept in almost any third party storage
+- Publication dependencies automate pushing data content to the correct place
+
+.center[
+```{r, echo=FALSE, fig.align="center", out.width="45%", fig.retina=1, fig.cap='see <a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank">DataLad Handbook: Beyond shared infrastructure</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/a3347c7a01084525a8df/?dl=1")
+# http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg
+```
+]
+
+---
+
 # Data sharing via GIN
 
 ```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://gin.g-node.org/" target="_blank">gin.g-node.org</a>'}
@@ -627,6 +671,10 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 ```
 
 > "*GIN is [...] a web-accessible repository store of your data based on git and git-annex that you can access securely anywhere you desire while keeping your data in sync, backed up and easily accessible [...]"*
+
+.center[
+DataLad plays perfectly with GIN, since both use git + git-annex (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))
+]
 
 ???
 
@@ -637,13 +685,12 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 
 #### `r emoji::emoji("sparkles")` Advantages of GIN
 
-- free to use and open-source (could be hosted within MPIs / MPS; details [here](https://gin.g-node.org/G-Node/Info/wiki/In+House))
+- free to use and open-source (could be hosted within your institution; details [here](https://gin.g-node.org/G-Node/Info/wiki/In+House))
+- currently unlimited storage capacity and no restrictions on individual file size
 - supports private and public repositories
 - publicly funded by the Federal Ministry of Education and Research (BMBF; details [here](https://gin.g-node.org/G-Node/Info/wiki/about#support))
 - servers are on German land (near Munich, Germany; cf. GDPR)
-- provides Digital Object Identifiers (DOIs) (details [here](https://gin.g-node.org/G-Node/Info/wiki/DOI))
-- free licensing (details [here](https://gin.g-node.org/G-Node/Info/wiki/Licensing))
-- DataLad plays perfectly with GIN, since both use git + git-annex (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))
+- provides Digital Object Identifiers (DOIs) (details [here](https://gin.g-node.org/G-Node/Info/wiki/DOI)) and allows free licensing (details [here](https://gin.g-node.org/G-Node/Info/wiki/Licensing))
 
 ???
 
@@ -651,9 +698,9 @@ knitr::include_graphics("https://gin.g-node.org/img/favicon.png")
 
 ---
 
-exclude: true
-
 # Publishing a DataLad dataset to GIN in only 4 steps
+
+--
 
 1\. Create a dataset
 
@@ -663,8 +710,6 @@ datalad create my_dataset
 
 --
 
-exclude: true
-
 2\. Save data into the dataset
 
 ```{bash, eval=FALSE}
@@ -672,8 +717,6 @@ datalad save -m "add data to dataset"
 ```
 
 --
-
-exclude: true
 
 3\. Add the GIN remote (aka. "sibling") to the repository
 
@@ -683,8 +726,6 @@ datalad siblings add -d . --name gin --url git@gin.g-node.org:/my_username/my_da
 
 --
 
-exclude: true
-
 4\. Transfer the dataset to GIN
 
 ```{bash, eval=FALSE}
@@ -693,11 +734,64 @@ datalad push --to gin
 
 --
 
-exclude: true
-
 Done!<sup>1</sup> 🎉
 
 <sup><sup>1</sup> To be fair, it's a bit more complex than that ... `r emoji::emoji("innocent")` (details [here](https://handbook.datalad.org/en/latest/basics/101-139-gin.html))</sup>
+
+---
+
+# Data sharing via the Open Science Framework (OSF)
+
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://osf.io/" target="_blank">osf.io</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/27b4f2ac823147a7975c/?dl=1")
+```
+
+.center[
+DataLad-OSF extension allows to integrate with OSF via DataLad (details [here](http://docs.datalad.org/projects/osf/en/latest/index.html))
+]
+
+--
+
+#### `r emoji::emoji("sparkles")` Advantages of OSF
+
+- free to use
+- supports private and public repositories
+- provides Digital Object Identifiers (DOIs) (details [here](https://help.osf.io/article/220-create-dois)) and allows free licensing (details [here](https://help.osf.io/article/148-licensing))
+- very popular among scientists (details [here](https://www.cos.io/blog/shared-investment-in-osf-sustainability))
+
+#### `r emoji::emoji("cloud_with_rain")` Limitations of OSF
+
+- private and public projects projects limited to 5GB and 50GB, respectively
+- maximum individual file size of 5GB
+
+---
+
+# Data sharing via S3 buckets (object storage)
+
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='e.g., <a href="https://tu-dresden.de/zih/dienste/service-katalog/arbeitsumgebung/datenspeicher/objektspeicher-s3?set_language=en" target="_blank">Object Storage at ZIH</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/45a664d668724e51917a/?dl=1")
+```
+
+--
+
+.center[
+> "*Object storage is a data store that originates in cloud environments and can be used to store and share data.*
+> *An object consists of a unique name, the actual data, and associated metadata.*
+> *In contrast to file systems, objects are not stored in a hierarchy but in a flat container (so-called buckets).*"
+]
+
+--
+
+#### `r emoji::emoji("sparkles")` Advantages of S3 buckets
+
+- up to 200 GB per TU Dresden employee (expandable)
+- data hosted on ZIH servers
+- S3 buckets can be configured as a [DataLad special remote](https://handbook.datalad.org/en/latest/basics/101-139-s3.html) (walkthrough in DataLad Handbook)
+
+
+???
+
+> Object storage is a data store that originates in cloud environments and can be used to store and share data. An object consists of a unique name, the actual data, and associated metadata (such as access permissions and user-defined metadata). In contrast to file systems, objects are not stored in a hierarchy but in a flat container (so-called buckets). Access is possible via HTTP-based protocols/APIs such as S3 or Swift.
 
 ---
 
@@ -766,6 +860,117 @@ The primary use case for dataverse siblings is dataset deposition, where only on
 ---
 
 class: title-slide, center, middle
+name: example
+
+# Example: Wittkuhn & Schuck, 2021, *Nature Communications*
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Example: Our paper
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="https://doi.org/10.1038/s41467-021-21970-2" target="_blank">doi: 10.1038/s41467-021-21970-2</a> (accessed 18/01/23)'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/a7540f80580b4131b22c/?dl=1") 
+```
+
+#### Two-sentence summary:
+
+> "*Non-invasive measurement of fast neural activity with spatial precision in humans is difficult.*
+> *Here, the authors **show how fMRI can be used to detect sub-second neural sequences in a localized fashion** and **report fast replay of images in visual cortex** that occurred independently of the hippocampus.*"
+
+]
+
+--
+
+.pull-right[
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">We share all code + data via <a href="https://twitter.com/gnode?ref_src=twsrc%5Etfw">@gnode</a> + <a href="https://twitter.com/hashtag/GitHub?src=hash&amp;ref_src=twsrc%5Etfw">#GitHub</a>, version-controlled with <a href="https://twitter.com/datalad?ref_src=twsrc%5Etfw">@datalad</a> (ca. 1.5 TB): MRI in <a href="https://twitter.com/BIDSstandard?ref_src=twsrc%5Etfw">@BIDSstandard</a>, <a href="https://twitter.com/hashtag/fMRIPrep?src=hash&amp;ref_src=twsrc%5Etfw">#fMRIPrep</a> data, <a href="https://twitter.com/hashtag/MRIQC?src=hash&amp;ref_src=twsrc%5Etfw">#MRIQC</a> metrics, GLMs + anatomical masks, task code, decoding pipeline, statistical analyses: <a href="https://t.co/sv3Vrco7wj">https://t.co/sv3Vrco7wj</a> <a href="https://twitter.com/hashtag/OpenScience?src=hash&amp;ref_src=twsrc%5Etfw">#OpenScience</a> 🧮 [2/n]</p>&mdash; Lennart Wittkuhn (@lnnrtwttkhn) <a href="https://twitter.com/lnnrtwttkhn/status/1372859256777670659?ref_src=twsrc%5Etfw">March 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+]
+
+---
+
+# Example: Data management using DataLad
+
+#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Data Availability statement](https://www.nature.com/articles/s41467-021-21970-2#data-availability)):
+
+> *"We publicly share all data used in this study. Data and code management was realized using DataLad.*"
+
+--
+
+- All individual datasets can be found at: https://gin.g-node.org/lnnrtwttkhn
+- Each dataset is associated with a unique URL and a Digital Object Identifier (DOI)
+- Dataset structure shared to GitHub and dataset contents shared to GIN
+
+--
+
+#### All data?
+
+--
+
+- `highspeed`: superdataset of all subdatasets, incl. project documentation ([GitLab](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed))
+- `highspeed-bids`: MRI and behavioral data adhering to the [BIDS standard](https://bids.neuroimaging.io/)
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-bids),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-bids),
+[DOI](https://doi.org/10.12751/g-node.4ivuv8))
+- `highspeed-mriqc`: MRI quality metrics and reports based on [MRIQC](https://mriqc.readthedocs.io/en/stable/) 
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-mriqc),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-mriqc),
+[DOI](https://doi.org/10.12751/g-node.0vmyuh))
+- `highspeed-fmriprep`: preprocessed MRI data using [fMRIPrep](https://fmriprep.org/en/stable/),
+([GitHub](https://github.com/lnnrtwttkhn/highspeed-fmriprep),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-fmriprep),
+[DOI](https://doi.org/10.12751/g-node.0ft06t))
+- `highspeed-masks`: binarized anatomical masks used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-masks),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-masks), [DOI](https://doi.org/10.12751/g-node.omirok))
+- `highspeed-glm`: first-level GLM results used for feature selection ([GitHub](https://github.com/lnnrtwttkhn/highspeed-glm),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-glm),
+[DOI](https://doi.org/10.12751/g-node.d21zpv))
+- `highspeed-decoding`: results of the multivariate decoding approach ([GitHub](https://github.com/lnnrtwttkhn/highspeed-decoding), [GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-decoding), [DOI](https://doi.org/10.12751/g-node.9zft1r))
+- `highspeed-data`: unprocessed data of the behavioral task acquired during MRI acquisition ([GitHub](https://github.com/lnnrtwttkhn/highspeed-data-behavior),
+[GIN](https://gin.g-node.org/lnnrtwttkhn/highspeed-data-behavior),
+[DOI](https://doi.org/10.12751/g-node.p7dabb))
+
+\> 1.5 TB in total, version-controlled using DataLad
+
+---
+
+# Superdataset to collect all resources of the project
+
+```{r, echo=FALSE, fig.align="center", out.width="85%", fig.retina=1, fig.cap='see <a href="https://git.mpib-berlin.mpg.de/wittkuhn/highspeed" target="_blank">main project repo on GitLab</a> (accessed 21/06/21)'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/40e43c7e029a4f4696b8/?dl=1")
+```
+
+---
+
+# Project website with main statistical results
+
+#### From Wittkuhn & Schuck, 2021, *Nature Communications* (see [Code Availability statement](https://www.nature.com/articles/s41467-021-21970-2#code-availability)):
+
+> "*We share all code used in this study. An overview of all the resources is publicly available on our **project website.**"*
+
+Project website publicly available at https://wittkuhn.mpib.berlin/highspeed/
+
+--
+
+#### Reproducible reports with [Bookdown](https://bookdown.org/yihui/bookdown/) / [RMarkdown](https://bookdown.org/yihui/rmarkdown/)
+
+> *"R Markdown is a file format for making dynamic documents with R. An R Markdown document is written in markdown (an easy-to-write plain text format) and contains chunks of embedded R code [...]"*
+
+- Project documentation and main statistical analyses are written in RMarkdown (see [here](https://github.com/lnnrtwttkhn/highspeed-analysis/tree/master/code))
+- Documentation pages showcase non-executed code (used in subdatasets) in Python and Bash
+- Statistical analyses are executed and website rendered automatically via [Continuous Integreation / Deployment (CI/CD)](https://docs.gitlab.com/ee/ci/):
+  1. In the [main project repository](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed), all RMarkdown files are [combined](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/_bookdown.yml#L22-36) using [bookdown](https://bookdown.org/) (across subdatasets)
+  1. Input data is [automatically retrieved](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L5-75) from GIN and / or Keeper using DataLad (run in a [Docker container](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/datalad/Dockerfile))
+  1. The RMarkdown files are [run in Docker](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.docker/bookdown/Dockerfile) (executing main statistical analyses) and [rendered](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L99) into a static website
+  1. The static website is [deployed to GitLab pages](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L95-106)
+
+&rarr; This pipeline is automatically triggered on every push (change) to the main repository.
+
+---
+
+class: title-slide, center, middle
 name: workflow-communication
 
 # Workflow: Communication and project management
@@ -777,9 +982,9 @@ name: workflow-communication
 
 # Communication and project management
 
-#### Status-quo
+#### The not uncommon status-quo
 
-- Multitude of channels: Notepads, Email, Messenger (e.g., Mattermost), Project Management Software (e.g., Trello), ...
+- A diversity of channels: Notepads, Email, Messenger (e.g., Slack), Project Management Software (e.g., Trello), ... `r emoji::emoji("see_no_evil")`
 
 --
 
@@ -892,6 +1097,107 @@ The repository maintainer (i.e., you) can ...
 
 ---
 
+# Managing access, permissions and roles
+
+--
+
+#### Visibility and permissions settings on GitLab
+
+- GitLab (and GitHub) allow setting the **project and group visibility**
+  - GitLab visibility levels: `r emoji::emoji("new_moon")` `Private` `r emoji::emoji("first_quarter_moon")` `Internal` `r emoji::emoji("full_moon")` `Public`  (details [here](https://docs.gitlab.com/ee/user/public_access.html))
+- GitLab (and GitHub) allow setting fine-grained **permissions and roles** for contributors
+  - GitLab roles: `Guest` `r emoji::emoji("arrow_right")` `Reporter` `r emoji::emoji("arrow_right")` `Developer` `r emoji::emoji("arrow_right")` `Maintainer` `r emoji::emoji("arrow_right")` `Owner` (details [here](https://docs.gitlab.com/ee/user/permissions.html))
+
+--
+
+#### Example workflow
+
+- Your projects are `private` from the start
+- Everyone in your group can view each other's projects (`Guest` or `Reporter`)
+- Direct collaborators (internal or external) can edit the project (`Developer` or `Maintainer`)
+- The PI gets access to all projects (`Maintainer` or `Owner`; optionally only at the end of a project)
+- Project can be set to `public` later on (e.g., upon publication)
+
+???
+
+- Group members can always view your projects and their current status
+- Group members can clone your repository, fork it, open issues and merge requests
+- Group members can not make any changes to your project by default
+- PI has at least Maingtainer access to all projects for long-term availability
+
+---
+
+class: title-slide, center, middle
+name: procedures
+
+# Procedures: Relationships between code and data
+<!--the next --- is a horizontal line-->
+
+--- 
+
+---
+
+# Procedures: Relationships between code and data
+
+- `r emoji::emoji("question")` *"Which (version of the) code produced which (version of the) data?"*
+- `r emoji::emoji("question")` *"In which order do I need to execute the code to reproduce the results?"*
+
+--
+
+#### Example solutions
+
+--
+
+.pull-left[
+
+[`datalad run`](http://docs.datalad.org/en/stable/generated/man/datalad-run.html) *"[...] will record a shell command, and save all changes this command triggered in the dataset – be that new files or changes to existing files."* ([DataLad Handbook](http://handbook.datalad.org/en/latest/basics/basics-run.html))
+{{content}}
+]
+
+--
+
+```bash
+datalad run -m "Run script to create plot" \
+  "python3 script.py" -i "data.tsv" -o "plot.png"
+```
+
+```bash
+{
+ "cmd": "python3 script.py",
+ "inputs": [
+  "data.csv"
+ ],
+ "outputs": [
+  "plot.png"
+ ]
+}
+```
+
+--
+
+.pull-right[
+[GNU Make](https://www.gnu.org/software/make/) *"enables [...] to build and install your package without knowing the details of how that is done -- because these details are recorded in the makefile that you supply."*
+
+*"Make figures out automatically which files it needs to update, based on which source files have changed. It also [...] determines the proper order for updating files [...]"*
+
+{{content}}
+]
+
+--
+
+```lang-makefile
+all: plot.png
+
+plot.png: script.py data.tsv
+    python3 script.py
+```
+
+```bash
+make all
+```
+
+---
+
 class: title-slide, center, middle
 name: discussion
 
@@ -914,18 +1220,19 @@ name: discussion
 
 --
 
-> How can we manage our code and data openly and reproducibly?
+> How can we manage our work (largely code and data) openly and reproducibly?
 
 --
 
 #### The technical solutions are already available!
 
-- Code and data management using **Git / DataLad** (free, open-source command-line tools)
-- Code and data sharing via flexible MPS-hosted infrastructure (**GIN, Keeper, Edmond**, etc.)
-- Project management and communication via **issue boards** and **merge requests** on GitLab
+- Code and data *management* using **Git** and **DataLad** (free, open-source command-line tools)
+- Code and data *sharing* via flexible repository hosting services (**GitLab, GitHub, GIN**, etc.)
+- Code and data *storage* on various infrastructure (**GIN**, **OSF**, **S3**, **Keeper**, **Dataverse**, and many more!)
+- Project-related communication (ideas, problems, discussions) via **issue boards** on GitLab
+- Contributions to code and data via **merge requests** on GitLab (i.e., pull requests on GitHub)
+- *Reproducible procedures using e.g., Make or datalad run commands*
 - *Reproducible computational environments using software containers (e.g., Docker)*
-- *Reproducible procedures using e.g., Make or `datalad run` commands*
-- *Reliance on community standards for data organization and code style guides*
 
 ???
 
@@ -939,14 +1246,27 @@ name: discussion
 
 #### The long-term challenges are largely non-technical:
 - moving towards a "culture of reproducibility" (cf. Russ Poldrack)
-- changing incentives / funding schemes
-- education, education, education
+- changing incentives and funding schemes
+- learning, adopting new practices, upgrading workflows
 
-???
+---
 
-- Viele Faktoren innerhalb der Wissenschaft, die uns 
+exclude: true
+
+# What are the costs?
+
+| | Git | DataLad | GitLab | GIN | Zenodo |
+|---|---|---|---|---|---|
+| available today | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` |
+| free to use | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` |
+| open source | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` |
+| publicly funded | `NA` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("heavy_multiplication_x")` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` |
+| self-hosted | `NA` | `NA` | `r emoji::emoji("white_check_mark")` | `r emoji::emoji("white_check_mark")` | `NA` |
 
 
+The only real cost is the **time invested in learning**!
+
+... and learning resources are plentiful!
 
 ---
 
@@ -966,13 +1286,28 @@ name: discussion
 - ["Research Data Management with DataLad"](https://www.youtube.com/playlist?list=PLEQHbPfpVqU5sSVrlwxkP0vpoOpgogg5j) | Recording of a full-day workshop on YouTube
 - [Datalad on YouTube](https://www.youtube.com/c/DataLad) | Recorded workshops, tutorials and talks on DataLad
 
+--
+
+#### Learn both (disclaimer: shameless plug `r emoji::emoji("see_no_evil")`)
+
+- Full-semester course on ["Version control of code and data using Git and DataLad"](https://lennartwittkuhn.com/ddlitlab/) in winter semester 2023/24 at University of Hamburg (generously funded by the [Digital and Data Literacy in Teaching Lab](https://www.isa.uni-hamburg.de/en/ddlitlab.html) program) - *more details coming soon ...*
+
+---
+
+exclude: true
+
+# Why share data?
+
+- Studies with accessible data tend to have fewer error and more robust statistical effects (Wicherts et al. 2011)
+- "The long-tail of dark data": over 50% of completed studies are estimated to be unreported, because the results did not conform to authors' hypotheses (Chan et al., 2014)
+
 ---
 
 # Thank you!
 
 .pull-left[
-```{r, echo=FALSE, fig.align="center", out.width="85%", fig.retina=1, fig.cap='<a href="https://schucklab.gitlab.io/" target="_blank">MPRG NeuroCode at MPIB</a>'}
-knitr::include_graphics("https://schucklab.gitlab.io/img/digital_group_photo.webp")
+```{r, echo=FALSE, fig.align="center", out.width="65%", fig.retina=1, fig.cap='<a href="https://schucklab.gitlab.io/" target="_blank">"NeuroCode" group at MPIB and UHH</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/90314f29b57f4e299755/?dl=1")
 ```
 ]
 
@@ -984,7 +1319,7 @@ knitr::include_graphics("https://www.mpg.de/assets/og-logo-8216b4912130f32577627
 ]
 
 .pull-left[
-```{r, echo=FALSE, fig.align="center", out.width="30%", fig.retina=1, fig.cap='<a href="https://www.mpib-berlin.mpg.de/mitarbeiter/michael-krause" target="_blank">Michael Krause</a>'}
+```{r, echo=FALSE, fig.align="center", out.width="30%", fig.retina=1, fig.cap='<a href="https://www.mpib-berlin.mpg.de/mitarbeiter/michael-krause" target="_blank">Michael Krause (MPIB Sys Admin)</a>'}
 knitr::include_graphics("https://secure.gravatar.com/avatar/f49adcdd1c7bb710cdf529ab916c3098?s=800&d=identicon")
 ```
 ]
@@ -1662,7 +1997,7 @@ knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible
 # Challenges: Many stages in the research cycle
 
 ```{r, echo=FALSE, fig.align="center", out.width="58%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/4906004" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
-knitr::include_graphics("https://the-turing-way.netlify.app/_images/research-cycle.jpg") 
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3a1863ac2c2e40809c5f/?dl=1") 
 ```
 
 ---
