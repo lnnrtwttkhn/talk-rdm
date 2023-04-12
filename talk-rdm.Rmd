@@ -232,7 +232,6 @@ name: track-everything
 # If everything is relevant ... 
 --
 track everything
---
 
 .footnote[
 Credit: Adapted from [Slides on "Research Data Management with DataLad"](http://datasets.datalad.org/datalad/datalad-course/html/mpsc-introduction.html#/5) by Adina Wagner & Michael Hanke
