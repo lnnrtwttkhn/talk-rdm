@@ -1,9 +1,9 @@
 ---
-title: "Tools for an open and reproducible research workflow"
-subtitle: "@ Open Science Initiative (OSIP) at TU Dresden (Dept. of Psychology)"
+title: "Open and reproducible data management with DataLad"
+subtitle: "Talk at Freie Universität Berlin (Dept. of Education and Psychology)"
 author: "Dr. Lennart Wittkuhn"
-institute: "</br>Max Planck Research Group NeuroCode, Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Department of Psychology, University of Hamburg"
-date: "</br>Wednesday, 18<sup>th</sup> of January 2023"
+institute: "</br>Department of Psychology, University of Hamburg</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research"
+date: "</br>Friday, 14<sup>th</sup> of April 2023"
 #date: "Last update of slides: `r format(Sys.time(), '%H:%M | %B %d, %Y')`"
 output:
   xaringan::moon_reader:
@@ -33,7 +33,7 @@ pacman::p_load(char = packages_cran)
 
 #### About me
 
-- `r emoji::emoji("scientist")` **Position:** PostDoc at [MPI for Human Development](https://www.mpib-berlin.mpg.de/en) & Lab Manager at [University of Hamburg](https://www.psy.uni-hamburg.de/en/arbeitsbereiche/lern-und-veraenderungsmechanismen.html) (PI: Nico Schuck)
+- `r emoji::emoji("scientist")` **Position:** PostDoc & Lab Manager at [University of Hamburg](https://www.psy.uni-hamburg.de/en/arbeitsbereiche/lern-und-veraenderungsmechanismen.html) & [MPI for Human Development](https://www.mpib-berlin.mpg.de/en) (PI: Prof. Nicolas Schuck)
 - `r emoji::emoji("microscope")` **Research:** I study the role of fast neural memory reactivation ([*replay*](https://en.wikipedia.org/wiki/Hippocampal_replay)) in the human brain using fMRI
 - `r emoji::emoji("mortar_board")` **Background:** BSc Psychology (TU Dresden), MSc Cognitive Neuroscience (TU Dresden), PhD Psychology (FU Berlin)
 - `r emoji::emoji("bookmark")` **Roles:** Member of the MPIB's working group on research data management and open science
@@ -57,7 +57,6 @@ pacman::p_load(char = packages_cran)
 - `r emoji::emoji("trackball")` **DOI:** [10.5281/zenodo.5012476](http://doi.org/10.5281/zenodo.5012476) (generated using GitHub releases + Zenodo, see details [here](https://guides.github.com/activities/citable-code/))
 - `r emoji::emoji("abacus")` **Source:** Source code is publicly available on GitHub at [github.com/lnnrtwttkhn/talk-rdm](https://github.com/lnnrtwttkhn/talk-rdm/)
 - `r emoji::emoji("electric_plug")` **Links:** This presentation contains links to external resources. I do not take responsibility for the accuracy, legality or content of the external site or for that of subsequent links. If you notice an issue with a link, please contact me!
-- `r emoji::emoji("notebook")` **Notes:** Collaborative notes during the talk via [HedgeDoc](https://pad.gwdg.de/XAmdzBEBToOD7WxFjgLiWw?both) (public!)
 - `r emoji::emoji("pray")` **Contact**: I am happy for any feedback or suggestions via [email](mailto:wittkuhn@mpib-berlin.mpg.de) or [GitHub issues](https://github.com/lnnrtwttkhn/talk-rdm/issues). Thank you!
 
 ---
@@ -233,7 +232,6 @@ name: track-everything
 # If everything is relevant ... 
 --
 track everything
---
 
 .footnote[
 Credit: Adapted from [Slides on "Research Data Management with DataLad"](http://datasets.datalad.org/datalad/datalad-course/html/mpsc-introduction.html#/5) by Adina Wagner & Michael Hanke
@@ -286,9 +284,9 @@ knitr::include_graphics("https://zenodo.org/record/3695300/files/ProjectHistory.
 ]
 
 .center[
-- keep files organized
-- keep track of changes
-- revert changes or go back to previous versions
+keep files organized</br>
+keep track of changes</br>
+revert changes or go back to previous versions
 ]
 
 ???
@@ -332,7 +330,7 @@ knitr::include_graphics("https://git-scm.com/book/en/v2/images/distributed.png")
 - most popular **distributed version control system**
 - free, [open-source](https://github.com/git) command-line tool
 - Graphical User Interfaces (GUIs) exist, e.g., [GitKraken](https://www.gitkraken.com/)
-- standard tool for most (all?) software developers
+- standard tool for professional software developers
 
 ???
 
@@ -376,6 +374,8 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/8fda5b269fef4d778007/?dl=1
 
 ---
 
+exclude: true
+
 # Code sharing via GitLab
 
 ```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://gitlab.com/" target="_blank">gitlab.com</a>'}
@@ -385,6 +385,8 @@ knitr::include_graphics("https://cdn.icon-icons.com/icons2/2415/PNG/512/gitlab_o
 > "*GitLab is **open source** software to collaborate on code. Manage git repositories with fine-grained **access controls** that keep your code secure. [...] Perform **code reviews** and **enhance collaboration** with merge requests. Each project can also have an **issue tracker** and a **wiki**.*"
 
 --
+
+exclude: true
 
 #### GitLab for TU Dresden employees
 
@@ -439,9 +441,9 @@ knitr::include_graphics("https://avatars.githubusercontent.com/u/8927200?s=200&v
 
 --
 
-- **"Git for (large) data"**
+- **"git for (large) data"**
 - free, [open-source](https://github.com/datalad/datalad) **command-line tool**
-- building on top of **Git** and **git-annex**, DataLad allows you to **version control arbitrarily large files** in datasets.
+- building on top of **git** and **git-annex**, DataLad allows you to **version control arbitrarily large files** in datasets.
 - *"Arbitrarily large?"* - yes, see DataLad dataset of 80TB / 15 million files from the Human Connectome Project (see [details](https://handbook.datalad.org/en/latest/usecases/HCP_dataset.html#usecase-hcp-dataset))
 - A Graphical User Interface (GUI) exists: [DataLad Gooey](http://docs.datalad.org/projects/gooey/en/latest/index.html)
 
@@ -587,6 +589,52 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_
 
 ---
 
+# Random useful info about DataLad
+
+#### Use DataLad within Python `r emoji::emoji("snake")` and R `r emoji::emoji("pirate_flag")`
+
+- [DataLad Python API](http://docs.datalad.org/en/stable/modref.html): Use DataLad commands directly in your Python code!
+- Install DataLad `pip install datalad` and import in your Python script `import datalad.api as dl`
+- Use system commands in other languages, e.g., in R `system2("datalad status")`
+
+--
+
+#### Keep only what you need (aka. "How to work on two fMRI studies with a 250GB laptop")
+
+- `datalad drop` removes the file contents completely from your dataset
+- only keep whatever you like or re-obtain with `datalad get`
+
+--
+
+#### git-annex takes the safety of your files seriously
+
+- Files saved under git-annex are locked against modifications
+- `datalad run` automatically unlocks specified inputs / outputs
+- `datalad unlock` can be used to unlock annexed content manually
+- Everything that is stored under git-annex is content-locked and everything that is stored under Git is not
+
+---
+
+# Git vs. git-annex
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-114-txt2git.html" target="_blank"><sup>DataLad Handbook: Data Safety</sup></a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/git_vs_gitannex.svg")
+```
+
+- Example: `datalad create -c text2git my_dataset`<br>&rarr; all text files are saved under Git
+- the `.gitattributes` file handles, which files are stored under git vs. git-annex (can modify manually)
+- see [this chapter](http://handbook.datalad.og/en/latest/basics/basics-configuration.html#chapter-config) in the DataLad handbook
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank"><sup>DataLad Handbook: Beyond shared infrastructure</sup></a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg") 
+```
+]
+
+---
+
 
 class: title-slide, center, middle
 name: workflow-sharing
@@ -649,7 +697,7 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3ff02e436e5142059461/?dl=1
 
 ---
 
-# Separate content in Git vs. git-annex behind the scenes
+# Separate content in git vs. git-annex behind the scenes
 
 - Datasets are exposed via private or public repository on a repository hosting service (e.g., GitLab)
 - Data can't be stored in the repository hosting service but can be kept in almost any third party storage
@@ -740,6 +788,32 @@ Done!<sup>1</sup> 🎉
 
 ---
 
+# Data sharing via Nextcloud
+
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://nextcloud.com/" target="_blank">nextcloud.com</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/d630458cd4124c2c9ce5/?dl=1")
+```
+
+.center[
+DataLad NEXT extension allows to push data to Nextcloud (using WebDAV; details [here](http://docs.datalad.org/projects/next/en/latest/generated/datalad.api.create_sibling_webdav.html))
+]
+
+--
+
+#### `r emoji::emoji("sparkles")` Advantages of Nextcloud
+
+- data privacy compliant alternative to Google Drive, Dropbox, etc. (often hosted on-site)
+- provided by your institution, so free to use
+- supports private and public repositories
+- can be used together with external collaborators
+
+#### `r emoji::emoji("bear")` Nextcloud at FU Berlin: [Box.FU](https://box.fu-berlin.de/)
+
+- data hosted on FU servers
+- storage quota: 200 GB per employee / student (expandable)
+
+---
+
 # Data sharing via the Open Science Framework (OSF)
 
 ```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://osf.io/" target="_blank">osf.io</a>'}
@@ -768,7 +842,7 @@ DataLad-OSF extension allows to integrate with OSF via DataLad (details [here](h
 
 # Data sharing via S3 buckets (object storage)
 
-```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='e.g., <a href="https://tu-dresden.de/zih/dienste/service-katalog/arbeitsumgebung/datenspeicher/objektspeicher-s3?set_language=en" target="_blank">Object Storage at ZIH</a>'}
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='e.g., <a href="https://www.rrz.uni-hamburg.de/en/services/datenhaltung/objektspeicher.html" target="_blank">Object Storage at UHH</a>'}
 knitr::include_graphics("https://keeper.mpdl.mpg.de/f/45a664d668724e51917a/?dl=1")
 ```
 
@@ -784,8 +858,8 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/45a664d668724e51917a/?dl=1
 
 #### `r emoji::emoji("sparkles")` Advantages of S3 buckets
 
-- up to 200 GB per TU Dresden employee (expandable)
-- data hosted on ZIH servers
+- flexible storage size for UHH employees
+- data hosted on UHH servers
 - S3 buckets can be configured as a [DataLad special remote](https://handbook.datalad.org/en/latest/basics/101-139-s3.html) (walkthrough in DataLad Handbook)
 
 
@@ -1055,9 +1129,6 @@ knitr::include_graphics("https://docs.gitlab.com/ee/user/project/img/issue_board
 ```
 ]
 
-
-
-
 ---
 
 # Propose and implement changes: Merge / pull requests
@@ -1290,7 +1361,7 @@ The only real cost is the **time invested in learning**!
 
 #### Learn both (disclaimer: shameless plug `r emoji::emoji("see_no_evil")`)
 
-- Full-semester course on ["Version control of code and data using Git and DataLad"](https://lennartwittkuhn.com/ddlitlab/) in winter semester 2023/24 at University of Hamburg (generously funded by the [Digital and Data Literacy in Teaching Lab](https://www.isa.uni-hamburg.de/en/ddlitlab.html) program) - *more details coming soon ...*
+- Full-semester course on ["Version control of code and data using Git and DataLad"](https://lennartwittkuhn.com/versioncontrol-course-uhh-ws23/) in winter semester 2023/24 at University of Hamburg (generously funded by the [Digital and Data Literacy in Teaching Lab](https://www.isa.uni-hamburg.de/en/ddlitlab.html) program) - *more details coming soon ...*
 
 ---
 
@@ -1327,52 +1398,6 @@ knitr::include_graphics("https://secure.gravatar.com/avatar/f49adcdd1c7bb710cdf5
 .pull-left[
 ```{r, echo=FALSE, fig.align="center", out.width="30%", fig.retina=1, fig.cap='<a href="https://www.repronim.org/" target="_blank">ReproNim</a>'}
 knitr::include_graphics("https://www.repronim.org/images/logo-square-256.png")
-```
-]
-
----
-
-# Random useful info about DataLad
-
-#### Use DataLad within Python `r emoji::emoji("snake")` and R `r emoji::emoji("pirate_flag")`
-
-- DataLad Python API Use DataLad commands directly in your Python scripts
-- Install DataLad `pip install datalad` and import in your Python script `import datalad.api as dl`
-- Use system commands in other languages, e.g., in R `system2("datalad status")`
-
---
-
-#### Keep only what you need (aka. "How to work on two fMRI studies with a 250GB laptop")
-
-- `datalad drop` removes the file contents completely from your dataset
-- only keep whatever you like or re-obtain with `datalad get`
-
---
-
-#### git-annex takes the safety of your files seriously
-
-- Files saved under git-annex are locked against modifications
-- `datalad run` automatically unlocks specified inputs / outputs
-- `datalad unlock` can be used to unlock annexed content manually
-- Everything that is stored under git-annex is content-locked and everything that is stored under Git is not
-
----
-
-# Git vs. git-annex
-
-.pull-left[
-```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-114-txt2git.html" target="_blank"><sup>DataLad Handbook: Data Safety</sup></a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/git_vs_gitannex.svg")
-```
-
-- Example: `datalad create -c text2git my_dataset`<br>&rarr; all text files are saved under Git
-- the `.gitattributes` file handles, which files are stored under Git vs. git-annex (can modify manually)
-- see [this chapter](http://handbook.datalad.og/en/latest/basics/basics-configuration.html#chapter-config) in the DataLad handbook
-]
-
-.pull-right[
-```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank"><sup>DataLad Handbook: Beyond shared infrastructure</sup></a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg") 
 ```
 ]
 
