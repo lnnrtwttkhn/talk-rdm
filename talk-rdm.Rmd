@@ -441,9 +441,9 @@ knitr::include_graphics("https://avatars.githubusercontent.com/u/8927200?s=200&v
 
 --
 
-- **"Git for (large) data"**
+- **"git for (large) data"**
 - free, [open-source](https://github.com/datalad/datalad) **command-line tool**
-- building on top of **Git** and **git-annex**, DataLad allows you to **version control arbitrarily large files** in datasets.
+- building on top of **git** and **git-annex**, DataLad allows you to **version control arbitrarily large files** in datasets.
 - *"Arbitrarily large?"* - yes, see DataLad dataset of 80TB / 15 million files from the Human Connectome Project (see [details](https://handbook.datalad.org/en/latest/usecases/HCP_dataset.html#usecase-hcp-dataset))
 - A Graphical User Interface (GUI) exists: [DataLad Gooey](http://docs.datalad.org/projects/gooey/en/latest/index.html)
 
@@ -593,7 +593,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_
 
 #### Use DataLad within Python `r emoji::emoji("snake")` and R `r emoji::emoji("pirate_flag")`
 
-- DataLad Python API Use DataLad commands directly in your Python scripts
+- [DataLad Python API](http://docs.datalad.org/en/stable/modref.html): Use DataLad commands directly in your Python code!
 - Install DataLad `pip install datalad` and import in your Python script `import datalad.api as dl`
 - Use system commands in other languages, e.g., in R `system2("datalad status")`
 
@@ -623,7 +623,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/git_vs_gi
 ```
 
 - Example: `datalad create -c text2git my_dataset`<br>&rarr; all text files are saved under Git
-- the `.gitattributes` file handles, which files are stored under Git vs. git-annex (can modify manually)
+- the `.gitattributes` file handles, which files are stored under git vs. git-annex (can modify manually)
 - see [this chapter](http://handbook.datalad.og/en/latest/basics/basics-configuration.html#chapter-config) in the DataLad handbook
 ]
 
@@ -697,7 +697,7 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3ff02e436e5142059461/?dl=1
 
 ---
 
-# Separate content in Git vs. git-annex behind the scenes
+# Separate content in git vs. git-annex behind the scenes
 
 - Datasets are exposed via private or public repository on a repository hosting service (e.g., GitLab)
 - Data can't be stored in the repository hosting service but can be kept in almost any third party storage
@@ -1128,9 +1128,6 @@ exclude: true
 knitr::include_graphics("https://docs.gitlab.com/ee/user/project/img/issue_boards_core_v14_1.png") 
 ```
 ]
-
-
-
 
 ---
 
