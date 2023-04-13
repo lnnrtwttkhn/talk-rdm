@@ -1,5 +1,5 @@
 ---
-title: "Open and reproducible research with DataLad"
+title: "Open and reproducible research workflows with DataLad"
 subtitle: "Talk at Freie Universität Berlin (Dept. of Education and Psychology)"
 author: "Dr. Lennart Wittkuhn"
 institute: "</br>Department of Psychology, University of Hamburg</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research"
@@ -33,7 +33,7 @@ pacman::p_load(char = packages_cran)
 
 #### About me
 
-- `r emoji::emoji("scientist")` **Position:** PostDoc & Lab Manager at [University of Hamburg](https://www.psy.uni-hamburg.de/en/arbeitsbereiche/lern-und-veraenderungsmechanismen.html) & [MPI for Human Development](https://www.mpib-berlin.mpg.de/en) (PI: Nico Schuck)
+- `r emoji::emoji("scientist")` **Position:** PostDoc & Lab Manager at [University of Hamburg](https://www.psy.uni-hamburg.de/en/arbeitsbereiche/lern-und-veraenderungsmechanismen.html) & [MPI for Human Development](https://www.mpib-berlin.mpg.de/en) (PI: Prof. Nicolas Schuck)
 - `r emoji::emoji("microscope")` **Research:** I study the role of fast neural memory reactivation ([*replay*](https://en.wikipedia.org/wiki/Hippocampal_replay)) in the human brain using fMRI
 - `r emoji::emoji("mortar_board")` **Background:** BSc Psychology (TU Dresden), MSc Cognitive Neuroscience (TU Dresden), PhD Psychology (FU Berlin)
 - `r emoji::emoji("bookmark")` **Roles:** Member of the MPIB's working group on research data management and open science
@@ -330,7 +330,7 @@ knitr::include_graphics("https://git-scm.com/book/en/v2/images/distributed.png")
 - most popular **distributed version control system**
 - free, [open-source](https://github.com/git) command-line tool
 - Graphical User Interfaces (GUIs) exist, e.g., [GitKraken](https://www.gitkraken.com/)
-- standard tool for most (all?) software developers
+- standard tool for professional software developers
 
 ???
 
@@ -796,7 +796,7 @@ DataLad-OSF extension allows to integrate with OSF via DataLad (details [here](h
 
 # Data sharing via S3 buckets (object storage)
 
-```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='e.g., <a href="https://tu-dresden.de/zih/dienste/service-katalog/arbeitsumgebung/datenspeicher/objektspeicher-s3?set_language=en" target="_blank">Object Storage at ZIH</a>'}
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='e.g., <a href="https://www.rrz.uni-hamburg.de/en/services/datenhaltung/objektspeicher.html" target="_blank">Object Storage at UHH</a>'}
 knitr::include_graphics("https://keeper.mpdl.mpg.de/f/45a664d668724e51917a/?dl=1")
 ```
 
@@ -812,8 +812,8 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/45a664d668724e51917a/?dl=1
 
 #### `r emoji::emoji("sparkles")` Advantages of S3 buckets
 
-- up to 200 GB per TU Dresden employee (expandable)
-- data hosted on ZIH servers
+- flexible storage size for UHH employees
+- data hosted on UHH servers
 - S3 buckets can be configured as a [DataLad special remote](https://handbook.datalad.org/en/latest/basics/101-139-s3.html) (walkthrough in DataLad Handbook)
 
 
