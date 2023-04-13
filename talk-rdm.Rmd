@@ -589,6 +589,52 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_
 
 ---
 
+# Random useful info about DataLad
+
+#### Use DataLad within Python `r emoji::emoji("snake")` and R `r emoji::emoji("pirate_flag")`
+
+- DataLad Python API Use DataLad commands directly in your Python scripts
+- Install DataLad `pip install datalad` and import in your Python script `import datalad.api as dl`
+- Use system commands in other languages, e.g., in R `system2("datalad status")`
+
+--
+
+#### Keep only what you need (aka. "How to work on two fMRI studies with a 250GB laptop")
+
+- `datalad drop` removes the file contents completely from your dataset
+- only keep whatever you like or re-obtain with `datalad get`
+
+--
+
+#### git-annex takes the safety of your files seriously
+
+- Files saved under git-annex are locked against modifications
+- `datalad run` automatically unlocks specified inputs / outputs
+- `datalad unlock` can be used to unlock annexed content manually
+- Everything that is stored under git-annex is content-locked and everything that is stored under Git is not
+
+---
+
+# Git vs. git-annex
+
+.pull-left[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-114-txt2git.html" target="_blank"><sup>DataLad Handbook: Data Safety</sup></a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/git_vs_gitannex.svg")
+```
+
+- Example: `datalad create -c text2git my_dataset`<br>&rarr; all text files are saved under Git
+- the `.gitattributes` file handles, which files are stored under Git vs. git-annex (can modify manually)
+- see [this chapter](http://handbook.datalad.og/en/latest/basics/basics-configuration.html#chapter-config) in the DataLad handbook
+]
+
+.pull-right[
+```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank"><sup>DataLad Handbook: Beyond shared infrastructure</sup></a>'}
+knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg") 
+```
+]
+
+---
+
 
 class: title-slide, center, middle
 name: workflow-sharing
@@ -1355,52 +1401,6 @@ knitr::include_graphics("https://secure.gravatar.com/avatar/f49adcdd1c7bb710cdf5
 .pull-left[
 ```{r, echo=FALSE, fig.align="center", out.width="30%", fig.retina=1, fig.cap='<a href="https://www.repronim.org/" target="_blank">ReproNim</a>'}
 knitr::include_graphics("https://www.repronim.org/images/logo-square-256.png")
-```
-]
-
----
-
-# Random useful info about DataLad
-
-#### Use DataLad within Python `r emoji::emoji("snake")` and R `r emoji::emoji("pirate_flag")`
-
-- DataLad Python API Use DataLad commands directly in your Python scripts
-- Install DataLad `pip install datalad` and import in your Python script `import datalad.api as dl`
-- Use system commands in other languages, e.g., in R `system2("datalad status")`
-
---
-
-#### Keep only what you need (aka. "How to work on two fMRI studies with a 250GB laptop")
-
-- `datalad drop` removes the file contents completely from your dataset
-- only keep whatever you like or re-obtain with `datalad get`
-
---
-
-#### git-annex takes the safety of your files seriously
-
-- Files saved under git-annex are locked against modifications
-- `datalad run` automatically unlocks specified inputs / outputs
-- `datalad unlock` can be used to unlock annexed content manually
-- Everything that is stored under git-annex is content-locked and everything that is stored under Git is not
-
----
-
-# Git vs. git-annex
-
-.pull-left[
-```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-114-txt2git.html" target="_blank"><sup>DataLad Handbook: Data Safety</sup></a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/git_vs_gitannex.svg")
-```
-
-- Example: `datalad create -c text2git my_dataset`<br>&rarr; all text files are saved under Git
-- the `.gitattributes` file handles, which files are stored under Git vs. git-annex (can modify manually)
-- see [this chapter](http://handbook.datalad.og/en/latest/basics/basics-configuration.html#chapter-config) in the DataLad handbook
-]
-
-.pull-right[
-```{r, echo=FALSE, fig.align="center", out.width="100%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank"><sup>DataLad Handbook: Beyond shared infrastructure</sup></a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/publishing_network_publishparts2.svg") 
 ```
 ]
 
