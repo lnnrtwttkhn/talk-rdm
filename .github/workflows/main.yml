@@ -9,6 +9,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install and Build
+        env:
+          RENV_CONFIG_AUTOLOADER_ENABLED: "FALSE"
         run: |
           Rscript -e "rmarkdown::render('index.Rmd', output_dir = 'public', output_file = 'index.html')"
       - name: Upload artifact
