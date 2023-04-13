@@ -374,6 +374,8 @@ knitr::include_graphics("https://keeper.mpdl.mpg.de/f/8fda5b269fef4d778007/?dl=1
 
 ---
 
+exclude: true
+
 # Code sharing via GitLab
 
 ```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://gitlab.com/" target="_blank">gitlab.com</a>'}
@@ -383,6 +385,8 @@ knitr::include_graphics("https://cdn.icon-icons.com/icons2/2415/PNG/512/gitlab_o
 > "*GitLab is **open source** software to collaborate on code. Manage git repositories with fine-grained **access controls** that keep your code secure. [...] Perform **code reviews** and **enhance collaboration** with merge requests. Each project can also have an **issue tracker** and a **wiki**.*"
 
 --
+
+exclude: true
 
 #### GitLab for TU Dresden employees
 
