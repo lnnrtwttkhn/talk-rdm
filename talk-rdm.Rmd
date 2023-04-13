@@ -742,6 +742,32 @@ Done!<sup>1</sup> 🎉
 
 ---
 
+# Data sharing via Nextcloud
+
+```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://nextcloud.com/" target="_blank">nextcloud.com</a>'}
+knitr::include_graphics("https://keeper.mpdl.mpg.de/f/d630458cd4124c2c9ce5/?dl=1")
+```
+
+.center[
+DataLad NEXT extension allows to push data to Nextcloud (using WebDAV; details [here](http://docs.datalad.org/projects/next/en/latest/generated/datalad.api.create_sibling_webdav.html))
+]
+
+--
+
+#### `r emoji::emoji("sparkles")` Advantages of Nextcloud
+
+- data privacy compliant alternative to Google Drive, Dropbox, etc. (often hosted on-site)
+- provided by your institution, so free to use
+- supports private and public repositories
+- can be used together with external collaborators
+
+#### `r emoji::emoji("bear")` Nextcloud at FU Berlin: [Box.FU](https://box.fu-berlin.de/)
+
+- data hosted on FU servers
+- storage quota: 200 GB per employee / student (expandable)
+
+---
+
 # Data sharing via the Open Science Framework (OSF)
 
 ```{r, echo=FALSE, fig.align="center", out.width="10%", fig.retina=1, fig.cap='<a href="https://osf.io/" target="_blank">osf.io</a>'}
