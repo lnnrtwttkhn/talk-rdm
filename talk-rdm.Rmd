@@ -1,5 +1,5 @@
 ---
-title: "Open and reproducible research workflows with DataLad"
+title: "Open and reproducible data management with DataLad"
 subtitle: "Talk at Freie Universität Berlin (Dept. of Education and Psychology)"
 author: "Dr. Lennart Wittkuhn"
 institute: "</br>Department of Psychology, University of Hamburg</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research"
