@@ -2,7 +2,7 @@
 title: "Open and reproducible data management with DataLad"
 subtitle: "Talk at Freie Universität Berlin (Dept. of Education and Psychology)"
 author: "Dr. Lennart Wittkuhn"
-institute: "</br>Department of Psychology, University of Hamburg</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research"
+institute: "</br>Department of Psychology, University of Hamburg</br>Max Planck Institute for Human Development, Berlin</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research, Berlin"
 date: "</br>Friday, 14<sup>th</sup> of April 2023"
 #date: "Last update of slides: `r format(Sys.time(), '%H:%M | %B %d, %Y')`"
 output:
@@ -67,13 +67,17 @@ pacman::p_load(char = packages_cran)
 2. **Research Workflow**
   - Code Management: **Git**
   - Data Management: **DataLad**
-  - Code & Data Sharing: **GIN**, **OSF**, **S3**, etc.
-  - Example: Wittkuhn & Schuck, 2021, *Nature Communications*
-  - Communication: Discussion via **Issues** and collaborations via **Merge Requests**
-  - *( Procedures: **datalad run** and **Make**)*
-  - *( Environments: **renv**, **venv**, **Docker**, etc.)*
+  - Code & Data Sharing: **GIN**, **Nextcloud**, **OSF**, **S3**, etc.
+  - Example: Wittkuhn & Schuck, 2021, Nature Communications
+  - Live demonstrations
   
-3. **Discussion**
+  Optional:
+  
+  - Communication: Discussion via **Issues** and collaborations via **Merge Requests**
+  - *(Procedures: **datalad run** and **Make**)*
+  - *(Environments: **renv**, **venv**, **Docker**, etc.)*
+  
+3. **Wrap-up & discussion**
 
 ???
 
@@ -589,7 +593,7 @@ knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/metadata_
 
 ---
 
-# Random useful info about DataLad
+# Interesting bits and pieces about DataLad
 
 #### Use DataLad within Python `r emoji::emoji("snake")` and R `r emoji::emoji("pirate_flag")`
 
@@ -1041,6 +1045,16 @@ Project website publicly available at https://wittkuhn.mpib.berlin/highspeed/
   1. The static website is [deployed to GitLab pages](https://git.mpib-berlin.mpg.de/wittkuhn/highspeed/-/blob/master/.gitlab-ci.yml#L95-106)
 
 &rarr; This pipeline is automatically triggered on every push (change) to the main repository.
+
+---
+
+class: title-slide, center, middle
+name: live-demonstrations
+
+# Live demonstrations
+<!--the next --- is a horizontal line-->
+
+--- 
 
 ---
 
