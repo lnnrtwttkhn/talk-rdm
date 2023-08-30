@@ -1,0 +1,5 @@
+library(rmarkdown)
+library(bookdown)
+library(here)
+library(xaringan)
+library(emoji)
