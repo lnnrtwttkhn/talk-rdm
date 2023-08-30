@@ -12,6 +12,7 @@ Slides are available at: https://lennartwittkuhn.com/talk-rdm/
 
 | When | What | Host | DOI |
 |---|---|---|---|
+| 14-04-23 | Talk at [Department of Education & Psychology](Department of Education & Psychology) at [Freie Universität Berlin](https://www.fu-berlin.de/en/) | Rasmus Bruckner | TBA |
 | 18-01-23 | [OSIP](https://tu-dresden.de/mn/psychologie/die-fakultaet/open-science#) Meeting | [Open Science Initiative at the Department of Psychology (OSIP)](https://tu-dresden.de/mn/psychologie/die-fakultaet/open-science#) at [TU Dresden](https://tu-dresden.de/) | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7554142.svg)](https://doi.org/10.5281/zenodo.7554142) |
 | 13-09-22 | [5<sup>th</sup> RDM-Workshop 2022 on Research Data Management in the Max Planck Society](https://rdm.mpdl.mpg.de/mpdl-services/workshops/5-fdm-workshop-2022/) | [Max Planck Digital Library (MPDL)](https://www.mpdl.mpg.de/en/) | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7075084.svg)](https://doi.org/10.5281/zenodo.7075084) |
 | 20-10-21 | LNDG Lab meeting | [Lifespan Neural Dynamics Group (LNDG)](https://www.mpib-berlin.mpg.de/research/research-centers/lip/projects/lndg) at the [Max Planck Institute for Human Development](https://www.mpib-berlin.mpg.de/en) | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5586318.svg)](https://doi.org/10.5281/zenodo.5586318) | 

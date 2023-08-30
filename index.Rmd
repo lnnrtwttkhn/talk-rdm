@@ -1,7 +1,10 @@
 ---
 title: "Talks on research data management, open science and reproducibility"
-author: "Lennart Wittkuhn"
-affiliation: "Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development</br>Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Berlin, Germany"
+author: "Dr. Lennart Wittkuhn"
+affiliation: |
+  Institute of Psychology, University of Hamburg<br>
+  Max Planck Research Group NeuroCode</br>Max Planck Institute for Human Development<br>
+  Max Planck UCL Centre for Computational Psychiatry and Ageing Research</br>Berlin, Germany
 date: "Last update: `r format(Sys.time(), '%d %B, %Y')`"
 output:
   bookdown::html_document2:
@@ -95,6 +98,24 @@ knitr::include_url(path_html)
 ```
 
 # Archive 📚
+
+## Department of Education & Psychology at Freie Universität Berlin
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7554142.svg)](https://doi.org/10.5281/zenodo.7554142)
+
+The following slides were presented during a talk prepared for the [Department of Education & Psychology](Department of Education & Psychology) at [Freie Universität Berlin](https://www.fu-berlin.de/en/), Germany on 14<sup>th</sup> of April 2023.
+
+### Slides
+
+```{r, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
+archive_name = "20230414-fu-berlin"
+path_source = file.path("archive", archive_name, "talk-rdm.Rmd")
+path_html = render_xaringan(name = archive_name, path_rmd = here::here(path_source))
+```
+
+```{r, echo=FALSE}
+knitr::include_url(path_html)
+```
 
 ## Open Science Initiative (OSIP) at the Department of Psychology at TU Dresden
 
