@@ -27,6 +27,33 @@ packages_cran = c("here", "xaringan", "emoji")
 pacman::p_load(char = packages_cran)
 ```
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
+read_url <- function(url) {
+  # taken from https://stackoverflow.com/questions/12193779/how-to-write-trycatch-in-r
+  out <- tryCatch(
+    {
+      readLines(con = url, warn = FALSE) 
+    },
+    error = function(cond) {
+      message(paste("URL does not seem to exist:", url))
+      message("Here's the original error message:")
+      message(cond)
+      return(NA)
+    },
+    warning = function(cond) {
+      message(paste("URL caused a warning:", url))
+      message("Here's the original warning message:")
+      message(cond)
+      return(NULL)
+    },
+    finally = {
+      message(paste("Processed URL:", url))
+    }
+  )    
+  return(url)
+}
+```
+
 # About
 
 --
@@ -159,6 +186,8 @@ knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot
 > *"[...] when the same analysis steps performed on the same dataset consistently produces the same answer."*
 
 ```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='<a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html" target="_blank">Table of Definitions for Reproducibility</a> by <i>The Turing Way</i> (CC-BY 4.0)'}
+url = "https://the-turing-way.netlify.app/_images/reproducible-matrix.jpg"
+read_url(url)
 knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible-matrix.jpg") 
 ```
 
