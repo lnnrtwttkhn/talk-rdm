@@ -1,3 +1,7 @@
+IMAGES_URL=https://cloud.uni-hamburg.de/s/bYAfMm5g5ZLqHcS/download
+IMAGES_ARCHIVE=images.zip
+IMAGES_DIR=images/
+
 all: public/index.html
 
 talk-rdm.html: talk-rdm.Rmd
@@ -9,6 +13,12 @@ public/index.html: index.Rmd talk-rdm.Rmd archive
 .PHONY: local
 local: talk-rdm.Rmd
 	Rscript -e "xaringan::inf_mr('talk-rdm.Rmd')"
+
+.PHONY: images
+images:
+	wget $(IMAGES_URL) -O $(IMAGES_ARCHIVE)
+	unzip -j -o $(IMAGES_ARCHIVE) -d $(IMAGES_DIR)
+	rm -f $(IMAGES_ARCHIVE)
 
 .PHONY: docker-build 
 docker-build:

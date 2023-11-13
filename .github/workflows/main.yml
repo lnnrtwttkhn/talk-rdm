@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Download images
+        run: |
+          make images
       - name: Install and Build
         env:
           RENV_CONFIG_AUTOLOADER_ENABLED: "FALSE"
