@@ -25,6 +25,7 @@ output:
 if (!requireNamespace("pacman")) install.packages("pacman")
 packages_cran = c("here", "xaringan", "emoji")
 pacman::p_load(char = packages_cran)
+path_images = here::here("images")
 ```
 
 # About
@@ -135,7 +136,7 @@ Buckheit & Donoho (1995), paraphrasing Jon Claerbout
 
 .pull-right[
 ```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='<a href="https://wiki.seg.org/wiki/Jon_Claerbout" target="_blank">Jon Claerbout</a></br>Geophysicist at Stanford University</br>(CC-BY-SA)'}
-knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot.jpg") 
+knitr::include_graphics(file.path(path_images, "jon_claerbout_headshot.jpg")) 
 ```
 ]
 
@@ -159,7 +160,7 @@ knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot
 > *"[...] when the same analysis steps performed on the same dataset consistently produces the same answer."*
 
 ```{r, echo=FALSE, fig.align="center", out.width="70%", fig.retina=1, fig.cap='<a href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html" target="_blank">Table of Definitions for Reproducibility</a> by <i>The Turing Way</i> (CC-BY 4.0)'}
-knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible-matrix.jpg") 
+knitr::include_graphics(file.path(path_images, "turing_way_reproducible_matrix.jpg")) 
 ```
 
 ???
@@ -182,7 +183,7 @@ knitr::include_graphics("https://the-turing-way.netlify.app/_images/reproducible
 # Challenge: Many stages in the research cycle
 
 ```{r, echo=FALSE, fig.align="center", out.width="58%", fig.retina=1, fig.cap='<a href="https://zenodo.org/record/4906004" target="_blank"><sup>by Scriberia for The Turing Way community (CC-BY 4.0)</sup></a>'}
-knitr::include_graphics("https://keeper.mpdl.mpg.de/f/3a1863ac2c2e40809c5f/?dl=1") 
+knitr::include_graphics(file.path(path_images, "turingway_scriberia_research_cycle.jpg")) 
 ```
 
 ???
