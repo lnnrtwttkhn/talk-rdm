@@ -800,7 +800,8 @@ name: workflow-communication
 
 .pull-left[
 ```{r, echo=FALSE, out.width="120%", fig.retina=1}
-knitr::include_graphics("https://gitlab.pavlovia.org/help/user/project/issues/img/new_issue.png")
+knitr::include_graphics("https://kp2.in.htwg-konstanz.de/git/help/user/project/issues/img/new_issue.png")
+# https://gitlab.pavlovia.org/help/user/project/issues/img/new_issue.png
 # https://docs.gitlab.com/ee/user/project/issues/img/new_issue_v13_1.png
 ```
 {{content}}
