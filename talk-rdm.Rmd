@@ -1822,13 +1822,13 @@ processing of large-scale data"](https://www.biorxiv.org/content/10.1101/2021.10
 
 .pull-left[
 ```{r, echo=FALSE, fig.align="center", out.width="95%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank"><sup>Clone from local</sup></a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/clone_local.svg")
+knitr::include_graphics("https://raw.githubusercontent.com/datalad-handbook/artwork/master/src/publishing/clone_local.svg")
 ```
 ]
 
 .pull-right[
 ```{r, echo=FALSE, fig.align="center", out.width="95%", fig.retina=1, fig.cap='<a href="http://handbook.datalad.org/en/latest/basics/101-138-sharethirdparty.html" target="_blank"><sup>Clone from server / cluster</sup></a>'}
-knitr::include_graphics("http://handbook.datalad.org/en/latest/_images/clone_server.svg") 
+knitr::include_graphics("https://raw.githubusercontent.com/datalad-handbook/artwork/master/src/publishing/clone_server.svg") 
 ```
 ]
 
@@ -1979,7 +1979,7 @@ Buckheit & Donoho (1995), paraphrasing Jon Claerbout
 
 .pull-right[
 ```{r, echo=FALSE, fig.align="center", out.width="50%", fig.retina=1, fig.cap='<a href="https://wiki.seg.org/wiki/Jon_Claerbout" target="_blank">Jon Claerbout</a></br>Geophysicist at Stanford University</br>(CC-BY-SA)'}
-knitr::include_graphics("https://wiki.seg.org/images/b/b0/Jon_Claerbout_headshot.jpg") 
+knitr::include_graphics("https://sepwww.stanford.edu/sep/prof/myface1.jpg") 
 ```
 ]
 
